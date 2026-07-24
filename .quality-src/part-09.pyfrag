@@ -1,0 +1,40 @@
+
+# Deduplicate external references by reference project. Multiple commits or
+# releases from the same external project are one daily validation task, not
+# separate implementation instructions.
+def build_actions(
+    items: list[dict[str, Any]],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+) -> list[Action]:
+    primary: list[Action] = []
+    references: list[Action] = []
+    seen_sources: set[str] = set()
+    seen_reference_names: set[str] = set()
+
+    for item in items:
+        action = make_action(item, run_at=run_at, context=context, tuning=tuning)
+        if action is None or action.source_uid in seen_sources:
+            continue
+        seen_sources.add(action.source_uid)
+
+        reference = external_reference(item, context)
+        if action.decision == "기술 검증 후보":
+            reference_name = str((reference or {}).get("name") or host_of(action.url) or action.source)
+            if reference_name in seen_reference_names:
+                continue
+            seen_reference_names.add(reference_name)
+            references.append(action)
+        else:
+            primary.append(action)
+
+    primary.sort(key=lambda x: (-x.actionability, -x.confidence, x.title.lower()))
+    references.sort(key=lambda x: (-x.actionability, -x.confidence, x.title.lower()))
+    max_actions = int(tuning.get("max_actions", 12))
+    max_refs = int(tuning.get("max_external_reference_actions", 2))
+    selected = primary[:max_actions]
+    room = max(0, max_actions - len(selected))
+    selected.extend(references[: min(max_refs, room)])
+    return selected
