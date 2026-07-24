@@ -1,0 +1,127 @@
+    official_ratio = float(metrics.get("official_ratio", 0))
+    source_failure = float(metrics.get("source_failure_ratio", 0))
+
+    if total >= 20 and noise > 0.30:
+        adjust("min_actionability_score", 3)
+        adjust("min_confidence_score", 2)
+    elif total >= 10 and noise < 0.08 and actionable == 0 and official_ratio > 0.35:
+        adjust("min_actionability_score", -2)
+
+    history = list(result.get("history", []))
+    history.append({
+        "date": report_date,
+        "quality_score": metrics.get("quality_score"),
+        "noise_ratio": metrics.get("noise_ratio"),
+        "actionable_items": actionable,
+        "source_failure_ratio": source_failure,
+        "changes": changes,
+    })
+    result["history"] = history[-30:]
+    result["last_tuned_at"] = metrics.get("generated_at")
+    return result, changes
+
+
+def maintenance_recommendations(metrics: dict[str, Any], changes: list[str]) -> list[dict[str, str]]:
+    recs: list[dict[str, str]] = []
+    if float(metrics.get("noise_ratio", 0)) > 0.20 or int(metrics.get("misc_items", 0)) > 3:
+        recs.append({
+            "scope": "collector-code",
+            "severity": "높음",
+            "problem": "원시 수집 결과의 오탐 비율이 높음",
+            "proposal": "GitHub 전역 검색에서 generic TaxIA 동명 저장소와 모니터 저장소 자체를 차단하고, 규제 RSS는 AI·세무·법률의 이중 문맥을 요구한다.",
+            "validation": "고정 오탐 fixture가 0건이 되고 TAXiA/XAIKOREA 정답 fixture는 유지되는지 테스트한다."
+        })
+    if int(metrics.get("baseline_items", 0)) > 0:
+        recs.append({
+            "scope": "collector-code",
+            "severity": "높음",
+            "problem": "초기 기준선 자산이 오늘의 긴급 변화처럼 보일 수 있음",
+            "proposal": "기준선 항목은 낮음으로 제한하고 오늘의 판단·즉시 적용 목록에서 제외한다.",
+            "validation": "과거 릴리스 기준선이 긴급 상위 5개에 나타나지 않는지 테스트한다."
+        })
+    if float(metrics.get("source_failure_ratio", 0)) > 0.20:
+        recs.append({
+            "scope": "pipeline",
+            "severity": "높음",
+            "problem": "소스 실패 비율이 20%를 초과",
+            "proposal": "실패 소스별 재시도·timeout·격리 정책을 조정하고 3회 연속 실패 시 degraded 상태를 별도 표시한다.",
+            "validation": "일부 소스가 실패해도 보고서는 생성되며 실패율과 재시도 횟수가 artifact에 남는지 확인한다."
+        })
+    if int(metrics.get("actionable_items", 0)) == 0 and int(metrics.get("total_items", 0)) > 0:
+        recs.append({
+            "scope": "result-quality",
+            "severity": "보통",
+            "problem": "수집은 됐지만 프로젝트 적용 항목이 없음",
+            "proposal": "프로젝트 구성요소 매핑과 시행일·판결·세무지식 변경 규칙을 보강한다.",
+            "validation": "대표 규제 fixture가 구체적인 파일·작업·인수기준으로 변환되는지 테스트한다."
+        })
+    if changes:
+        recs.append({
+            "scope": "safe-autotune",
+            "severity": "낮음",
+            "problem": "품질 지표가 설정 경계 조정을 요구",
+            "proposal": "; ".join(changes),
+            "validation": "설정값이 bounds 안에 있고 테스트와 보고서 생성이 성공하는지 확인한다."
+        })
+    return recs
+
+
+def md_escape(value: str) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ").strip()
+
+
+def render_application_brief(
+    *,
+    report_date: str,
+    run_at: dt.datetime,
+    actions: list[Action],
+    metrics: dict[str, Any],
+    context: dict[str, Any],
+    raw_report_paths: list[str],
+    quality_path: str,
+) -> str:
+    lines = [
+        f"# 프로젝트 적용 브리프 — {report_date}",
+        "",
+        f"- **대상 프로젝트:** `{context.get('target_repository', 'xaikorea/taxia')}`",
+        f"- **분석 시각:** {run_at.astimezone(ZoneInfo(context.get('timezone', 'Asia/Seoul'))).strftime('%Y-%m-%d %H:%M:%S')} KST",
+        f"- **적용 가능 항목:** {len(actions)}개 / 원시 수집 {metrics.get('total_items', 0)}개",
+        f"- **품질 점수:** {metrics.get('quality_score', 0)}/100",
+    ]
+    for index, raw_path in enumerate(raw_report_paths, start=1):
+        lines.append(
+            f"- **원시 보고서 {index}:** [{raw_path}](https://github.com/{context.get('monitor_repository')}/blob/main/{raw_path})"
+        )
+    lines.extend([
+        f"- **품질 지표:** [{quality_path}](https://github.com/{context.get('monitor_repository')}/blob/main/{quality_path})",
+        "",
+        "> 우선순위는 브랜드 언급량이 아니라 프로젝트 적용성·증거 신뢰도·시행 시급성으로 계산한다. 자동 결과는 원문과 실제 코드 상태를 다시 확인해야 한다.",
+        "",
+        "## 바로 적용할 작업",
+        "",
+    ])
+    if not actions:
+        lines.extend([
+            "현재 기준을 충족한 즉시 적용 항목이 없습니다. 이는 외부 변화가 없다는 뜻이 아니라, 수집 항목 중 신뢰도와 프로젝트 매핑이 동시에 기준을 넘지 못했다는 뜻입니다.",
+            "",
+        ])
+    for index, action in enumerate(actions, start=1):
+        lines.extend([
+            f"### {index}. [{action.title}]({action.url})",
+            "",
+            f"- **판정:** {action.decision}",
+            f"- **적용성 / 신뢰도:** {action.actionability}/100 · {action.confidence}/100",
+            f"- **관할·분야:** {action.jurisdiction} · {action.category}",
+            f"- **프로젝트 구성요소:** {', '.join(action.components)}",
+            f"- **대상 저장소:** `{action.target_repository}`",
+            f"- **우선 확인 파일:** {', '.join(f'`{path}`' for path in action.target_files[:8])}",
+            f"- **변경 제안:** {action.proposed_change}",
+            f"- **왜 적용하는가:** {action.rationale}",
+            f"- **근거 수준:** {action.evidence}",
+            "",
+            "**구현 순서**",
+            "",
+        ])
+        lines.extend([f"- [ ] {step}" for step in action.implementation_steps])
+        lines.extend(["", "**완료 기준**", ""])
+        lines.extend([f"- [ ] {criterion}" for criterion in action.acceptance_criteria])
