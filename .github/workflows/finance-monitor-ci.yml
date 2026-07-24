@@ -33,5 +33,7 @@ jobs:
           python -m json.tool config/finance_quality_policy.json >/dev/null
       - name: Run existing finance monitor tests
         run: python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
-      - name: Run core ranking and quality optimizer tests
-        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -v
+      - name: Run core-first ranking tests
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k CoreFirstPolicyTests -v
+      - name: Run bounded quality optimizer tests
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k QualityOptimizerTests -v
