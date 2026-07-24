@@ -25,10 +25,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate Python, JSON and unit tests
+      - name: Compile monitor and optimizer
+        run: python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
+      - name: Validate JSON configuration
         run: |
-          set -euo pipefail
-          python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
           python -m json.tool config/finance_sources.json >/dev/null
           python -m json.tool config/finance_quality_policy.json >/dev/null
-          python -m unittest discover -s tests -p 'test_finance*.py' -v
+      - name: Run existing finance monitor tests
+        run: python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
+      - name: Run core ranking and quality optimizer tests
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -v
