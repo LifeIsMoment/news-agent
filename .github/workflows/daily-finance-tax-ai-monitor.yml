@@ -154,7 +154,7 @@ jobs:
 
       - name: Publish or update daily finance report issue
         if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out-finance-tax-ai/issue_body.md') != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
@@ -204,7 +204,7 @@ jobs:
 
       - name: Open or update finance monitor failure issue
         if: failure() || steps.collect.outcome == 'failure'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;
@@ -255,7 +255,7 @@ jobs:
 
       - name: Close today's finance failure issue after recovery
         if: steps.collect.outcome == 'success'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;

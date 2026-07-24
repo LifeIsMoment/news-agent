@@ -159,7 +159,7 @@ jobs:
 
       - name: Publish or update daily report issue
         if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/issue_body.md') != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           ISSUE_LABEL: daily-monitoring
           ASSIGNEE: LifeIsMoment
@@ -212,7 +212,7 @@ jobs:
 
       - name: Open or update failure issue
         if: failure() || steps.collect.outcome == 'failure'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           FAILURE_LABEL: monitor-failure
           ASSIGNEE: LifeIsMoment
@@ -266,7 +266,7 @@ jobs:
 
       - name: Close today's failure issue after recovery
         if: steps.collect.outcome == 'success'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;
