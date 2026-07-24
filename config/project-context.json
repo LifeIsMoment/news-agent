@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Seoul",
+  "monitor_repository": "LifeIsMoment/news-agent",
+  "target_repository": "xaikorea/taxia",
+  "principle": "브랜드 언급량보다 프로젝트 적용 가능성, 증거 신뢰도, 시행 시급성을 우선한다.",
+  "components": {
+    "tax_knowledge_pipeline": {
+      "name": "세법 지식 수집·버전·인덱싱",
+      "categories": ["세무·조세", "세무 AI·조세기술"],
+      "terms": ["세법", "법인세", "부가가치세", "원천징수", "세액공제", "이전가격", "관세", "예규", "유권해석", "판결", "시행령", "시행규칙"],
+      "paths": ["src/taxia/retrieval/data_loader_user.py", "src/taxia/retrieval/", "src/taxia/engine.py", "src/js/src/utils/hf-loader.ts", "tests/"],
+      "change": "공식 원문·효력일을 버전 메타데이터로 저장하고 벡터·그래프 인덱스와 변경 조문 회귀질의를 갱신한다.",
+      "steps": ["공식 원문·공포일·시행일·적용대상·개정 전후 조문을 확보한다.", "source_url, retrieved_at, effective_from, effective_to, jurisdiction을 저장한다.", "Qdrant와 Neo4j 인덱스를 재생성하고 과거 기준일 검색을 보존한다.", "변경 조문별 질문·정답·인용 기대값을 회귀 테스트에 추가한다."],
+      "acceptance": ["현재 시점 질문은 최신 유효 조문을 인용한다.", "과거 기준일 질문은 당시 유효 조문을 인용한다.", "인용에 법령명·조문·효력일·원문 URL이 포함된다.", "인덱싱·질의 회귀 테스트가 통과한다."]
+    },
+    "citation_and_answer_safety": {
+      "name": "인용·답변 안전성",
+      "categories": ["세무·조세", "AI 규제·거버넌스", "금융·소비자", "감사·내부통제·부정탐지"],
+      "terms": ["투명성", "고지", "설명가능", "인용", "허위", "오류", "책임", "면책", "사람 검토", "자동화된 결정"],
+      "paths": ["src/taxia/engine.py", "src/taxia/types.py", "src/taxia/connectors/", "src/js/src/types.ts", "tests/"],
+      "change": "답변 고지·인용 검증과 불확실성 상태를 응답 스키마와 trace에 반영한다.",
+      "steps": ["규제 요구를 응답 필드와 검증 규칙으로 변환한다.", "model/provider/version, 법령 기준일, 인용 검증 결과를 trace에 기록한다.", "근거 부족·상충 조문·시행일 불명 시 확정 표현을 차단한다.", "Python·REST·JavaScript 응답 스키마를 함께 갱신한다."],
+      "acceptance": ["근거 부족 시 uncertain 또는 review_required가 반환된다.", "최소 인용 수와 원문 일치가 자동 테스트된다.", "클라이언트별 스키마가 같은 의미를 유지한다.", "사용자가 AI 생성·검토 필요 여부를 식별할 수 있다."]
+    },
+    "privacy_and_audit": {
+      "name": "개인정보·감사추적",
+      "categories": ["개인정보·데이터", "보안·책임", "AI 규제·거버넌스", "감사·내부통제·부정탐지"],
+      "terms": ["개인정보", "국외이전", "보유기간", "삭제", "음성", "전사", "프롬프트", "로그", "민감정보", "침해", "과징금"],
+      "paths": ["src/taxia/logging/tracer.py", "src/taxia/engine.py", "src/taxia/api/", "src/js/src/client.ts", "SECURITY.md", "tests/"],
+      "change": "프롬프트·응답·감사로그에 최소수집, 마스킹, 보유기간, 삭제, 국외이전 메타데이터와 접근통제를 구현한다.",
+      "steps": ["입력·검색문서·LLM 전송·로그의 데이터 흐름을 그린다.", "민감정보 탐지와 마스킹을 LLM 호출 및 trace 저장 전에 적용한다.", "보유기간·삭제·열람 권한을 설정과 감사 이벤트로 구현한다.", "국외 모델·클라우드 사용 시 수신자·국가·처리목적을 기록한다."],
+      "acceptance": ["기본 로그에 원문 개인정보가 저장되지 않는다.", "보유기간 만료와 사용자 삭제 요청이 테스트된다.", "LLM 전송 항목과 국외이전 기록을 추적할 수 있다.", "관리자 외 사용자가 감사 원문에 접근하지 못한다."]
+    },
+    "data_provenance_and_ip": {
+      "name": "데이터 출처·저작권·라이선스",
+      "categories": ["저작권·지식재산", "공공 데이터·API", "문서 AI·OCR·RAG"],
+      "terms": ["저작권", "학습데이터", "라이선스", "데이터셋", "출처", "상표", "특허", "영업비밀"],
+      "paths": ["src/taxia/retrieval/data_loader_user.py", "src/js/src/utils/hf-loader.ts", "README.md", "SECURITY.md", "docs/", "tests/"],
+      "change": "문서·데이터셋별 출처, 이용조건, 수집시각, 변형 이력, 삭제 요청을 provenance manifest로 관리한다.",
+      "steps": ["데이터 원천별 라이선스와 이용제한을 식별한다.", "원문 URL·해시·수집일·가공단계·재배포 가능 여부를 manifest에 저장한다.", "삭제·정정 요청 대상 문서를 인덱스에서 제거한다.", "데이터 카드와 사용자 문서에 적용 범위를 명시한다."],
+      "acceptance": ["모든 검색 문서가 provenance 레코드를 가진다.", "금지·철회 문서가 재생성되지 않는다.", "인용에서 출처와 데이터 버전을 추적할 수 있다.", "배포 산출물에 라이선스 고지가 포함된다."]
+    },
+    "security_and_reliability": {
+      "name": "보안·신뢰성·운영",
+      "categories": ["보안·책임", "AI 규제·거버넌스", "오픈소스·도구"],
+      "terms": ["보안", "취약점", "사이버", "공급망", "의존성", "인증", "권한", "에이전트", "자율", "사고", "안전"],
+      "paths": ["src/taxia/config.py", "src/taxia/api/", "src/taxia/connectors/", "src/taxia/logging/tracer.py", "SECURITY.md", ".github/workflows/", "tests/"],
+      "change": "최소권한, 입력·출력 검증, dependency pinning, 비상중단, 장애격리, 감사로그를 강화한다.",
+      "steps": ["외부 API·벡터DB·그래프DB·모델 권한을 목록화한다.", "프롬프트 인젝션·SSRF·비밀정보 유출·과도한 도구 권한 테스트를 추가한다.", "timeout·retry·circuit breaker·kill switch를 구성한다.", "SBOM·의존성 업데이트·취약점 대응 절차를 문서화한다."],
+      "acceptance": ["비밀정보가 로그·오류에 노출되지 않는다.", "권한 없는 도구 호출과 외부 URL 접근이 차단된다.", "부분 장애가 전체 응답 실패로 확산되지 않는다.", "보안 회귀 테스트와 dependency scan이 통과한다."]
+    },
+    "sdk_and_delivery": {
+      "name": "SDK·API·배포",
+      "categories": ["TAXiA·CLOA", "세무 AI·조세기술", "오픈소스·도구", "제품·시장"],
+      "terms": ["release", "릴리스", "sdk", "api", "package", "pypi", "npm", "버전", "호환성", "commit", "커밋"],
+      "paths": ["src/taxia/", "src/js/", "pyproject.toml", "package.json", "README.md", "docs/", ".github/workflows/", "tests/"],
+      "change": "공개 API·SDK·패키지 변경을 semver, migration guide, 계약 테스트, 배포 검증에 반영한다.",
+      "steps": ["변경이 기능·버그·문서·의존성 중 무엇인지 분류한다.", "Python·REST·JavaScript API 호환성을 비교한다.", "필요 시 deprecation 기간과 migration guide를 작성한다.", "패키지 빌드·설치·예제·계약 테스트를 실행한다."],
+      "acceptance": ["버전 변경이 semver 정책과 일치한다.", "기존 공개 API 계약 테스트가 통과한다.", "신규 설치 환경에서 예제가 실행된다.", "릴리스 노트에 영향·마이그레이션·롤백이 포함된다."]
+    },
+    "evaluation_and_regression": {
+      "name": "평가·회귀·벤치마크",
+      "categories": ["평가·회귀·벤치마크", "세무 AI·조세기술", "AI 규제·거버넌스"],
+      "terms": ["benchmark", "벤치마크", "평가", "정확도", "환각", "회귀", "citation", "reasoning", "성능"],
+      "paths": ["tests/", "benchmarks/", "evaluation/", "src/taxia/engine.py", "docs/"],
+      "change": "새 법령·판례·연구·벤치마크를 정답, 인용, 시간유효성, 안전성 평가세트로 전환한다.",
+      "steps": ["변경 내용을 대표하는 질문·근거·정답·금지 답변을 만든다.", "검색 recall, 인용 정확도, 답변 정확도, 시간유효성, 비용·지연을 측정한다.", "모델·프롬프트·인덱스 버전별 결과를 비교한다.", "기준 이하 결과는 배포 게이트를 차단한다."],
+      "acceptance": ["평가세트가 출처와 기대 인용을 포함한다.", "회귀 임계값과 실패 원인이 기록된다.", "중요 세법 변경 질문이 배포 전 자동 실행된다.", "결과가 재현 가능한 버전 메타데이터를 가진다."]
+    },
+    "document_and_public_api_integration": {
+      "name": "문서·회계·공공 API 통합",
+      "categories": ["문서 AI·OCR·RAG", "공공 데이터·API", "회계·재무 자동화"],
+      "terms": ["ocr", "invoice", "세금계산서", "전자신고", "공공 api", "opendart", "ecos", "국가법령", "문서", "pdf"],
+      "paths": ["src/taxia/connectors/", "src/taxia/retrieval/", "src/taxia/api/", "src/js/src/client.ts", "docs/", "tests/"],
+      "change": "문서·공공 API 커넥터의 스키마, 출처, 오류처리, 캐시, 증분수집과 데이터 품질 검사를 구현한다.",
+      "steps": ["공식 API·문서 스키마와 이용제한을 확인한다.", "커넥터 입력·출력 타입과 오류 코드를 정의한다.", "재시도·rate limit·증분수집·캐시 무효화를 구현한다.", "샘플 문서와 API fixture로 통합 테스트를 추가한다."],
+      "acceptance": ["스키마 변경이 계약 테스트에서 탐지된다.", "출처·조회시각·원문 식별자가 보존된다.", "중복·누락·파싱 실패가 품질 지표로 집계된다.", "API 제한 중에도 부분 결과와 명확한 오류가 반환된다."]
+    },
+    "product_market_policy": {
+      "name": "제품·시장·사업정책",
+      "categories": ["제품·시장", "경쟁·플랫폼", "금융·소비자", "노동·채용"],
+      "terms": ["시장", "경쟁", "가격", "고객", "계약", "플랫폼", "소비자", "세무사", "회계사", "광고", "책임"],
+      "paths": ["README.md", "docs/", "SECURITY.md", "TERMS.md", "PRIVACY.md", "examples/"],
+      "change": "제품 범위, 사용자 고지, 책임경계, 가격·계약, 전문가 검토 흐름과 시장 차별화를 문서와 제품 요구사항에 반영한다.",
+      "steps": ["변화가 사용자군·업무흐름·책임·가격에 미치는 영향을 정리한다.", "제품 요구사항과 고지·약관·문서 변경을 분리한다.", "전문가 검토가 필요한 단계와 자동화 가능한 단계를 정의한다.", "고객 인터뷰·사용성·전환율·오류율 검증 계획을 추가한다."],
+      "acceptance": ["기능 설명과 실제 동작이 일치한다.", "법률·세무 자문으로 오인될 표현이 제거된다.", "전문가 검토와 이의제기 경로가 명확하다.", "시장 가설에 측정 가능한 성공·중단 기준이 있다."]
+    }
+  }
+}
