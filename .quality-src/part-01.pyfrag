@@ -1,0 +1,186 @@
+    text = item_text(item)
+    if tuning.get("suppress_baselines", True) and item_is_baseline(item):
+        return True
+    if tuning.get("suppress_self_references", True) and item_is_self_reference(item, str(context.get("monitor_repository", ""))):
+        return True
+    if item_is_generic_github_noise(item, context):
+        return True
+    if contains_any(text, tuning.get("exclude_terms", [])):
+        return True
+    for repo in tuning.get("exclude_repositories", []):
+        if str(repo).lower() in text:
+            return True
+    return False
+
+
+def recency_score(item: dict[str, Any], run_at: dt.datetime, max_age_days: int) -> tuple[int, int | None]:
+    published = parse_datetime(item.get("published_at"))
+    if published is None:
+        return 4, None
+    age_days = max(0, (run_at - published).days)
+    if age_days <= 2:
+        return 20, age_days
+    if age_days <= 7:
+        return 16, age_days
+    if age_days <= 14:
+        return 12, age_days
+    if age_days <= max_age_days:
+        return 6, age_days
+    return -25, age_days
+
+
+def confidence_score(item: dict[str, Any], run_at: dt.datetime, tuning: dict[str, Any]) -> int:
+    score = 30
+    text = item_text(item)
+    if item_is_official(item):
+        score += 38
+    if item_is_direct_project_asset(item, {"target_repository": "xaikorea/taxia"}):
+        score += 18
+    status = str(item.get("status", "")).lower()
+    evidence = str(item.get("evidence", "")).lower()
+    source = str(item.get("source", "")).lower()
+    if "rss" in status or "rss" in evidence or "google news" in source:
+        score -= 18
+    if "원문 확인 필요" in status or "자동 판독" in status:
+        score -= 8
+    if item_is_baseline(item):
+        score -= 10
+    recency, _ = recency_score(item, run_at, int(tuning.get("max_age_days", 45)))
+    score += recency // 2
+    if not item.get("url"):
+        score -= 15
+    if str(item.get("category", "")) == "기타":
+        score -= 10
+    if contains_any(text, BINDING_TERMS) and not item_is_official(item):
+        score -= 15
+    return clamp(score, 0, 100)
+
+
+def match_components(item: dict[str, Any], context: dict[str, Any]) -> list[tuple[str, dict[str, Any], int]]:
+    text = item_text(item)
+    category = str(item.get("category", "기타"))
+    direct = item_is_direct_project_asset(item, context)
+    matches: list[tuple[str, dict[str, Any], int]] = []
+    for component_id, component in context.get("components", {}).items():
+        score = 0
+        if category in component.get("categories", []):
+            score += 35
+        term_hits = sum(1 for term in component.get("terms", []) if str(term).lower() in text)
+        score += min(term_hits * 9, 36)
+        if direct and component_id == "sdk_and_delivery":
+            score += 25
+        if direct and component_id == "tax_knowledge_pipeline" and contains_any(text, ("dataset", "hugging face", "data", "법령")):
+            score += 22
+        if component_id == "citation_and_answer_safety" and contains_any(text, ("transparency", "투명성", "고지", "설명", "citation", "인용")):
+            score += 22
+        if score >= 25:
+            matches.append((component_id, component, min(score, 100)))
+    matches.sort(key=lambda row: (-row[2], row[0]))
+    return matches[:3]
+
+
+def actionability_score(
+    item: dict[str, Any],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+    components: list[tuple[str, dict[str, Any], int]],
+    confidence: int,
+) -> int:
+    if item_is_excluded(item, context, tuning):
+        return 0
+    score = int(item.get("score", 0)) * 0.22
+    score += confidence * 0.24
+    score += (components[0][2] if components else 0) * 0.32
+    recency, age_days = recency_score(item, run_at, int(tuning.get("max_age_days", 45)))
+    score += recency
+    text = item_text(item)
+    if contains_any(text, CHANGE_TERMS):
+        score += 12
+    if item_is_official(item):
+        score += 7
+    if item_is_direct_project_asset(item, context):
+        score += 8
+    if str(item.get("kind", "")) == "market_news":
+        score -= 15
+    if str(item.get("category", "")) == "기타":
+        score -= 18
+    if age_days is not None and age_days > int(tuning.get("max_age_days", 45)):
+        score -= 20
+    if contains_any(text, BINDING_TERMS) and tuning.get("official_required_for_binding_change", True) and not item_is_official(item):
+        score -= 25
+    return clamp(round(score), 0, 100)
+
+
+@dataclasses.dataclass
+class Action:
+    action_id: str
+    source_uid: str
+    title: str
+    url: str
+    source: str
+    published_at: str
+    jurisdiction: str
+    category: str
+    importance: str
+    confidence: int
+    actionability: int
+    decision: str
+    component_ids: list[str]
+    components: list[str]
+    target_repository: str
+    target_files: list[str]
+    proposed_change: str
+    implementation_steps: list[str]
+    acceptance_criteria: list[str]
+    rationale: str
+    evidence: str
+    limitations: str
+    automatic_scope: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return dataclasses.asdict(self)
+
+
+def make_action(
+    item: dict[str, Any],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+) -> Action | None:
+    components = match_components(item, context)
+    confidence = confidence_score(item, run_at, tuning)
+    applicability = actionability_score(
+        item,
+        run_at=run_at,
+        context=context,
+        tuning=tuning,
+        components=components,
+        confidence=confidence,
+    )
+    if not components:
+        return None
+    min_action = int(tuning.get("min_actionability_score", 58))
+    min_conf = int(tuning.get("min_confidence_score", 58))
+    if applicability < min_action or confidence < min_conf:
+        return None
+
+    primary_id, primary, _ = components[0]
+    component_names = [row[1].get("name", row[0]) for row in components]
+    component_ids = [row[0] for row in components]
+    paths: list[str] = []
+    steps: list[str] = []
+    acceptance: list[str] = []
+    changes: list[str] = []
+    for _, component, _ in components:
+        for value in component.get("paths", []):
+            if value not in paths:
+                paths.append(value)
+        for value in component.get("steps", []):
+            if value not in steps:
+                steps.append(value)
+        for value in component.get("acceptance", []):
+            if value not in acceptance:
+                acceptance.append(value)
