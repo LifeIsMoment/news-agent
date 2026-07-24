@@ -44,6 +44,18 @@ MATERIAL_REPOSITORY_TERMS = {
     "audit", "invoice", "ocr", "xbrl", "reconciliation", "fraud",
     "agent", "mcp", "financial statement", "internal control",
 }
+NOISE_ITEM_TERMS = {
+    "채용", "모집", "입찰", "구인", "job opening", "hiring", "recruitment",
+    "tender notice", "procurement notice", "webinar registration", "award ceremony",
+    "sponsorship announcement",
+}
+PAPER_DOMAIN_TERMS = {
+    "accounting", "financial statement", "financial reporting", "financial question answering",
+    "financial reasoning", "finance benchmark", "tax", "taxation", "vat", "transfer pricing",
+    "invoice", "receipt", "ledger", "bookkeeping", "audit firm", "external audit",
+    "audit report", "assurance", "internal control", "sec filing", "xbrl",
+    "회계", "세무", "조세", "재무제표", "감사보고서", "내부통제", "세금계산서",
+}
 SOURCE_RANK = {
     "official_primary": 0,
     "paper_primary": 1,
@@ -105,8 +117,23 @@ def is_generic_commit(item: Any) -> bool:
     return _contains(text, GENERIC_COMMIT_TERMS) and not _contains(text, MATERIAL_REPOSITORY_TERMS)
 
 
+def is_noise_item(item: Any) -> bool:
+    text = f"{getattr(item, 'title', '')} {getattr(item, 'summary', '')}".lower()
+    return _contains(text, NOISE_ITEM_TERMS)
+
+
+def is_weak_paper_item(item: Any) -> bool:
+    if getattr(item, "source_type", "") != "paper_primary":
+        return False
+    text = f"{getattr(item, 'title', '')} {getattr(item, 'summary', '')}".lower()
+    return not _contains(text, PAPER_DOMAIN_TERMS)
+
+
 def is_core_item(item: Any) -> bool:
-    return not is_taxia_item(item) and not is_baseline_item(item) and not is_generic_commit(item)
+    return not any((
+        is_taxia_item(item), is_baseline_item(item), is_generic_commit(item),
+        is_noise_item(item), is_weak_paper_item(item),
+    ))
 
 
 def apply_core_first_policy(config: dict[str, Any]) -> dict[str, Any]:
@@ -120,9 +147,11 @@ def apply_core_first_policy(config: dict[str, Any]) -> dict[str, Any]:
     config["max_issue_items"] = min(int(config.get("max_issue_items", 16)), 16)
     config["max_report_items"] = min(int(config.get("max_report_items", 180)), 180)
     config["min_report_score"] = max(int(config.get("min_report_score", 30)), 30)
+    config["max_workers"] = min(int(config.get("max_workers", 4)), 4)
+    config["critical_source_groups"] = ["뉴스·공식기관", "GitHub 고정 추적"]
     config.setdefault("core_top_limit", 10)
     config.setdefault("taxia_appendix_limit", 5)
-    config["priority_policy_version"] = 2
+    config["priority_policy_version"] = 3
 
     for row in config.get("news_queries", []):
         if row.get("name") == "DIRECT-TAXIA-CLOA":
@@ -159,7 +188,9 @@ def normalize_item(item: Any, module: Any, now: dt.datetime | None = None) -> An
     taxia_item = is_taxia_item(item)
     baseline_item = is_baseline_item(item)
     generic_commit = is_generic_commit(item)
-    demoted = taxia_item or baseline_item or generic_commit
+    noise_item = is_noise_item(item)
+    weak_paper = is_weak_paper_item(item)
+    demoted = taxia_item or baseline_item or generic_commit or noise_item or weak_paper
 
     if taxia_item:
         item.track = APPENDIX_TRACK
@@ -171,9 +202,7 @@ def normalize_item(item: Any, module: Any, now: dt.datetime | None = None) -> An
             "재무·세무·회계 AI의 제품, 데이터, 통제 또는 평가 구조에 미치는 영향을 원문에서 검토해야 한다.",
         )
 
-    if baseline_item:
-        score = min(score, 29)
-    if generic_commit:
+    if baseline_item or generic_commit or noise_item or weak_paper:
         score = min(score, 29)
     if getattr(item, "source_type", "") == "secondary_index":
         score = min(score, 54)
@@ -190,7 +219,7 @@ def normalize_item(item: Any, module: Any, now: dt.datetime | None = None) -> An
             "공공 데이터·API", "AI 규제·거버넌스",
         } and _contains(text, module.REGULATORY_TERMS | module.RISK_TERMS | module.RELEASE_TERMS):
             score = max(score, 76)
-        if recent and source_type == "paper_primary" and _contains(text, module.BENCHMARK_TERMS) and _contains(text, module.DOMAIN_TERMS):
+        if recent and source_type == "paper_primary" and _contains(text, module.BENCHMARK_TERMS) and _contains(text, PAPER_DOMAIN_TERMS):
             score = max(score, 62)
         if recent and source_type == "vendor_primary" and _contains(text, module.RELEASE_TERMS) and _contains(text, module.DOMAIN_TERMS):
             score = max(score, 58)
@@ -222,10 +251,10 @@ def core_sort_key(item: Any) -> tuple[Any, ...]:
     priority_rank = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
     published = _parse_time(getattr(item, "published_at", "")) or dt.datetime.min.replace(tzinfo=dt.timezone.utc)
     appendix_penalty = 1 if is_taxia_item(item) else 0
-    baseline_penalty = 1 if is_baseline_item(item) else 0
+    noise_penalty = 1 if any((is_baseline_item(item), is_generic_commit(item), is_noise_item(item), is_weak_paper_item(item))) else 0
     return (
         appendix_penalty,
-        baseline_penalty,
+        noise_penalty,
         priority_rank.get(getattr(item, "priority", "P3"), 9),
         SOURCE_RANK.get(getattr(item, "source_type", ""), 9),
         TRACK_RANK.get(getattr(item, "track", ""), 9),
