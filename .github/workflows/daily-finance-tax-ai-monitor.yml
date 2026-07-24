@@ -18,6 +18,7 @@ on:
     paths:
       - ".github/workflows/daily-finance-tax-ai-monitor.yml"
       - "finance_monitor.py"
+      - "finance_monitor_entry.py"
       - "config/finance_sources.json"
       - "tests/test_finance_monitor.py"
 
@@ -91,12 +92,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m py_compile finance_monitor.py
+          python -m py_compile finance_monitor.py finance_monitor_entry.py
           python -m json.tool config/finance_sources.json >/dev/null
-
-      - name: Run finance monitor unit tests
-        if: steps.gate.outputs.should_run == 'true'
-        run: python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
+          python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
 
       - name: Collect, classify and generate report
         id: collect
@@ -111,7 +109,7 @@ jobs:
             *) LOOKBACK="40" ;;
           esac
 
-          python finance_monitor.py \
+          python finance_monitor_entry.py \
             --config config/finance_sources.json \
             --lookback-hours "$LOOKBACK" \
             --state-file "$MONITOR_STATE" \
@@ -121,7 +119,7 @@ jobs:
           echo "exit_code=$STATUS" >> "$GITHUB_OUTPUT"
           exit "$STATUS"
 
-      - name: Commit report and finance monitor state
+      - name: Commit report, tuned config and monitor state
         if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out-finance-tax-ai/metadata.json') != ''
         shell: bash
         run: |
@@ -131,6 +129,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add \
             finance_monitor.py \
+            finance_monitor_entry.py \
             config/finance_sources.json \
             tests/test_finance_monitor.py \
             .github/workflows/daily-finance-tax-ai-monitor.yml \
@@ -259,7 +258,7 @@ jobs:
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner, repo, state: 'open', labels: process.env.FAILURE_LABEL, per_page: 100
             });
-            for (const issue of issues.filter((row) => !row.pull_request && row.title === title)) {
+            for (const issue of issues.filter((row) => !row.pull_request && issue.title === title)) {
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issue.number,
                 body: `후속 실행 ${context.runId}에서 AI 재무·세무·회계 자동 보고가 복구되었습니다.`
