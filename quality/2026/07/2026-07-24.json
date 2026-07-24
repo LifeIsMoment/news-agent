@@ -1,0 +1,48 @@
+{
+  "autotune_changes": [],
+  "date": "2026-07-24",
+  "maintenance_recommendations": [
+    {
+      "problem": "원시 수집 결과의 오탐 비율이 높음",
+      "proposal": "GitHub 전역 검색에서 generic TaxIA 동명 저장소와 모니터 저장소 자체를 차단하고, 규제 RSS는 AI·세무·법률의 이중 문맥을 요구한다.",
+      "scope": "collector-code",
+      "severity": "높음",
+      "validation": "고정 오탐 fixture가 0건이 되고 TAXiA/XAIKOREA 정답 fixture는 유지되는지 테스트한다."
+    },
+    {
+      "problem": "초기 기준선 자산이 오늘의 긴급 변화처럼 보일 수 있음",
+      "proposal": "기준선 항목은 낮음으로 제한하고 오늘의 판단·즉시 적용 목록에서 제외한다.",
+      "scope": "collector-code",
+      "severity": "높음",
+      "validation": "과거 릴리스 기준선이 긴급 상위 5개에 나타나지 않는지 테스트한다."
+    }
+  ],
+  "metrics": {
+    "actionable_items": 12,
+    "actionable_ratio": 0.0363,
+    "baseline_items": 19,
+    "component_coverage": 7,
+    "component_total": 9,
+    "excluded_items": 30,
+    "generated_at": "2026-07-24T14:09:54Z",
+    "generic_github_noise_items": 11,
+    "misc_items": 60,
+    "noise_ratio": 0.0906,
+    "official_action_items": 12,
+    "official_items": 159,
+    "official_ratio": 0.4804,
+    "quality_score": 100,
+    "report_tracks": [
+      "reports",
+      "reports-finance-tax-ai"
+    ],
+    "self_reference_items": 1,
+    "source_failure_ratio": 0.0,
+    "sources_failed": 0,
+    "sources_total": 116,
+    "stale_items": 39,
+    "stale_ratio": 0.1178,
+    "total_items": 331
+  },
+  "schema_version": 1
+}

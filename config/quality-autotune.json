@@ -1,17 +1,21 @@
 {
-  "schema_version": 1,
-  "min_actionability_score": 58,
-  "min_confidence_score": 58,
-  "max_actions": 12,
-  "max_age_days": 45,
-  "official_required_for_binding_change": true,
-  "suppress_baselines": true,
-  "suppress_self_references": true,
   "bounds": {
-    "min_actionability_score": [48, 78],
-    "min_confidence_score": [50, 82],
-    "max_actions": [6, 18]
+    "max_actions": [
+      6,
+      18
+    ],
+    "min_actionability_score": [
+      48,
+      78
+    ],
+    "min_confidence_score": [
+      50,
+      82
+    ]
   },
+  "exclude_repositories": [
+    "LifeIsMoment/news-agent"
+  ],
   "exclude_terms": [
     "personal ai assistant",
     "ai companion",
@@ -22,6 +26,23 @@
     "pdrn",
     "cloahq.com"
   ],
-  "exclude_repositories": ["LifeIsMoment/news-agent"],
-  "history": []
+  "history": [
+    {
+      "actionable_items": 12,
+      "changes": [],
+      "date": "2026-07-24",
+      "noise_ratio": 0.0906,
+      "quality_score": 100,
+      "source_failure_ratio": 0.0
+    }
+  ],
+  "last_tuned_at": "2026-07-24T14:09:54Z",
+  "max_actions": 12,
+  "max_age_days": 45,
+  "min_actionability_score": 58,
+  "min_confidence_score": 58,
+  "official_required_for_binding_change": true,
+  "schema_version": 1,
+  "suppress_baselines": true,
+  "suppress_self_references": true
 }
