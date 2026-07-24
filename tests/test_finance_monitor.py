@@ -271,7 +271,10 @@ class FinanceMonitorTests(unittest.TestCase):
     def test_config_is_detailed_and_scheduled_at_seven(self):
         config = json.loads(Path("config/finance_sources.json").read_text(encoding="utf-8"))
         self.assertEqual(config["report_hour_kst"], 7)
-        self.assertEqual(config["watchdog_minute_kst"], 20)
+        self.assertEqual(config["report_minute_kst"], 30)
+        self.assertEqual(config["watchdog_minute_kst"], 50)
+        self.assertNotIn("논문", config["critical_source_groups"])
+        self.assertLessEqual(config.get("max_workers", 4), 4)
         self.assertGreaterEqual(len(config["news_queries"]), 30)
         self.assertGreaterEqual(len(config["arxiv_queries"]), 6)
         self.assertGreaterEqual(len(config["github_repositories"]), 12)
