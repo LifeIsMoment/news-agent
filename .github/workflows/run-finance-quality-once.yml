@@ -10,9 +10,6 @@ permissions:
 
 jobs:
   dispatch:
-    if: >-
-      github.event.issue.title == '[RUN FINANCE MONITOR VERIFICATION]' ||
-      github.event.issue.title == '[RUN FINANCE QUALITY VERIFICATION]'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -21,8 +18,16 @@ jobs:
         with:
           script: |
             const title = context.payload.issue.title;
+            const allowed = new Set([
+              '[RUN FINANCE MONITOR VERIFICATION]',
+              '[RUN FINANCE QUALITY VERIFICATION]'
+            ]);
+            if (!allowed.has(title)) {
+              core.info(`Ignoring unrelated issue: ${title}`);
+              return;
+            }
             let workflowId;
-            let inputs = undefined;
+            let inputs;
             let description;
             if (title === '[RUN FINANCE MONITOR VERIFICATION]') {
               workflowId = 'daily-finance-tax-ai-monitor.yml';
