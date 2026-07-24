@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "generated_at": "2026-07-24T07:52:21Z",
+  "generated_at": "2026-07-24T14:13:00Z",
   "health": [
     {
       "count": 0,
@@ -69,13 +69,13 @@
       "source": "Market-News-1"
     },
     {
-      "count": 9,
+      "count": 2,
       "detail": "",
       "ok": true,
       "source": "Market-News-2"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "Market-News-3"
@@ -99,13 +99,13 @@
       "source": "Market-News-6"
     },
     {
-      "count": 13,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "Market-News-7"
     },
     {
-      "count": 9,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "KR-NTS"
@@ -117,61 +117,61 @@
       "source": "KR-MOEF"
     },
     {
-      "count": 20,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "KR-PIPC"
     },
     {
-      "count": 13,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "KR-LAW-ASSEMBLY"
     },
     {
-      "count": 100,
+      "count": 17,
       "detail": "",
       "ok": true,
       "source": "KR-COURTS"
     },
     {
-      "count": 2,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "KR-FTC"
     },
     {
-      "count": 13,
+      "count": 5,
       "detail": "",
       "ok": true,
       "source": "KR-FSC-FSS"
     },
     {
-      "count": 3,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "KR-COPYRIGHT"
     },
     {
-      "count": 6,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "KR-LABOR"
     },
     {
-      "count": 13,
+      "count": 3,
       "detail": "",
       "ok": true,
       "source": "KR-SECURITY"
     },
     {
-      "count": 8,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "EU-AI-ACT"
     },
     {
-      "count": 6,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "EU-DATA"
@@ -195,31 +195,31 @@
       "source": "EU-COURT"
     },
     {
-      "count": 6,
+      "count": 2,
       "detail": "",
       "ok": true,
       "source": "US-FEDERAL"
     },
     {
-      "count": 3,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "US-FTC-DOJ"
     },
     {
-      "count": 3,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "US-TAX"
     },
     {
-      "count": 31,
+      "count": 3,
       "detail": "",
       "ok": true,
       "source": "US-IP-SEC"
     },
     {
-      "count": 90,
+      "count": 8,
       "detail": "",
       "ok": true,
       "source": "UK-GOV"
@@ -237,7 +237,7 @@
       "source": "JP-PPC"
     },
     {
-      "count": 30,
+      "count": 3,
       "detail": "",
       "ok": true,
       "source": "JP-METI-DIGITAL"
@@ -249,61 +249,99 @@
       "source": "CN-CAC"
     },
     {
-      "count": 83,
+      "count": 7,
       "detail": "",
       "ok": true,
       "source": "CN-SAMR-TAX"
     },
     {
-      "count": 18,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "INT-OECD"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "INT-WIPO"
     },
     {
-      "count": 8,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "GitHub-Repo-xaikorea/taxia"
     },
     {
-      "count": 5,
+      "count": 6,
       "detail": "",
       "ok": true,
       "source": "GitHub-Global-Search"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "PyPI-taxia-core"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "HuggingFace-xaikorea0"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "ok": true,
       "source": "WebSnapshot-xaikorea.github.io"
     },
     {
-      "count": 8,
+      "count": 1,
       "detail": "",
       "ok": true,
       "source": "US-Federal-Register-API"
     }
   ],
   "items": [
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "긴급",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-07-24T14:09:59Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 94,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 자동 개선 점검 — 2026-07-24 - 품질 점수: **100/100** - 노이즈 비율: **9.1%** - 소스 실패 비율: **0.0%** - 프로젝트 적용 항목: **12개** ## 자동 적용된 안전 설정 - 변경 없음 ## 코드·파이프라인 개선 후보 ### 1. 원시 수집 결과의 오탐 비율이 높음 - **범위:** collector-code - **중요도:** 높음 - **제안:** GitHub 전역 검색에서 generic TaxIA 동명 저장소와 모니터 저장소 자체를 차단하고, 규제 RSS는 AI·세무·법률의 이중 문맥을 요구한다. - **검증:** 고정 오탐 fixture가 0건이 되고 TAXiA/XAIKOREA 정답 fixture는 유지되는지 테스트한다. ### 2. 초기 기준선 자산이 오늘의 긴급 변화처럼 보일 수 있음 - **범위:** collector-code - **중요도:** 높음 - **제안:** 기준선 항목은 낮음으로 제한하고 오늘의 판단·즉시 적용 목록에서 제외한다. - **검증:** 과거 릴리스 기준선이 긴급 상위 5개에 나타나지 않는지 테스트한다. ## 변경 통제 - 설정 조정만 자동 커밋한다. - 수집기 코드는 allowlist 패치와 신규 회귀 테스트를 모두 통과한 경우에만 자동 개선 브랜치 대상으로 만든다. - 워크플로 권한, secrets, 외부 전송, 대상 프로젝트 코드는 자동 병합하…",
+      "title": "GitHub LifeIsMoment/news-agent #26: [자동 개선] 2026-07-24 모니터링 품질 점검",
+      "uid": "e133eea945d9601fc846acfa",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/26"
+    },
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "긴급",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-07-24T08:34:00Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 94,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 2026-07-24 자동 모니터링 **실행:** 2026-07-24 16:52:21 KST **누적 항목:** 160개 **전체 보고서:** [reports/2026/07/2026-07-24.md](https://github.com/LifeIsMoment/news-agent/blob/main/reports/2026/07/2026-07-24.md) ## 우선 검토 - **긴급** · **제품 생태계/TAXiA·CLOA** · [공식 페이지 기준선 등록: TAXIA - Korean Tax AI Library with Graph-RAG](https://xaikorea.github.io/taxia/) - TAXiA 공식 문서·소개 페이지의 비정형 변경을 탐지 - 상태: 공식 페이지 기준선 · 출처: xaikorea.github.io - **긴급** · **제품 생태계/TAXiA·CLOA** · [xaikorea/taxia 릴리스 js-v0.0.3](https://github.com/xaikorea/taxia/releases/tag/js-v0.0.3) - TAXiA 코드·기능·의존성·배포 변경을 직접 반영 - 상태: 공식 릴리스 · 출처: GitHub Releases - **긴급** · **제품 생태계/TAXiA·CLOA** · [xaikorea/taxia 릴리스 js-v0.0.2](https://github.com/xaikorea/ta…",
+      "title": "GitHub LifeIsMoment/news-agent #2: [AI 세무·법률/TAXiA·CLOA] 2026-07-24 자동 모니터링",
+      "uid": "f76f5d71b139b7a051bfb31b",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/2"
+    },
     {
       "category": "TAXiA·CLOA",
       "evidence": "공개 웹페이지의 정규화 해시 비교. 변경 내용은 원문 대조 필요.",
@@ -418,6 +456,25 @@
       "title": "Electronic Delivery of Information Under the Federal Securities Laws",
       "uid": "4e0f74a05337429142a227ad",
       "url": "https://www.federalregister.gov/documents/2026/07/21/2026-14679/electronic-delivery-of-information-under-the-federal-securities-laws"
+    },
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "높음",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-07-24T14:09:57Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 70,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 2026-07-24 프로젝트 적용 브리프 **품질:** 100/100 **원시 수집:** 331개 **적용 후보:** 12개 **전체 브리프:** [applications/2026/07/2026-07-24.md](https://github.com/LifeIsMoment/news-agent/blob/main/applications/2026/07/2026-07-24.md) ## 실행 우선순위 - [ ] **이번 스프린트 반영** · [PyPI policyengine-core 3.30.3 릴리스](https://pypi.org/project/policyengine-core/) - 적용성 94 / 신뢰도 78 - 구성요소: SDK·API·배포, 세법 지식 수집·버전·인덱싱, 평가·회귀·벤치마크 - 파일: `src/taxia/`, `src/js/`, `pyproject.toml`, `package.json` - 변경: 공개 API·SDK·패키지 변경을 semver, migration guide, 계약 테스트, 배포 검증에 반영한다. 공식 원문·효력일을 버전 메타데이터로 저장하고 벡터·그래프 인덱스와 변경 조문 회귀질의를 갱신한다. 새 법령·판례·연구·벤치마크를 정답, 인용, 시간유효성, 안전성 평가세트로 전환한다. - [ ] **이번 스프린트 반영** · [PolicyEngine/policyengine-core 커밋 d05551405e:…",
+      "title": "GitHub LifeIsMoment/news-agent #25: [프로젝트 적용] 2026-07-24 모니터링 브리프",
+      "uid": "516d0493a6bc099b2a7f7c21",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/25"
     },
     {
       "category": "TAXiA·CLOA",
@@ -672,6 +729,25 @@
       "importance": "높음",
       "jurisdiction": "제품 생태계",
       "kind": "github_activity",
+      "published_at": "2026-07-24T10:05:45Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 58,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 2026-07-24 AI 재무·세무·회계 자동 모니터링 **실행:** 2026-07-24 19:05:18 KST **당일 누적:** 166개 **전체 상세 보고서:** [reports-finance-tax-ai/2026/07/2026-07-24.md](https://github.com/LifeIsMoment/news-agent/blob/main/reports-finance-tax-ai/2026/07/2026-07-24.md) ## 우선 검토 - **P0** · **TAXiA·CLOA 직접 관련/세무 AI·조세기술** · [xaikorea/taxia 릴리스 js-v0.0.3](https://github.com/xaikorea/taxia/releases/tag/js-v0.0.3) - 발표·업데이트: 2026-01-24 01:14 KST - TAXiA/CLOA: TAXiA 코드·릴리스·이슈·PR의 직접 변화 - 출처: GitHub REST API · 신뢰도 높음 · 상태 공식 GitHub 릴리스 - **P0** · **TAXiA·CLOA 직접 관련/세무 AI·조세기술** · [PyPI taxia-core 1.0.1 릴리스](https://pypi.org/project/taxia-core/) - 발표·업데이트: 2026-01-23 18:44 KST - TAXiA/CLOA: TAXiA 공식 패키지 버전·호환성·배포 변경 - 출처: PyP…",
+      "title": "GitHub LifeIsMoment/news-agent #5: [AI 재무·세무·회계] 2026-07-24 자동 모니터링",
+      "uid": "44997327ad87e584134ea302",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/5"
+    },
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "높음",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
       "published_at": "2026-07-24T05:48:11Z",
       "query_names": [
         "github:repositories"
@@ -798,6 +874,44 @@
       "title": "xaikorea/taxia 커밋 457bcc1f5a: fix: update Python nav - remove JS links, replace npm with HuggingFace, add emojis",
       "uid": "3447c8769f278c01addadc11",
       "url": "https://github.com/xaikorea/taxia/commit/457bcc1f5ac7b0edf2bba68385539d44f8ce5ade"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T12:05:50Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 52,
+      "source": "대한민국 법원",
+      "status": "공식 공표·자동 판독",
+      "summary": "대학원생에 딸 논문 대필시킨 교수, 징역형 확정 대한민국 법원",
+      "title": "대학원생에 딸 논문 대필시킨 교수, 징역형 확정",
+      "uid": "87a86330c37da7fe34aa11f2",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWmRuLVhZVTI5QzVzNTZWcTNHWk9xNEE1NVgwc3JWYS1WSGwtQWRCTUpkNkNzdUtHMHZkdEt6c0h5V1d5OFZrMkhWV0RZM0RlSUxXX0pZS20ySzY2ZkJjRGJuUkFXaDhjS01oakZfT29BWHRDNGVmQlpTOFUzcTZ4S3I2T2FjYXA3VjFOVzA3a0N0Zm41UWhiTXFDcS1mQ0JZNl9IYjlOTmlFVWFrWlA3NGVsbm0?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T12:05:49Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 52,
+      "source": "대한민국 법원",
+      "status": "공식 공표·자동 판독",
+      "summary": "대법 \"의붓아들 시켜 동생 때려 숨지게 한 계부 징역 13년 확정\" 대한민국 법원",
+      "title": "대법 \"의붓아들 시켜 동생 때려 숨지게 한 계부 징역 13년 확정\"",
+      "uid": "a990124bfd4e02d02ddf80c8",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUFpYaVczMHUtQ1ZlUXhScFRvWHhicWhiSEpGd0s4OURyd3J5TV96cjcteDRyNV9tV2gyWTNpTGlmVU41NVF0NTBmNzhuOFVEa1NpWTJweUVHZ05mVVExeG1LQzhvSVRqemtiSnhXaFF1VWlUdnEyODdiSmExUTlQa0lEV2dGYjZvQnprZW9sM3dYX3BKSVVUWU9IX2dVY1JOWWxtd3g0NFA3ZEpzTjdubngxbG8?oc=5"
     },
     {
       "category": "기타",
@@ -1066,6 +1180,44 @@
       "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE52ZG5sNUxEU3ZBSFNTNEZIR0JESmdiQVg0cmhaNFVRU3Q4THhMcTdVekgwZmRFc1pJS0dzYi1ic091d0dEZXJmYklscVhNQQ?oc=5"
     },
     {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:56:25Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "공식 공표·자동 판독",
+      "summary": "iCRAFT/Contract for Sales or Supply/2026.07.24 DART - Repository of Korea's Corporate Filings",
+      "title": "iCRAFT/Contract for Sales or Supply/2026.07.24",
+      "uid": "cb5b163773ee599081b5f123",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBvZS1vWkJ0RHY0dnQ3M1QyclRaWEcwcGVnd3pEY0E0OXNwbEljdC0wLVZDS0poa0VUUWEzZ1dWZW5WMXhrN0pra3hWb2RuUjRxcUVLZ1hMLTkyTlNYMnd2ajhRdEdXWEdBNURaSE5uN1FUUkVO?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:56:20Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 40,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "공식 공표·자동 판독",
+      "summary": "Saramin/Decision on Acquisition of Shares or Investment Securities of Other Corporation/2026.07.24 DART - Repository of Korea's Corporate Filings",
+      "title": "Saramin/Decision on Acquisition of Shares or Investment Securities of Other Corporation/2026.07.24",
+      "uid": "436ab3301e2a5ea1ce6d5dbd",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1zaHpKRU9LMm5TQ1lQTHhZdnJNM3lnWHdXX05abjVBcHJuM0pqYmQ3REplbHd2UklxZ0p2VjliMUk2WGRyUWdkNTROQVltTGNQZ0xSV3JLM2hMb1RZaFRuRU1IU1JvQThxNzNabl85djZfYV9W?oc=5"
+    },
+    {
       "category": "노동·채용",
       "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
       "importance": "보통",
@@ -1180,6 +1332,25 @@
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPcXdjYWI4WjFsZXFlaEZtdnpscnBwZy0xNmxTRjhUTjA1dlZDWHhqT21xMUxWMnpxY2I4RWs3QndNNmxVYmcyZTF2NC1pU0Frd0htemxqMHVFZGswdUtfb3pIUjJzRjdEMEZQOEJrLUUxQUJMNjM2TlN6MlIzSG1JcE5GX3h4TFN6U1JVVQ?oc=5"
     },
     {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "EU",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:11:44Z",
+      "query_names": [
+        "EU-DATA"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 40,
+      "source": "European Commission",
+      "status": "공식 공표·자동 판독",
+      "summary": "New EU energy rules: cleaner, more secure energy and stronger consumer protection European Commission",
+      "title": "New EU energy rules: cleaner, more secure energy and stronger consumer protection",
+      "uid": "431f6661bfe90981923b5374",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNV2xGd0ZndWlqdVFmNkpNYXF3c1pORjROVjFUbmJRYXdlb3c5SVdrYUlzN3E3LUtVY29aNVQ3OVNYVFRMZXVHUDA3ZUEzMEJqZHpYQ0ZrRkdodFNHLUlvdTY2ZkV0c1l6MG5yQWg1OXktWW5aeGt5WklEM19KRDA3MEFiU3pFOF9sY2RSZG9fMjhneTJZUnAtTGdHVlpfTXc3cFBpYmJBYjBIUlhmQ25XSEViSlZjY200Ny1xNGd6U0dQU0ktT3JMNnY0Z0FkV1lLNUp6TkY2M0g2UQ?oc=5"
+    },
+    {
       "category": "기타",
       "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
       "importance": "보통",
@@ -1235,6 +1406,25 @@
       "title": "Commission publishes guidelines on transparency obligations for providers and deployers of certain AI systems",
       "uid": "4908bdd3bc92e10486373aef",
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNRzN4WXBONkViLWhBeHRnUXJDWnNfWlpKcjBKYU1NTjdvZWNwc0x6ZG1Dano2WF9BVGpuUkd6UUl1QTRnOFBTMkZXUnNJbE1WQVhLODhBNk9UVlpfQldjMVJHQmJSSHdoSG9helI4ejVnZTNhaHZYaUFSa09TelNfeVhzSlFpNm9kbWRvYkI1TVNWbVJNdEJoWkNqQi1meVZJRFBGZ1VXMmZsOTBYNHpQSUVVRkF2bkJsbUliRGFsOXhERlVPUkVqUGhVZzZGeUFYa3hNQUpKZm5nZTg4Znc?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T05:00:04Z",
+      "query_names": [
+        "US-IP-SEC"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 40,
+      "source": "SEC.gov",
+      "status": "공식 공표·자동 판독",
+      "summary": "Sunshine Act Notice SEC.gov",
+      "title": "Sunshine Act Notice",
+      "uid": "c3139331a55dab8a45c4c7c1",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNVhiRzI5b0piVUlRcXU1TnBTc1F1X2lIVHB6UDY1NXkzSU8wM3VJaTFsRWt5amFmM1A1Y1dHblY0aWVsdzladHRLQ2hhbDdScTNXZ1ZnWFhFNW10UU44VlZ0VGtudkdLWVRsMDRJcDhTM3JlY20wLU9JRHQya1dWQ3J4UmQ?oc=5"
     },
     {
       "category": "기타",
@@ -1395,6 +1585,44 @@
       "importance": "보통",
       "jurisdiction": "미국",
       "kind": "regulatory_news",
+      "published_at": "2026-07-24T14:00:00Z",
+      "query_names": [
+        "US-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "U.S. Department of the Treasury (.gov)",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "FinCEN Issues Alert on Fraud Schemes Targeting Federal Student Aid U.S. Department of the Treasury (.gov)",
+      "title": "FinCEN Issues Alert on Fraud Schemes Targeting Federal Student Aid",
+      "uid": "68d924a0dc41d589ecbb26e3",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBZVzlYMFVIYS1tWkg5cGZBU1VoOE9JV3NMMG9wN3h3M2p4U1ktOG9sZ1YtSkR2V1R6N2hWbVF2S1NsWk95clZvU2pTSi1OS2c0YlJvX24zS1JFcjJZNy1oc1ln?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T13:40:45Z",
+      "query_names": [
+        "US-FTC-DOJ"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "Department of Justice (.gov)",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Office of Public Affairs | Four Men Plead Guilty to $2M Minnesota Medicaid Fraud Department of Justice (.gov)",
+      "title": "Office of Public Affairs | Four Men Plead Guilty to $2M Minnesota Medicaid Fraud",
+      "uid": "eb191d9719d341bf257d8a95",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPY1hYMVhSVFNYSUY0THpkNi13SzJ0VGNOeUZ2UWFRLXRpRjFaMkFPcXJfS3BTRlBMSzFOSnZmQktsYnRUT2I3bld6VG1pcS1taUNZc1UtalE5US03b2ZyZ1FUS19wZFg2Rl9vcW93d2VXS2l6MFkzaHVGb3ZCSVdjMG51OWVwYjQ?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
       "published_at": "2026-07-23T20:05:27Z",
       "query_names": [
         "US-TAX"
@@ -1483,6 +1711,63 @@
       "title": "Deputy Director of Strategy, Research and Innovation",
       "uid": "4c129dad383e90b512a3207d",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE56VE1nZ0o0UXZPUDQ0QndxNTNwVjhTUTYxT2NPc1paYUMwOHE0OUVZaVRzUDBIaEM5UGZDNWM3TUdLeTVUYms2cGhmSTJwMUwwemJRdkpVT0RUQURYRmtNLXZmWWZSQWYybUlqaVkydHBoVWVmV2ptQjVB?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "중국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T11:38:00Z",
+      "query_names": [
+        "CN-SAMR-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "山东省税务局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "山东巧借“税动力”推动经济“向新、向绿” 转型升级 山东省税务局",
+      "title": "山东巧借“税动力”推动经济“向新、向绿” 转型升级",
+      "uid": "826ad630bd8ca0386d8621e2",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE4weXJZeXk5TDBoVmtETUI2V3MwUGRYZnQxRjZIb1RaSFhIVndDVkdLaks5bFhwQ3RJTm0tY21lVUJtS3dMYUlOdHFDWjVuVzJRLWVYREdMVkNMMFJEbW1RSzQ4Y3ctaWlzS2tGdkVTV28zNXAw?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "중국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:02:00Z",
+      "query_names": [
+        "CN-SAMR-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "吉林省税务局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "上半年吉林经济结构持续优化升级 吉林省税务局",
+      "title": "上半年吉林经济结构持续优化升级",
+      "uid": "e6b2957b77b7f1ccc48bffd5",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9CSkhkOGZMVDBRamFObnFEUThfY3hwUV9TekU2Nm11MkRweXZkSGh4OGNOc3FZanljRmdGQ3hZTklSUUtVVFUtTE1PLVJyeFNoMnd5a2RqRHc1REVXcWZsQWo3dXZmZnY4NVplbU81aw?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "중국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T07:01:00Z",
+      "query_names": [
+        "CN-SAMR-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "国家税务总局浙江省税务局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "杭州市临安区局：合规护航 助力人形机器人产业驶向新蓝海 国家税务总局浙江省税务局",
+      "title": "杭州市临安区局：合规护航 助力人形机器人产业驶向新蓝海",
+      "uid": "48a57c6013b4843a2c7526b1",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE42eXZHMV9Sam9OeF9ZTThPSHVEUEtiNlJON0FZdzI2UFo2X0wtdEZja2lLcnFnWEU5OHpvdlBoRklSaVFEcjd3bkhMZjBxbkxRdjZxRGhXQ1hZekl0S3NBRDlaMV9SeGFJdGY4RzN3RFFzWTJGVDRV?oc=5"
     },
     {
       "category": "세무·조세",
@@ -1787,6 +2072,82 @@
       "title": "Corporate Income Tax Rates Database",
       "uid": "4f5276c26c97a6609534a5a2",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPTkpRclk4RUw0MkpGUE9uSElNODVxWkZNQy03OW9uRTV4d1NGSDQwV2w3VE9NdzhMOFE4dUU4cTZ2UnRxYmJ2RVU1eGdjWHRyTzN6b1NoWTZIc3U2elZYSVA3c3IwWFk3S25wMlhuWFpabzVoU3BHR2xFNm9UNS1BSVF1clA?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T12:28:44Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "대한민국 법원",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "개인정보 처리방침 대한민국 법원",
+      "title": "개인정보 처리방침",
+      "uid": "417f3bd3fde89fc86ab6f2ae",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE94Y0kza241Y3hoV2lpNnpnRHRTRWZDanFQXzA1SjdnQUZ2Z2lfNFBpQmNhSm5SdWpRMkh2VVI3SU4ySzlDamh4U0V0MVQzd1FMUmRXUFFydW02US0zRVJ1VEZsWmZwYjI0MUJlZGJZTQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:56:21Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "WISEnut/Corporate Value-up Plan (Voluntary Disclosure)/2026.07.24 DART - Repository of Korea's Corporate Filings",
+      "title": "WISEnut/Corporate Value-up Plan (Voluntary Disclosure)/2026.07.24",
+      "uid": "c8a0d0160617d02ac41583b2",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5LNU9NT3NTbFBIaHoyRGRRc1lHNFlOTDR0eGZuZ1FWVVhSQWlhRkRRYXJTdzVZa2ctZFNBOEo1clhaNDdXd192Y3hkdG15SnZTMkhjNnhmVWpfRF9GN2d6NXgzcDBqenpUR3ZJdVgtU1A3TnFX?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T08:56:17Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 28,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "SECERN AI/Final Issue Price of Rights Offering/2026.07.24 DART - Repository of Korea's Corporate Filings",
+      "title": "SECERN AI/Final Issue Price of Rights Offering/2026.07.24",
+      "uid": "10511e8e19bcf200dc585448",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9FeV9GZ0UtS2RZN1RTYUo1NDZJVGZKQ2tnd2hIS1d4ZDBqcHhaS0otYUg5bHZGMmlITG9waG42Q0JsYlFpRzdyZDdpblBrdnFwd0dBNWg0cmhkcUdRTXh1cTRzNmtTWk9CRC0tU2liQ25EMUFj?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-07-24T06:51:57Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 28,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "SECERN AI/Small Public Offering Disclosure Documents (Equity securities)/2026.07.24 DART - Repository of Korea's Corporate Filings",
+      "title": "SECERN AI/Small Public Offering Disclosure Documents (Equity securities)/2026.07.24",
+      "uid": "6f2aa64d363b59c37acbae8f",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5pb05qd2pIWWVjLVFLRFJVYm5DQ3FHU0h3WG9OZWNKZ0FMVk51T0didmtiRkdjRkZOWTVFT0c1WHpjdTBaZHBuYzhvUm9KNzg5UzNHMFB6VXJHQlg1NFREU2VqdWtCekJvV0VqQ1ZFVlpvdWhQ?oc=5"
     },
     {
       "category": "개인정보·데이터",
@@ -2988,367 +3349,6 @@
       "title": "EUNOMIA.AI - Trustworthy Generative AI for efficient and accessible public services",
       "uid": "59dec0d0311618a3cf1bf40a",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOa01MU1ZFTUQyNzNXN1BaUU1pRmR3dGhWd01UbjYtUU1YSjYxRVNQZmlLLXo1RFlmS3pnMmt0ZnhVMGd2MGVNNXA5ZldGaTdEajFaUHE3MUJESXRRa19ta3FnalBRcEl1SXVITjBGajZlakRqRjRhRzVZVE5yWExVb2twOFBObG13MlJJellrU05VbmpZT3pwQTJkdzEzbmV4VmlDR2tiODBkcHdzbHI0aS1yVHZyN3E1bUlHNkk2WQ?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-22T12:00:00Z",
-      "query_names": [
-        "EU-DATA"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "European Commission",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "A renewed commitment to protect and empower the EU's citizens European Commission",
-      "title": "A renewed commitment to protect and empower the EU's citizens",
-      "uid": "2f996ec0beadcf3496cc9fcc",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVWN0Z3ZJOHZWcmtLLUNJY0huRW5xbS0zRWo5bjVIOHJPUEVIaEM2a2poZW9FMFdTYkJTTlFyenp1N3RYdnV5Slk0SUs0SXV0SnZZd1ZLVW4weVdsb0VEVjdwNlRtazlKMUg3TlA1QUlWLXYyMFNUWHBFd2lEQWNpZ3BXb1gtYXBITW0wTWs5UXFqQ3FyVXctR01ocFpLbWUwYVBwbEE3VjA4WDA5RU1ScGZFa3M?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-22T08:11:59Z",
-      "query_names": [
-        "EU-DATA"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "European Commission",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Become a European Commission trainee – applications are now open European Commission",
-      "title": "Become a European Commission trainee – applications are now open",
-      "uid": "d4f136ddff3da6b0f6fd32e7",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcVNLOV9UNVpsWXpIT01XWEFVOVEwVkswcmZJSk5lc3FWMzBJa0hhb21qNGNFT1ZsRlcwMkFlcTNQczlockNfUnZCSndwTmxiVWxKTjhZRTQ5VzhycEN5YjlTemhDVHA3eVpDQjA3SWJUTXR6R0laSEswZWdMTGROcEY3V2lwYXh2eExWZE5LU0FzSm8yb1JnRTNBMURJMDRLbmdpQnNwRjl0em9jTkpEVm9tdmNfMjFOZXBRVWJsOW0?oc=5"
-    },
-    {
-      "category": "경쟁·플랫폼",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-21T09:08:31Z",
-      "query_names": [
-        "EU-DATA"
-      ],
-      "relevance": "AI 서비스의 시장접근, 제휴, 플랫폼 의존성과 경쟁전략에 영향을 줄 수 있음",
-      "score": 28,
-      "source": "European Commission",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "One Europe, One Market roadmap European Commission",
-      "title": "One Europe, One Market roadmap",
-      "uid": "dcb0dfee58a8080033bab3ce",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUWc2LVlCc1FmS3pLQjJwUmpwQ1FfOGRTYWNHVkNhd3RxUUNzSWFSR2dLQUlZY0E2b0RTVnU4dnBwejdBRm9BbmdSVnZhd2FjM2hLSm1hNVc4Ym9wdUdvZXRpRmNzbDFhc2J2d25fUEJtakp0T3NZdFF0Zk1oUTR2YmhYR2g5MVlLaDU3Qw?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-20T20:12:21Z",
-      "query_names": [
-        "EU-AI-ACT"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "Shaping Europe’s digital future",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Shaping Europe’s digital future",
-      "title": "- Shaping Europe’s digital future",
-      "uid": "aa2b7903ccc1c789142c5eba",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQV0ZUdkZjalo5dW9JQnplMF8xelVBbUVheUZWMTVvVzhiVjZQUWowdnkzSTRuRXRqam94cWJ5ZHhqdk5nNGxOcUNYMW1wRDRrQWQtTDNmaW1zWkdUZDgwdVZuVllUZXVWSFdYejBCQ0ZXMjNrdTUtXzVlTlV6VllhU1VSQ1NxazlMTGF0QlZVME04UWZBNnlDck9UQVhfMGtmTnVBNHBDVFJQdTdyaHZPSkgtbmI3X3ktWm9Zd2RMNkxiVURxOWJVY3gxSXg?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-20T18:13:46Z",
-      "query_names": [
-        "EU-DATA"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "European Commission",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Third meeting of the Working Group on Organic Products under the EU-UK Trade and Cooperation Agreement European Commission",
-      "title": "Third meeting of the Working Group on Organic Products under the EU-UK Trade and Cooperation Agreement",
-      "uid": "fdcaf805dbce6421a150e404",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNcllMdEtnOWRSZTFyal80b013Z3JyTkZTdHNkaXF2MjZYZHBWWkZRbU5MZ2VNTlRGcmxwdlRrVkZtU1ZiVmI5dF9aWUFfck1iN1htUHAwOHFVdFM0ZlZ4VEljSVV5OE1XZFhTcExrNzd5OFRxSlZYd0ljUU1aRi1wdi1FbnhSbG5PT2lSenh1d1FvcUZyTXltaHJ4a2JoMU5hTEdSR1Q5dlZyQ19PSmgyWnFyNWVvYmkxUGFscDd4X0ZWbFNhcldjVWY1NjQwaE1a?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "EU",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-20T10:30:10Z",
-      "query_names": [
-        "EU-AI-ACT"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "Shaping Europe’s digital future",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Digital technologies to power Europe's clean energy transition Shaping Europe’s digital future",
-      "title": "Digital technologies to power Europe's clean energy transition",
-      "uid": "ae5cc99b3223deb0e9bd55ef",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOG5FVlQyTmRIYzk1dTAzS0NoaWVpeXZHMHU4TW1SVTdPTkhRQTFTdEN4NmtnS3FjT0RLaW00RW55SGlCX2FadUpzVlRpbGxsN19UTFctTU9UZ1FxZlB3TjZEejluc2dxYjN3RFdsY3BUb0RUYzdjOUNLUGtFY0lTUzFkdWJDN1F2dXlWMmpLaFdraFRYX1NObkV5Uml5Z1VzUG5QOXhmRQ?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-24T06:04:11Z",
-      "query_names": [
-        "US-FEDERAL"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "Federal Register (.gov)",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Federal Register Federal Register (.gov)",
-      "title": "Federal Register",
-      "uid": "6c8741c9800740543d67139c",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBEcFR5cXVtR1V5REd1QjZnVlcyUDU1QWMyVHVsbFFJZ2tZYWVSZHVDaWtDRjF5N21yTXg4OTl5WnVlYS1Hd0hFVFRsTDU?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T22:53:13Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "2026 HLNE Annual Report SEC.gov",
-      "title": "2026 HLNE Annual Report",
-      "uid": "7a0d7b5636a2e2f9accc8384",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUlIxQXdXWnE3bm9zNUFaNjFUUTlJd2ptR2U3alBMZ3ZXS1o2bE1YTWxHT2dkU3FLYi0xbmFvVGdydUVLWnpiYmhBenFOQW1QS2F5RDZSNUR0OEVwcV9zQ05iYk5XRDJ4VjY3a1BidS1rYVlWY0JkbWwyZlhCa1JHT3Zva250WWtIdHRrQnVpREc1cHhoM092MjhCQ3RXQQ?oc=5"
-    },
-    {
-      "category": "저작권·지식재산",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T21:15:00Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "학습데이터, 생성물, 소프트웨어·브랜드 권리관계에 영향을 줄 수 있음",
-      "score": 28,
-      "source": "United States Patent and Trademark Office (.gov)",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Remarks by John A. Squires at the America 250 signing ceremony and Commerce Secretary Howard W. Lutnick’s Trading Card unveiling United States Patent and Trademark Office (.gov)",
-      "title": "Remarks by John A. Squires at the America 250 signing ceremony and Commerce Secretary Howard W. Lutnick’s Trading Card unveiling",
-      "uid": "ebb1fe86c9d0d5586f9928e7",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQazFlSVlKOTZCeUZ2U0E1cklLMl83ck9wNnlKMzhSSGo3cklITmRrNEg5Ry10OG12VmZWSkViT3NmMVZYT2dVOWU0c0ZDczNFR2I4Z3dDUE1TUV9DVFF0LVZOa19Oc2VQTVBFZHNKc1J5b1cwNnNlVlBoTXdLZjZGNDBrLWpPcnBiLTRjQnduelBLaU1TVFBDcE43eUQ3cGk1V1ZpUFk2S3l6cmFneVdlamFLNVVhWlk?oc=5"
-    },
-    {
-      "category": "기타",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T21:04:25Z",
-      "query_names": [
-        "US-FEDERAL"
-      ],
-      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
-      "score": 28,
-      "source": "public-inspection.federalregister.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "4184-34-P DEPARTMENT OF HEALTH AND HUMAN SERVICES Administration for Children and Families [Assistance Listing Number(s): 93.612 public-inspection.federalregister.gov",
-      "title": "4184-34-P DEPARTMENT OF HEALTH AND HUMAN SERVICES Administration for Children and Families [Assistance Listing Number(s): 93.612",
-      "uid": "526cfae9763159549dd3e93e",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5GMGZadEdVTGZtT3hzQkpIQXZZNndIdFQxaWxqNFdIVllKU3BqRFQ3RFZFODY4eTB6cEJkOU9PQ1VaMDBfbUgyejh5TWFLTHNvUzVqb2FhSEdvWXg4dklod3ZTU1JSTkJEbkVJQQ?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T20:54:50Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Document SEC.gov",
-      "title": "Document",
-      "uid": "936ccc131860f2df60a6e118",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQakhnd0VhWEh5VkJoWnVSLW8xRlh3bExQWkY3bE5UVFRIWk02eGNjYmIxUFhmUWtxZXJqNVR2dER2TzQ5TGlIeGNYX0l2Z0h6RW16X3pxNGd4V0Raemp3bkVVMGJHV2plT0picG9ZaUs2LWhPZWM0azQweXNOSHJ5R3NBTURkTE9NQ2hfMDBxNkNiNG5mUW5XRk1JN0Y0UQ?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T17:45:42Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Registration No. 333-[ ] - SEC.gov SEC.gov",
-      "title": "Registration No. 333-[ ] - SEC.gov",
-      "uid": "ea155d09d755222e394a6b40",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUURwXzlXb1RfeHIzcXVrNzlYQUNodW12ZHhCSVREakVjYnNPWHo2aUk3ZER6dUFiNThxVTlXVTc4Y2VUSXRlckJ6bVdNNzltMVlOcDVHRm1iMWd4Z3VYOWNhdUlUNzFzYU9YVWpGcG10QzRRc1NHQWxxVUVLYkZFeGFob3Jndk91aWZqTlNEQndBZlVsUEln?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T15:06:58Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Roundtable on Preparations for 24-Hour Trading SEC.gov",
-      "title": "Roundtable on Preparations for 24-Hour Trading",
-      "uid": "b5c8a7b9a45471bcac2644e3",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPb08yQWJDM2RuMTM4UUItbDQxMENEa1hMRGVOMGpvZW55NkdQUF9sckNpY0o2YVpGVGNxRXo3VGxLN1VfTEZSQXFOWGdYajMxWDl2OW9iYy16SjlpVVFFMjh4UFRfRHZ2MnRqR3BTWVF5VEM0Y0pZeldHYmZIWlBlam1Ob0JaYldFTEVVNw?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T15:06:58Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "SEC Announces Roundtable on Preparations for 24-Hour Trading SEC.gov",
-      "title": "SEC Announces Roundtable on Preparations for 24-Hour Trading",
-      "uid": "19b6a18fcd340cc5da33a49c",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPMTNSSE5hNnd1M1lxaU1ZRHlwS2NtRi00dFJ2ejhGcE93U1BmRmhUOUtTMS1icEc1YXJYTnp6aW80OXdaMHNtLTRwQnBweEFuRS0zNzNpWHgta2NKcWlqUlBsWHFZQzNHNW8wUTg4ZjhhLUZWVjlDNEU3NXVqR0k1OVo3U0V1TnItVjhiOEZEUzNIblFpeVJUTUNsZGQ2blIxWl95aU5RUzE?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T12:53:26Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Directory Listing /Archives/edgar/data/1531031/000110465926086092 SEC.gov",
-      "title": "Directory Listing /Archives/edgar/data/1531031/000110465926086092",
-      "uid": "879a508d2fb084055f5a7c09",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBiTFN2MmJ4WUVwUno3eFAzVmpqcFEyR3BhR241djFfZlZGSkR0eVpDWkNoQWM0N2EtZGhMYjFaS05FYXh1QVJZSG1NZ0VrX05Ia2hveXBRd0hjY2daUnc4Zk5sQUxPcG9OeW5yWlVQWHpwUHRCMVE?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T12:51:10Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "care-20260723 SEC.gov",
-      "title": "care-20260723",
-      "uid": "5a89b1b2f85fb9e98ee6e7e4",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxON01TYWhuNW9YbmVsWVg1WkVUZHYzNU1UZ2hFRU1jbGJzTDRtVWphdWdPZjJrR2w0a21nX0FCcUZYbl9HTGNQN2dHdnA1ODdIUEhkbUZQRjlwOFpiUHZVQWtITnRIYVlfMERxOUZ2Nm1wc0pKVGdUZThlakhxd2NWaldTX0dzcXhEcU1NLQ?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T10:40:49Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "EDGAR Filing Documents for 0001823608-26-000177 SEC.gov",
-      "title": "EDGAR Filing Documents for 0001823608-26-000177",
-      "uid": "0581fe071622efdbf5c95231",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVlpGSXFSSnUtdTFBa2daWklvUUNWMzFMVjdNb21uamEzbmQ0dWVxRHY5TWJRdlVhVUYyQm5zVjdxTU1idXowa0F1LXNOYVl5TEFmd1pmSHpVc3BBSEMyc3VHV0VnSDREODJEcEpfUFlBQ3hpTk91eWVoUUNTM0phd2Y0OFJBSHIwaFhKZk0tY2c4Y2s1bXVVY1BDVnNKZw?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T10:26:46Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "tsla-20260630 SEC.gov",
-      "title": "tsla-20260630",
-      "uid": "023ec24783858622400582c4",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQcFNSdFNKVlE4RFZaOVpKYzVDMEdZZVBGenpHamlNYVRDZFQ1cExNR082MnROTkZwUm9rU1ZGeHlRT2RLYkpQbWlFNXNnLVBMOWhuQ0M0S2RWY3R3Wk5GZVVXMHkxN01hNkxmNS1zZzBVbk1lOTg2Tzl1SjNsLUQ3YXYwOW9JXzIzX1RrRQ?oc=5"
-    },
-    {
-      "category": "금융·소비자",
-      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
-      "importance": "낮음",
-      "jurisdiction": "미국",
-      "kind": "regulatory_news",
-      "published_at": "2026-07-23T07:10:15Z",
-      "query_names": [
-        "US-IP-SEC"
-      ],
-      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
-      "score": 28,
-      "source": "SEC.gov",
-      "status": "RSS 색인·원문 확인 필요",
-      "summary": "Techdollar and Manatt, Phelps & Phillips, LLP SEC.gov",
-      "title": "Techdollar and Manatt, Phelps & Phillips, LLP",
-      "uid": "c09577dbae6071cf44ca8808",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUmlGQ1FwWEpzWXk5T2NfX2pQMmd5UG9jVVlSLUJnVTFBbEJsbFl1ZWlUS1pRRU52aWpoaE5WQnpRZ2lQcHNWWEFuVXlGaE1zOWpKSWFocDhYZG1HRjlTT0o5UkdsRV95ZENZNFRSZzVKanNQZ05BZVZmV0NiSHpXOGtzOHFtZEU4dmZqb0pta25WOG9LTXp2SzRLUnk4UQ?oc=5"
     }
   ],
   "schema_version": 1
