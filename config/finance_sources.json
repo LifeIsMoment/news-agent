@@ -17,8 +17,7 @@
   "min_healthy_sources": 8,
   "critical_source_groups": [
     "뉴스·공식기관",
-    "GitHub 고정 추적",
-    "논문"
+    "GitHub 고정 추적"
   ],
   "section_order": [
     "상용 서비스·기업 업데이트",
@@ -2698,8 +2697,8 @@
     "score_boost": 8,
     "impact": "미국 금융·세무·회계 영역의 AI 규칙·가이던스가 데이터·책임·감사 설계에 미치는 영향 검토"
   },
-  "max_workers": 8,
+  "max_workers": 4,
   "core_top_limit": 10,
   "taxia_appendix_limit": 5,
-  "priority_policy_version": 2
+  "priority_policy_version": 3
 }
