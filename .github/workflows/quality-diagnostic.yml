@@ -1,0 +1,61 @@
+name: One-time Quality Diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/quality-diagnostic.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run focused tests and capture output
+        id: test
+        shell: bash
+        run: |
+          set +e
+          mkdir -p out-diagnostic
+          python -m unittest tests.test_quality tests.test_self_improve -v >out-diagnostic/test.log 2>&1
+          STATUS=$?
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          tail -n 200 out-diagnostic/test.log
+          exit 0
+      - name: Publish diagnostic result
+        uses: actions/github-script@v7
+        env:
+          TEST_STATUS: ${{ steps.test.outputs.status }}
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const log = fs.readFileSync('out-diagnostic/test.log', 'utf8');
+            const status = process.env.TEST_STATUS;
+            const title = '[일회성 진단] 프로젝트 적용성 테스트';
+            const body = [
+              `- 상태: ${status === '0' ? '성공' : '실패'}`,
+              `- 커밋: ${context.sha}`,
+              `- 실행: https://github.com/${owner}/${repo}/actions/runs/${context.runId}`,
+              '',
+              '```text',
+              log.slice(-50000),
+              '```',
+            ].join('\n');
+            const rows = await github.paginate(github.rest.issues.listForRepo, {owner, repo, state: 'all', per_page: 100});
+            const existing = rows.find(row => !row.pull_request && row.title === title);
+            if (existing) {
+              await github.rest.issues.update({owner, repo, issue_number: existing.number, body, state: status === '0' ? 'closed' : 'open'});
+            } else {
+              await github.rest.issues.create({owner, repo, title, body, labels: [], assignees: ['LifeIsMoment']});
+            }
