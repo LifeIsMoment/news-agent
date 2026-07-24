@@ -1,0 +1,259 @@
+name: Project Actionability Quality Loop
+
+on:
+  schedule:
+    # 07:40 Asia/Seoul, after the morning collectors and watchdogs.
+    - cron: "40 22 * * *"
+    # 08:00 watchdog; it skips when today's quality output already exists.
+    - cron: "0 23 * * *"
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "분석할 보고서 날짜(YYYY-MM-DD). 비우면 최신 날짜"
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - "quality.py"
+      - ".quality-src/**"
+      - "self_improve.py"
+      - "config/project-context.json"
+      - "config/quality-autotune.json"
+      - "tests/test_quality.py"
+      - "tests/test_self_improve.py"
+      - ".github/workflows/quality-maintenance.yml"
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: project-actionability-quality-loop
+  cancel-in-progress: false
+
+jobs:
+  analyse-improve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONUNBUFFERED: "1"
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ASSIGNEE: LifeIsMoment
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate pipeline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile monitor.py finance_monitor.py quality.py self_improve.py
+          python -m json.tool config/project-context.json >/dev/null
+          python -m json.tool config/quality-autotune.json >/dev/null
+          python -m unittest discover -s tests -v
+
+      - name: Select report date and watchdog gate
+        id: gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          REQUESTED="${{ inputs.report_date }}"
+          DATE="$(python - "$REQUESTED" <<'PY'
+          import datetime as dt
+          import sys
+          from pathlib import Path
+
+          requested = sys.argv[1].strip()
+          if requested:
+              dt.date.fromisoformat(requested)
+              print(requested)
+              raise SystemExit
+          dates = []
+          for base in (Path('reports'), Path('reports-finance-tax-ai')):
+              for path in base.glob('*/*/*.json'):
+                  try:
+                      dates.append(dt.date.fromisoformat(path.stem))
+                  except ValueError:
+                      pass
+          if not dates:
+              raise SystemExit('no report JSON found')
+          print(max(dates).isoformat())
+          PY
+          )"
+          YEAR="${DATE:0:4}"
+          MONTH="${DATE:5:2}"
+          QUALITY="quality/${YEAR}/${MONTH}/${DATE}.json"
+          SHOULD_RUN=true
+          if [[ "${{ github.event_name }}" == "schedule" && "${{ github.event.schedule }}" == "0 23 * * *" && -f "$QUALITY" ]]; then
+            SHOULD_RUN=false
+          fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "quality_file=$QUALITY" >> "$GITHUB_OUTPUT"
+          echo "should_run=$SHOULD_RUN" >> "$GITHUB_OUTPUT"
+
+      - name: Generate project application brief and quality analysis
+        if: steps.gate.outputs.should_run == 'true'
+        run: python quality.py --date "${{ steps.gate.outputs.date }}"
+
+      - name: Commit generated brief, metrics and bounded tuning
+        if: steps.gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "project-actionability[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add applications/ quality/ config/quality-autotune.json
+          if git diff --cached --quiet; then
+            echo "No generated change to commit."
+          else
+            git commit -m "quality: publish ${{ steps.gate.outputs.date }} project application brief"
+            for attempt in 1 2 3; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then break; fi
+              [[ "$attempt" == 3 ]] && exit 1
+              sleep $((attempt * 5))
+            done
+          fi
+
+      - name: Read quality metadata
+        id: meta
+        if: steps.gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          data = json.load(open('out-quality/metadata.json', encoding='utf-8'))
+          print(f"quality_file={data['quality_path']}")
+          print(f"needs_maintenance={'true' if data['maintenance_recommendations'] or data['tuning_changes'] else 'false'}")
+          print(f"actions={data['actions']}")
+          print(f"quality_score={data['quality_score']}")
+          PY
+
+      - name: Publish project application issue
+        if: steps.gate.outputs.should_run == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = fs.readFileSync('out-quality/application_issue_title.txt', 'utf8').trim();
+            const body = fs.readFileSync('out-quality/application_issue_body.md', 'utf8');
+            const label = 'project-application';
+            try { await github.rest.issues.getLabel({owner, repo, name: label}); }
+            catch (e) {
+              if (e.status !== 404) throw e;
+              await github.rest.issues.createLabel({owner, repo, name: label, color: '0E8A16', description: '프로젝트에 바로 적용할 수 있는 일일 실행 브리프'});
+            }
+            const rows = await github.paginate(github.rest.issues.listForRepo, {owner, repo, state: 'all', labels: label, per_page: 100});
+            const existing = rows.find(row => !row.pull_request && row.title === title);
+            if (existing) {
+              await github.rest.issues.update({owner, repo, issue_number: existing.number, title, body, state: 'open', labels: [label], assignees: [process.env.ASSIGNEE]});
+            } else {
+              await github.rest.issues.create({owner, repo, title, body, labels: [label], assignees: [process.env.ASSIGNEE]});
+            }
+
+      - name: Publish automatic improvement issue
+        if: steps.gate.outputs.should_run == 'true' && steps.meta.outputs.needs_maintenance == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = fs.readFileSync('out-quality/maintenance_issue_title.txt', 'utf8').trim();
+            const body = fs.readFileSync('out-quality/maintenance_issue_body.md', 'utf8');
+            const label = 'auto-improvement';
+            try { await github.rest.issues.getLabel({owner, repo, name: label}); }
+            catch (e) {
+              if (e.status !== 404) throw e;
+              await github.rest.issues.createLabel({owner, repo, name: label, color: '5319E7', description: '자동 품질·파이프라인 개선 분석'});
+            }
+            const rows = await github.paginate(github.rest.issues.listForRepo, {owner, repo, state: 'all', labels: label, per_page: 100});
+            const existing = rows.find(row => !row.pull_request && row.title === title);
+            if (existing) {
+              await github.rest.issues.update({owner, repo, issue_number: existing.number, title, body, state: 'open', labels: [label], assignees: [process.env.ASSIGNEE]});
+            } else {
+              await github.rest.issues.create({owner, repo, title, body, labels: [label], assignees: [process.env.ASSIGNEE]});
+            }
+
+      - name: Generate allowlisted collector-quality patch
+        if: steps.gate.outputs.should_run == 'true'
+        run: python self_improve.py --quality-file "${{ steps.meta.outputs.quality_file }}"
+
+      - name: Validate candidate patch
+        id: candidate
+        if: steps.gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXISTS="$(python -c 'import json; print(str(json.load(open("out-quality/candidate.json"))["candidate"]).lower())')"
+          echo "exists=$EXISTS" >> "$GITHUB_OUTPUT"
+          [[ "$EXISTS" == "true" ]] || exit 0
+          python - <<'PY'
+          import json, subprocess
+          meta = json.load(open('out-quality/candidate.json', encoding='utf-8'))
+          allowed = set(meta['allowlisted_files'])
+          changed = set(subprocess.check_output(['git', 'diff', '--name-only'], text=True).splitlines())
+          if not changed or not changed.issubset(allowed):
+              raise SystemExit(f'unsafe changed files: {sorted(changed)}; allowed: {sorted(allowed)}')
+          total = 0
+          for line in subprocess.check_output(['git', 'diff', '--numstat'], text=True).splitlines():
+              add, delete, *_ = line.split('\t')
+              if add.isdigit() and delete.isdigit():
+                  total += int(add) + int(delete)
+          if total > 220:
+              raise SystemExit(f'candidate too large: {total} changed lines')
+          PY
+          git diff --check
+          python -m py_compile monitor.py self_improve.py
+          python -m unittest discover -s tests -v
+
+      - name: Open and merge guarded collector-quality PR
+        if: steps.candidate.outputs.exists == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          BRANCH="auto-improve/collector-quality"
+          TITLE="$(cat out-quality/candidate_pr_title.txt)"
+          git switch -C "$BRANCH"
+          git add monitor.py tests/test_collector_quality.py
+          git config user.name "monitor-quality[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "$TITLE"
+          git push --force-with-lease -u origin "HEAD:$BRANCH"
+          PR="$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [[ -z "$PR" ]]; then
+            URL="$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$BRANCH" --title "$TITLE" --body-file out-quality/candidate_pr_body.md)"
+            PR="${URL##*/}"
+          else
+            gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body-file out-quality/candidate_pr_body.md
+          fi
+          if ! gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch; then
+            echo "Repository policy blocked automatic merge; PR remains open." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload quality diagnostics
+        if: always() && steps.gate.outputs.should_run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-actionability-${{ github.run_id }}
+          path: out-quality/
+          retention-days: 30
+
+      - name: Record watchdog skip
+        if: steps.gate.outputs.should_run == 'false'
+        run: echo "Today's project application brief already exists; watchdog skipped." >> "$GITHUB_STEP_SUMMARY"
