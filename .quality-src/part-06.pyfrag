@@ -1,0 +1,421 @@
+
+# ---------------------------------------------------------------------------
+# Actionability precision layer (v2)
+# ---------------------------------------------------------------------------
+# The broad collectors intentionally over-collect. The final application brief
+# must be stricter: category labels alone are not enough, external repositories
+# are references rather than implementation instructions, and only a regulator
+# or the target project can trigger an immediate-change decision.
+
+ECOSYSTEM_HOSTS = {"github.com", "api.github.com", "pypi.org", "huggingface.co"}
+TRANSFER_TERMS = {
+    "rag", "graph-rag", "retrieval", "citation", "benchmark", "evaluation",
+    "dataset", "schema", "tax calculation", "tax engine", "period", "versioning",
+    "provenance", "audit", "privacy", "security", "vector", "knowledge graph",
+    "인용", "검색", "벤치마크", "평가", "데이터셋", "스키마", "세액 계산",
+    "버전", "출처", "감사", "개인정보", "보안", "벡터", "지식그래프",
+}
+
+
+def item_is_regulatory_primary(item: dict[str, Any]) -> bool:
+    host = host_of(str(item.get("url", "")))
+    kind = str(item.get("kind", ""))
+    if host in ECOSYSTEM_HOSTS or host.endswith("xaikorea.github.io"):
+        return False
+    return item_is_official(item) and kind in {"regulatory_news", "official_rule", "official_document"}
+
+
+def item_is_external_ecosystem(item: dict[str, Any], context: dict[str, Any]) -> bool:
+    host = host_of(str(item.get("url", "")))
+    return (
+        str(item.get("jurisdiction", "")) == "제품 생태계"
+        or host in ECOSYSTEM_HOSTS
+    ) and not item_is_direct_project_asset(item, context)
+
+
+def external_reference(item: dict[str, Any], context: dict[str, Any]) -> dict[str, Any] | None:
+    if not item_is_external_ecosystem(item, context):
+        return None
+    text = item_text(item)
+    for reference in context.get("external_references", []):
+        if any(str(term).lower() in text for term in reference.get("terms", [])):
+            return reference
+    return None
+
+
+def _component_term_hits(text: str, component: dict[str, Any]) -> int:
+    return sum(1 for term in component.get("terms", []) if str(term).lower() in text)
+
+
+def match_components(item: dict[str, Any], context: dict[str, Any]) -> list[tuple[str, dict[str, Any], int]]:
+    text = item_text(item)
+    category = str(item.get("category", "기타"))
+    direct = item_is_direct_project_asset(item, context)
+    regulatory = item_is_regulatory_primary(item)
+    reference = external_reference(item, context)
+
+    if item_is_external_ecosystem(item, context) and reference is None:
+        return []
+
+    matches: list[tuple[str, dict[str, Any], int]] = []
+    reference_components = set(reference.get("components", [])) if reference else set()
+    for component_id, component in context.get("components", {}).items():
+        hits = _component_term_hits(text, component)
+        score = 0
+
+        if direct:
+            if category in component.get("categories", []):
+                score += 35
+            score += min(hits * 9, 36)
+            if component_id == "sdk_and_delivery":
+                score += 25
+            if component_id == "tax_knowledge_pipeline" and contains_any(text, ("dataset", "data", "법령", "세법")):
+                score += 20
+        elif reference is not None:
+            if component_id not in reference_components:
+                continue
+            score = 46 + min(hits * 6, 18)
+        elif regulatory:
+            # A collector category is only a hint. At least one project-domain
+            # term must appear in the actual title/summary/evidence.
+            if hits == 0:
+                continue
+            if category in component.get("categories", []):
+                score += 32
+            score += min(hits * 12, 48)
+        else:
+            # Secondary news and market items need two independent domain hits.
+            if hits < 2:
+                continue
+            if category in component.get("categories", []):
+                score += 22
+            score += min(hits * 10, 45)
+
+        if score >= 28:
+            matches.append((component_id, component, min(score, 100)))
+
+    matches.sort(key=lambda row: (-row[2], row[0]))
+    return matches[:3]
+
+
+def actionability_score(
+    item: dict[str, Any],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+    components: list[tuple[str, dict[str, Any], int]],
+    confidence: int,
+) -> int:
+    if item_is_excluded(item, context, tuning) or not components:
+        return 0
+
+    score = int(item.get("score", 0)) * 0.18
+    score += confidence * 0.22
+    score += components[0][2] * 0.34
+    recency, age_days = recency_score(item, run_at, int(tuning.get("max_age_days", 45)))
+    score += recency
+    text = item_text(item)
+    direct = item_is_direct_project_asset(item, context)
+    regulatory = item_is_regulatory_primary(item)
+    reference = external_reference(item, context)
+
+    if contains_any(text, CHANGE_TERMS):
+        score += 8
+    if direct:
+        score += 18
+    if regulatory:
+        score += 12
+    if str(item.get("kind", "")) == "market_news":
+        score -= 18
+    if str(item.get("category", "")) == "기타":
+        score -= 22
+    if age_days is not None and age_days > int(tuning.get("max_age_days", 45)):
+        score -= 24
+    if contains_any(text, BINDING_TERMS) and tuning.get("official_required_for_binding_change", True) and not regulatory:
+        score -= 25
+
+    score = clamp(round(score), 0, 100)
+    if reference is not None:
+        score = min(score, int(reference.get("max_actionability", 65)))
+    elif item_is_external_ecosystem(item, context):
+        return 0
+    elif not direct and not regulatory and str(item.get("kind", "")) in {"market_news", "brand_news", "regulatory_news"}:
+        score = min(score, 62)
+    return score
+
+
+def make_action(
+    item: dict[str, Any],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+) -> Action | None:
+    components = match_components(item, context)
+    if not components:
+        return None
+    confidence = confidence_score(item, run_at, tuning)
+    applicability = actionability_score(
+        item,
+        run_at=run_at,
+        context=context,
+        tuning=tuning,
+        components=components,
+        confidence=confidence,
+    )
+    if applicability < int(tuning.get("min_actionability_score", 58)) or confidence < int(tuning.get("min_confidence_score", 58)):
+        return None
+
+    direct = item_is_direct_project_asset(item, context)
+    regulatory = item_is_regulatory_primary(item)
+    reference = external_reference(item, context)
+    text = item_text(item)
+    binding = contains_any(text, BINDING_TERMS)
+
+    component_names = [row[1].get("name", row[0]) for row in components]
+    component_ids = [row[0] for row in components]
+    paths: list[str] = []
+    steps: list[str] = []
+    acceptance: list[str] = []
+    changes: list[str] = []
+    for _, component, _ in components:
+        for value in component.get("paths", []):
+            if value not in paths:
+                paths.append(value)
+        for value in component.get("steps", []):
+            if value not in steps:
+                steps.append(value)
+        for value in component.get("acceptance", []):
+            if value not in acceptance:
+                acceptance.append(value)
+        if component.get("change") and component["change"] not in changes:
+            changes.append(component["change"])
+
+    if reference is not None:
+        decision = "기술 검증 후보"
+        purpose = str(reference.get("purpose", "외부 구현에서 이전 가능한 패턴을 검증한다."))
+        proposed_change = (
+            f"격리된 PoC에서 {purpose} 현재 TAXiA 구현과 정확도·인용·지연·비용·라이선스를 비교한 뒤, "
+            "명확한 우위가 입증된 최소 단위만 채택한다."
+        )
+        steps = [
+            "외부 프로젝트의 변경 diff·문서·라이선스와 TAXiA의 현재 구현을 비교한다.",
+            "직접 의존성을 추가하지 않는 격리된 PoC 또는 fixture를 만든다.",
+            "동일 데이터·질문으로 정확도, 인용, 지연, 비용, 재현성을 비교한다.",
+        ] + steps
+        acceptance = [
+            "비교 기준선보다 측정 가능한 개선이 없으면 도입하지 않는다.",
+            "라이선스·보안·데이터 반출·유지보수 위험이 허용 범위 안이다.",
+            "채택 시 외부 전체 패키지가 아니라 검증된 최소 설계 패턴만 반영한다.",
+        ] + acceptance
+    else:
+        proposed_change = " ".join(changes)
+        if regulatory and binding and applicability >= 75:
+            decision = "즉시 적용 검토"
+        elif direct and applicability >= 72:
+            decision = "이번 스프린트 반영"
+        elif applicability >= 72:
+            decision = "이번 스프린트 반영"
+        else:
+            decision = "백로그 등록·검증"
+
+    source_uid = str(item.get("uid") or hashlib.sha256((str(item.get("title")) + str(item.get("url"))).encode()).hexdigest()[:24])
+    evidence = str(item.get("evidence") or "수집 메타데이터")
+    if reference is not None:
+        evidence += " · 외부 참고 구현이며 TAXiA 직접 변경 근거는 아님"
+    return Action(
+        action_id="A-" + source_uid[:10],
+        source_uid=source_uid,
+        title=str(item.get("title", "")),
+        url=str(item.get("url", "")),
+        source=str(item.get("source", "")),
+        published_at=str(item.get("published_at", "")),
+        jurisdiction=str(item.get("jurisdiction", "")),
+        category=str(item.get("category", "")),
+        importance=str(item.get("importance") or item.get("priority") or ""),
+        confidence=confidence,
+        actionability=applicability,
+        decision=decision,
+        component_ids=component_ids,
+        components=component_names,
+        target_repository=str(context.get("target_repository", "xaikorea/taxia")),
+        target_files=paths[:12],
+        proposed_change=proposed_change,
+        implementation_steps=steps[:10],
+        acceptance_criteria=acceptance[:10],
+        rationale=str(item.get("relevance") or item.get("impact") or "프로젝트 구성요소에 직접 매핑됨"),
+        evidence=evidence,
+        limitations="자동 분류 결과다. 실제 적용범위·시행일·예외·원문 문언과 현재 코드는 담당자가 확인해야 한다.",
+        automatic_scope=(
+            "모니터링 필터·점수·보고서 구성은 안전 범위에서 자동 조정 가능. "
+            "xaikorea/taxia 소스 변경은 대상 저장소 쓰기 권한과 프로젝트 테스트 통과 후에만 가능."
+        ),
+    )
+
+
+def build_actions(
+    items: list[dict[str, Any]],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+) -> list[Action]:
+    primary: list[Action] = []
+    references: list[Action] = []
+    seen_sources: set[str] = set()
+    for item in items:
+        action = make_action(item, run_at=run_at, context=context, tuning=tuning)
+        if action is None or action.source_uid in seen_sources:
+            continue
+        seen_sources.add(action.source_uid)
+        if action.decision == "기술 검증 후보":
+            references.append(action)
+        else:
+            primary.append(action)
+    primary.sort(key=lambda x: (-x.actionability, -x.confidence, x.title.lower()))
+    references.sort(key=lambda x: (-x.actionability, -x.confidence, x.title.lower()))
+    max_actions = int(tuning.get("max_actions", 12))
+    max_refs = int(tuning.get("max_external_reference_actions", 2))
+    selected = primary[:max_actions]
+    room = max(0, max_actions - len(selected))
+    selected.extend(references[: min(max_refs, room)])
+    return selected
+
+
+def quality_metrics(
+    items: list[dict[str, Any]],
+    health: list[dict[str, Any]],
+    actions: list[Action],
+    *,
+    run_at: dt.datetime,
+    context: dict[str, Any],
+    tuning: dict[str, Any],
+) -> dict[str, Any]:
+    total = len(items)
+    baselines = sum(item_is_baseline(x) for x in items)
+    self_refs = sum(item_is_self_reference(x, str(context.get("monitor_repository", ""))) for x in items)
+    github_noise = sum(item_is_generic_github_noise(x, context) for x in items)
+    misc_items = sum(str(x.get("category", "")) == "기타" for x in items)
+    excluded = sum(item_is_excluded(x, context, tuning) for x in items)
+    official = sum(item_is_official(x) for x in items)
+    stale = 0
+    for item in items:
+        _, age = recency_score(item, run_at, int(tuning.get("max_age_days", 45)))
+        if age is not None and age > int(tuning.get("max_age_days", 45)):
+            stale += 1
+    failed = sum(not bool(row.get("ok")) for row in health)
+    reference_actions = sum(action.decision == "기술 검증 후보" for action in actions)
+    primary_actions = len(actions) - reference_actions
+    direct_or_regulatory_actions = 0
+    source_by_uid = {str(item.get("uid")): item for item in items}
+    for action in actions:
+        source = source_by_uid.get(action.source_uid, {})
+        if item_is_direct_project_asset(source, context) or item_is_regulatory_primary(source):
+            direct_or_regulatory_actions += 1
+    coverage = len({component for action in actions for component in action.component_ids})
+    component_total = max(1, len(context.get("components", {})))
+
+    def ratio(value: int, denominator: int = total) -> float:
+        return round(value / denominator, 4) if denominator else 0.0
+
+    noise_count = baselines + self_refs + github_noise
+    source_failure_ratio = round(failed / max(1, len(health)), 4)
+    reference_action_ratio = round(reference_actions / max(1, len(actions)), 4)
+    quality_score = 100
+    quality_score -= round(ratio(noise_count) * 40)
+    quality_score -= round(ratio(misc_items) * 25)
+    quality_score -= round(ratio(stale) * 22)
+    quality_score -= round(source_failure_ratio * 25)
+    quality_score -= round(reference_action_ratio * 20)
+    if total and primary_actions == 0:
+        quality_score -= 20
+    if actions and direct_or_regulatory_actions == 0:
+        quality_score -= 15
+    quality_score += min(5, round((coverage / component_total) * 5))
+    quality_score = clamp(quality_score, 0, 100)
+
+    return {
+        "generated_at": run_at.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "total_items": total,
+        "actionable_items": len(actions),
+        "primary_action_items": primary_actions,
+        "reference_action_items": reference_actions,
+        "direct_or_regulatory_action_items": direct_or_regulatory_actions,
+        "official_items": official,
+        "baseline_items": baselines,
+        "self_reference_items": self_refs,
+        "generic_github_noise_items": github_noise,
+        "misc_items": misc_items,
+        "excluded_items": excluded,
+        "stale_items": stale,
+        "sources_total": len(health),
+        "sources_failed": failed,
+        "component_coverage": coverage,
+        "component_total": component_total,
+        "actionable_ratio": ratio(len(actions)),
+        "official_ratio": ratio(official),
+        "noise_ratio": ratio(noise_count),
+        "misc_ratio": ratio(misc_items),
+        "stale_ratio": ratio(stale),
+        "source_failure_ratio": source_failure_ratio,
+        "reference_action_ratio": reference_action_ratio,
+        "quality_score": quality_score,
+    }
+
+
+def maintenance_recommendations(metrics: dict[str, Any], changes: list[str]) -> list[dict[str, str]]:
+    recs: list[dict[str, str]] = []
+    if float(metrics.get("noise_ratio", 0)) > 0.12 or int(metrics.get("misc_items", 0)) > 3:
+        recs.append({
+            "scope": "collector-code",
+            "severity": "높음",
+            "problem": "원시 수집 결과의 오탐·기타 분류 비율이 높음",
+            "proposal": "GitHub 전역 동명 결과, 모니터 자기참조, 규제 RSS의 카테고리 오분류를 수집 단계에서 억제한다.",
+            "validation": "고정 오탐 fixture가 0건이고 TAXiA/XAIKOREA 및 실제 규제 fixture는 유지되는지 테스트한다.",
+        })
+    if int(metrics.get("baseline_items", 0)) > 0:
+        recs.append({
+            "scope": "collector-code",
+            "severity": "높음",
+            "problem": "초기 기준선 자산이 신규 변화로 누적됨",
+            "proposal": "기준선 항목은 낮음으로 제한하고 오늘의 판단과 적용 후보에서 제외한다.",
+            "validation": "기준선 릴리스·페이지가 상위 목록에 나타나지 않는지 테스트한다.",
+        })
+    if float(metrics.get("reference_action_ratio", 0)) > 0.35:
+        recs.append({
+            "scope": "result-quality",
+            "severity": "높음",
+            "problem": "외부 참고 구현이 적용 목록을 과도하게 차지함",
+            "proposal": "외부 프로젝트는 최대 2건의 기술 검증 후보로 제한하고 직접 변경·공식 규제를 우선한다.",
+            "validation": "즉시 적용 목록의 대부분이 대상 저장소 직접 변경 또는 공식 규제인지 확인한다.",
+        })
+    if float(metrics.get("source_failure_ratio", 0)) > 0.20:
+        recs.append({
+            "scope": "pipeline",
+            "severity": "높음",
+            "problem": "소스 실패 비율이 20%를 초과",
+            "proposal": "실패 소스별 재시도·timeout·격리 정책을 조정하고 3회 연속 실패 시 degraded 상태를 표시한다.",
+            "validation": "일부 소스 실패에도 보고서가 생성되고 실패율·재시도가 artifact에 남는지 확인한다.",
+        })
+    if int(metrics.get("primary_action_items", 0)) == 0 and int(metrics.get("total_items", 0)) > 0:
+        recs.append({
+            "scope": "result-quality",
+            "severity": "보통",
+            "problem": "수집은 됐지만 직접 적용 또는 공식 규제 항목이 없음",
+            "proposal": "프로젝트 구성요소 매핑과 공식 시행·판결·세무지식 변경 검색식을 보강한다.",
+            "validation": "대표 규제 fixture가 구체적 파일·작업·인수기준으로 변환되는지 테스트한다.",
+        })
+    if changes:
+        recs.append({
+            "scope": "safe-autotune",
+            "severity": "낮음",
+            "problem": "품질 지표가 설정 경계 조정을 요구",
+            "proposal": "; ".join(changes),
+            "validation": "설정값이 bounds 안에 있고 테스트와 보고서 생성이 성공하는지 확인한다.",
+        })
+    return recs
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
