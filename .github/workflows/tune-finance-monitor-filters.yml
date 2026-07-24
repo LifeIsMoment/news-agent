@@ -1,13 +1,16 @@
 name: Tune Finance Monitor Filters Once
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".finance-tune-trigger"
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: tune-finance-monitor-filters-once
+  cancel-in-progress: false
 
 jobs:
   tune:
