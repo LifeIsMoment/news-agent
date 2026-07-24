@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "generated_at": "2026-07-24T09:24:11Z",
+  "generated_at": "2026-07-24T09:51:40Z",
   "health": [
     {
       "count": 0,
@@ -8,13 +8,6 @@
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "KR-AI-ACCOUNTING-PRODUCT"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-AI-TAX-PRODUCT"
     },
     {
       "count": 0,
@@ -35,6 +28,20 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "GLOBAL-AUDIT-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-AI-TAX-PRODUCT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "GLOBAL-TAX-AI-PRODUCT"
     },
     {
@@ -42,7 +49,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-AUDIT-AI"
+      "source": "KR-FINANCE-CFO-AI"
     },
     {
       "count": 2,
@@ -50,13 +57,6 @@
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "KR-AUDIT-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-FINANCE-CFO-AI"
     },
     {
       "count": 0,
@@ -101,20 +101,6 @@
       "source": "KR-MOEF-TAX-DIGITAL"
     },
     {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "FINANCE-AI-BENCHMARK-NEWS"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-NTS-AI"
-    },
-    {
       "count": 2,
       "detail": "",
       "group": "뉴스·공식기관",
@@ -126,21 +112,14 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-OPENDART-API"
+      "source": "KR-NTS-AI"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-KASB-STANDARDS"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "PROFESSIONAL-FIRMS-AI"
+      "source": "FINANCE-AI-BENCHMARK-NEWS"
     },
     {
       "count": 0,
@@ -148,20 +127,6 @@
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "KR-FSC-FSS-AI-FINANCE"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-LAW-OPEN-API"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-BOK-ECOS-API"
     },
     {
       "count": 1,
@@ -175,7 +140,49 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "KR-KASB-STANDARDS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-OPENDART-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "PROFESSIONAL-FIRMS-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-BOK-ECOS-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-LAW-OPEN-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "KR-PIPC-FINANCE-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "US-IRS-TREASURY-AI"
     },
     {
       "count": 0,
@@ -189,28 +196,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "US-IRS-TREASURY-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "논문",
-      "ok": true,
-      "source": "ARXIV-TAX-REASONING-BENCHMARK"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
       "source": "OECD-TAX-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "논문",
-      "ok": true,
-      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
     },
     {
       "count": 0,
@@ -231,21 +217,14 @@
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-AUDIT-AI"
+      "source": "ARXIV-TAX-REASONING-BENCHMARK"
     },
     {
       "count": 0,
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-INVOICE-DOCUMENT-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "논문",
-      "ok": true,
-      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
+      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
     },
     {
       "count": 0,
@@ -257,9 +236,9 @@
     {
       "count": 0,
       "detail": "",
-      "group": "뉴스·공식기관",
+      "group": "논문",
       "ok": true,
-      "source": "IFRS-EFRAG-DIGITAL"
+      "source": "ARXIV-INVOICE-DOCUMENT-AI"
     },
     {
       "count": 0,
@@ -278,6 +257,34 @@
     {
       "count": 0,
       "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "IFRS-EFRAG-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-AUDIT-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
+    },
+    {
+      "count": 0,
+      "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "AI4Finance-Foundation/FinGPT"
@@ -290,14 +297,7 @@
       "source": "AI4Finance-Foundation/FinRL"
     },
     {
-      "count": 0,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinRobot"
-    },
-    {
-      "count": 0,
+      "count": 1,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -308,24 +308,10 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "OpenBB-finance/agents-for-openbb"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
       "source": "xaikorea/taxia"
     },
     {
-      "count": 0,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "patronus-ai/financebench"
-    },
-    {
-      "count": 0,
+      "count": 1,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -343,14 +329,28 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "openfisca/openfisca-core"
+      "source": "OpenBB-finance/agents-for-openbb"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "PaddlePaddle/PaddleOCR"
+      "source": "openfisca/openfisca-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "patronus-ai/financebench"
+    },
+    {
+      "count": 6,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "frappe/erpnext"
     },
     {
       "count": 0,
@@ -358,13 +358,6 @@
       "group": "PyPI",
       "ok": true,
       "source": "taxia-core"
-    },
-    {
-      "count": 3,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "frappe/erpnext"
     },
     {
       "count": 0,
@@ -411,6 +404,13 @@
     {
       "count": 0,
       "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "PaddlePaddle/PaddleOCR"
+    },
+    {
+      "count": 0,
+      "detail": "",
       "group": "공식 규정 API",
       "ok": true,
       "source": "US-FEDERAL-REGISTER-FINANCE-AI"
@@ -423,18 +423,18 @@
       "source": "frappe/books"
     },
     {
-      "count": 3,
-      "detail": "",
-      "group": "GitHub 신규 발견",
-      "ok": true,
-      "source": "GITHUB-TAX-AI-DISCOVERY"
-    },
-    {
       "count": 0,
       "detail": "",
       "group": "GitHub 신규 발견",
       "ok": true,
       "source": "GITHUB-ACCOUNTING-AI-DISCOVERY"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-TAX-AI-DISCOVERY"
     },
     {
       "count": 0,
@@ -459,9 +459,9 @@
     },
     {
       "count": 0,
-      "detail": "URLError: <urlopen error timed out>",
+      "detail": "",
       "group": "공식 페이지 변경",
-      "ok": false,
+      "ok": true,
       "source": "OpenDART 개발가이드"
     }
   ],
@@ -1574,6 +1574,50 @@
       "jurisdiction": "제품 생태계",
       "kind": "github_metadata",
       "priority": "P2",
+      "published_at": "2026-07-24T09:38:54Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-07-24T09:51:34Z; stars 37220; forks 12184; open issues 1900; archived False.",
+      "title": "frappe/erpnext 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "29e719181d4e0e510efa94cb",
+      "url": "https://github.com/frappe/erpnext"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-07-24T09:30:00Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "Merge pull request #57435 from aerele/fix-party-dashboard-user-permission",
+      "title": "frappe/erpnext 커밋 3e15fe0dfd: Merge pull request #57435 from aerele/fix-party-dashboard-user-permission",
+      "track": "오픈소스 프로젝트",
+      "uid": "9aba9cc0ee43f4a4ff4477eb",
+      "url": "https://github.com/frappe/erpnext/commit/3e15fe0dfd16d95f5f1b130f139e15901bc64f51"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P2",
       "published_at": "2026-07-24T09:04:28Z",
       "query_names": [
         "frappe/erpnext"
@@ -1631,6 +1675,28 @@
       "track": "오픈소스 프로젝트",
       "uid": "8127cd5fae8d87f017db88bc",
       "url": "https://github.com/frappe/erpnext/commit/a04725eb04092b224c172bafde751a7aa96173b3"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-07-24T06:52:08Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix: respect user permissions in party dashboard company list",
+      "title": "frappe/erpnext 커밋 903c87bcaa: fix: respect user permissions in party dashboard company list",
+      "track": "오픈소스 프로젝트",
+      "uid": "5f55039d69dc27fcbe6ec581",
+      "url": "https://github.com/frappe/erpnext/commit/903c87bcaa705ca997e28ec53132e308502ac6eb"
     },
     {
       "category": "회계 자동화·결산",
@@ -2403,6 +2469,28 @@
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1TSTNqVE1GM1FHdzFLaWR5WVVfZHJtYm91TWJnSGZFVV9HZkpVclNwbVd1eURzOHBtcWtUWXlUel9lQzY2MzFHTlFleDU4OUZsMUxN?oc=5"
     },
     {
+      "category": "재무분석·FP&A·CFO",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "재무 데이터 통합·MCP·에이전트 연동 방식과 CLOA 재무분석 확장성을 비교",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-07-24T09:39:18Z",
+      "query_names": [
+        "OpenBB-finance/OpenBB"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-07-24T02:43:43Z; stars 70960; forks 7220; open issues 79; archived False.",
+      "title": "OpenBB-finance/OpenBB 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "f43327b095a4d40b13ee4d5e",
+      "url": "https://github.com/OpenBB-finance/OpenBB"
+    },
+    {
       "category": "문서 AI·OCR·XBRL",
       "confidence": "높음",
       "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
@@ -2532,6 +2620,28 @@
       "title": "AI4Finance-Foundation/FinRL-Trading 저장소 기준선 등록",
       "track": "오픈소스 프로젝트",
       "uid": "5b07cdaea4f354bf446e217f",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL-Trading"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "금융 AI 운영·배포 패턴을 참고하되 TAXiA 핵심 세무 범위와 분리",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-07-24T08:52:40Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinRL-Trading"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-05-02T15:12:44Z; stars 3475; forks 1038; open issues 52; archived False.",
+      "title": "AI4Finance-Foundation/FinRL-Trading 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "dfd647c48868db44819216a2",
       "url": "https://github.com/AI4Finance-Foundation/FinRL-Trading"
     },
     {

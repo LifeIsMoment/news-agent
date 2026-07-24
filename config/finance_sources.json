@@ -1397,32 +1397,35 @@
       "required_all_groups": [
         [
           "ECOS",
-          "API",
-          "경제통계",
-          "데이터"
+          "API"
         ],
         [
           "변경",
           "개편",
           "점검",
           "추가",
-          "공지"
+          "버전",
+          "서비스",
+          "개발"
         ]
       ],
       "required_any": [],
       "exclude_any": [
-        "sports",
-        "football",
+        "AI companion",
         "baseball",
+        "casino",
+        "cosmetic",
+        "crypto price",
+        "dating",
+        "football",
         "game",
         "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
         "skincare",
-        "AI companion",
-        "dating"
+        "sports",
+        "stock price prediction",
+        "모집",
+        "입찰",
+        "채용"
       ],
       "source_type": "official_primary",
       "direct": false,
@@ -1430,6 +1433,10 @@
       "domain_allowlist": [
         "bok.or.kr",
         "ecos.bok.or.kr"
+      ],
+      "title_required_any": [
+        "ECOS",
+        "API"
       ]
     },
     {
@@ -2179,9 +2186,6 @@
       "required_all_groups": [
         [
           "감사",
-          "감리",
-          "내부통제",
-          "부정",
           "audit",
           "assurance",
           "internal control",
@@ -2193,6 +2197,16 @@
           "LLM",
           "agent",
           "artificial intelligence"
+        ],
+        [
+          "accounting",
+          "financial statement",
+          "financial reporting",
+          "assurance",
+          "internal control",
+          "external audit",
+          "회계",
+          "재무제표"
         ]
       ],
       "exclude_any": [
@@ -2296,43 +2310,50 @@
       "monitor_issues": true,
       "baseline_commits": 5,
       "baseline_issues": 10,
-      "impact": "TAXiA 코드·릴리스·이슈·PR의 직접 변화"
+      "impact": "TAXiA 코드·릴리스·이슈·PR의 직접 변화",
+      "baseline_releases": 0
     },
     {
       "repo": "AI4Finance-Foundation/FinGPT",
       "category": "오픈소스·도구",
       "baseline_commits": 3,
-      "impact": "금융 특화 LLM·데이터 파이프라인 변화와 TAXiA/CLOA의 도메인 모델 전략 비교"
+      "impact": "금융 특화 LLM·데이터 파이프라인 변화와 TAXiA/CLOA의 도메인 모델 전략 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "AI4Finance-Foundation/FinRobot",
       "category": "오픈소스·도구",
       "baseline_commits": 3,
-      "impact": "금융 멀티에이전트·리서치 자동화 구조를 CLOA 에이전트 설계와 비교"
+      "impact": "금융 멀티에이전트·리서치 자동화 구조를 CLOA 에이전트 설계와 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "AI4Finance-Foundation/FinRL",
       "category": "오픈소스·도구",
       "baseline_commits": 2,
-      "impact": "투자·퀀트 중심 프로젝트이므로 세무 기능과 혼동하지 않고 금융 확장 후보로만 추적"
+      "impact": "투자·퀀트 중심 프로젝트이므로 세무 기능과 혼동하지 않고 금융 확장 후보로만 추적",
+      "baseline_releases": -1
     },
     {
       "repo": "AI4Finance-Foundation/FinRL-Trading",
       "category": "오픈소스·도구",
       "baseline_commits": 2,
-      "impact": "금융 AI 운영·배포 패턴을 참고하되 TAXiA 핵심 세무 범위와 분리"
+      "impact": "금융 AI 운영·배포 패턴을 참고하되 TAXiA 핵심 세무 범위와 분리",
+      "baseline_releases": -1
     },
     {
       "repo": "OpenBB-finance/OpenBB",
       "category": "재무분석·FP&A·CFO",
       "baseline_commits": 3,
-      "impact": "재무 데이터 통합·MCP·에이전트 연동 방식과 CLOA 재무분석 확장성을 비교"
+      "impact": "재무 데이터 통합·MCP·에이전트 연동 방식과 CLOA 재무분석 확장성을 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "OpenBB-finance/agents-for-openbb",
       "category": "오픈소스·도구",
       "baseline_commits": 3,
-      "impact": "재무 에이전트 도구 인터페이스와 권한·데이터 연결 패턴을 참고"
+      "impact": "재무 에이전트 도구 인터페이스와 권한·데이터 연결 패턴을 참고",
+      "baseline_releases": -1
     },
     {
       "repo": "patronus-ai/financebench",
@@ -2340,43 +2361,50 @@
       "baseline_commits": 3,
       "monitor_issues": true,
       "baseline_issues": 5,
-      "impact": "공시 기반 재무 QA 평가셋과 TAXiA/CLOA 완전정답·근거 평가를 비교"
+      "impact": "공시 기반 재무 QA 평가셋과 TAXiA/CLOA 완전정답·근거 평가를 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "PolicyEngine/policyengine-core",
       "category": "세무 AI·조세기술",
       "baseline_commits": 3,
-      "impact": "세법·복지 규칙의 파라미터화, 버전 관리, 결정론적 계산 엔진 설계 참고"
+      "impact": "세법·복지 규칙의 파라미터화, 버전 관리, 결정론적 계산 엔진 설계 참고",
+      "baseline_releases": -1
     },
     {
       "repo": "openfisca/openfisca-core",
       "category": "세무 AI·조세기술",
       "baseline_commits": 3,
-      "impact": "법·정책 계산 규칙을 코드화하는 구조와 한국형 세금 엔진 적용 가능성을 비교"
+      "impact": "법·정책 계산 규칙을 코드화하는 구조와 한국형 세금 엔진 적용 가능성을 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "frappe/erpnext",
       "category": "회계 자동화·결산",
       "baseline_commits": 2,
-      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적"
+      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
+      "baseline_releases": -1
     },
     {
       "repo": "frappe/books",
       "category": "회계 자동화·결산",
       "baseline_commits": 2,
-      "impact": "경량 복식부기·오프라인 회계 구조를 TAXiA/CLOA PoC와 비교"
+      "impact": "경량 복식부기·오프라인 회계 구조를 TAXiA/CLOA PoC와 비교",
+      "baseline_releases": -1
     },
     {
       "repo": "docling-project/docling",
       "category": "문서 AI·OCR·XBRL",
       "baseline_commits": 3,
-      "impact": "PDF·XBRL·표·문서 구조 추출과 로컬 실행 기능을 증빙 파이프라인 후보로 평가"
+      "impact": "PDF·XBRL·표·문서 구조 추출과 로컬 실행 기능을 증빙 파이프라인 후보로 평가",
+      "baseline_releases": -1
     },
     {
       "repo": "PaddlePaddle/PaddleOCR",
       "category": "문서 AI·OCR·XBRL",
       "baseline_commits": 3,
-      "impact": "한국어 증빙 OCR, 좌표·표 구조, 문서 VLM 성능과 라이선스·배포 조건을 추적"
+      "impact": "한국어 증빙 OCR, 좌표·표 구조, 문서 VLM 성능과 라이선스·배포 조건을 추적",
+      "baseline_releases": -1
     }
   ],
   "github_discovery_queries": [
