@@ -33,7 +33,15 @@ jobs:
           python -m json.tool config/finance_quality_policy.json >/dev/null
       - name: Run existing finance monitor tests
         run: python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
-      - name: Run core-first ranking tests
-        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k CoreFirstPolicyTests -v
+      - name: Verify specific-project demotion
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_taxia_activity_is_demoted_to_appendix -v
+      - name: Verify baseline and generic-commit demotion
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_baseline_and_generic_commit_cannot_enter_top_priority -v
+      - name: Verify current official-rule promotion
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_current_official_rule_remains_p0 -v
+      - name: Verify core-first section order
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_section_order_puts_specific_project_last -v
+      - name: Verify core summary excludes specific projects
+        run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_report_core_summary_excludes_taxia -v
       - name: Run bounded quality optimizer tests
         run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k QualityOptimizerTests -v
