@@ -248,15 +248,15 @@ def propose_config(config: dict[str, Any], policy: dict[str, Any], metrics: Qual
 
     target_issue_items = max(10, min(16, metrics.actionable_core_items + 4))
     set_if_changed(proposed, "max_issue_items", target_issue_items, changes)
-    set_if_changed(proposed, "max_report_items", 180 if metrics.items > 180 else 200, changes)
+    set_if_changed(proposed, "max_report_items", 180, changes)
 
     current_min = int(proposed.get("min_report_score", 30))
     if metrics.top_core_purity < float(thresholds.get("min_top_core_purity", 0.85)) or metrics.noise_top_share > float(thresholds.get("max_noise_top_share", 0.05)):
         target_min = min(40, current_min + 2)
     elif metrics.top_core_purity >= 0.95 and metrics.actionable_core_items < 4:
-        target_min = max(28, current_min - 1)
+        target_min = max(30, current_min - 1)
     else:
-        target_min = current_min
+        target_min = max(30, current_min)
     set_if_changed(proposed, "min_report_score", target_min, changes)
 
     workers = int(proposed.get("max_workers", 8))
