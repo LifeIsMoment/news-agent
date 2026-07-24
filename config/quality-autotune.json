@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "min_actionability_score": 58,
+  "min_confidence_score": 58,
+  "max_actions": 12,
+  "max_age_days": 45,
+  "official_required_for_binding_change": true,
+  "suppress_baselines": true,
+  "suppress_self_references": true,
+  "bounds": {
+    "min_actionability_score": [48, 78],
+    "min_confidence_score": [50, 82],
+    "max_actions": [6, 18]
+  },
+  "exclude_terms": [
+    "personal ai assistant",
+    "ai companion",
+    "voice latency",
+    "cosmetic",
+    "skincare",
+    "mascara",
+    "pdrn",
+    "cloahq.com"
+  ],
+  "exclude_repositories": ["LifeIsMoment/news-agent"],
+  "history": []
+}
