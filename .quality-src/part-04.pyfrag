@@ -1,0 +1,146 @@
+        lines.extend(["", f"> 제한: {action.limitations}", ""])
+    lines.extend([
+        "## 자동 적용 범위",
+        "",
+        "- 보고서 필터, 점수 임계값, 표시 개수 등은 설정된 bounds 안에서 자동 조정한다.",
+        "- 수집기 코드의 알려진 오탐 문제는 회귀 테스트가 포함된 allowlist 패치로 자동 제안·검증한다.",
+        "- `.github/workflows/` 변경, 권한 확대, 비밀정보 처리, 대상 프로젝트 소스 변경은 자동 병합하지 않는다.",
+        "- 현재 연결 권한상 `xaikorea/taxia`에는 읽기 권한만 있어, 실제 프로젝트 코드는 구현 패킷으로 생성되고 해당 저장소 쓰기 권한이 있어야 적용된다.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def render_issue_body(
+    report_date: str,
+    actions: list[Action],
+    metrics: dict[str, Any],
+    context: dict[str, Any],
+    application_path: str,
+) -> str:
+    url = f"https://github.com/{context.get('monitor_repository')}/blob/main/{application_path}"
+    lines = [
+        f"# {report_date} 프로젝트 적용 브리프",
+        "",
+        f"**품질:** {metrics.get('quality_score', 0)}/100  ",
+        f"**원시 수집:** {metrics.get('total_items', 0)}개  ",
+        f"**적용 후보:** {len(actions)}개  ",
+        f"**전체 브리프:** [{application_path}]({url})",
+        "",
+        "## 실행 우선순위",
+        "",
+    ]
+    if not actions:
+        lines.append("신뢰도와 적용성 기준을 동시에 충족한 항목 없음. 원시 보고서와 소스 실패를 별도 확인해야 합니다.")
+    for action in actions[:8]:
+        files = ", ".join(f"`{path}`" for path in action.target_files[:4])
+        lines.extend([
+            f"- [ ] **{action.decision}** · [{action.title}]({action.url})",
+            f"  - 적용성 {action.actionability} / 신뢰도 {action.confidence}",
+            f"  - 구성요소: {', '.join(action.components)}",
+            f"  - 파일: {files}",
+            f"  - 변경: {action.proposed_change}",
+        ])
+    lines.extend(["", "> 법적 효력·시행일·예외와 실제 코드 상태는 담당자 검증이 필요합니다.", ""])
+    return "\n".join(lines)
+
+
+def render_maintenance_packet(
+    report_date: str,
+    metrics: dict[str, Any],
+    recommendations: list[dict[str, str]],
+    changes: list[str],
+) -> str:
+    lines = [
+        f"# 자동 개선 점검 — {report_date}",
+        "",
+        f"- 품질 점수: **{metrics.get('quality_score', 0)}/100**",
+        f"- 노이즈 비율: **{metrics.get('noise_ratio', 0):.1%}**",
+        f"- 소스 실패 비율: **{metrics.get('source_failure_ratio', 0):.1%}**",
+        f"- 프로젝트 적용 항목: **{metrics.get('actionable_items', 0)}개**",
+        "",
+        "## 자동 적용된 안전 설정",
+        "",
+    ]
+    lines.extend([f"- {change}" for change in changes] if changes else ["- 변경 없음"])
+    lines.extend(["", "## 코드·파이프라인 개선 후보", ""])
+    if not recommendations:
+        lines.append("현재 임계값을 넘는 개선 후보 없음.")
+    for index, recommendation in enumerate(recommendations, start=1):
+        lines.extend([
+            f"### {index}. {recommendation['problem']}",
+            "",
+            f"- **범위:** {recommendation['scope']}",
+            f"- **중요도:** {recommendation['severity']}",
+            f"- **제안:** {recommendation['proposal']}",
+            f"- **검증:** {recommendation['validation']}",
+            "",
+        ])
+    lines.extend([
+        "## 변경 통제",
+        "",
+        "- 설정 조정만 자동 커밋한다.",
+        "- 수집기 코드는 allowlist 패치와 신규 회귀 테스트를 모두 통과한 경우에만 자동 개선 브랜치 대상으로 만든다.",
+        "- 워크플로 권한, secrets, 외부 전송, 대상 프로젝트 코드는 자동 병합하지 않는다.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def report_paths_for_date(report_dirs: list[Path], requested_date: str | None) -> tuple[str, list[Path]]:
+    if requested_date:
+        try:
+            date = dt.date.fromisoformat(requested_date)
+        except ValueError:
+            raise SystemExit(f"Invalid --date: {requested_date}")
+        paths = [directory / str(date.year) / f"{date.month:02d}" / f"{date.isoformat()}.json" for directory in report_dirs]
+        existing = [path for path in paths if path.exists()]
+        return date.isoformat(), existing
+
+    candidates: list[tuple[str, Path]] = []
+    for directory in report_dirs:
+        for path in directory.glob("*/*/*.json"):
+            try:
+                date = dt.date.fromisoformat(path.stem)
+            except ValueError:
+                continue
+            candidates.append((date.isoformat(), path))
+    if not candidates:
+        return "", []
+    latest_date = max(date for date, _ in candidates)
+    return latest_date, [path for date, path in candidates if date == latest_date]
+
+
+def merge_report_payloads(paths: list[Path], root: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[str]]:
+    items: list[dict[str, Any]] = []
+    health: list[dict[str, Any]] = []
+    markdown_paths: list[str] = []
+    seen: set[str] = set()
+    for path in paths:
+        payload = load_json(path, {})
+        track_name = path.parents[2].name
+        for row in payload.get("items", []):
+            if not isinstance(row, dict):
+                continue
+            item = dict(row)
+            item["monitor_track"] = track_name
+            key = str(item.get("uid") or "")
+            if not key:
+                key = hashlib.sha256((str(item.get("url")) + str(item.get("title"))).encode("utf-8")).hexdigest()[:24]
+            if key in seen:
+                continue
+            seen.add(key)
+            items.append(item)
+        for row in payload.get("health", []):
+            if isinstance(row, dict):
+                health_row = dict(row)
+                health_row["monitor_track"] = track_name
+                health.append(health_row)
+        markdown = path.with_suffix(".md")
+        markdown_paths.append(markdown.relative_to(root).as_posix())
+    return items, health, markdown_paths
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Project-actionable report quality and bounded autotuning")
+    parser.add_argument("--project-context", default="config/project-context.json")
