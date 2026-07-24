@@ -6,6 +6,7 @@ on:
       - "finance_monitor.py"
       - "finance_monitor_entry.py"
       - "finance_monitor_quality.py"
+      - "finance_monitor_quality_entry.py"
       - "config/finance_sources.json"
       - "config/finance_quality_policy.json"
       - "tests/test_finance*.py"
@@ -26,13 +27,20 @@ jobs:
         with:
           python-version: "3.12"
       - name: Compile monitor and optimizer
-        run: python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
+        run: |
+          python -m py_compile \
+            finance_monitor.py \
+            finance_monitor_entry.py \
+            finance_monitor_quality.py \
+            finance_monitor_quality_entry.py
       - name: Validate JSON configuration
         run: |
           python -m json.tool config/finance_sources.json >/dev/null
           python -m json.tool config/finance_quality_policy.json >/dev/null
       - name: Run existing finance monitor tests
         run: python -m unittest discover -s tests -p 'test_finance_monitor.py' -v
+      - name: Run first-feedback regression tests
+        run: python -m unittest discover -s tests -p 'test_finance_first_feedback.py' -v
       - name: Verify specific-project demotion
         run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_taxia_activity_is_demoted_to_appendix -v
       - name: Verify baseline and generic-commit demotion
@@ -45,3 +53,5 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k test_report_core_summary_excludes_taxia -v
       - name: Run bounded quality optimizer tests
         run: python -m unittest discover -s tests -p 'test_finance_quality.py' -k QualityOptimizerTests -v
+      - name: Run quality autopilot guard tests
+        run: python -m unittest discover -s tests -p 'test_finance_quality_autopilot.py' -v
