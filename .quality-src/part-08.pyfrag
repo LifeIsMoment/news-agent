@@ -1,0 +1,65 @@
+
+# Semantic precision layer: generated category/relevance/status text must never
+# become evidence for its own classification. Project mapping uses the source
+# title and source summary, with URL/source only for provenance and direct-asset
+# identification.
+
+def semantic_item_text(item: dict[str, Any]) -> str:
+    values = [
+        item.get("title", ""),
+        item.get("summary", ""),
+        item.get("source", ""),
+        item.get("url", ""),
+    ]
+    return " ".join(str(value) for value in values if value).lower()
+
+
+def match_components(item: dict[str, Any], context: dict[str, Any]) -> list[tuple[str, dict[str, Any], int]]:
+    text = semantic_item_text(item)
+    category = str(item.get("category", "기타"))
+    direct = item_is_direct_project_asset(item, context)
+    regulatory = item_is_regulatory_primary(item)
+    reference = external_reference(item, context)
+
+    if item_is_external_ecosystem(item, context) and reference is None:
+        return []
+
+    matches: list[tuple[str, dict[str, Any], int]] = []
+    reference_components = set(reference.get("components", [])) if reference else set()
+    for component_id, component in context.get("components", {}).items():
+        hits = _component_term_hits(text, component)
+        score = 0
+
+        if direct:
+            if category in component.get("categories", []):
+                score += 35
+            score += min(hits * 9, 36)
+            if component_id == "sdk_and_delivery":
+                score += 25
+            if component_id == "tax_knowledge_pipeline" and contains_any(text, ("dataset", "data", "법령", "세법")):
+                score += 20
+        elif reference is not None:
+            if component_id not in reference_components:
+                continue
+            score = 46 + min(hits * 6, 18)
+        elif regulatory:
+            # Category and generated relevance are not evidence. The actual source
+            # title/summary must contain at least one component-domain signal.
+            if hits == 0:
+                continue
+            if category in component.get("categories", []):
+                score += 32
+            score += min(hits * 12, 48)
+        else:
+            # Secondary/market material needs two independent source-text signals.
+            if hits < 2:
+                continue
+            if category in component.get("categories", []):
+                score += 22
+            score += min(hits * 10, 45)
+
+        if score >= 28:
+            matches.append((component_id, component, min(score, 100)))
+
+    matches.sort(key=lambda row: (-row[2], row[0]))
+    return matches[:3]
