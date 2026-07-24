@@ -34,7 +34,10 @@ class CoreFirstPolicyTests(unittest.TestCase):
 
     def test_baseline_and_generic_commit_cannot_enter_top_priority(self):
         baseline = make_item(title="OpenDART 기준선 등록", status="공식 페이지 기준선", source_type="official_primary", score=90, priority="P0")
-        commit = make_item(title="Project commit: update README", kind="github_commit", source_type="repository_primary", score=80, priority="P0")
+        commit = make_item(
+            title="Project commit: update README", summary="Documentation formatting only",
+            kind="github_commit", source_type="repository_primary", score=80, priority="P0",
+        )
         self.assertEqual(entry.normalize_item(baseline, monitor).priority, "P3")
         self.assertEqual(entry.normalize_item(commit, monitor).priority, "P3")
 
