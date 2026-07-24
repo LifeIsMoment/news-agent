@@ -1,5 +1,6 @@
 name: One-time Quality Diagnostic
 
+# Re-run marker: registered quality runtime module.
 on:
   push:
     branches: [main]
