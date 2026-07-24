@@ -1,113 +1,626 @@
 {
-  "monitor_id": "finance-tax-accounting-ai",
-  "report_title": "AI 재무·세무·회계 핵심 동향 모니터링",
-  "issue_title_prefix": "[AI 재무·세무·회계 핵심 동향]",
-  "timezone": "Asia/Seoul",
-  "report_hour_kst": 7,
-  "report_minute_kst": 30,
-  "watchdog_minute_kst": 50,
+  "arxiv_queries": [
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "ARXIV-FINANCIAL-LLM-AGENTS",
+      "query": "all:\"financial large language model\" OR all:\"finance agent\" OR all:\"financial agent\"",
+      "required_all_groups": [
+        [
+          "large language model",
+          "LLM",
+          "agent",
+          "agentic",
+          "artificial intelligence"
+        ],
+        [
+          "재무",
+          "재무분석",
+          "예산",
+          "현금흐름",
+          "finance",
+          "financial",
+          "FP&A",
+          "CFO",
+          "treasury",
+          "forecast"
+        ]
+      ],
+      "score_boost": 3,
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "impact": "한국형 세무 벤치마크의 문제 유형, 근거 인용, 계산·시행일 평가 방식을 비교",
+      "name": "ARXIV-TAX-REASONING-BENCHMARK",
+      "query": "all:\"tax reasoning\" OR all:\"tax benchmark\" OR all:\"tax large language model\"",
+      "required_all_groups": [
+        [
+          "tax",
+          "taxation"
+        ],
+        [
+          "reasoning",
+          "benchmark",
+          "large language model",
+          "LLM",
+          "agent"
+        ]
+      ],
+      "score_boost": 5,
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "ARXIV-ACCOUNTING-AGENTS",
+      "query": "all:\"accounting large language model\" OR all:\"accounting agent\" OR all:\"financial close agent\"",
+      "required_all_groups": [
+        [
+          "회계",
+          "기장",
+          "결산",
+          "전표",
+          "원장",
+          "accounting",
+          "bookkeeping",
+          "financial close",
+          "ledger"
+        ],
+        [
+          "large language model",
+          "LLM",
+          "agent",
+          "artificial intelligence"
+        ]
+      ],
+      "score_boost": 4,
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "ARXIV-AUDIT-AI",
+      "query": "all:\"audit large language model\" OR all:\"audit agent\" OR all:\"AI auditing\"",
+      "required_all_groups": [
+        [
+          "감사",
+          "audit",
+          "assurance",
+          "internal control",
+          "fraud",
+          "SOX"
+        ],
+        [
+          "large language model",
+          "LLM",
+          "agent",
+          "artificial intelligence"
+        ],
+        [
+          "accounting",
+          "financial statement",
+          "financial reporting",
+          "assurance",
+          "internal control",
+          "external audit",
+          "회계",
+          "재무제표"
+        ]
+      ],
+      "score_boost": 4,
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "ARXIV-FINANCIAL-QA-BENCHMARK",
+      "query": "all:\"financial question answering\" OR all:\"financial benchmark\" OR all:\"financial reasoning benchmark\"",
+      "required_all_groups": [
+        [
+          "재무",
+          "재무분석",
+          "예산",
+          "현금흐름",
+          "finance",
+          "financial",
+          "FP&A",
+          "CFO",
+          "treasury",
+          "forecast"
+        ],
+        [
+          "question answering",
+          "benchmark",
+          "reasoning",
+          "evaluation"
+        ]
+      ],
+      "score_boost": 4,
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "ARXIV-INVOICE-DOCUMENT-AI",
+      "query": "(all:\"invoice\" OR all:\"receipt\") AND (all:\"document intelligence\" OR all:\"vision language model\" OR all:\"document AI\")",
+      "required_all_groups": [
+        [
+          "invoice",
+          "receipt"
+        ],
+        [
+          "document intelligence",
+          "vision language model",
+          "document AI",
+          "OCR"
+        ]
+      ],
+      "score_boost": 2,
+      "track": "논문·벤치마크"
+    }
+  ],
   "assignee": "LifeIsMoment",
-  "issue_label": "finance-tax-ai-monitoring",
-  "failure_label": "finance-tax-ai-monitor-failure",
-  "max_issue_items": 16,
-  "max_report_items": 180,
-  "min_report_score": 30,
-  "dedup_days": 180,
-  "overlap_hours": 8,
-  "min_healthy_sources": 8,
+  "core_top_limit": 10,
   "critical_source_groups": [
     "뉴스·공식기관",
     "GitHub 고정 추적"
   ],
-  "section_order": [
-    "상용 서비스·기업 업데이트",
-    "논문·벤치마크",
-    "공공 데이터·API",
-    "법·제도·감사",
-    "오픈소스 프로젝트",
-    "참고: TAXiA·CLOA 직접 관련"
+  "dedup_days": 180,
+  "failure_label": "finance-tax-ai-monitor-failure",
+  "federal_register": {
+    "category": "AI 규제·거버넌스",
+    "exclude_any": [
+      "sports",
+      "football",
+      "baseball",
+      "game",
+      "gaming",
+      "casino",
+      "crypto price",
+      "stock price prediction",
+      "cosmetic",
+      "skincare",
+      "AI companion",
+      "dating"
+    ],
+    "impact": "미국 금융·세무·회계 영역의 AI 규칙·가이던스가 데이터·책임·감사 설계에 미치는 영향 검토",
+    "name": "US-FEDERAL-REGISTER-FINANCE-AI",
+    "required_all_groups": [
+      [
+        "AI",
+        "인공지능",
+        "생성형AI",
+        "artificial intelligence",
+        "LLM",
+        "agentic",
+        "에이전트",
+        "copilot",
+        "MCP"
+      ],
+      [
+        "세무",
+        "세법",
+        "조세",
+        "법인세",
+        "부가가치세",
+        "tax",
+        "taxation",
+        "VAT",
+        "transfer pricing",
+        "회계",
+        "기장",
+        "결산",
+        "전표",
+        "원장",
+        "accounting",
+        "bookkeeping",
+        "financial close",
+        "ledger",
+        "재무",
+        "재무분석",
+        "예산",
+        "현금흐름",
+        "finance",
+        "financial",
+        "FP&A",
+        "CFO",
+        "treasury",
+        "forecast",
+        "감사",
+        "감리",
+        "내부통제",
+        "부정",
+        "audit",
+        "assurance",
+        "internal control",
+        "fraud",
+        "SOX",
+        "financial institution",
+        "banking",
+        "securities"
+      ]
+    ],
+    "score_boost": 8,
+    "track": "법·제도·감사"
+  },
+  "github_discovery_queries": [
+    {
+      "category": "세무 AI·조세기술",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "GITHUB-TAX-AI-DISCOVERY",
+      "query": "\"tax\" \"AI agent\" in:name,description,readme fork:false stars:>2",
+      "required_all_groups": [
+        [
+          "tax",
+          "taxation",
+          "VAT"
+        ],
+        [
+          "AI",
+          "인공지능",
+          "생성형AI",
+          "artificial intelligence",
+          "LLM",
+          "agentic",
+          "에이전트",
+          "copilot",
+          "MCP"
+        ]
+      ],
+      "score_boost": 2
+    },
+    {
+      "category": "회계 자동화·결산",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "GITHUB-ACCOUNTING-AI-DISCOVERY",
+      "query": "\"accounting\" \"AI agent\" in:name,description,readme fork:false stars:>2",
+      "required_all_groups": [
+        [
+          "회계",
+          "기장",
+          "결산",
+          "전표",
+          "원장",
+          "accounting",
+          "bookkeeping",
+          "financial close",
+          "ledger"
+        ],
+        [
+          "AI",
+          "인공지능",
+          "생성형AI",
+          "artificial intelligence",
+          "LLM",
+          "agentic",
+          "에이전트",
+          "copilot",
+          "MCP"
+        ]
+      ],
+      "score_boost": 2
+    },
+    {
+      "category": "논문·벤치마크",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "GITHUB-FINANCE-BENCHMARK-DISCOVERY",
+      "query": "\"financial\" \"LLM benchmark\" in:name,description,readme fork:false stars:>2",
+      "required_all_groups": [
+        [
+          "재무",
+          "재무분석",
+          "예산",
+          "현금흐름",
+          "finance",
+          "financial",
+          "FP&A",
+          "CFO",
+          "treasury",
+          "forecast"
+        ],
+        [
+          "LLM",
+          "benchmark",
+          "evaluation"
+        ]
+      ],
+      "score_boost": 2
+    },
+    {
+      "category": "AP·AR·인보이스",
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "name": "GITHUB-INVOICE-AGENT-DISCOVERY",
+      "query": "\"invoice\" \"AI agent\" in:name,description,readme fork:false stars:>2",
+      "required_all_groups": [
+        [
+          "invoice",
+          "accounts payable",
+          "billing"
+        ],
+        [
+          "AI",
+          "인공지능",
+          "생성형AI",
+          "artificial intelligence",
+          "LLM",
+          "agentic",
+          "에이전트",
+          "copilot",
+          "MCP"
+        ]
+      ]
+    }
   ],
-  "official_domains": [
-    "nts.go.kr",
-    "taxlaw.nts.go.kr",
-    "moef.go.kr",
-    "fsc.go.kr",
-    "fss.or.kr",
-    "opendart.fss.or.kr",
-    "dart.fss.or.kr",
-    "kasb.or.kr",
-    "bok.or.kr",
-    "ecos.bok.or.kr",
-    "pipc.go.kr",
-    "open.law.go.kr",
-    "law.go.kr",
-    "data.go.kr",
-    "kosis.kr",
-    "krx.co.kr",
-    "irs.gov",
-    "treasury.gov",
-    "sec.gov",
-    "pcaobus.org",
-    "fasb.org",
-    "federalregister.gov",
-    "ifrs.org",
-    "efrag.org",
-    "esma.europa.eu",
-    "taxation-customs.ec.europa.eu",
-    "oecd.org",
-    "gov.uk",
-    "frc.org.uk",
-    "nta.go.jp",
-    "fsa.go.jp",
-    "asb.or.jp",
-    "chinatax.gov.cn",
-    "mof.gov.cn",
-    "csrc.gov.cn",
-    "arxiv.org",
-    "export.arxiv.org",
-    "github.com",
-    "api.github.com",
-    "pypi.org"
+  "github_repositories": [
+    {
+      "baseline_commits": 0,
+      "baseline_issues": 3,
+      "baseline_releases": 0,
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "impact": "직접 프로젝트 변화는 부록에서만 확인하고 핵심 우선순위에는 포함하지 않는다.",
+      "monitor_issues": true,
+      "repo": "xaikorea/taxia",
+      "score_boost": -8,
+      "track": "참고: TAXiA·CLOA 직접 관련"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "오픈소스·도구",
+      "impact": "금융 특화 LLM·데이터 파이프라인 변화와 TAXiA/CLOA의 도메인 모델 전략 비교",
+      "repo": "AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "오픈소스·도구",
+      "impact": "금융 멀티에이전트·리서치 자동화 구조를 CLOA 에이전트 설계와 비교",
+      "repo": "AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "baseline_commits": 2,
+      "baseline_releases": -1,
+      "category": "오픈소스·도구",
+      "impact": "투자·퀀트 중심 프로젝트이므로 세무 기능과 혼동하지 않고 금융 확장 후보로만 추적",
+      "repo": "AI4Finance-Foundation/FinRL"
+    },
+    {
+      "baseline_commits": 2,
+      "baseline_releases": -1,
+      "category": "오픈소스·도구",
+      "impact": "금융 AI 운영·배포 패턴을 참고하되 TAXiA 핵심 세무 범위와 분리",
+      "repo": "AI4Finance-Foundation/FinRL-Trading"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "재무분석·FP&A·CFO",
+      "impact": "재무 데이터 통합·MCP·에이전트 연동 방식과 CLOA 재무분석 확장성을 비교",
+      "repo": "OpenBB-finance/OpenBB"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "오픈소스·도구",
+      "impact": "재무 에이전트 도구 인터페이스와 권한·데이터 연결 패턴을 참고",
+      "repo": "OpenBB-finance/agents-for-openbb"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_issues": 5,
+      "baseline_releases": -1,
+      "category": "논문·벤치마크",
+      "impact": "공시 기반 재무 QA 평가셋과 TAXiA/CLOA 완전정답·근거 평가를 비교",
+      "monitor_issues": true,
+      "repo": "patronus-ai/financebench"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "세무 AI·조세기술",
+      "impact": "세법·복지 규칙의 파라미터화, 버전 관리, 결정론적 계산 엔진 설계 참고",
+      "repo": "PolicyEngine/policyengine-core"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "세무 AI·조세기술",
+      "impact": "법·정책 계산 규칙을 코드화하는 구조와 한국형 세금 엔진 적용 가능성을 비교",
+      "repo": "openfisca/openfisca-core"
+    },
+    {
+      "baseline_commits": 2,
+      "baseline_releases": -1,
+      "category": "회계 자동화·결산",
+      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
+      "repo": "frappe/erpnext"
+    },
+    {
+      "baseline_commits": 2,
+      "baseline_releases": -1,
+      "category": "회계 자동화·결산",
+      "impact": "경량 복식부기·오프라인 회계 구조를 TAXiA/CLOA PoC와 비교",
+      "repo": "frappe/books"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "문서 AI·OCR·XBRL",
+      "impact": "PDF·XBRL·표·문서 구조 추출과 로컬 실행 기능을 증빙 파이프라인 후보로 평가",
+      "repo": "docling-project/docling"
+    },
+    {
+      "baseline_commits": 3,
+      "baseline_releases": -1,
+      "category": "문서 AI·OCR·XBRL",
+      "impact": "한국어 증빙 OCR, 좌표·표 구조, 문서 VLM 성능과 라이선스·배포 조건을 추적",
+      "repo": "PaddlePaddle/PaddleOCR"
+    }
   ],
-  "vendor_domains": [
-    "thomsonreuters.com",
-    "bluej.com",
-    "avalara.com",
-    "wolterskluwer.com",
-    "canopytax.com",
-    "taxact.com",
-    "drakesoftware.com",
-    "firm360.com",
-    "intuit.com",
-    "quickbooks.intuit.com",
-    "xero.com",
-    "sage.com",
-    "floqast.com",
-    "numeric.io",
-    "blackline.com",
-    "vic.ai",
-    "dext.com",
-    "trullion.com",
-    "workiva.com",
-    "pleo.io",
-    "billtrust.com",
-    "recvue.com",
-    "pwc.com",
-    "deloitte.com",
-    "ey.com",
-    "kpmg.com",
-    "grantthornton.com",
-    "bakertilly.com",
-    "claconnect.com"
-  ],
+  "issue_label": "finance-tax-ai-monitoring",
+  "issue_title_prefix": "[AI 재무·세무·회계 핵심 동향]",
+  "max_issue_items": 10,
+  "max_report_items": 180,
+  "max_workers": 4,
+  "min_healthy_sources": 8,
+  "min_report_score": 30,
+  "monitor_id": "finance-tax-accounting-ai",
   "news_queries": [
     {
-      "name": "DIRECT-TAXIA-CLOA",
-      "query": "(\"TAXiA\" OR \"택시아\" OR \"taxia-core\" OR \"XAIKOREA\" OR \"CLOA engine\" OR \"CLOA 엔진\")",
-      "track": "참고: TAXiA·CLOA 직접 관련",
       "category": "세무 AI·조세기술",
+      "direct": false,
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
+      "impact": "직접 프로젝트 변화는 참고용으로 보존하며 핵심 시장·연구·기관 동향보다 낮게 평가한다.",
       "jurisdiction": "글로벌",
       "locale": "ko",
+      "name": "DIRECT-TAXIA-CLOA",
+      "query": "(\"TAXiA\" OR \"택시아\" OR \"taxia-core\" OR \"XAIKOREA\" OR \"CLOA engine\" OR \"CLOA 엔진\")",
       "required_all_groups": [
         [
           "TAXiA",
@@ -127,6 +640,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": -8,
+      "source_type": "secondary_index",
+      "track": "참고: TAXiA·CLOA 직접 관련"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -141,18 +661,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": -8,
-      "impact": "직접 프로젝트 변화는 참고용으로 보존하며 핵심 시장·연구·기관 동향보다 낮게 평가한다."
-    },
-    {
+      "jurisdiction": "대한민국",
+      "locale": "ko",
       "name": "KR-AI-TAX-PRODUCT",
       "query": "(\"AI 세무\" OR \"세무 AI\" OR \"세무 에이전트\" OR \"생성형 AI 세무\") (출시 OR 서비스 OR 자동화 OR 업데이트 OR 도입)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "세무 AI·조세기술",
-      "jurisdiction": "대한민국",
-      "locale": "ko",
       "required_all_groups": [
         [
           "AI",
@@ -178,6 +690,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 6,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -192,17 +711,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 6
-    },
-    {
+      "jurisdiction": "대한민국",
+      "locale": "ko",
       "name": "KR-AI-ACCOUNTING-PRODUCT",
       "query": "(\"AI 회계\" OR \"회계 AI\" OR \"회계 에이전트\" OR \"AI 결산\") (출시 OR 자동화 OR 도입 OR 업데이트)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "회계 자동화·결산",
-      "jurisdiction": "대한민국",
-      "locale": "ko",
       "required_all_groups": [
         [
           "AI",
@@ -228,6 +740,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 5,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -242,17 +761,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 5
-    },
-    {
-      "name": "KR-AUDIT-AI",
-      "query": "(회계법인 OR 회계사 OR 감사 OR 감리 OR 내부통제) (AI OR 인공지능 OR 생성형AI OR 에이전트) (도입 OR 출시 OR 자동화 OR 검증)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "감사·내부통제·부정탐지",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-AUDIT-AI",
+      "query": "(회계법인 OR 회계사 OR 감사 OR 감리 OR 내부통제) (AI OR 인공지능 OR 생성형AI OR 에이전트) (도입 OR 출시 OR 자동화 OR 검증)",
       "required_all_groups": [
         [
           "AI",
@@ -278,6 +790,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 5,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "재무분석·FP&A·CFO",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -292,17 +811,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 5
-    },
-    {
-      "name": "KR-FINANCE-CFO-AI",
-      "query": "(재무 OR CFO OR FP&A OR 자금 OR 예산) (AI OR 인공지능 OR 에이전트 OR 코파일럿) (도입 OR 출시 OR 자동화 OR 분석)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "재무분석·FP&A·CFO",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-FINANCE-CFO-AI",
+      "query": "(재무 OR CFO OR FP&A OR 자금 OR 예산) (AI OR 인공지능 OR 에이전트 OR 코파일럿) (도입 OR 출시 OR 자동화 OR 분석)",
       "required_all_groups": [
         [
           "AI",
@@ -329,6 +841,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 0,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -343,17 +862,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 0
-    },
-    {
-      "name": "GLOBAL-TAX-AI-PRODUCT",
-      "query": "(\"AI tax\" OR \"tax AI\" OR \"tax agent\" OR \"tax copilot\") (launch OR release OR introduces OR partnership OR general availability)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-TAX-AI-PRODUCT",
+      "query": "(\"AI tax\" OR \"tax AI\" OR \"tax agent\" OR \"tax copilot\") (launch OR release OR introduces OR partnership OR general availability)",
       "required_all_groups": [
         [
           "AI",
@@ -393,6 +905,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 6,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -407,17 +926,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 6
-    },
-    {
-      "name": "GLOBAL-ACCOUNTING-AI-PRODUCT",
-      "query": "(\"accounting AI\" OR \"AI accounting\" OR \"accounting agent\" OR \"accounting copilot\") (launch OR release OR introduces OR partnership)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "회계 자동화·결산",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-ACCOUNTING-AI-PRODUCT",
+      "query": "(\"accounting AI\" OR \"AI accounting\" OR \"accounting agent\" OR \"accounting copilot\") (launch OR release OR introduces OR partnership)",
       "required_all_groups": [
         [
           "AI",
@@ -457,6 +969,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 5,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -471,17 +990,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 5
-    },
-    {
-      "name": "GLOBAL-AUDIT-AI",
-      "query": "(\"audit AI\" OR \"AI audit\" OR \"audit agent\" OR \"assurance AI\" OR \"internal controls AI\") (launch OR release OR partnership OR deployment OR governance)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "감사·내부통제·부정탐지",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-AUDIT-AI",
+      "query": "(\"audit AI\" OR \"AI audit\" OR \"audit agent\" OR \"assurance AI\" OR \"internal controls AI\") (launch OR release OR partnership OR deployment OR governance)",
       "required_all_groups": [
         [
           "AI",
@@ -507,6 +1019,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 5,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "재무분석·FP&A·CFO",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -521,17 +1040,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 5
-    },
-    {
-      "name": "GLOBAL-FINANCE-AGENT",
-      "query": "(\"finance agent\" OR \"financial AI agent\" OR \"CFO copilot\" OR \"FP&A AI\") (launch OR release OR deployment OR platform)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "재무분석·FP&A·CFO",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-FINANCE-AGENT",
+      "query": "(\"finance agent\" OR \"financial AI agent\" OR \"CFO copilot\" OR \"FP&A AI\") (launch OR release OR deployment OR platform)",
       "required_all_groups": [
         [
           "AI",
@@ -558,6 +1070,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 0,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -572,17 +1091,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 0
-    },
-    {
-      "name": "GLOBAL-CLOSE-RECONCILIATION-AI",
-      "query": "(\"financial close AI\" OR \"AI reconciliation\" OR \"month-end close agent\" OR \"journal entry AI\")",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "회계 자동화·결산",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-CLOSE-RECONCILIATION-AI",
+      "query": "(\"financial close AI\" OR \"AI reconciliation\" OR \"month-end close agent\" OR \"journal entry AI\")",
       "required_all_groups": [
         [
           "AI",
@@ -608,6 +1120,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 0,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "AP·AR·인보이스",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -622,17 +1141,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 0
-    },
-    {
-      "name": "GLOBAL-AP-AR-AI",
-      "query": "(\"accounts payable AI\" OR \"accounts receivable AI\" OR \"invoice AI agent\" OR \"collections AI agent\") (launch OR release OR platform OR update)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "AP·AR·인보이스",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-AP-AR-AI",
+      "query": "(\"accounts payable AI\" OR \"accounts receivable AI\" OR \"invoice AI agent\" OR \"collections AI agent\") (launch OR release OR platform OR update)",
       "required_all_groups": [
         [
           "AI",
@@ -654,6 +1166,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 0,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -668,17 +1187,11 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 0
-    },
-    {
-      "name": "GLOBAL-FINANCE-MCP",
-      "query": "(MCP OR \"Model Context Protocol\") (tax OR accounting OR finance OR audit OR invoice) (server OR connector OR integration)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "AI 규제·거버넌스",
+      "impact": "범용 AI에서 TAXiA/CLOA 검색·계산 도구를 안전하게 노출하는 MCP 게이트웨이 설계와 비교",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-FINANCE-MCP",
+      "query": "(MCP OR \"Model Context Protocol\") (tax OR accounting OR finance OR audit OR invoice) (server OR connector OR integration)",
       "required_all_groups": [
         [
           "MCP",
@@ -725,6 +1238,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 4,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -739,18 +1259,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 4,
-      "impact": "범용 AI에서 TAXiA/CLOA 검색·계산 도구를 안전하게 노출하는 MCP 게이트웨이 설계와 비교"
-    },
-    {
-      "name": "GLOBAL-FINANCE-AI-GOVERNANCE",
-      "query": "(\"finance AI governance\" OR \"AI agent governance\" OR \"AI internal controls\" OR \"agent audit trail\") (CFO OR accounting OR tax OR audit)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "GLOBAL-FINANCE-AI-GOVERNANCE",
+      "query": "(\"finance AI governance\" OR \"AI agent governance\" OR \"AI internal controls\" OR \"agent audit trail\") (CFO OR accounting OR tax OR audit)",
       "required_all_groups": [
         [
           "AI",
@@ -811,6 +1323,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 5,
+      "source_type": "secondary_index",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -825,17 +1344,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 5
-    },
-    {
-      "name": "TAX-VENDOR-WATCH",
-      "query": "(\"Thomson Reuters\" OR \"Blue J\" OR Avalara OR \"Wolters Kluwer\" OR Canopy OR TaxAct OR Drake OR Firm360 OR TaxGPT) (AI OR agent OR copilot OR automation OR MCP)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "TAX-VENDOR-WATCH",
+      "query": "(\"Thomson Reuters\" OR \"Blue J\" OR Avalara OR \"Wolters Kluwer\" OR Canopy OR TaxAct OR Drake OR Firm360 OR TaxGPT) (AI OR agent OR copilot OR automation OR MCP)",
       "required_all_groups": [
         [
           "Thomson Reuters",
@@ -862,6 +1374,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 4,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -876,17 +1395,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 4
-    },
-    {
-      "name": "ACCOUNTING-VENDOR-WATCH",
-      "query": "(Intuit OR QuickBooks OR Xero OR Sage OR FloQast OR Numeric OR BlackLine OR \"Vic.ai\" OR Dext OR Trullion OR Workiva OR Pleo OR Billtrust OR RecVue) (AI OR agent OR copilot OR automation OR MCP)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "회계 자동화·결산",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "ACCOUNTING-VENDOR-WATCH",
+      "query": "(Intuit OR QuickBooks OR Xero OR Sage OR FloQast OR Numeric OR BlackLine OR \"Vic.ai\" OR Dext OR Trullion OR Workiva OR Pleo OR Billtrust OR RecVue) (AI OR agent OR copilot OR automation OR MCP)",
       "required_all_groups": [
         [
           "Intuit",
@@ -918,6 +1430,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 4,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -932,17 +1451,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 4
-    },
-    {
-      "name": "PROFESSIONAL-FIRMS-AI",
-      "query": "(Deloitte OR PwC OR EY OR KPMG OR \"Grant Thornton\" OR \"Baker Tilly\" OR CLA) (tax OR accounting OR audit OR finance) (AI OR agent OR copilot)",
-      "track": "상용 서비스·기업 업데이트",
-      "category": "감사·내부통제·부정탐지",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "PROFESSIONAL-FIRMS-AI",
+      "query": "(Deloitte OR PwC OR EY OR KPMG OR \"Grant Thornton\" OR \"Baker Tilly\" OR CLA) (tax OR accounting OR audit OR finance) (AI OR agent OR copilot)",
       "required_all_groups": [
         [
           "Deloitte",
@@ -1005,6 +1517,13 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 4,
+      "source_type": "secondary_index",
+      "track": "상용 서비스·기업 업데이트"
+    },
+    {
+      "category": "논문·벤치마크",
+      "direct": false,
       "exclude_any": [
         "sports",
         "football",
@@ -1019,17 +1538,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 4
-    },
-    {
-      "name": "FINANCE-AI-BENCHMARK-NEWS",
-      "query": "(\"finance benchmark\" OR \"financial AI benchmark\" OR \"tax benchmark\" OR \"accounting benchmark\" OR \"audit benchmark\") (LLM OR AI OR agent)",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
       "jurisdiction": "글로벌",
       "locale": "en",
+      "name": "FINANCE-AI-BENCHMARK-NEWS",
+      "query": "(\"finance benchmark\" OR \"financial AI benchmark\" OR \"tax benchmark\" OR \"accounting benchmark\" OR \"audit benchmark\") (LLM OR AI OR agent)",
       "required_all_groups": [
         [
           "AI",
@@ -1088,6 +1600,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 3,
+      "source_type": "secondary_index",
+      "track": "논문·벤치마크"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "domain_allowlist": [
+        "nts.go.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1102,17 +1624,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "secondary_index",
-      "direct": false,
-      "score_boost": 3
-    },
-    {
-      "name": "KR-NTS-AI",
-      "query": "site:nts.go.kr (AI OR 인공지능 OR 생성형AI OR 데이터) (세무 OR 세법 OR 신고 OR 조사 OR 상담)",
-      "track": "법·제도·감사",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-NTS-AI",
+      "query": "site:nts.go.kr (AI OR 인공지능 OR 생성형AI OR 데이터) (세무 OR 세법 OR 신고 OR 조사 OR 상담)",
       "required_all_groups": [
         [
           "AI",
@@ -1142,6 +1657,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "domain_allowlist": [
+        "moef.go.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1156,20 +1681,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "nts.go.kr"
-      ]
-    },
-    {
-      "name": "KR-MOEF-TAX-DIGITAL",
-      "query": "site:moef.go.kr (AI OR 인공지능 OR 디지털 OR 데이터) (세제 OR 세법 OR 조세 OR 법인세 OR 부가가치세)",
-      "track": "법·제도·감사",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-MOEF-TAX-DIGITAL",
+      "query": "site:moef.go.kr (AI OR 인공지능 OR 디지털 OR 데이터) (세제 OR 세법 OR 조세 OR 법인세 OR 부가가치세)",
       "required_all_groups": [
         [
           "AI",
@@ -1198,6 +1713,17 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
+      "domain_allowlist": [
+        "fsc.go.kr",
+        "fss.or.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1212,20 +1738,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "moef.go.kr"
-      ]
-    },
-    {
-      "name": "KR-FSC-FSS-AI-FINANCE",
-      "query": "(site:fsc.go.kr OR site:fss.or.kr) (AI OR 인공지능 OR 에이전틱 OR 알고리즘) (재무 OR 회계 OR 감사 OR 내부통제 OR 금융)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-FSC-FSS-AI-FINANCE",
+      "query": "(site:fsc.go.kr OR site:fss.or.kr) (AI OR 인공지능 OR 에이전틱 OR 알고리즘) (재무 OR 회계 OR 감사 OR 내부통제 OR 금융)",
       "required_all_groups": [
         [
           "AI",
@@ -1272,6 +1788,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "공공 데이터·API",
+      "direct": false,
+      "domain_allowlist": [
+        "opendart.fss.or.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1286,21 +1812,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "fsc.go.kr",
-        "fss.or.kr"
-      ]
-    },
-    {
-      "name": "KR-OPENDART-API",
-      "query": "site:opendart.fss.or.kr (API OR 개발가이드 OR XBRL OR 재무정보 OR 공시) (변경 OR 추가 OR 개편 OR 버전 OR 공지 OR 점검)",
-      "track": "공공 데이터·API",
-      "category": "공공 데이터·API",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-OPENDART-API",
+      "query": "site:opendart.fss.or.kr (API OR 개발가이드 OR XBRL OR 재무정보 OR 공시) (변경 OR 추가 OR 개편 OR 버전 OR 공지 OR 점검)",
       "required_all_groups": [
         [
           "API",
@@ -1320,6 +1835,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 10,
+      "source_type": "official_primary",
+      "track": "공공 데이터·API"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
+      "domain_allowlist": [
+        "kasb.or.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1334,20 +1859,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 10,
-      "domain_allowlist": [
-        "opendart.fss.or.kr"
-      ]
-    },
-    {
-      "name": "KR-KASB-STANDARDS",
-      "query": "site:kasb.or.kr (AI OR 디지털 OR XBRL OR 회계기준 OR K-IFRS) (개정 OR 공개초안 OR 공표 OR 번역 OR 지침)",
-      "track": "법·제도·감사",
-      "category": "회계 자동화·결산",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-KASB-STANDARDS",
+      "query": "site:kasb.or.kr (AI OR 디지털 OR XBRL OR 회계기준 OR K-IFRS) (개정 OR 공개초안 OR 공표 OR 번역 OR 지침)",
       "required_all_groups": [
         [
           "AI",
@@ -1365,50 +1880,17 @@
         ]
       ],
       "required_any": [],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "source_type": "official_primary",
-      "direct": false,
       "score_boost": 9,
-      "domain_allowlist": [
-        "kasb.or.kr"
-      ]
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
     },
     {
-      "name": "KR-BOK-ECOS-API",
-      "query": "(site:bok.or.kr OR site:ecos.bok.or.kr) (ECOS OR API OR 경제통계 OR 데이터) (변경 OR 개편 OR 점검 OR 추가 OR 공지)",
-      "track": "공공 데이터·API",
       "category": "공공 데이터·API",
-      "jurisdiction": "대한민국",
-      "locale": "ko",
-      "required_all_groups": [
-        [
-          "ECOS",
-          "API"
-        ],
-        [
-          "변경",
-          "개편",
-          "점검",
-          "추가",
-          "버전",
-          "서비스",
-          "개발"
-        ]
+      "direct": false,
+      "domain_allowlist": [
+        "bok.or.kr",
+        "ecos.bok.or.kr"
       ],
-      "required_any": [],
       "exclude_any": [
         "AI companion",
         "baseball",
@@ -1426,25 +1908,59 @@
         "입찰",
         "채용"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "bok.or.kr",
-        "ecos.bok.or.kr"
+      "jurisdiction": "대한민국",
+      "locale": "ko",
+      "name": "KR-BOK-ECOS-API",
+      "query": "(site:bok.or.kr OR site:ecos.bok.or.kr) (ECOS OR API OR 경제통계 OR 데이터) (변경 OR 개편 OR 점검 OR 추가 OR 공지)",
+      "required_all_groups": [
+        [
+          "ECOS",
+          "API"
+        ],
+        [
+          "변경",
+          "개편",
+          "점검",
+          "추가",
+          "버전",
+          "서비스",
+          "개발"
+        ]
       ],
+      "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
       "title_required_any": [
         "ECOS",
         "API"
-      ]
+      ],
+      "track": "공공 데이터·API"
     },
     {
-      "name": "KR-LAW-OPEN-API",
-      "query": "(site:open.law.go.kr OR site:law.go.kr) (OPEN API OR 공동활용 OR 법령 API OR 판례 API) (변경 OR 추가 OR 공지 OR 점검 OR 개편)",
-      "track": "공공 데이터·API",
       "category": "공공 데이터·API",
+      "direct": false,
+      "domain_allowlist": [
+        "open.law.go.kr",
+        "law.go.kr"
+      ],
+      "exclude_any": [
+        "sports",
+        "football",
+        "baseball",
+        "game",
+        "gaming",
+        "casino",
+        "crypto price",
+        "stock price prediction",
+        "cosmetic",
+        "skincare",
+        "AI companion",
+        "dating"
+      ],
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-LAW-OPEN-API",
+      "query": "(site:open.law.go.kr OR site:law.go.kr) (OPEN API OR 공동활용 OR 법령 API OR 판례 API) (변경 OR 추가 OR 공지 OR 점검 OR 개편)",
       "required_all_groups": [
         [
           "OPEN API",
@@ -1461,6 +1977,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 10,
+      "source_type": "official_primary",
+      "track": "공공 데이터·API"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
+      "domain_allowlist": [
+        "pipc.go.kr"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1475,21 +2001,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 10,
-      "domain_allowlist": [
-        "open.law.go.kr",
-        "law.go.kr"
-      ]
-    },
-    {
-      "name": "KR-PIPC-FINANCE-AI",
-      "query": "site:pipc.go.kr (AI OR 인공지능 OR 자동화된 결정 OR 에이전트) (금융 OR 세무 OR 회계 OR 신용 OR 고객 데이터)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "대한민국",
       "locale": "ko",
+      "name": "KR-PIPC-FINANCE-AI",
+      "query": "site:pipc.go.kr (AI OR 인공지능 OR 자동화된 결정 OR 에이전트) (금융 OR 세무 OR 회계 OR 신용 OR 고객 데이터)",
       "required_all_groups": [
         [
           "AI",
@@ -1537,6 +2052,17 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "domain_allowlist": [
+        "irs.gov",
+        "treasury.gov"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1551,20 +2077,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "pipc.go.kr"
-      ]
-    },
-    {
-      "name": "US-IRS-TREASURY-AI",
-      "query": "(site:irs.gov OR site:treasury.gov) (artificial intelligence OR AI OR automation OR algorithm) (tax OR taxpayer OR enforcement OR filing OR practitioner)",
-      "track": "법·제도·감사",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "미국",
       "locale": "en",
+      "name": "US-IRS-TREASURY-AI",
+      "query": "(site:irs.gov OR site:treasury.gov) (artificial intelligence OR AI OR automation OR algorithm) (tax OR taxpayer OR enforcement OR filing OR practitioner)",
       "required_all_groups": [
         [
           "AI",
@@ -1595,6 +2111,18 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "direct": false,
+      "domain_allowlist": [
+        "sec.gov",
+        "pcaobus.org",
+        "fasb.org"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1609,21 +2137,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "irs.gov",
-        "treasury.gov"
-      ]
-    },
-    {
-      "name": "US-SEC-PCAOB-FASB-AI",
-      "query": "(site:sec.gov OR site:pcaobus.org OR site:fasb.org) (artificial intelligence OR AI OR automation OR data analytics) (accounting OR audit OR disclosure OR financial reporting OR internal control)",
-      "track": "법·제도·감사",
-      "category": "감사·내부통제·부정탐지",
       "jurisdiction": "미국",
       "locale": "en",
+      "name": "US-SEC-PCAOB-FASB-AI",
+      "query": "(site:sec.gov OR site:pcaobus.org OR site:fasb.org) (artificial intelligence OR AI OR automation OR data analytics) (accounting OR audit OR disclosure OR financial reporting OR internal control)",
       "required_all_groups": [
         [
           "AI",
@@ -1662,6 +2179,18 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 9,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "direct": false,
+      "domain_allowlist": [
+        "ifrs.org",
+        "efrag.org",
+        "esma.europa.eu"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1676,22 +2205,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 9,
-      "domain_allowlist": [
-        "sec.gov",
-        "pcaobus.org",
-        "fasb.org"
-      ]
-    },
-    {
-      "name": "IFRS-EFRAG-DIGITAL",
-      "query": "(site:ifrs.org OR site:efrag.org OR site:esma.europa.eu) (AI OR artificial intelligence OR digital reporting OR XBRL OR taxonomy) (accounting OR audit OR financial reporting OR sustainability reporting)",
-      "track": "법·제도·감사",
-      "category": "회계 자동화·결산",
       "jurisdiction": "EU·국제",
       "locale": "en",
+      "name": "IFRS-EFRAG-DIGITAL",
+      "query": "(site:ifrs.org OR site:efrag.org OR site:esma.europa.eu) (AI OR artificial intelligence OR digital reporting OR XBRL OR taxonomy) (accounting OR audit OR financial reporting OR sustainability reporting)",
       "required_all_groups": [
         [
           "AI",
@@ -1731,6 +2248,17 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
+      "domain_allowlist": [
+        "gov.uk",
+        "frc.org.uk"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1745,22 +2273,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "ifrs.org",
-        "efrag.org",
-        "esma.europa.eu"
-      ]
-    },
-    {
-      "name": "UK-HMRC-FRC-AI",
-      "query": "(site:gov.uk OR site:frc.org.uk) (artificial intelligence OR AI OR automation OR data analytics) (tax OR accounting OR audit OR financial reporting)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "영국",
       "locale": "en-gb",
+      "name": "UK-HMRC-FRC-AI",
+      "query": "(site:gov.uk OR site:frc.org.uk) (artificial intelligence OR AI OR automation OR data analytics) (tax OR accounting OR audit OR financial reporting)",
       "required_all_groups": [
         [
           "AI",
@@ -1807,6 +2323,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "domain_allowlist": [
+        "oecd.org"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1821,21 +2347,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "gov.uk",
-        "frc.org.uk"
-      ]
-    },
-    {
-      "name": "OECD-TAX-AI",
-      "query": "site:oecd.org (artificial intelligence OR AI OR digitalisation) (tax administration OR taxation OR accounting OR finance OR audit)",
-      "track": "법·제도·감사",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "국제",
       "locale": "en",
+      "name": "OECD-TAX-AI",
+      "query": "site:oecd.org (artificial intelligence OR AI OR digitalisation) (tax administration OR taxation OR accounting OR finance OR audit)",
       "required_all_groups": [
         [
           "AI",
@@ -1890,6 +2405,16 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "direct": false,
+      "domain_allowlist": [
+        "taxation-customs.ec.europa.eu"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1904,20 +2429,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "oecd.org"
-      ]
-    },
-    {
-      "name": "EU-TAX-AI",
-      "query": "site:taxation-customs.ec.europa.eu (artificial intelligence OR AI OR digital) (tax OR VAT OR customs OR transfer pricing OR e-invoicing)",
-      "track": "법·제도·감사",
-      "category": "세무 AI·조세기술",
       "jurisdiction": "EU",
       "locale": "en",
+      "name": "EU-TAX-AI",
+      "query": "site:taxation-customs.ec.europa.eu (artificial intelligence OR AI OR digital) (tax OR VAT OR customs OR transfer pricing OR e-invoicing)",
       "required_all_groups": [
         [
           "AI",
@@ -1946,6 +2461,18 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
+      "domain_allowlist": [
+        "nta.go.jp",
+        "fsa.go.jp",
+        "asb.or.jp"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -1960,20 +2487,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "taxation-customs.ec.europa.eu"
-      ]
-    },
-    {
-      "name": "JP-TAX-ACCOUNTING-AI",
-      "query": "(site:nta.go.jp OR site:fsa.go.jp OR site:asb.or.jp) (AI OR 人工知能 OR 生成AI OR デジタル) (税 OR 会計 OR 監査 OR 財務 OR 開示)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "일본",
       "locale": "ja",
+      "name": "JP-TAX-ACCOUNTING-AI",
+      "query": "(site:nta.go.jp OR site:fsa.go.jp OR site:asb.or.jp) (AI OR 人工知能 OR 生成AI OR デジタル) (税 OR 会計 OR 監査 OR 財務 OR 開示)",
       "required_all_groups": [
         [
           "AI",
@@ -1990,6 +2507,18 @@
         ]
       ],
       "required_any": [],
+      "score_boost": 8,
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "direct": false,
+      "domain_allowlist": [
+        "chinatax.gov.cn",
+        "mof.gov.cn",
+        "csrc.gov.cn"
+      ],
       "exclude_any": [
         "sports",
         "football",
@@ -2004,22 +2533,10 @@
         "AI companion",
         "dating"
       ],
-      "source_type": "official_primary",
-      "direct": false,
-      "score_boost": 8,
-      "domain_allowlist": [
-        "nta.go.jp",
-        "fsa.go.jp",
-        "asb.or.jp"
-      ]
-    },
-    {
-      "name": "CN-TAX-FINANCE-AI",
-      "query": "(site:chinatax.gov.cn OR site:mof.gov.cn OR site:csrc.gov.cn) (人工智能 OR 生成式人工智能 OR 数字化) (税收 OR 会计 OR 审计 OR 财务 OR 信息披露)",
-      "track": "법·제도·감사",
-      "category": "AI 규제·거버넌스",
       "jurisdiction": "중국",
       "locale": "zh",
+      "name": "CN-TAX-FINANCE-AI",
+      "query": "(site:chinatax.gov.cn OR site:mof.gov.cn OR site:csrc.gov.cn) (人工智能 OR 生成式人工智能 OR 数字化) (税收 OR 会计 OR 审计 OR 财务 OR 信息披露)",
       "required_all_groups": [
         [
           "人工智能",
@@ -2035,670 +2552,153 @@
         ]
       ],
       "required_any": [],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "source_type": "official_primary",
-      "direct": false,
       "score_boost": 8,
-      "domain_allowlist": [
-        "chinatax.gov.cn",
-        "mof.gov.cn",
-        "csrc.gov.cn"
-      ]
+      "source_type": "official_primary",
+      "track": "법·제도·감사"
     }
   ],
-  "arxiv_queries": [
-    {
-      "name": "ARXIV-FINANCIAL-LLM-AGENTS",
-      "query": "all:\"financial large language model\" OR all:\"finance agent\" OR all:\"financial agent\"",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "large language model",
-          "LLM",
-          "agent",
-          "agentic",
-          "artificial intelligence"
-        ],
-        [
-          "재무",
-          "재무분석",
-          "예산",
-          "현금흐름",
-          "finance",
-          "financial",
-          "FP&A",
-          "CFO",
-          "treasury",
-          "forecast"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 3
-    },
-    {
-      "name": "ARXIV-TAX-REASONING-BENCHMARK",
-      "query": "all:\"tax reasoning\" OR all:\"tax benchmark\" OR all:\"tax large language model\"",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "tax",
-          "taxation"
-        ],
-        [
-          "reasoning",
-          "benchmark",
-          "large language model",
-          "LLM",
-          "agent"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 5,
-      "impact": "한국형 세무 벤치마크의 문제 유형, 근거 인용, 계산·시행일 평가 방식을 비교"
-    },
-    {
-      "name": "ARXIV-ACCOUNTING-AGENTS",
-      "query": "all:\"accounting large language model\" OR all:\"accounting agent\" OR all:\"financial close agent\"",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "회계",
-          "기장",
-          "결산",
-          "전표",
-          "원장",
-          "accounting",
-          "bookkeeping",
-          "financial close",
-          "ledger"
-        ],
-        [
-          "large language model",
-          "LLM",
-          "agent",
-          "artificial intelligence"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 4
-    },
-    {
-      "name": "ARXIV-AUDIT-AI",
-      "query": "all:\"audit large language model\" OR all:\"audit agent\" OR all:\"AI auditing\"",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "감사",
-          "audit",
-          "assurance",
-          "internal control",
-          "fraud",
-          "SOX"
-        ],
-        [
-          "large language model",
-          "LLM",
-          "agent",
-          "artificial intelligence"
-        ],
-        [
-          "accounting",
-          "financial statement",
-          "financial reporting",
-          "assurance",
-          "internal control",
-          "external audit",
-          "회계",
-          "재무제표"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 4
-    },
-    {
-      "name": "ARXIV-FINANCIAL-QA-BENCHMARK",
-      "query": "all:\"financial question answering\" OR all:\"financial benchmark\" OR all:\"financial reasoning benchmark\"",
-      "track": "논문·벤치마크",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "재무",
-          "재무분석",
-          "예산",
-          "현금흐름",
-          "finance",
-          "financial",
-          "FP&A",
-          "CFO",
-          "treasury",
-          "forecast"
-        ],
-        [
-          "question answering",
-          "benchmark",
-          "reasoning",
-          "evaluation"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 4
-    },
-    {
-      "name": "ARXIV-INVOICE-DOCUMENT-AI",
-      "query": "(all:\"invoice\" OR all:\"receipt\") AND (all:\"document intelligence\" OR all:\"vision language model\" OR all:\"document AI\")",
-      "track": "논문·벤치마크",
-      "category": "문서 AI·OCR·XBRL",
-      "required_all_groups": [
-        [
-          "invoice",
-          "receipt"
-        ],
-        [
-          "document intelligence",
-          "vision language model",
-          "document AI",
-          "OCR"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 2
-    }
+  "official_domains": [
+    "nts.go.kr",
+    "taxlaw.nts.go.kr",
+    "moef.go.kr",
+    "fsc.go.kr",
+    "fss.or.kr",
+    "opendart.fss.or.kr",
+    "dart.fss.or.kr",
+    "kasb.or.kr",
+    "bok.or.kr",
+    "ecos.bok.or.kr",
+    "pipc.go.kr",
+    "open.law.go.kr",
+    "law.go.kr",
+    "data.go.kr",
+    "kosis.kr",
+    "krx.co.kr",
+    "irs.gov",
+    "treasury.gov",
+    "sec.gov",
+    "pcaobus.org",
+    "fasb.org",
+    "federalregister.gov",
+    "ifrs.org",
+    "efrag.org",
+    "esma.europa.eu",
+    "taxation-customs.ec.europa.eu",
+    "oecd.org",
+    "gov.uk",
+    "frc.org.uk",
+    "nta.go.jp",
+    "fsa.go.jp",
+    "asb.or.jp",
+    "chinatax.gov.cn",
+    "mof.gov.cn",
+    "csrc.gov.cn",
+    "arxiv.org",
+    "export.arxiv.org",
+    "github.com",
+    "api.github.com",
+    "pypi.org"
   ],
-  "github_repositories": [
-    {
-      "repo": "xaikorea/taxia",
-      "track": "참고: TAXiA·CLOA 직접 관련",
-      "category": "세무 AI·조세기술",
-      "direct": false,
-      "score_boost": -8,
-      "monitor_issues": true,
-      "baseline_commits": 0,
-      "baseline_issues": 3,
-      "impact": "직접 프로젝트 변화는 부록에서만 확인하고 핵심 우선순위에는 포함하지 않는다.",
-      "baseline_releases": 0
-    },
-    {
-      "repo": "AI4Finance-Foundation/FinGPT",
-      "category": "오픈소스·도구",
-      "baseline_commits": 3,
-      "impact": "금융 특화 LLM·데이터 파이프라인 변화와 TAXiA/CLOA의 도메인 모델 전략 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "AI4Finance-Foundation/FinRobot",
-      "category": "오픈소스·도구",
-      "baseline_commits": 3,
-      "impact": "금융 멀티에이전트·리서치 자동화 구조를 CLOA 에이전트 설계와 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "AI4Finance-Foundation/FinRL",
-      "category": "오픈소스·도구",
-      "baseline_commits": 2,
-      "impact": "투자·퀀트 중심 프로젝트이므로 세무 기능과 혼동하지 않고 금융 확장 후보로만 추적",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "AI4Finance-Foundation/FinRL-Trading",
-      "category": "오픈소스·도구",
-      "baseline_commits": 2,
-      "impact": "금융 AI 운영·배포 패턴을 참고하되 TAXiA 핵심 세무 범위와 분리",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "OpenBB-finance/OpenBB",
-      "category": "재무분석·FP&A·CFO",
-      "baseline_commits": 3,
-      "impact": "재무 데이터 통합·MCP·에이전트 연동 방식과 CLOA 재무분석 확장성을 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "OpenBB-finance/agents-for-openbb",
-      "category": "오픈소스·도구",
-      "baseline_commits": 3,
-      "impact": "재무 에이전트 도구 인터페이스와 권한·데이터 연결 패턴을 참고",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "patronus-ai/financebench",
-      "category": "논문·벤치마크",
-      "baseline_commits": 3,
-      "monitor_issues": true,
-      "baseline_issues": 5,
-      "impact": "공시 기반 재무 QA 평가셋과 TAXiA/CLOA 완전정답·근거 평가를 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "PolicyEngine/policyengine-core",
-      "category": "세무 AI·조세기술",
-      "baseline_commits": 3,
-      "impact": "세법·복지 규칙의 파라미터화, 버전 관리, 결정론적 계산 엔진 설계 참고",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "openfisca/openfisca-core",
-      "category": "세무 AI·조세기술",
-      "baseline_commits": 3,
-      "impact": "법·정책 계산 규칙을 코드화하는 구조와 한국형 세금 엔진 적용 가능성을 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "frappe/erpnext",
-      "category": "회계 자동화·결산",
-      "baseline_commits": 2,
-      "impact": "회계·ERP 원장 연동과 오픈소스 데이터 모델 변화 추적",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "frappe/books",
-      "category": "회계 자동화·결산",
-      "baseline_commits": 2,
-      "impact": "경량 복식부기·오프라인 회계 구조를 TAXiA/CLOA PoC와 비교",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "docling-project/docling",
-      "category": "문서 AI·OCR·XBRL",
-      "baseline_commits": 3,
-      "impact": "PDF·XBRL·표·문서 구조 추출과 로컬 실행 기능을 증빙 파이프라인 후보로 평가",
-      "baseline_releases": -1
-    },
-    {
-      "repo": "PaddlePaddle/PaddleOCR",
-      "category": "문서 AI·OCR·XBRL",
-      "baseline_commits": 3,
-      "impact": "한국어 증빙 OCR, 좌표·표 구조, 문서 VLM 성능과 라이선스·배포 조건을 추적",
-      "baseline_releases": -1
-    }
-  ],
-  "github_discovery_queries": [
-    {
-      "name": "GITHUB-TAX-AI-DISCOVERY",
-      "query": "\"tax\" \"AI agent\" in:name,description,readme fork:false stars:>2",
-      "category": "세무 AI·조세기술",
-      "required_all_groups": [
-        [
-          "tax",
-          "taxation",
-          "VAT"
-        ],
-        [
-          "AI",
-          "인공지능",
-          "생성형AI",
-          "artificial intelligence",
-          "LLM",
-          "agentic",
-          "에이전트",
-          "copilot",
-          "MCP"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 2
-    },
-    {
-      "name": "GITHUB-ACCOUNTING-AI-DISCOVERY",
-      "query": "\"accounting\" \"AI agent\" in:name,description,readme fork:false stars:>2",
-      "category": "회계 자동화·결산",
-      "required_all_groups": [
-        [
-          "회계",
-          "기장",
-          "결산",
-          "전표",
-          "원장",
-          "accounting",
-          "bookkeeping",
-          "financial close",
-          "ledger"
-        ],
-        [
-          "AI",
-          "인공지능",
-          "생성형AI",
-          "artificial intelligence",
-          "LLM",
-          "agentic",
-          "에이전트",
-          "copilot",
-          "MCP"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 2
-    },
-    {
-      "name": "GITHUB-FINANCE-BENCHMARK-DISCOVERY",
-      "query": "\"financial\" \"LLM benchmark\" in:name,description,readme fork:false stars:>2",
-      "category": "논문·벤치마크",
-      "required_all_groups": [
-        [
-          "재무",
-          "재무분석",
-          "예산",
-          "현금흐름",
-          "finance",
-          "financial",
-          "FP&A",
-          "CFO",
-          "treasury",
-          "forecast"
-        ],
-        [
-          "LLM",
-          "benchmark",
-          "evaluation"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ],
-      "score_boost": 2
-    },
-    {
-      "name": "GITHUB-INVOICE-AGENT-DISCOVERY",
-      "query": "\"invoice\" \"AI agent\" in:name,description,readme fork:false stars:>2",
-      "category": "AP·AR·인보이스",
-      "required_all_groups": [
-        [
-          "invoice",
-          "accounts payable",
-          "billing"
-        ],
-        [
-          "AI",
-          "인공지능",
-          "생성형AI",
-          "artificial intelligence",
-          "LLM",
-          "agentic",
-          "에이전트",
-          "copilot",
-          "MCP"
-        ]
-      ],
-      "exclude_any": [
-        "sports",
-        "football",
-        "baseball",
-        "game",
-        "gaming",
-        "casino",
-        "crypto price",
-        "stock price prediction",
-        "cosmetic",
-        "skincare",
-        "AI companion",
-        "dating"
-      ]
-    }
-  ],
+  "overlap_hours": 8,
+  "priority_policy_version": 2,
   "pypi_packages": [
     {
-      "package": "taxia-core",
-      "track": "참고: TAXiA·CLOA 직접 관련",
       "category": "세무 AI·조세기술",
       "direct": false,
+      "impact": "직접 패키지 변화는 참고용 부록으로만 보존한다.",
+      "package": "taxia-core",
       "score_boost": -8,
-      "impact": "직접 패키지 변화는 참고용 부록으로만 보존한다."
+      "track": "참고: TAXiA·CLOA 직접 관련"
     },
     {
-      "package": "openbb",
       "category": "재무분석·FP&A·CFO",
-      "impact": "재무 데이터 플랫폼 패키지 릴리스와 API 호환성 추적"
+      "impact": "재무 데이터 플랫폼 패키지 릴리스와 API 호환성 추적",
+      "package": "openbb"
     },
     {
-      "package": "policyengine-core",
       "category": "세무 AI·조세기술",
-      "impact": "결정론적 조세 규칙 엔진의 릴리스와 파라미터 시스템 변화 추적"
+      "impact": "결정론적 조세 규칙 엔진의 릴리스와 파라미터 시스템 변화 추적",
+      "package": "policyengine-core"
     },
     {
-      "package": "openfisca-core",
       "category": "세무 AI·조세기술",
-      "impact": "조세·복지 시뮬레이션 코어 버전 변화 추적"
+      "impact": "조세·복지 시뮬레이션 코어 버전 변화 추적",
+      "package": "openfisca-core"
     },
     {
-      "package": "docling",
       "category": "문서 AI·OCR·XBRL",
-      "impact": "문서 구조화·XBRL·로컬 처리 라이브러리의 배포 변화 추적"
+      "impact": "문서 구조화·XBRL·로컬 처리 라이브러리의 배포 변화 추적",
+      "package": "docling"
     },
     {
-      "package": "paddleocr",
       "category": "문서 AI·OCR·XBRL",
-      "impact": "OCR·문서 VLM 패키지 버전과 배포 의존성 변화 추적"
+      "impact": "OCR·문서 VLM 패키지 버전과 배포 의존성 변화 추적",
+      "package": "paddleocr"
     }
   ],
+  "report_hour_kst": 7,
+  "report_minute_kst": 30,
+  "report_title": "AI 재무·세무·회계 핵심 동향 모니터링",
+  "section_order": [
+    "상용 서비스·기업 업데이트",
+    "논문·벤치마크",
+    "공공 데이터·API",
+    "법·제도·감사",
+    "오픈소스 프로젝트",
+    "참고: TAXiA·CLOA 직접 관련"
+  ],
+  "taxia_appendix_limit": 5,
+  "timezone": "Asia/Seoul",
+  "vendor_domains": [
+    "thomsonreuters.com",
+    "bluej.com",
+    "avalara.com",
+    "wolterskluwer.com",
+    "canopytax.com",
+    "taxact.com",
+    "drakesoftware.com",
+    "firm360.com",
+    "intuit.com",
+    "quickbooks.intuit.com",
+    "xero.com",
+    "sage.com",
+    "floqast.com",
+    "numeric.io",
+    "blackline.com",
+    "vic.ai",
+    "dext.com",
+    "trullion.com",
+    "workiva.com",
+    "pleo.io",
+    "billtrust.com",
+    "recvue.com",
+    "pwc.com",
+    "deloitte.com",
+    "ey.com",
+    "kpmg.com",
+    "grantthornton.com",
+    "bakertilly.com",
+    "claconnect.com"
+  ],
+  "watchdog_minute_kst": 50,
   "web_snapshots": [
     {
-      "name": "OpenDART 개발가이드",
-      "url": "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS001",
-      "jurisdiction": "대한민국",
-      "track": "공공 데이터·API",
       "category": "공공 데이터·API",
+      "impact": "공시·재무·XBRL API 목록과 개발가이드 변경을 수집 파이프라인에 반영",
+      "jurisdiction": "대한민국",
+      "name": "OpenDART 개발가이드",
       "score_boost": 8,
-      "impact": "공시·재무·XBRL API 목록과 개발가이드 변경을 수집 파이프라인에 반영"
+      "track": "공공 데이터·API",
+      "url": "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS001"
     },
     {
-      "name": "국가법령정보 OPEN API 가이드",
-      "url": "https://open.law.go.kr/LSO/openApi/guideList.do",
-      "jurisdiction": "대한민국",
-      "track": "공공 데이터·API",
       "category": "공공 데이터·API",
+      "impact": "법령·연혁·판례·해석례 API 추가·변경을 TAXiA 소스 레지스트리에 반영",
+      "jurisdiction": "대한민국",
+      "name": "국가법령정보 OPEN API 가이드",
       "score_boost": 8,
-      "impact": "법령·연혁·판례·해석례 API 추가·변경을 TAXiA 소스 레지스트리에 반영"
+      "track": "공공 데이터·API",
+      "url": "https://open.law.go.kr/LSO/openApi/guideList.do"
     }
-  ],
-  "federal_register": {
-    "name": "US-FEDERAL-REGISTER-FINANCE-AI",
-    "track": "법·제도·감사",
-    "category": "AI 규제·거버넌스",
-    "required_all_groups": [
-      [
-        "AI",
-        "인공지능",
-        "생성형AI",
-        "artificial intelligence",
-        "LLM",
-        "agentic",
-        "에이전트",
-        "copilot",
-        "MCP"
-      ],
-      [
-        "세무",
-        "세법",
-        "조세",
-        "법인세",
-        "부가가치세",
-        "tax",
-        "taxation",
-        "VAT",
-        "transfer pricing",
-        "회계",
-        "기장",
-        "결산",
-        "전표",
-        "원장",
-        "accounting",
-        "bookkeeping",
-        "financial close",
-        "ledger",
-        "재무",
-        "재무분석",
-        "예산",
-        "현금흐름",
-        "finance",
-        "financial",
-        "FP&A",
-        "CFO",
-        "treasury",
-        "forecast",
-        "감사",
-        "감리",
-        "내부통제",
-        "부정",
-        "audit",
-        "assurance",
-        "internal control",
-        "fraud",
-        "SOX",
-        "financial institution",
-        "banking",
-        "securities"
-      ]
-    ],
-    "exclude_any": [
-      "sports",
-      "football",
-      "baseball",
-      "game",
-      "gaming",
-      "casino",
-      "crypto price",
-      "stock price prediction",
-      "cosmetic",
-      "skincare",
-      "AI companion",
-      "dating"
-    ],
-    "score_boost": 8,
-    "impact": "미국 금융·세무·회계 영역의 AI 규칙·가이던스가 데이터·책임·감사 설계에 미치는 영향 검토"
-  },
-  "max_workers": 4,
-  "core_top_limit": 10,
-  "taxia_appendix_limit": 5,
-  "priority_policy_version": 3
+  ]
 }
