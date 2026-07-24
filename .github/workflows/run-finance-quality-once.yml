@@ -2,7 +2,7 @@ name: Run Finance Verification Once
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened]
 
 permissions:
   actions: write
