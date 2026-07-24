@@ -1,0 +1,161 @@
+#!/usr/bin/env python3
+"""Actionability-first post-processing and bounded self-improvement.
+
+This module converts a broad discovery report into a project application brief.
+It also measures report quality and applies only bounded configuration tuning.
+Core code and workflow changes are never silently merged by this script; it emits
+an explicit maintenance packet for guarded PR automation.
+"""
+from __future__ import annotations
+
+import argparse
+import dataclasses
+import datetime as dt
+import hashlib
+import json
+import math
+import os
+import re
+import sys
+import urllib.parse
+from pathlib import Path
+from typing import Any, Iterable
+from zoneinfo import ZoneInfo
+
+UTC = dt.timezone.utc
+PROJECT_SIGNAL_TERMS = {
+    "taxia-core", "xaikorea/taxia", "xaikorea0", "xaikorea.github.io/taxia",
+    "src/taxia", "src/js", "qdrant", "neo4j", "graph-rag", "trace_id",
+}
+CHANGE_TERMS = {
+    "시행", "발효", "공포", "개정", "판결", "결정", "과징금", "제재", "마감",
+    "의무", "금지", "가이드라인", "지침", "유권해석", "예규", "릴리스", "커밋",
+    "release", "released", "effective", "deadline", "enforcement", "guideline",
+    "guidance", "judgment", "decision", "amendment", "security", "vulnerability",
+}
+BINDING_TERMS = {
+    "시행", "발효", "공포", "판결", "과징금", "제재", "처분", "의무", "금지",
+    "effective", "enters into force", "judgment", "penalty", "fine", "binding",
+}
+OFFICIAL_HOSTS = {
+    "nts.go.kr", "moef.go.kr", "pipc.go.kr", "law.go.kr", "assembly.go.kr",
+    "scourt.go.kr", "ccourt.go.kr", "ftc.go.kr", "fsc.go.kr", "fss.or.kr",
+    "mcst.go.kr", "copyright.or.kr", "moel.go.kr", "kisa.or.kr",
+    "digital-strategy.ec.europa.eu", "commission.europa.eu", "edpb.europa.eu",
+    "competition-policy.ec.europa.eu", "digital-markets-act.ec.europa.eu",
+    "taxation-customs.ec.europa.eu", "curia.europa.eu", "federalregister.gov",
+    "ftc.gov", "justice.gov", "irs.gov", "treasury.gov", "copyright.gov",
+    "uspto.gov", "sec.gov", "gov.uk", "ico.org.uk", "cma.gov.uk", "ppc.go.jp",
+    "meti.go.jp", "digital.go.jp", "cac.gov.cn", "samr.gov.cn", "chinatax.gov.cn",
+    "oecd.org", "wipo.int", "github.com", "api.github.com", "pypi.org",
+    "huggingface.co", "xaikorea.github.io",
+}
+
+
+def clamp(value: int, lower: int, upper: int) -> int:
+    return max(lower, min(upper, value))
+
+
+def parse_datetime(value: Any) -> dt.datetime | None:
+    if not value:
+        return None
+    if isinstance(value, dt.datetime):
+        result = value
+    else:
+        try:
+            result = dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        except ValueError:
+            try:
+                result = dt.datetime.strptime(str(value)[:10], "%Y-%m-%d")
+            except ValueError:
+                return None
+    if result.tzinfo is None:
+        result = result.replace(tzinfo=UTC)
+    return result.astimezone(UTC)
+
+
+def load_json(path: Path, default: Any) -> Any:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return default
+
+
+def save_json(path: Path, value: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def host_of(url: str) -> str:
+    try:
+        return urllib.parse.urlsplit(url).netloc.lower().split(":", 1)[0].removeprefix("www.")
+    except ValueError:
+        return ""
+
+
+def is_official_host(host: str) -> bool:
+    return any(host == domain or host.endswith("." + domain) for domain in OFFICIAL_HOSTS)
+
+
+def contains_any(text: str, terms: Iterable[str]) -> bool:
+    lowered = text.lower()
+    return any(term.lower() in lowered for term in terms)
+
+
+def item_text(item: dict[str, Any]) -> str:
+    values = [
+        item.get("title", ""), item.get("summary", ""), item.get("source", ""),
+        item.get("status", ""), item.get("evidence", ""), item.get("relevance", ""),
+        item.get("impact", ""), item.get("confidence", ""), item.get("source_type", ""),
+        item.get("track", ""), item.get("priority", ""), item.get("monitor_track", ""),
+        item.get("url", ""), " ".join(item.get("query_names", []) or []),
+    ]
+    return " ".join(str(v) for v in values if v).lower()
+
+
+def item_is_baseline(item: dict[str, Any]) -> bool:
+    return "기준선" in item_text(item) or "baseline" in item_text(item)
+
+
+def item_is_self_reference(item: dict[str, Any], monitor_repository: str) -> bool:
+    text = item_text(item)
+    return monitor_repository.lower() in text
+
+
+def item_is_official(item: dict[str, Any]) -> bool:
+    text = item_text(item)
+    host = host_of(str(item.get("url", "")))
+    source = str(item.get("source", "")).lower()
+    status = str(item.get("status", "")).lower()
+    evidence = str(item.get("evidence", "")).lower()
+    source_type = str(item.get("source_type", "")).lower()
+    if is_official_host(host) and "news.google.com" not in host:
+        return True
+    if any(x in status for x in ("공식", "판결", "법령")):
+        return True
+    if any(x in evidence for x in ("공식 api", "공식 rest api", "federal register 공식")):
+        return True
+    if source in {"github releases", "github commits", "pypi json api", "hugging face hub api", "github rest api"}:
+        return True
+    if source_type in {"official_primary", "repository_primary", "package_primary", "regulator_primary", "standard_setter_primary", "public_api_primary"}:
+        return True
+    return contains_any(text, ("정부", "위원회", "법원", "commission", "oecd", "wipo")) and is_official_host(host)
+
+
+def item_is_direct_project_asset(item: dict[str, Any], context: dict[str, Any]) -> bool:
+    text = item_text(item)
+    target = str(context.get("target_repository", "")).lower()
+    return target in text or contains_any(text, PROJECT_SIGNAL_TERMS)
+
+
+def item_is_generic_github_noise(item: dict[str, Any], context: dict[str, Any]) -> bool:
+    if str(item.get("source", "")) != "GitHub Search API":
+        return False
+    if item_is_direct_project_asset(item, context):
+        return False
+    text = item_text(item)
+    # Generic TaxIA repositories are frequent homonyms and are not enough on their own.
+    return not contains_any(text, ("taxia-core", "xaikorea", "xaikorea0", "korean tax", "한국 세법", "graph-rag"))
+
+
+def item_is_excluded(item: dict[str, Any], context: dict[str, Any], tuning: dict[str, Any]) -> bool:
