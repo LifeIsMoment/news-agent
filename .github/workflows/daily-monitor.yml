@@ -1,0 +1,281 @@
+name: Daily AI Tax Legal TAXiA CLOA Monitor
+
+on:
+  schedule:
+    # 07:00 Asia/Seoul (UTC+9; Korea has no daylight-saving time)
+    - cron: "0 22 * * *"
+    # 07:20 watchdog. It runs only if the 07:00 report is absent.
+    - cron: "20 22 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "수동 실행 시 조회 시간 범위"
+        required: false
+        default: "72"
+        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily-monitor.yml"
+      - ".bootstrap/**"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-ai-tax-legal-taxia-cloa-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      PYTHONUNBUFFERED: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Decide whether watchdog should run
+        id: gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ github.event.schedule }}" != "20 22 * * *" ]]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "reason=primary-manual-or-deploy" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt
+          import json
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          state_path = Path('.monitor/state.json')
+          today = dt.datetime.now(dt.timezone.utc).astimezone(ZoneInfo('Asia/Seoul')).date()
+          try:
+              state = json.loads(state_path.read_text(encoding='utf-8'))
+              stamp = state.get('last_success_at')
+              last = dt.datetime.fromisoformat(stamp.replace('Z', '+00:00')) if stamp else None
+              last_date = last.astimezone(ZoneInfo('Asia/Seoul')).date() if last else None
+          except Exception:
+              last_date = None
+
+          if last_date == today:
+              print('should_run=false')
+              print('reason=primary-report-already-exists')
+          else:
+              print('should_run=true')
+              print('reason=primary-report-missing')
+          PY
+
+      - name: Restore source tree from verified bootstrap bundle
+        if: steps.gate.outputs.should_run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f monitor.py && -f config/sources.json && -f tests/test_monitor.py ]]; then
+            echo "Source tree already present."
+            exit 0
+          fi
+
+          test -d .bootstrap
+          cat .bootstrap/part-* | base64 --decode > /tmp/news-agent.tar.gz
+          echo "2f7f0ec1f83678b5e32b76767097bad2e3fcecccba497044fdb664af0329910f  /tmp/news-agent.tar.gz" | sha256sum --check --strict
+          rm -rf /tmp/news-agent-unpacked
+          mkdir -p /tmp/news-agent-unpacked
+          tar -xzf /tmp/news-agent.tar.gz -C /tmp/news-agent-unpacked
+
+          install -d config tests .monitor reports
+          cp /tmp/news-agent-unpacked/README.md README.md
+          cp /tmp/news-agent-unpacked/.gitignore .gitignore
+          cp /tmp/news-agent-unpacked/monitor.py monitor.py
+          cp /tmp/news-agent-unpacked/config/sources.json config/sources.json
+          cp /tmp/news-agent-unpacked/tests/test_monitor.py tests/test_monitor.py
+          if [[ ! -f .monitor/state.json ]]; then
+            cp /tmp/news-agent-unpacked/.monitor/state.json .monitor/state.json
+          fi
+          chmod +x monitor.py
+
+      - name: Run unit tests
+        if: steps.gate.outputs.should_run == 'true'
+        run: python -m unittest discover -s tests -v
+
+      - name: Collect and generate report
+        id: collect
+        if: steps.gate.outputs.should_run == 'true'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          case "${{ github.event_name }}" in
+            workflow_dispatch)
+              LOOKBACK="${{ inputs.lookback_hours }}"
+              ;;
+            push)
+              LOOKBACK="168"
+              ;;
+            *)
+              LOOKBACK="40"
+              ;;
+          esac
+
+          python monitor.py \
+            --lookback-hours "$LOOKBACK" \
+            --state-file .monitor/state.json \
+            --output-dir reports \
+            --work-dir out
+          STATUS=$?
+          echo "exit_code=$STATUS" >> "$GITHUB_OUTPUT"
+          exit "$STATUS"
+
+      - name: Commit source, report and monitoring state
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/metadata.json') != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT_DATE="$(python -c 'import json; print(json.load(open("out/metadata.json"))["date"])')"
+          git config user.name "ai-tax-legal-monitor[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md .gitignore monitor.py config/ tests/ .monitor/state.json reports/
+
+          if git diff --cached --quiet; then
+            echo "No report/state change to commit."
+            exit 0
+          fi
+
+          git commit -m "monitor: publish ${REPORT_DATE} report"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Publish or update daily GitHub issue
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/issue_body.md') != ''
+        uses: actions/github-script@v7
+        env:
+          ISSUE_LABEL: daily-monitoring
+          ASSIGNEE: LifeIsMoment
+        with:
+          script: |
+            const fs = require('fs');
+            const title = fs.readFileSync('out/issue_title.txt', 'utf8').trim();
+            const body = fs.readFileSync('out/issue_body.md', 'utf8');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const label = process.env.ISSUE_LABEL;
+            const assignee = process.env.ASSIGNEE;
+
+            async function ensureLabel(name, color, description) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              }
+            }
+
+            await ensureLabel(label, '1D76DB', '매일 생성되는 AI 세무·법률 및 TAXiA·CLOA 모니터링 보고서');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100,
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, title, body,
+                state: 'open', labels: [label], assignees: [assignee],
+              });
+              core.info(`Updated issue #${existing.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [assignee],
+              });
+              core.info(`Created issue #${created.data.number}`);
+            }
+
+      - name: Add report to workflow summary
+        if: always() && hashFiles('out/summary.md') != ''
+        shell: bash
+        run: cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload run diagnostics
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/metadata.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitor-diagnostics-${{ github.run_id }}
+          path: out/
+          retention-days: 30
+
+      - name: Open or update failure issue
+        if: failure() || steps.collect.outcome == 'failure'
+        uses: actions/github-script@v7
+        env:
+          FAILURE_LABEL: monitor-failure
+          ASSIGNEE: LifeIsMoment
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const label = process.env.FAILURE_LABEL;
+            const assignee = process.env.ASSIGNEE;
+            const date = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            const title = `[자동 모니터링 실패] ${date}`;
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = [
+              'AI 세무·법률 / TAXiA·CLOA 자동 모니터링 실행이 실패하거나 임계 수준의 소스 장애를 감지했습니다.',
+              '',
+              `- 실행: [GitHub Actions run ${context.runId}](${runUrl})`,
+              `- 이벤트: ${context.eventName}`,
+              `- 커밋: ${context.sha}`,
+              `- 수집 단계 결과: ${{ steps.collect.outcome }}`,
+              `- 수집기 종료 코드: ${{ steps.collect.outputs.exit_code }}`,
+              '',
+              '실행 로그와 diagnostics artifact를 확인하십시오.',
+            ].join('\n');
+
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: 'B60205',
+                description: '자동 모니터링 실행 실패 또는 중대한 수집 장애'
+              });
+            }
+
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100,
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, body, state: 'open',
+                labels: [label], assignees: [assignee],
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [assignee],
+              });
+            }
+
+      - name: Mark run failed when collector failed
+        if: steps.collect.outcome == 'failure'
+        run: exit 1
+
+      - name: Record watchdog skip
+        if: steps.gate.outputs.should_run == 'false'
+        run: echo "07:00 KST primary report already exists; 07:20 watchdog skipped." >> "$GITHUB_STEP_SUMMARY"
