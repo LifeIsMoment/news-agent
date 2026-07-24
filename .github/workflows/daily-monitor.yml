@@ -1,7 +1,18 @@
-name: One-time Project Actionability Installer
+name: Daily AI Tax Legal TAXiA CLOA Monitor
 
 on:
+  schedule:
+    # 07:00 Asia/Seoul (UTC+9; Korea has no daylight-saving time)
+    - cron: "0 22 * * *"
+    # 07:20 watchdog: run only if today's primary report is absent.
+    - cron: "20 22 * * *"
   workflow_dispatch:
+    inputs:
+      lookback_hours:
+        description: "수동 실행 시 조회 시간 범위"
+        required: false
+        default: "72"
+        type: string
   push:
     branches: [main]
     paths:
@@ -9,57 +20,278 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
-  group: one-time-project-actionability-installer
+  group: daily-ai-tax-legal-taxia-cloa-monitor
   cancel-in-progress: false
 
 jobs:
-  install:
+  monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 35
+    env:
+      PYTHONUNBUFFERED: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
-      - name: Checkout main
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Restore verified actionability bundle
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Decide whether watchdog should run
+        id: gate
         shell: bash
         run: |
           set -euo pipefail
-          test -f .bootstrap-actionability/part-00
-          cat .bootstrap-actionability/part-* | base64 --decode > /tmp/actionability.tar.gz
-          echo "6a8546eaaf03aa754bd862dbe15b36c6715131a30359a437a8c651f1d00f2b22  /tmp/actionability.tar.gz" \
-            | sha256sum --check --strict
-          tar -xzf /tmp/actionability.tar.gz
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ github.event.schedule }}" != "20 22 * * *" ]]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "reason=primary-manual-or-deploy" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
-          # Restore the proven daily monitor from the parent commit. This installer
-          # exists for one push only and does not remain in the operating pipeline.
-          git show HEAD^:.github/workflows/daily-monitor.yml > .github/workflows/daily-monitor.yml
-          rm -rf .bootstrap-actionability
-          rm -f .github/workflows/bootstrap-actionability.yml
-
-      - name: Validate restored source
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m py_compile quality.py self_improve.py monitor.py finance_monitor.py
-          python - <<'PY'
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt
           import json
           from pathlib import Path
-          for path in Path('config').glob('*.json'):
-              json.loads(path.read_text(encoding='utf-8'))
-          PY
-          python -m unittest discover -s tests -v
+          from zoneinfo import ZoneInfo
 
-      - name: Commit installation and restore normal workflow
+          today = dt.datetime.now(dt.timezone.utc).astimezone(ZoneInfo("Asia/Seoul")).date()
+          try:
+              state = json.loads(Path(".monitor/state.json").read_text(encoding="utf-8"))
+              stamp = state.get("last_success_at")
+              last = dt.datetime.fromisoformat(stamp.replace("Z", "+00:00")) if stamp else None
+              last_date = last.astimezone(ZoneInfo("Asia/Seoul")).date() if last else None
+          except Exception:
+              last_date = None
+
+          print("should_run=false" if last_date == today else "should_run=true")
+          print("reason=primary-report-already-exists" if last_date == today else "reason=primary-report-missing")
+          PY
+
+      - name: Restore verified source bundle
+        if: steps.gate.outputs.should_run == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "project-actionability-installer[bot]"
+          if [[ -f monitor.py && -f config/sources.json && -f tests/test_monitor.py ]]; then
+            echo "Source tree already present."
+            exit 0
+          fi
+
+          cat \
+            .bootstrap/part-00 \
+            .bootstrap/part-01 \
+            .bootstrap/part-02 \
+            .payload/part-03 \
+            .payload/part-04 \
+            .payload/part-05 \
+            .payload/part-06 \
+            .payload/part-07 \
+            .payload/part-08 \
+            | base64 --decode > /tmp/news-agent.tar.gz
+
+          echo "2f7f0ec1f83678b5e32b76767097bad2e3fcecccba497044fdb664af0329910f  /tmp/news-agent.tar.gz" \
+            | sha256sum --check --strict
+
+          rm -rf /tmp/news-agent-unpacked
+          mkdir -p /tmp/news-agent-unpacked
+          tar -xzf /tmp/news-agent.tar.gz -C /tmp/news-agent-unpacked
+          install -d config tests .monitor reports
+          cp /tmp/news-agent-unpacked/README.md README.md
+          cp /tmp/news-agent-unpacked/.gitignore .gitignore
+          cp /tmp/news-agent-unpacked/monitor.py monitor.py
+          cp /tmp/news-agent-unpacked/config/sources.json config/sources.json
+          cp /tmp/news-agent-unpacked/tests/test_monitor.py tests/test_monitor.py
+          if [[ ! -f .monitor/state.json ]]; then
+            cp /tmp/news-agent-unpacked/.monitor/state.json .monitor/state.json
+          fi
+          chmod +x monitor.py
+
+      - name: Run unit tests
+        if: steps.gate.outputs.should_run == 'true'
+        run: python -m unittest discover -s tests -v
+
+      - name: Collect and generate report
+        id: collect
+        if: steps.gate.outputs.should_run == 'true'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          case "${{ github.event_name }}" in
+            workflow_dispatch) LOOKBACK="${{ inputs.lookback_hours }}" ;;
+            push) LOOKBACK="168" ;;
+            *) LOOKBACK="40" ;;
+          esac
+
+          python monitor.py \
+            --lookback-hours "$LOOKBACK" \
+            --state-file .monitor/state.json \
+            --output-dir reports \
+            --work-dir out
+          STATUS=$?
+          echo "exit_code=$STATUS" >> "$GITHUB_OUTPUT"
+          exit "$STATUS"
+
+      - name: Commit source, report and state
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/metadata.json') != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPORT_DATE="$(python -c 'import json; print(json.load(open("out/metadata.json"))["date"])')"
+          git config user.name "ai-tax-legal-monitor[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "feat: add project actionability and guarded self-improvement"
+          git add README.md .gitignore monitor.py config/ tests/ .monitor/state.json reports/
+          if git diff --cached --quiet; then
+            echo "No source/report/state change to commit."
+            exit 0
+          fi
+          git commit -m "monitor: publish ${REPORT_DATE} report"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Publish or update daily report issue
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/issue_body.md') != ''
+        uses: actions/github-script@v7
+        env:
+          ISSUE_LABEL: daily-monitoring
+          ASSIGNEE: LifeIsMoment
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = fs.readFileSync('out/issue_title.txt', 'utf8').trim();
+            const body = fs.readFileSync('out/issue_body.md', 'utf8');
+            const label = process.env.ISSUE_LABEL;
+            const assignee = process.env.ASSIGNEE;
+
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: '1D76DB',
+                description: 'AI 세무·법률 및 TAXiA·CLOA 일일 자동 보고서'
+              });
+            }
+
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, title, body,
+                state: 'open', labels: [label], assignees: [assignee]
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [assignee]
+              });
+            }
+
+      - name: Add report to workflow summary
+        if: always() && hashFiles('out/summary.md') != ''
+        run: cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload diagnostics
+        if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out/metadata.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: monitor-diagnostics-${{ github.run_id }}
+          path: out/
+          retention-days: 30
+
+      - name: Open or update failure issue
+        if: failure() || steps.collect.outcome == 'failure'
+        uses: actions/github-script@v7
+        env:
+          FAILURE_LABEL: monitor-failure
+          ASSIGNEE: LifeIsMoment
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const label = process.env.FAILURE_LABEL;
+            const assignee = process.env.ASSIGNEE;
+            const date = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            const title = `[자동 모니터링 실패] ${date}`;
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = [
+              'AI 세무·법률 / TAXiA·CLOA 자동 모니터링 실행이 실패했거나 임계 수준의 수집 장애를 감지했습니다.',
+              '',
+              `- 실행: [GitHub Actions run ${context.runId}](${runUrl})`,
+              `- 이벤트: ${context.eventName}`,
+              `- 커밋: ${context.sha}`,
+              `- 수집 단계 결과: ${{ steps.collect.outcome }}`,
+              `- 수집기 종료 코드: ${{ steps.collect.outputs.exit_code }}`,
+              '',
+              '실행 로그와 diagnostics artifact를 확인하십시오.'
+            ].join('\n');
+
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: 'B60205',
+                description: '자동 모니터링 실행 실패 또는 중대한 수집 장애'
+              });
+            }
+
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, body, state: 'open',
+                labels: [label], assignees: [assignee]
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [assignee]
+              });
+            }
+
+      - name: Close today's failure issue after recovery
+        if: steps.collect.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const date = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            const title = `[자동 모니터링 실패] ${date}`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'open', labels: 'monitor-failure', per_page: 100
+            });
+            for (const issue of issues.filter((row) => !row.pull_request && row.title === title)) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number,
+                body: `후속 실행 ${context.runId}에서 자동 보고가 복구되었습니다.`
+              });
+              await github.rest.issues.update({
+                owner, repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'
+              });
+            }
+
+      - name: Mark run failed when collector failed
+        if: steps.collect.outcome == 'failure'
+        run: exit 1
+
+      - name: Record watchdog skip
+        if: steps.gate.outputs.should_run == 'false'
+        run: echo "07:00 KST primary report already exists; 07:20 watchdog skipped." >> "$GITHUB_STEP_SUMMARY"
