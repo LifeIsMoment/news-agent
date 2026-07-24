@@ -1,0 +1,44 @@
+name: Monitor CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "*.py"
+      - ".quality-src/**"
+      - "tests/**"
+      - "config/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and validate JSON
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile monitor.py finance_monitor.py quality.py self_improve.py
+          for FILE in config/*.json; do python -m json.tool "$FILE" >/dev/null; done
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Actionability smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          LATEST="$(find reports reports-finance-tax-ai -type f -name '*.json' 2>/dev/null | sort | tail -n 1 || true)"
+          if [[ -n "$LATEST" ]]; then
+            DATE="$(basename "$LATEST" .json)"
+            python quality.py --date "$DATE" --dry-run
+          else
+            echo "No checked-in report fixture; smoke test skipped."
+          fi
