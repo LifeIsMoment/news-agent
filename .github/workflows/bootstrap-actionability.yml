@@ -3,7 +3,7 @@ name: Bootstrap Project Actionability Loop
 on:
   push:
     branches:
-      - agent/project-actionability-quality-loop
+      - main
     paths:
       - ".bootstrap-actionability/**"
       - ".github/workflows/bootstrap-actionability.yml"
@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Checkout deployment branch
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: agent/project-actionability-quality-loop
+          ref: main
           fetch-depth: 0
 
       - name: Restore verified bundle
@@ -58,4 +58,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "feat: add project actionability and guarded self-improvement"
-          git push origin HEAD:agent/project-actionability-quality-loop
+          git push origin HEAD:main
