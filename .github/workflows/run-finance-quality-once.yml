@@ -1,5 +1,6 @@
 name: Run Finance Quality Verification Once
 
+# Registration refresh after initial default-branch installation.
 on:
   issues:
     types: [opened]
