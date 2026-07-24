@@ -1,0 +1,247 @@
+{
+  "timezone": "Asia/Seoul",
+  "report_hour_kst": 7,
+  "assignee": "LifeIsMoment",
+  "issue_label": "daily-monitoring",
+  "failure_label": "monitor-failure",
+  "max_issue_items": 40,
+  "max_report_items": 160,
+  "dedup_days": 180,
+  "overlap_hours": 8,
+  "brand": {
+    "primary_names": [
+      "TAXiA",
+      "택시아",
+      "taxia-core",
+      "XAIKOREA",
+      "엑스에이아이코리아",
+      "CLOA 엔진",
+      "CLOA engine"
+    ],
+    "context_terms": [
+      "세무",
+      "세법",
+      "회계",
+      "조세",
+      "tax",
+      "accounting",
+      "RAG",
+      "Graph-RAG",
+      "LLM",
+      "김재환",
+      "TAXiA",
+      "택시아",
+      "XAIKOREA",
+      "엑스에이아이코리아"
+    ],
+    "exclude_terms": [
+      "화장품",
+      "cosmetic",
+      "skincare",
+      "3W CLINIC",
+      "mascara",
+      "PDRN",
+      "personal AI assistant",
+      "AI companion",
+      "voice latency",
+      "cloahq.com"
+    ],
+    "news_queries": [
+      "\"TAXiA\" 세무 OR 회계 OR XAIKOREA",
+      "\"택시아\" AI 세무 OR 회계",
+      "\"taxia-core\" OR \"xaikorea/taxia\"",
+      "\"XAIKOREA\" AI 세무 회계",
+      "\"엑스에이아이코리아\" AI 세무 회계",
+      "\"CLOA 엔진\" OR (\"CLOA\" XAIKOREA) OR (\"CLOA\" 택시아)",
+      "\"김재환\" (XAIKOREA OR 택시아 OR TAXiA)",
+      "site:xaikorea.github.io/taxia TAXIA",
+      "site:pypi.org/project/taxia-core taxia-core",
+      "site:huggingface.co xaikorea0 taxia"
+    ],
+    "github_repositories": [
+      "xaikorea/taxia"
+    ],
+    "pypi_packages": [
+      "taxia-core"
+    ],
+    "huggingface_authors": [
+      "xaikorea0"
+    ],
+    "web_snapshots": [
+      "https://xaikorea.github.io/taxia/"
+    ]
+  },
+  "market_news_queries": [
+    "한국 AI 세무 서비스 OR 세무 AI 에이전트 OR AI 회계 SaaS",
+    "한국 리걸테크 생성형 AI 법률 서비스",
+    "세무사 AI 자동화 RAG 세법",
+    "회계사 AI 업무보조 세무",
+    "AI tax accounting SaaS Korea",
+    "legal AI tax RAG Korea",
+    "(오토택스AI OR STELX OR 삼쩜삼 OR 혜움 OR AskLaw OR 로앤컴퍼니 OR BHSN) AI"
+  ],
+  "regulatory_news_queries": [
+    {
+      "name": "KR-NTS",
+      "jurisdiction": "대한민국",
+      "query": "site:nts.go.kr (AI OR 인공지능 OR 생성형AI OR 데이터) (세무 OR 세법 OR 법인세 OR 부가가치세 OR 원천징수 OR 세액공제 OR 조사)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-MOEF",
+      "jurisdiction": "대한민국",
+      "query": "site:moef.go.kr (AI OR 인공지능 OR 디지털) (세제 OR 세법 OR 조세 OR 법인세 OR 부가가치세)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-PIPC",
+      "jurisdiction": "대한민국",
+      "query": "site:pipc.go.kr (AI OR 인공지능 OR 개인정보 OR 데이터 OR 자동화된 결정)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-LAW-ASSEMBLY",
+      "jurisdiction": "대한민국",
+      "query": "(site:law.go.kr OR site:assembly.go.kr OR site:likms.assembly.go.kr) (인공지능 OR AI OR 개인정보 OR 데이터 OR 저작권)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-COURTS",
+      "jurisdiction": "대한민국",
+      "query": "(site:scourt.go.kr OR site:glaw.scourt.go.kr OR site:ccourt.go.kr) (인공지능 OR 알고리즘 OR 개인정보 OR 데이터 OR 저작권)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-FTC",
+      "jurisdiction": "대한민국",
+      "query": "site:ftc.go.kr (AI OR 인공지능 OR 알고리즘 OR 플랫폼 OR 생성형AI)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-FSC-FSS",
+      "jurisdiction": "대한민국",
+      "query": "(site:fsc.go.kr OR site:fss.or.kr) (AI OR 인공지능 OR 알고리즘 OR 생성형AI)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-COPYRIGHT",
+      "jurisdiction": "대한민국",
+      "query": "(site:mcst.go.kr OR site:copyright.or.kr) (AI OR 생성형AI OR 인공지능) (저작권 OR 학습데이터 OR 생성물)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-LABOR",
+      "jurisdiction": "대한민국",
+      "query": "site:moel.go.kr (AI OR 인공지능 OR 알고리즘) (채용 OR 평가 OR 노동 OR 근로자 OR 감시)",
+      "locale": "ko"
+    },
+    {
+      "name": "KR-SECURITY",
+      "jurisdiction": "대한민국",
+      "query": "(site:kisa.or.kr OR site:isms.kisa.or.kr) (AI OR 인공지능 OR 생성형AI) (보안 OR 사이버 OR 침해)",
+      "locale": "ko"
+    },
+    {
+      "name": "EU-AI-ACT",
+      "jurisdiction": "EU",
+      "query": "site:digital-strategy.ec.europa.eu (AI Act OR artificial intelligence) (guidelines OR code OR enforcement OR transparency OR high-risk)",
+      "locale": "en"
+    },
+    {
+      "name": "EU-DATA",
+      "jurisdiction": "EU",
+      "query": "(site:edpb.europa.eu OR site:commission.europa.eu) artificial intelligence (privacy OR data protection OR GDPR)",
+      "locale": "en"
+    },
+    {
+      "name": "EU-COMPETITION",
+      "jurisdiction": "EU",
+      "query": "(site:competition-policy.ec.europa.eu OR site:digital-markets-act.ec.europa.eu) artificial intelligence competition DMA platform",
+      "locale": "en"
+    },
+    {
+      "name": "EU-TAX",
+      "jurisdiction": "EU",
+      "query": "site:taxation-customs.ec.europa.eu (artificial intelligence OR digital) (tax OR VAT OR customs OR transfer pricing)",
+      "locale": "en"
+    },
+    {
+      "name": "EU-COURT",
+      "jurisdiction": "EU",
+      "query": "site:curia.europa.eu (artificial intelligence OR algorithm OR automated decision OR training data)",
+      "locale": "en"
+    },
+    {
+      "name": "US-FEDERAL",
+      "jurisdiction": "미국",
+      "query": "site:federalregister.gov artificial intelligence (rule OR regulation OR guidance OR tax OR privacy)",
+      "locale": "en"
+    },
+    {
+      "name": "US-FTC-DOJ",
+      "jurisdiction": "미국",
+      "query": "(site:ftc.gov OR site:justice.gov) artificial intelligence (enforcement OR competition OR consumer OR algorithm)",
+      "locale": "en"
+    },
+    {
+      "name": "US-TAX",
+      "jurisdiction": "미국",
+      "query": "(site:irs.gov OR site:treasury.gov) artificial intelligence (tax OR enforcement OR guidance)",
+      "locale": "en"
+    },
+    {
+      "name": "US-IP-SEC",
+      "jurisdiction": "미국",
+      "query": "(site:copyright.gov OR site:uspto.gov OR site:sec.gov) artificial intelligence (copyright OR patent OR disclosure OR enforcement)",
+      "locale": "en"
+    },
+    {
+      "name": "UK-GOV",
+      "jurisdiction": "영국",
+      "query": "site:gov.uk artificial intelligence (data regulation OR tax OR copyright OR employment OR safety)",
+      "locale": "en"
+    },
+    {
+      "name": "UK-ICO-CMA",
+      "jurisdiction": "영국",
+      "query": "(site:ico.org.uk OR site:cma.gov.uk) artificial intelligence (guidance OR enforcement OR data OR competition)",
+      "locale": "en"
+    },
+    {
+      "name": "JP-PPC",
+      "jurisdiction": "일본",
+      "query": "site:ppc.go.jp (AI OR 人工知能 OR 生成AI) (個人情報 OR データ)",
+      "locale": "ja"
+    },
+    {
+      "name": "JP-METI-DIGITAL",
+      "jurisdiction": "일본",
+      "query": "(site:meti.go.jp OR site:digital.go.jp) (AI OR 人工知能 OR 生成AI) (ガイドライン OR 法 OR 税 OR データ)",
+      "locale": "ja"
+    },
+    {
+      "name": "CN-CAC",
+      "jurisdiction": "중국",
+      "query": "site:cac.gov.cn (人工智能 OR 生成式人工智能 OR 算法) (规定 OR 办法 OR 治理 OR 数据)",
+      "locale": "zh"
+    },
+    {
+      "name": "CN-SAMR-TAX",
+      "jurisdiction": "중국",
+      "query": "(site:samr.gov.cn OR site:chinatax.gov.cn) 人工智能 (监管 OR 算法 OR 税收 OR 数据)",
+      "locale": "zh"
+    },
+    {
+      "name": "INT-OECD",
+      "jurisdiction": "국제",
+      "query": "site:oecd.org artificial intelligence (tax OR labour OR privacy OR governance OR competition)",
+      "locale": "en"
+    },
+    {
+      "name": "INT-WIPO",
+      "jurisdiction": "국제",
+      "query": "site:wipo.int artificial intelligence (copyright OR patent OR training data OR intellectual property)",
+      "locale": "en"
+    }
+  ]
+}
