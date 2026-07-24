@@ -50,9 +50,17 @@
       "noise_ratio": 0.1118,
       "quality_score": 36,
       "source_failure_ratio": 0.0
+    },
+    {
+      "actionable_items": 2,
+      "changes": [],
+      "date": "2026-07-24",
+      "noise_ratio": 0.1118,
+      "quality_score": 36,
+      "source_failure_ratio": 0.0
     }
   ],
-  "last_tuned_at": "2026-07-24T14:32:07Z",
+  "last_tuned_at": "2026-07-24T14:35:19Z",
   "max_actions": 12,
   "max_age_days": 45,
   "max_external_reference_actions": 2,
