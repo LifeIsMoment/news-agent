@@ -2,10 +2,10 @@ name: Project Actionability Quality Loop
 
 on:
   schedule:
-    # 07:40 Asia/Seoul, after the morning collectors and watchdogs.
-    - cron: "40 22 * * *"
-    # 08:00 watchdog; it skips when today's quality output already exists.
-    - cron: "0 23 * * *"
+    # 08:10 Asia/Seoul, after the 07:00 and 07:30 collectors and watchdogs.
+    - cron: "10 23 * * *"
+    # 08:30 watchdog; it skips when today's quality output already exists.
+    - cron: "30 23 * * *"
   workflow_dispatch:
     inputs:
       report_date:
@@ -19,7 +19,6 @@ on:
       - ".quality-src/**"
       - "self_improve.py"
       - "config/project-context.json"
-      - "config/quality-autotune.json"
       - "tests/test_quality.py"
       - "tests/test_self_improve.py"
       - ".github/workflows/quality-maintenance.yml"
@@ -32,7 +31,7 @@ permissions:
 
 concurrency:
   group: project-actionability-quality-loop
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   analyse-improve:
@@ -96,7 +95,7 @@ jobs:
           MONTH="${DATE:5:2}"
           QUALITY="quality/${YEAR}/${MONTH}/${DATE}.json"
           SHOULD_RUN=true
-          if [[ "${{ github.event_name }}" == "schedule" && "${{ github.event.schedule }}" == "0 23 * * *" && -f "$QUALITY" ]]; then
+          if [[ "${{ github.event_name }}" == "schedule" && "${{ github.event.schedule }}" == "30 23 * * *" && -f "$QUALITY" ]]; then
             SHOULD_RUN=false
           fi
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
@@ -229,6 +228,7 @@ jobs:
           set -euo pipefail
           BRANCH="auto-improve/collector-quality"
           TITLE="$(cat out-quality/candidate_pr_title.txt)"
+          git fetch origin "$BRANCH" || true
           git switch -C "$BRANCH"
           git add monitor.py tests/test_collector_quality.py
           git config user.name "monitor-quality[bot]"
@@ -253,6 +253,33 @@ jobs:
           name: project-actionability-${{ github.run_id }}
           path: out-quality/
           retention-days: 30
+
+      - name: Open quality-loop failure issue
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const date = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            const title = `[프로젝트 적용 품질루프 실패] ${date}`;
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = `프로젝트 적용성 분석 또는 제한형 자동 개선이 실패했습니다.\n\n- 실행: ${runUrl}\n- 커밋: ${context.sha}\n`;
+            const label = 'project-quality-failure';
+            try { await github.rest.issues.getLabel({owner, repo, name: label}); }
+            catch (e) {
+              if (e.status !== 404) throw e;
+              await github.rest.issues.createLabel({owner, repo, name: label, color: 'B60205', description: '프로젝트 적용성·자동 개선 파이프라인 실패'});
+            }
+            const rows = await github.paginate(github.rest.issues.listForRepo, {owner, repo, state: 'open', labels: label, per_page: 100});
+            const existing = rows.find(row => !row.pull_request && row.title === title);
+            if (existing) {
+              await github.rest.issues.update({owner, repo, issue_number: existing.number, body, labels: [label], assignees: [process.env.ASSIGNEE]});
+            } else {
+              await github.rest.issues.create({owner, repo, title, body, labels: [label], assignees: [process.env.ASSIGNEE]});
+            }
 
       - name: Record watchdog skip
         if: steps.gate.outputs.should_run == 'false'
