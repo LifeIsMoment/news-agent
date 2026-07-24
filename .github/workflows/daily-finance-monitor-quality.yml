@@ -1,0 +1,249 @@
+name: Daily Finance Monitor Quality Improvement
+
+on:
+  schedule:
+    # 08:20 Asia/Seoul, after the 07:30 primary run and 07:50 watchdog.
+    - cron: "20 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: daily-finance-monitor-quality-improvement
+  cancel-in-progress: false
+
+jobs:
+  analyze-and-improve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      QUALITY_OUT: out-finance-quality
+      QUALITY_STATE: .monitor/finance-quality-state.json
+      QUALITY_REPORT_DIR: quality-reports-finance-tax-ai
+      QUALITY_LABEL: finance-monitor-quality
+      AUTO_LABEL: auto-improvement
+      FAILURE_LABEL: finance-monitor-quality-failure
+      ASSIGNEE: LifeIsMoment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect recent workflow telemetry
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$QUALITY_OUT"
+          if ! gh api -X GET \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/daily-finance-tax-ai-monitor.yml/runs" \
+            -f per_page=20 > "$QUALITY_OUT/workflow-runs.json"; then
+            echo '{"workflow_runs": []}' > "$QUALITY_OUT/workflow-runs.json"
+          fi
+
+      - name: Validate monitor and quality code
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            finance_monitor.py \
+            finance_monitor_entry.py \
+            finance_monitor_quality.py
+          python -m json.tool config/finance_sources.json >/dev/null
+          python -m json.tool config/finance_quality_policy.json >/dev/null
+          python -m unittest discover -s tests -p 'test_finance*.py' -v
+
+      - name: Analyze reports and create bounded improvement proposal
+        id: analyze
+        shell: bash
+        run: |
+          set -euo pipefail
+          python finance_monitor_quality.py \
+            --reports-dir reports-finance-tax-ai \
+            --config config/finance_sources.json \
+            --policy config/finance_quality_policy.json \
+            --workflow-file .github/workflows/daily-finance-tax-ai-monitor.yml \
+            --workflow-runs "$QUALITY_OUT/workflow-runs.json" \
+            --state-file "$QUALITY_STATE" \
+            --quality-report-dir "$QUALITY_REPORT_DIR" \
+            --output-dir "$QUALITY_OUT"
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          data = json.load(open('out-finance-quality/decision.json', encoding='utf-8'))
+          for key in ('changed', 'changed_config', 'changed_workflow', 'auto_merge_eligible'):
+              print(f"{key}={str(bool(data.get(key))).lower()}")
+          print(f"date={data['date']}")
+          print(f"quality_score={data['quality_score']}")
+          PY
+
+      - name: Commit quality report and quality state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ai-finance-quality[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$QUALITY_REPORT_DIR" "$QUALITY_STATE"
+          if git diff --cached --quiet; then
+            echo "No quality report/state change to commit."
+            exit 0
+          fi
+          git commit -m "quality: analyze finance monitor ${{ steps.analyze.outputs.date }}"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Unable to publish quality report after retries." >&2
+          exit 1
+
+      - name: Create, validate and merge safe improvement PR
+        id: improve
+        if: steps.analyze.outputs.changed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          BRANCH="auto/finance-monitor-quality-${{ steps.analyze.outputs.date }}-${GITHUB_RUN_ID}"
+          git switch -c "$BRANCH" origin/main
+
+          if [[ "${{ steps.analyze.outputs.changed_config }}" == "true" ]]; then
+            cp "$QUALITY_OUT/proposed-config.json" config/finance_sources.json
+          fi
+          if [[ "${{ steps.analyze.outputs.changed_workflow }}" == "true" ]]; then
+            cp "$QUALITY_OUT/proposed-workflow.yml" .github/workflows/daily-finance-tax-ai-monitor.yml
+          fi
+
+          python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
+          python -m json.tool config/finance_sources.json >/dev/null
+          python -m json.tool config/finance_quality_policy.json >/dev/null
+          python -m unittest discover -s tests -p 'test_finance*.py' -v
+
+          git add config/finance_sources.json .github/workflows/daily-finance-tax-ai-monitor.yml
+          if git diff --cached --quiet; then
+            echo "Proposal became a no-op after rebasing."
+            echo "pr_url=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "ai-finance-quality[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: tune finance monitor quality ${{ steps.analyze.outputs.date }}"
+          git push -u origin "$BRANCH"
+
+          gh label create "$AUTO_LABEL" --color "5319E7" \
+            --description "Bounded automated monitor quality improvement" --force
+          gh label create "$QUALITY_LABEL" --color "0E8A16" \
+            --description "AI finance/tax/accounting monitor quality analysis" --force
+
+          if [[ "${{ steps.analyze.outputs.auto_merge_eligible }}" == "true" ]]; then
+            PR_URL="$(gh pr create \
+              --base main --head "$BRANCH" \
+              --title "chore: tune finance monitor quality ${{ steps.analyze.outputs.date }}" \
+              --body-file "$QUALITY_OUT/pr_body.md" \
+              --label "$AUTO_LABEL" --label "$QUALITY_LABEL")"
+            if gh pr merge "$PR_URL" --squash --delete-branch; then
+              echo "Safely auto-merged $PR_URL"
+              gh workflow run daily-finance-tax-ai-monitor.yml \
+                --ref main -f lookback_hours=40 || true
+            else
+              echo "Automatic merge was blocked; PR remains open for review."
+            fi
+          else
+            PR_URL="$(gh pr create \
+              --draft --base main --head "$BRANCH" \
+              --title "review: finance monitor quality proposal ${{ steps.analyze.outputs.date }}" \
+              --body-file "$QUALITY_OUT/pr_body.md" \
+              --label "$AUTO_LABEL" --label "$QUALITY_LABEL")"
+          fi
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Publish or update daily quality issue
+        if: always() && hashFiles('out-finance-quality/issue_body.md') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = fs.readFileSync('out-finance-quality/issue_title.txt', 'utf8').trim();
+            let body = fs.readFileSync('out-finance-quality/issue_body.md', 'utf8');
+            const prUrl = '${{ steps.improve.outputs.pr_url }}';
+            if (prUrl) body += `\n\n## 자동 개선 PR\n\n- ${prUrl}\n`;
+            const label = process.env.QUALITY_LABEL;
+            const assignee = process.env.ASSIGNEE;
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: '0E8A16',
+                description: 'AI 재무·세무·회계 모니터 품질 분석 및 자동 개선'
+              });
+            }
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, title, body,
+                state: 'open', labels: [label], assignees: [assignee]
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [assignee]
+              });
+            }
+
+      - name: Add quality analysis to workflow summary
+        if: always() && hashFiles('out-finance-quality/summary.md') != ''
+        run: cat "$QUALITY_OUT/summary.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload quality diagnostics
+        if: always() && hashFiles('out-finance-quality/decision.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: finance-monitor-quality-${{ github.run_id }}
+          path: out-finance-quality/
+          retention-days: 30
+
+      - name: Open quality workflow failure issue
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const date = new Intl.DateTimeFormat('en-CA', {
+              timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(new Date());
+            const title = `[AI 재무·세무·회계 품질개선 실패] ${date}`;
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+            const label = process.env.FAILURE_LABEL;
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: 'B60205',
+                description: 'AI 재무·세무·회계 품질 분석 또는 자동 개선 실패'
+              });
+            }
+            const body = `품질 분석 또는 제한형 자동 개선이 실패했습니다.\n\n- 실행: ${runUrl}\n- 커밋: ${context.sha}\n`;
+            await github.rest.issues.create({
+              owner, repo, title, body, labels: [label], assignees: [process.env.ASSIGNEE]
+            });
