@@ -105,3 +105,5 @@ jobs:
             echo "- 누락 감시: 07:20 KST"
             echo "- 초기 7일 기준선 실행을 별도 dispatch함"
           } >> "$GITHUB_STEP_SUMMARY"
+
+# Explicit retrigger after first registration on the default branch.
