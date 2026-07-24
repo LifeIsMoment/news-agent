@@ -1,0 +1,57 @@
+name: Diagnose Actionability Test
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/diagnose-actionability-test.yml"
+      - "quality.py"
+      - ".quality-src/**"
+      - "tests/test_quality.py"
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          show-progress: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Capture representative traceback
+        id: test
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          python -m unittest discover -s tests -p 'test_quality.py' \
+            -k 'test_binding_official_change_maps_to_files_and_acceptance' -v \
+            > /tmp/actionability-test.log 2>&1
+          STATUS=$?
+          cat /tmp/actionability-test.log
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Comment traceback on PR
+        if: steps.test.outputs.status != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let log = fs.readFileSync('/tmp/actionability-test.log', 'utf8');
+            if (log.length > 12000) log = log.slice(-12000);
+            const body = `### Actionability test diagnostic\n\n\`\`\`text\n${log}\n\`\`\``;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+      - name: Fail after publishing diagnostic
+        if: steps.test.outputs.status != '0'
+        run: exit 1
