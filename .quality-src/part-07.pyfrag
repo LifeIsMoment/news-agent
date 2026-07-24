@@ -1,0 +1,31 @@
+
+# Default allowlist for external implementations that may contain transferable
+# design patterns. These sources are references only: they cannot create a direct
+# implementation decision and are capped below the primary-action threshold.
+DEFAULT_EXTERNAL_REFERENCES = [
+    {
+        "name": "PolicyEngine",
+        "terms": ["policyengine/policyengine-core", "policyengine-core"],
+        "components": ["tax_knowledge_pipeline", "evaluation_and_regression", "sdk_and_delivery"],
+        "purpose": "결정론적 세액 계산·기간 버전 모델·정책 테스트 패턴을 비교 검증한다.",
+        "max_actionability": 68,
+    },
+    {
+        "name": "FinGPT",
+        "terms": ["ai4finance-foundation/fingpt", "fingpt"],
+        "components": ["evaluation_and_regression", "data_provenance_and_ip"],
+        "purpose": "금융 NLP 데이터셋·평가·출처관리 패턴 중 세무 RAG에 이전 가능한 부분만 검증한다.",
+        "max_actionability": 62,
+    },
+]
+
+
+def external_reference(item: dict[str, Any], context: dict[str, Any]) -> dict[str, Any] | None:
+    if not item_is_external_ecosystem(item, context):
+        return None
+    text = item_text(item)
+    references = context.get("external_references") or DEFAULT_EXTERNAL_REFERENCES
+    for reference in references:
+        if any(str(term).lower() in text for term in reference.get("terms", [])):
+            return reference
+    return None
