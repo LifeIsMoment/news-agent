@@ -15,9 +15,9 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  core-monitoring:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,10 +27,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python -m py_compile monitor.py finance_monitor.py quality.py self_improve.py
+          python -m py_compile \
+            monitor.py \
+            finance_monitor.py \
+            finance_monitor_entry.py \
+            finance_monitor_quality.py \
+            finance_monitor_quality_entry.py \
+            quality.py \
+            self_improve.py
           for FILE in config/*.json; do python -m json.tool "$FILE" >/dev/null; done
-      - name: Unit tests
-        run: python -m unittest discover -s tests -v
+      - name: Tax and legal monitor tests
+        run: python -m unittest discover -s tests -p 'test_monitor.py' -v
+      - name: Finance, tax and accounting monitor tests
+        run: python -m unittest discover -s tests -p 'test_finance*.py' -v
       - name: Actionability smoke test
         shell: bash
         run: |
@@ -42,3 +51,30 @@ jobs:
           else
             echo "No checked-in report fixture; smoke test skipped."
           fi
+
+  project-actionability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        test_method:
+          - test_binding_official_change_maps_to_files_and_acceptance
+          - test_baseline_and_self_reference_are_excluded
+          - test_generic_github_taxia_homonym_is_noise
+          - test_xaikorea_release_maps_to_sdk_delivery
+          - test_unrelated_official_document_is_not_actionable_by_category_alone
+          - test_policyengine_is_a_capped_technical_reference
+          - test_external_references_are_capped_in_daily_actions
+          - test_bounded_autotune_never_crosses_limits
+          - test_quality_metrics_measure_noise_and_coverage
+          - test_report_path_selects_latest_across_tracks
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run ${{ matrix.test_method }}
+        run: >-
+          python -m unittest discover -s tests -p 'test_quality.py'
+          -k '${{ matrix.test_method }}' -v
