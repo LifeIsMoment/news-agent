@@ -3,10 +3,11 @@
 
 The implementation is split only to keep GitHub API writes reviewable. The
 fragments concatenate to the validated source without generated code or network
-access. A sentinel module name prevents fragment-level ``__main__`` guards from
-terminating before later precision layers are loaded.
+access. A registered sentinel module name prevents fragment-level ``__main__``
+guards from terminating before later precision layers are loaded.
 """
 from pathlib import Path
+import sys
 
 _MODULE_NAME = __name__
 _IS_MAIN = _MODULE_NAME == "__main__"
@@ -18,6 +19,10 @@ _SOURCE = "".join(
 if not _SOURCE:
     raise RuntimeError("project actionability source fragments are missing")
 
+# dataclasses and other runtime introspection resolve classes through
+# ``sys.modules[cls.__module__]``. Point the sentinel at this actual module before
+# executing fragments so their decorators remain valid.
+sys.modules["quality_runtime"] = sys.modules[_MODULE_NAME]
 globals()["__name__"] = "quality_runtime"
 exec(compile(_SOURCE, str(Path(__file__).resolve()), "exec"), globals(), globals())
 globals()["__name__"] = _MODULE_NAME
