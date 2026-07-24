@@ -1,0 +1,34 @@
+name: Finance Monitor CI
+
+on:
+  pull_request:
+    paths:
+      - "finance_monitor.py"
+      - "finance_monitor_entry.py"
+      - "finance_monitor_quality.py"
+      - "config/finance_sources.json"
+      - "config/finance_quality_policy.json"
+      - "tests/test_finance*.py"
+      - ".github/workflows/daily-finance-tax-ai-monitor.yml"
+      - ".github/workflows/daily-finance-monitor-quality.yml"
+      - ".github/workflows/finance-monitor-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Python, JSON and unit tests
+        run: |
+          set -euo pipefail
+          python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
+          python -m json.tool config/finance_sources.json >/dev/null
+          python -m json.tool config/finance_quality_policy.json >/dev/null
+          python -m unittest discover -s tests -p 'test_finance*.py' -v
