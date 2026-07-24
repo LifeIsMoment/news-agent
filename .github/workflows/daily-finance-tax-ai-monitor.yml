@@ -196,7 +196,7 @@ jobs:
 
       - name: Upload finance monitor diagnostics
         if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out-finance-tax-ai/metadata.json') != ''
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: finance-tax-ai-monitor-diagnostics-${{ github.run_id }}
           path: out-finance-tax-ai/
