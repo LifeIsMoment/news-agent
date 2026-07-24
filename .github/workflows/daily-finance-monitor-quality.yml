@@ -234,7 +234,7 @@ jobs:
 
       - name: Publish or update daily quality issue
         if: always() && hashFiles('out-finance-quality/issue_body.md') != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
@@ -278,7 +278,7 @@ jobs:
           always() &&
           steps.analyze.outcome == 'success' &&
           (steps.improve.outcome == 'success' || steps.improve.outcome == 'skipped')
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;
@@ -311,7 +311,7 @@ jobs:
 
       - name: Open or update quality workflow failure issue
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;

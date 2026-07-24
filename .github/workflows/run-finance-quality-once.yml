@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Dispatch requested workflow
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const title = context.payload.issue.title;
