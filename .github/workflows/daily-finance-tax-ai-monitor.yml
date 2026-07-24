@@ -2,10 +2,10 @@ name: Daily AI Finance Tax Accounting Monitor
 
 on:
   schedule:
-    # 07:00 Asia/Seoul (UTC+9; Korea has no daylight-saving time)
-    - cron: "0 22 * * *"
-    # 07:20 watchdog: run only if today's primary report is absent.
-    - cron: "20 22 * * *"
+    # 07:30 Asia/Seoul (UTC+9; Korea has no daylight-saving time)
+    - cron: "30 22 * * *"
+    # 07:50 watchdog: run only if today's primary report is absent.
+    - cron: "50 22 * * *"
   workflow_dispatch:
     inputs:
       lookback_hours:
@@ -25,6 +25,7 @@ on:
 permissions:
   contents: write
   issues: write
+  actions: read
 
 concurrency:
   group: daily-ai-finance-tax-accounting-monitor
@@ -60,7 +61,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "${{ github.event_name }}" != "schedule" || "${{ github.event.schedule }}" != "20 22 * * *" ]]; then
+          if [[ "${{ github.event_name }}" != "schedule" || "${{ github.event.schedule }}" != "50 22 * * *" ]]; then
             echo "should_run=true" >> "$GITHUB_OUTPUT"
             echo "reason=primary-manual-or-source-change" >> "$GITHUB_OUTPUT"
             exit 0
@@ -140,8 +141,16 @@ jobs:
             exit 0
           fi
           git commit -m "finance-monitor: publish ${REPORT_DATE} report"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed; retrying after rebase."
+            sleep $((attempt * 5))
+          done
+          echo "Unable to push finance monitoring report after retries." >&2
+          exit 1
 
       - name: Publish or update daily finance report issue
         if: always() && steps.gate.outputs.should_run == 'true' && hashFiles('out-finance-tax-ai/issue_body.md') != ''
@@ -258,7 +267,7 @@ jobs:
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner, repo, state: 'open', labels: process.env.FAILURE_LABEL, per_page: 100
             });
-            for (const issue of issues.filter((row) => !row.pull_request && issue.title === title)) {
+            for (const issue of issues.filter((row) => !row.pull_request && row.title === title)) {
               await github.rest.issues.createComment({
                 owner, repo, issue_number: issue.number,
                 body: `후속 실행 ${context.runId}에서 AI 재무·세무·회계 자동 보고가 복구되었습니다.`
@@ -274,4 +283,4 @@ jobs:
 
       - name: Record finance watchdog skip
         if: steps.gate.outputs.should_run == 'false'
-        run: echo "07:00 KST finance/tax/accounting primary report already exists; 07:20 watchdog skipped." >> "$GITHUB_STEP_SUMMARY"
+        run: echo "07:30 KST finance/tax/accounting primary report already exists; 07:50 watchdog skipped." >> "$GITHUB_STEP_SUMMARY"
