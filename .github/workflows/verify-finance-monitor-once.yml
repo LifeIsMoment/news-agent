@@ -1,0 +1,136 @@
+name: Verify Finance Core Monitor Once
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: verify-finance-core-monitor-once
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONUNBUFFERED: "1"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MONITOR_STATE: .monitor/finance-tax-ai-state.json
+      REPORT_DIR: reports-finance-tax-ai
+      WORK_DIR: out-finance-tax-ai
+      ISSUE_LABEL: finance-tax-ai-monitoring
+      FAILURE_LABEL: finance-tax-ai-monitor-failure
+      ASSIGNEE: LifeIsMoment
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate source and tests
+        run: |
+          set -euo pipefail
+          python -m py_compile finance_monitor.py finance_monitor_entry.py finance_monitor_quality.py
+          python -m json.tool config/finance_sources.json >/dev/null
+          python -m unittest discover -s tests -p 'test_finance*.py' -v
+
+      - name: Collect and generate corrected core report
+        run: |
+          set -euo pipefail
+          python finance_monitor_entry.py \
+            --config config/finance_sources.json \
+            --lookback-hours 40 \
+            --state-file "$MONITOR_STATE" \
+            --output-dir "$REPORT_DIR" \
+            --work-dir "$WORK_DIR"
+
+      - name: Commit corrected report and remove verifier
+        run: |
+          set -euo pipefail
+          REPORT_DATE="$(python -c 'import json; print(json.load(open("out-finance-tax-ai/metadata.json"))["date"])')"
+          git rm .github/workflows/verify-finance-monitor-once.yml
+          git config user.name "ai-finance-verify[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            finance_monitor_entry.py \
+            config/finance_sources.json \
+            "$MONITOR_STATE" \
+            "$REPORT_DIR"/
+          git commit -m "finance-monitor: verify corrected ${REPORT_DATE} report"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          exit 1
+
+      - name: Update daily finance report issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = fs.readFileSync('out-finance-tax-ai/issue_title.txt', 'utf8').trim();
+            const body = fs.readFileSync('out-finance-tax-ai/issue_body.md', 'utf8');
+            const label = process.env.ISSUE_LABEL;
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: label });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner, repo, name: label, color: '0E8A16',
+                description: 'AI 재무·세무·회계 핵심 동향 일일 보고서'
+              });
+            }
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', labels: label, per_page: 100
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.number, title, body,
+                state: 'open', labels: [label], assignees: [process.env.ASSIGNEE]
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo, title, body, labels: [label], assignees: [process.env.ASSIGNEE]
+              });
+            }
+
+      - name: Close today's finance monitor failure issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'open', labels: process.env.FAILURE_LABEL, per_page: 100
+            });
+            for (const issue of issues.filter((row) => !row.pull_request)) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: issue.number,
+                body: `교정된 핵심 모니터 검증 실행 ${context.runId}에서 보고서 생성이 성공했습니다.`
+              });
+              await github.rest.issues.update({
+                owner, repo, issue_number: issue.number, state: 'closed', state_reason: 'completed'
+              });
+            }
+
+      - name: Upload verification diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: finance-core-verification-${{ github.run_id }}
+          path: out-finance-tax-ai/
+          retention-days: 30
