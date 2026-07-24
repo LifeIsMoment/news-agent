@@ -1,20 +1,20 @@
 {
   "date": "2026-07-25",
-  "generated_at": "2026-07-24T15:43:52Z",
+  "generated_at": "2026-07-24T23:32:33Z",
   "health": [
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "DIRECT-TAXIA-CLOA"
+      "source": "KR-AI-ACCOUNTING-PRODUCT"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-AI-ACCOUNTING-PRODUCT"
+      "source": "DIRECT-TAXIA-CLOA"
     },
     {
       "count": 0,
@@ -35,14 +35,14 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-ACCOUNTING-AI-PRODUCT"
+      "source": "GLOBAL-TAX-AI-PRODUCT"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-TAX-AI-PRODUCT"
+      "source": "GLOBAL-ACCOUNTING-AI-PRODUCT"
     },
     {
       "count": 0,
@@ -94,18 +94,11 @@
       "source": "GLOBAL-FINANCE-MCP"
     },
     {
-      "count": 0,
+      "count": 4,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "TAX-VENDOR-WATCH"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "ACCOUNTING-VENDOR-WATCH"
     },
     {
       "count": 0,
@@ -119,14 +112,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "PROFESSIONAL-FIRMS-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-MOEF-TAX-DIGITAL"
+      "source": "ACCOUNTING-VENDOR-WATCH"
     },
     {
       "count": 0,
@@ -140,7 +126,28 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "KR-MOEF-TAX-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "PROFESSIONAL-FIRMS-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "KR-FSC-FSS-AI-FINANCE"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-OPENDART-API"
     },
     {
       "count": 0,
@@ -161,7 +168,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-OPENDART-API"
+      "source": "KR-LAW-OPEN-API"
     },
     {
       "count": 0,
@@ -175,13 +182,6 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-LAW-OPEN-API"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
       "source": "US-IRS-TREASURY-AI"
     },
     {
@@ -189,14 +189,21 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "US-SEC-PCAOB-FASB-AI"
+      "source": "OECD-TAX-AI"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "OECD-TAX-AI"
+      "source": "IFRS-EFRAG-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "US-SEC-PCAOB-FASB-AI"
     },
     {
       "count": 0,
@@ -211,13 +218,6 @@
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "EU-TAX-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "IFRS-EFRAG-DIGITAL"
     },
     {
       "count": 0,
@@ -259,14 +259,14 @@
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-INVOICE-DOCUMENT-AI"
+      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
     },
     {
       "count": 0,
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
+      "source": "ARXIV-INVOICE-DOCUMENT-AI"
     },
     {
       "count": 0,
@@ -283,13 +283,6 @@
       "source": "AI4Finance-Foundation/FinGPT"
     },
     {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinRobot"
-    },
-    {
       "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
@@ -297,14 +290,21 @@
       "source": "xaikorea/taxia"
     },
     {
-      "count": 0,
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "count": 1,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "AI4Finance-Foundation/FinRL"
     },
     {
-      "count": 0,
+      "count": 1,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -346,11 +346,18 @@
       "source": "openfisca/openfisca-core"
     },
     {
-      "count": 5,
+      "count": 4,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "frappe/erpnext"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "docling-project/docling"
     },
     {
       "count": 0,
@@ -368,13 +375,6 @@
     },
     {
       "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "docling-project/docling"
-    },
-    {
-      "count": 2,
       "detail": "",
       "group": "GitHub 신규 발견",
       "ok": true,
@@ -402,13 +402,6 @@
       "source": "policyengine-core"
     },
     {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 신규 발견",
-      "ok": true,
-      "source": "GITHUB-ACCOUNTING-AI-DISCOVERY"
-    },
-    {
       "count": 0,
       "detail": "",
       "group": "PyPI",
@@ -434,6 +427,13 @@
       "detail": "",
       "group": "GitHub 신규 발견",
       "ok": true,
+      "source": "GITHUB-ACCOUNTING-AI-DISCOVERY"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
       "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
     },
     {
@@ -444,7 +444,7 @@
       "source": "US-FEDERAL-REGISTER-FINANCE-AI"
     },
     {
-      "count": 2,
+      "count": 0,
       "detail": "",
       "group": "GitHub 신규 발견",
       "ok": true,
@@ -466,6 +466,28 @@
     }
   ],
   "items": [
+    {
+      "category": "세무 AI·조세기술",
+      "confidence": "중간~높음",
+      "evidence": "Google News RSS에서 공식 출처 도메인을 확인. 세부 내용은 연결된 1차 원문 검토 필요.",
+      "impact": "세법 검색, 신고 검증, 결정론적 세액 계산, 전문가 승인 구조에 직접 영향을 준다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-07-24T18:41:17Z",
+      "query_names": [
+        "TAX-VENDOR-WATCH"
+      ],
+      "score": 40,
+      "source": "Thomson Reuters Legal Solutions",
+      "source_type": "vendor_primary",
+      "status": "기업 공식 발표 색인",
+      "summary": "The AI execution gap: What law firm leaders need to know Thomson Reuters Legal Solutions",
+      "title": "The AI execution gap: What law firm leaders need to know",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "10ddd0ce0b150ce7b461da54",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOT2I3c3ViRGpnT2NLQTlJZjd5Sm5YVjFXaHpqSEhIalN2Q3hmZjZWQTRRYzMzN3A2YXBPNmMxTTlSZFlkWTA4QzdaVDJNM1NNa195LWJiWndSUWFmWlp1S1Fldk1pSkcwLXE3bTZoOUMzOFM2SEk2aUdsbl9wZUJwVXI5R0NkYXRCU1lCNGMzUQ?oc=5"
+    },
     {
       "category": "회계 자동화·결산",
       "confidence": "높음",
@@ -489,6 +511,28 @@
       "url": "https://github.com/frappe/erpnext"
     },
     {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-07-24T12:03:58Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix: accept list payload for trans_items in update_child_qty_rate",
+      "title": "frappe/erpnext 커밋 d73ff0a2bf: fix: accept list payload for trans_items in update_child_qty_rate",
+      "track": "오픈소스 프로젝트",
+      "uid": "b9cd0f863dc6593998db8fb1",
+      "url": "https://github.com/frappe/erpnext/commit/d73ff0a2bfb23179b00b48ea86ce0feba46817a2"
+    },
+    {
       "category": "세무 AI·조세기술",
       "confidence": "중간",
       "evidence": "GitHub 공개 Repository Search API. 동명이인, 포크, 유지보수 상태와 라이선스 확인 필요.",
@@ -510,6 +554,72 @@
       "track": "오픈소스 프로젝트",
       "uid": "e3547a48c36bbdf1066820fd",
       "url": "https://github.com/omprakashsrv/ampairs-app"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-07-24T18:47:20Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinRL"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-07-13T23:02:18Z; stars 15800; forks 3437; open issues 305; archived False.",
+      "title": "AI4Finance-Foundation/FinRL 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "0300024b2a8566f65b6d4889",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-07-24T15:53:13Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(uspto): guard out-of-range namest in CALS table spans (#3822)",
+      "title": "docling-project/docling 커밋 873f990203: fix(uspto): guard out-of-range namest in CALS table spans (#3822)",
+      "track": "오픈소스 프로젝트",
+      "uid": "ae7ef3b4a8f293d8aadeaac3",
+      "url": "https://github.com/docling-project/docling/commit/873f990203ac3195b0142f5564eea13e59c1a312"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-07-24T15:51:21Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "docs(chunking): extend notebook for chunking with OCR text (#3865)",
+      "title": "docling-project/docling 커밋 507cbc00c5: docs(chunking): extend notebook for chunking with OCR text (#3865)",
+      "track": "오픈소스 프로젝트",
+      "uid": "f8196806c3abcb315e56e888",
+      "url": "https://github.com/docling-project/docling/commit/507cbc00c594a7248c9a72896ebe036a1624d7c0"
     },
     {
       "category": "문서 AI·OCR·XBRL",
@@ -598,6 +708,28 @@
       "track": "오픈소스 프로젝트",
       "uid": "be686168ff7586396aefcbed",
       "url": "https://github.com/OpenBB-finance/OpenBB"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "세법 검색, 신고 검증, 결정론적 세액 계산, 전문가 승인 구조에 직접 영향을 준다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-07-24T19:11:01Z",
+      "query_names": [
+        "TAX-VENDOR-WATCH"
+      ],
+      "score": 33,
+      "source": "Yahoo Finance",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "Thomson Reuters (TSX:TRI) Stock May Be Undervalued After AI Restructuring Yahoo Finance",
+      "title": "Thomson Reuters (TSX:TRI) Stock May Be Undervalued After AI Restructuring",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "1f9c621dba23ee6ab23381d0",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLWtsN1ZIUXhkSkNYRnJ2WFZ0NnloYVpNQl9TbXFBZnpDRlBSOS1UUjNIbHd6SHU5SjF3cHNkQ3dZbEI1aEZ1azB2N3N1RHZ0NHpvMjQzTDlrVkg3YVFIRHpSNGtxN0ZOcGhBb2Rtams3SUhFZ2lEM0FTNW52UGx0NjgtUW1VcnRTUHZYODB3NFpOSU5tV0kzN25B?oc=5"
     }
   ],
   "monitor_id": "finance-tax-accounting-ai",
