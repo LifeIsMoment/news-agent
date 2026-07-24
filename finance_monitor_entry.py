@@ -156,20 +156,24 @@ def normalize_item(item: Any, module: Any, now: dt.datetime | None = None) -> An
     age_days = (now - published).total_seconds() / 86400 if published else 10_000
     text = f"{getattr(item, 'title', '')} {getattr(item, 'summary', '')} {getattr(item, 'status', '')}"
     score = int(getattr(item, "score", 0))
+    taxia_item = is_taxia_item(item)
+    baseline_item = is_baseline_item(item)
+    generic_commit = is_generic_commit(item)
+    demoted = taxia_item or baseline_item or generic_commit
 
-    if is_taxia_item(item):
+    if taxia_item:
         item.track = APPENDIX_TRACK
         item.impact = "직접 프로젝트 변화는 참고용 부록으로만 보존하며 핵심 우선순위에서는 제외한다."
-        score = min(score, 29 if is_baseline_item(item) or getattr(item, "kind", "") == "github_commit" else 44)
+        score = min(score, 29 if baseline_item or getattr(item, "kind", "") == "github_commit" else 44)
     else:
         item.impact = CORE_IMPACT.get(
             getattr(item, "category", ""),
             "재무·세무·회계 AI의 제품, 데이터, 통제 또는 평가 구조에 미치는 영향을 원문에서 검토해야 한다.",
         )
 
-    if is_baseline_item(item):
+    if baseline_item:
         score = min(score, 29)
-    if is_generic_commit(item):
+    if generic_commit:
         score = min(score, 29)
     if getattr(item, "source_type", "") == "secondary_index":
         score = min(score, 54)
@@ -180,17 +184,18 @@ def normalize_item(item: Any, module: Any, now: dt.datetime | None = None) -> An
     source_type = getattr(item, "source_type", "")
     kind = getattr(item, "kind", "")
     recent = age_days <= 14
-    if recent and source_type == "official_primary" and category in {
-        "세무 AI·조세기술", "회계 자동화·결산", "감사·내부통제·부정탐지",
-        "공공 데이터·API", "AI 규제·거버넌스",
-    } and _contains(text, module.REGULATORY_TERMS | module.RISK_TERMS | module.RELEASE_TERMS):
-        score = max(score, 76)
-    if recent and source_type == "paper_primary" and _contains(text, module.BENCHMARK_TERMS) and _contains(text, module.DOMAIN_TERMS):
-        score = max(score, 62)
-    if recent and source_type == "vendor_primary" and _contains(text, module.RELEASE_TERMS) and _contains(text, module.DOMAIN_TERMS):
-        score = max(score, 58)
-    if recent and source_type in {"repository_primary", "package_primary"} and kind in {"github_release", "pypi_release"} and _contains(text, MATERIAL_REPOSITORY_TERMS):
-        score = max(score, 56)
+    if not demoted:
+        if recent and source_type == "official_primary" and category in {
+            "세무 AI·조세기술", "회계 자동화·결산", "감사·내부통제·부정탐지",
+            "공공 데이터·API", "AI 규제·거버넌스",
+        } and _contains(text, module.REGULATORY_TERMS | module.RISK_TERMS | module.RELEASE_TERMS):
+            score = max(score, 76)
+        if recent and source_type == "paper_primary" and _contains(text, module.BENCHMARK_TERMS) and _contains(text, module.DOMAIN_TERMS):
+            score = max(score, 62)
+        if recent and source_type == "vendor_primary" and _contains(text, module.RELEASE_TERMS) and _contains(text, module.DOMAIN_TERMS):
+            score = max(score, 58)
+        if recent and source_type in {"repository_primary", "package_primary"} and kind in {"github_release", "pypi_release"} and _contains(text, MATERIAL_REPOSITORY_TERMS):
+            score = max(score, 56)
 
     if age_days > 90 and source_type in {"repository_primary", "package_primary"}:
         score = min(score, 34)
