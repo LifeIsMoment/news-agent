@@ -1,0 +1,102 @@
+    parser.add_argument("--tuning", default="config/quality-autotune.json")
+    parser.add_argument("--reports-dir", action="append", dest="reports_dirs")
+    parser.add_argument("--applications-dir", default="applications")
+    parser.add_argument("--quality-dir", default="quality")
+    parser.add_argument("--work-dir", default="out-quality")
+    parser.add_argument("--date")
+    parser.add_argument("--now", help="ISO-8601 timestamp")
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args(argv)
+
+    root = Path.cwd()
+    context = load_json(root / args.project_context, {})
+    tuning = load_json(root / args.tuning, {})
+    if not context or not tuning:
+        print("project context or tuning configuration missing", file=sys.stderr)
+        return 2
+    run_at = parse_datetime(args.now) if args.now else dt.datetime.now(tz=UTC)
+    assert run_at is not None
+    report_dir_names = args.reports_dirs or ["reports", "reports-finance-tax-ai"]
+    report_dirs = [root / name for name in report_dir_names]
+    report_date, report_paths = report_paths_for_date(report_dirs, args.date)
+    if not report_paths:
+        print("No report JSON found", file=sys.stderr)
+        return 4
+    items, health, raw_report_paths = merge_report_payloads(report_paths, root)
+
+    actions = build_actions(items, run_at=run_at, context=context, tuning=tuning)
+    metrics = quality_metrics(items, health, actions, run_at=run_at, context=context, tuning=tuning)
+    metrics["report_tracks"] = [path.parents[2].name for path in report_paths]
+    tuned, changes = bounded_autotune(tuning, metrics, report_date)
+    recommendations = maintenance_recommendations(metrics, changes)
+
+    date_obj = dt.date.fromisoformat(report_date)
+    rel_dir = Path(str(date_obj.year)) / f"{date_obj.month:02d}"
+    application_rel = Path(args.applications_dir) / rel_dir / f"{report_date}.md"
+    application_json_rel = Path(args.applications_dir) / rel_dir / f"{report_date}.json"
+    quality_rel = Path(args.quality_dir) / rel_dir / f"{report_date}.json"
+
+    brief = render_application_brief(
+        report_date=report_date,
+        run_at=run_at,
+        actions=actions,
+        metrics=metrics,
+        context=context,
+        raw_report_paths=raw_report_paths,
+        quality_path=quality_rel.as_posix(),
+    )
+    issue_body = render_issue_body(report_date, actions, metrics, context, application_rel.as_posix())
+    maintenance = render_maintenance_packet(report_date, metrics, recommendations, changes)
+
+    work = root / args.work_dir
+    work.mkdir(parents=True, exist_ok=True)
+    (work / "application_issue_title.txt").write_text(f"[프로젝트 적용] {report_date} 모니터링 브리프\n", encoding="utf-8")
+    (work / "application_issue_body.md").write_text(issue_body, encoding="utf-8")
+    (work / "maintenance_issue_title.txt").write_text(f"[자동 개선] {report_date} 모니터링 품질 점검\n", encoding="utf-8")
+    (work / "maintenance_issue_body.md").write_text(maintenance, encoding="utf-8")
+    save_json(work / "metadata.json", {
+        "date": report_date,
+        "report_paths": [path.relative_to(root).as_posix() for path in report_paths],
+        "application_path": application_rel.as_posix(),
+        "application_json_path": application_json_rel.as_posix(),
+        "quality_path": quality_rel.as_posix(),
+        "actions": len(actions),
+        "quality_score": metrics.get("quality_score"),
+        "tuning_changes": changes,
+        "maintenance_recommendations": len(recommendations),
+    })
+
+    if not args.dry_run:
+        (root / application_rel).parent.mkdir(parents=True, exist_ok=True)
+        (root / application_rel).write_text(brief, encoding="utf-8")
+        save_json(root / application_json_rel, {
+            "schema_version": 1,
+            "date": report_date,
+            "generated_at": metrics.get("generated_at"),
+            "target_repository": context.get("target_repository"),
+            "source_reports": [path.relative_to(root).as_posix() for path in report_paths],
+            "actions": [action.to_dict() for action in actions],
+        })
+        save_json(root / quality_rel, {
+            "schema_version": 1,
+            "date": report_date,
+            "metrics": metrics,
+            "autotune_changes": changes,
+            "maintenance_recommendations": recommendations,
+        })
+        save_json(root / args.tuning, tuned)
+
+    print(json.dumps({
+        "date": report_date,
+        "source_reports": len(report_paths),
+        "actions": len(actions),
+        "quality_score": metrics.get("quality_score"),
+        "noise_ratio": metrics.get("noise_ratio"),
+        "tuning_changes": changes,
+        "application": application_rel.as_posix(),
+    }, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
