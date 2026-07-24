@@ -1,0 +1,63 @@
+name: Trigger Finance Monitor Once
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+jobs:
+  dispatch:
+    if: github.event.issue.title == '[RUN FINANCE MONITOR BOOTSTRAP]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Dispatch initial 7-day finance monitor run
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'daily-finance-tax-ai-monitor.yml',
+              ref: 'main',
+              inputs: { lookback_hours: '168' }
+            });
+            core.info('Dispatched the initial AI finance/tax/accounting monitor run.');
+
+      - name: Close bootstrap trigger issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '초기 AI 재무·세무·회계 모니터링 실행을 dispatch했습니다. 이 트리거 이슈는 자동 종료합니다.'
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed',
+              state_reason: 'completed'
+            });
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove one-time trigger workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ai-finance-tax-monitor[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/trigger-finance-monitor-once.yml
+          git commit -m "ci: remove one-time finance monitor trigger"
+          git pull --rebase origin main
+          git push origin HEAD:main
