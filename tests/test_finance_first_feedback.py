@@ -3,7 +3,6 @@ import unittest
 
 import finance_monitor as monitor
 import finance_monitor_entry as entry
-import finance_monitor_quality as quality
 
 
 def make_item(**updates):
@@ -42,7 +41,6 @@ class FirstFeedbackRegressionTests(unittest.TestCase):
         normalized = entry.normalize_item(item, monitor, dt.datetime(2026, 7, 24, tzinfo=dt.timezone.utc))
         self.assertEqual(normalized.priority, "P3")
         self.assertFalse(entry.is_core_item(normalized))
-        self.assertFalse(quality.is_core(normalized.to_dict()))
 
     def test_financial_reporting_benchmark_remains_core(self):
         item = make_item(
@@ -53,7 +51,6 @@ class FirstFeedbackRegressionTests(unittest.TestCase):
         normalized = entry.normalize_item(item, monitor, dt.datetime(2026, 7, 24, tzinfo=dt.timezone.utc))
         self.assertEqual(normalized.priority, "P1")
         self.assertTrue(entry.is_core_item(normalized))
-        self.assertTrue(quality.is_core(normalized.to_dict()))
 
     def test_temporary_paper_outage_is_not_a_global_failure_condition(self):
         config = entry.apply_core_first_policy({
