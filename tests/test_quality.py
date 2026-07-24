@@ -90,6 +90,64 @@ class QualityTests(unittest.TestCase):
         self.assertIsNotNone(action)
         self.assertIn("sdk_and_delivery", action.component_ids)
         self.assertIn("pyproject.toml", action.target_files)
+        self.assertNotEqual(action.decision, "기술 검증 후보")
+
+    def test_unrelated_official_document_is_not_actionable_by_category_alone(self):
+        immigration = item(
+            uid="immigration",
+            title="Establishing a Fixed Time Period of Admission for Nonimmigrant Students",
+            url="https://www.federalregister.gov/documents/2026/07/17/example",
+            source="U.S. Federal Register API",
+            jurisdiction="미국",
+            category="금융·소비자",
+            kind="official_rule",
+            summary="A rule about nonimmigrant academic students and exchange visitors.",
+            evidence="Federal Register 공식 API",
+            relevance="자동 분류상 금융·소비자로 표시됨",
+        )
+        self.assertIsNone(
+            quality.make_action(immigration, run_at=RUN_AT, context=context(), tuning=tuning())
+        )
+
+    def test_policyengine_is_a_capped_technical_reference(self):
+        reference = item(
+            uid="policyengine",
+            title="PyPI policyengine-core 3.30.3 release",
+            url="https://pypi.org/project/policyengine-core/",
+            source="PyPI JSON API",
+            jurisdiction="제품 생태계",
+            category="세무 AI·조세기술",
+            kind="pypi_release",
+            summary="Deterministic tax calculation, policy period versioning and test framework.",
+            status="공식 패키지 릴리스",
+            evidence="PyPI 공식 JSON API",
+            relevance="세액 계산 엔진 설계 참고",
+        )
+        action = quality.make_action(reference, run_at=RUN_AT, context=context(), tuning=tuning())
+        self.assertIsNotNone(action)
+        self.assertEqual(action.decision, "기술 검증 후보")
+        self.assertLessEqual(action.actionability, 68)
+        self.assertIn("격리된 PoC", action.proposed_change)
+        self.assertIn("외부 참고 구현", action.evidence)
+
+    def test_external_references_are_capped_in_daily_actions(self):
+        candidates = []
+        for index in range(5):
+            candidates.append(item(
+                uid=f"policyengine-{index}",
+                title=f"PolicyEngine/policyengine-core commit {index}",
+                url=f"https://github.com/PolicyEngine/policyengine-core/commit/{index}",
+                source="GitHub Commits",
+                jurisdiction="제품 생태계",
+                category="세무 AI·조세기술",
+                kind="github_activity",
+                summary="Tax calculation period versioning benchmark schema.",
+                status="공식 코드 변경",
+                evidence="GitHub 공식 REST API",
+            ))
+        actions = quality.build_actions(candidates, run_at=RUN_AT, context=context(), tuning=tuning())
+        self.assertLessEqual(len(actions), tuning()["max_external_reference_actions"])
+        self.assertTrue(all(action.decision == "기술 검증 후보" for action in actions))
 
     def test_bounded_autotune_never_crosses_limits(self):
         tune = tuning()
@@ -129,6 +187,7 @@ class QualityTests(unittest.TestCase):
         self.assertEqual(metrics["baseline_items"], 1)
         self.assertGreater(metrics["component_coverage"], 0)
         self.assertGreater(metrics["noise_ratio"], 0)
+        self.assertEqual(metrics["primary_action_items"], 1)
 
     def test_report_path_selects_latest_across_tracks(self):
         with tempfile.TemporaryDirectory() as tmp:
