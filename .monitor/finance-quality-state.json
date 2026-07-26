@@ -74,8 +74,33 @@
       "top_core_purity": 1.0,
       "top_count": 12,
       "vendor_items": 10
+    },
+    {
+      "actionable_core_items": 0,
+      "baseline_top_share": 0.0,
+      "category_coverage": 8,
+      "changed": false,
+      "date": "2026-07-26",
+      "health_rate": 0.9949,
+      "items": 16,
+      "noise_top_share": 0.0,
+      "official_items": 3,
+      "official_or_paper_share": 0.0,
+      "open_source_items": 116,
+      "paper_items": 4,
+      "pipeline_average_minutes": 0.67,
+      "pipeline_success_rate": 0.8571,
+      "pipeline_timed_out": 0,
+      "primary_evidence_share": 0.8125,
+      "quality_score": 73,
+      "reports": 3,
+      "secondary_items": 67,
+      "taxia_top_share": 0.0,
+      "top_core_purity": 1.0,
+      "top_count": 16,
+      "vendor_items": 12
     }
   ],
-  "last_quality_score": 72,
-  "last_run_at": "2026-07-25T00:16:01.756095Z"
+  "last_quality_score": 73,
+  "last_run_at": "2026-07-26T00:15:18.134039Z"
 }
