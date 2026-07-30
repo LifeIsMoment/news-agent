@@ -1,0 +1,75 @@
+{
+  "actions": [
+    {
+      "acceptance_criteria": [
+        "비교 기준선보다 측정 가능한 개선이 없으면 도입하지 않는다.",
+        "라이선스·보안·데이터 반출·유지보수 위험이 허용 범위 안이다.",
+        "채택 시 외부 전체 패키지가 아니라 검증된 최소 설계 패턴만 반영한다.",
+        "모든 검색 문서가 provenance 레코드를 가진다.",
+        "금지·철회 문서가 재생성되지 않는다.",
+        "인용에서 출처와 데이터 버전을 추적할 수 있다.",
+        "배포 산출물에 라이선스 고지가 포함된다.",
+        "평가세트가 출처와 기대 인용을 포함한다.",
+        "회귀 임계값과 실패 원인이 기록된다.",
+        "중요 세법 변경 질문이 배포 전 자동 실행된다."
+      ],
+      "action_id": "A-0db313ea32",
+      "actionability": 62,
+      "automatic_scope": "모니터링 필터·점수·보고서 구성은 안전 범위에서 자동 조정 가능. xaikorea/taxia 소스 변경은 대상 저장소 쓰기 권한과 프로젝트 테스트 통과 후에만 가능.",
+      "category": "오픈소스·도구",
+      "component_ids": [
+        "data_provenance_and_ip",
+        "evaluation_and_regression"
+      ],
+      "components": [
+        "데이터 출처·저작권·라이선스",
+        "평가·회귀·벤치마크"
+      ],
+      "confidence": 78,
+      "decision": "기술 검증 후보",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터 · 외부 참고 구현이며 TAXiA 직접 변경 근거는 아님",
+      "implementation_steps": [
+        "외부 프로젝트의 변경 diff·문서·라이선스와 TAXiA의 현재 구현을 비교한다.",
+        "직접 의존성을 추가하지 않는 격리된 PoC 또는 fixture를 만든다.",
+        "동일 데이터·질문으로 정확도, 인용, 지연, 비용, 재현성을 비교한다.",
+        "데이터 원천별 라이선스와 이용제한을 식별한다.",
+        "원문 URL·해시·수집일·가공단계·재배포 가능 여부를 manifest에 저장한다.",
+        "삭제·정정 요청 대상 문서를 인덱스에서 제거한다.",
+        "데이터 카드와 사용자 문서에 적용 범위를 명시한다.",
+        "변경 내용을 대표하는 질문·근거·정답·금지 답변을 만든다.",
+        "검색 recall, 인용 정확도, 답변 정확도, 시간유효성, 비용·지연을 측정한다.",
+        "모델·프롬프트·인덱스 버전별 결과를 비교한다."
+      ],
+      "importance": "P3",
+      "jurisdiction": "제품 생태계",
+      "limitations": "자동 분류 결과다. 실제 적용범위·시행일·예외·원문 문언과 현재 코드는 담당자가 확인해야 한다.",
+      "proposed_change": "격리된 PoC에서 금융 NLP 데이터셋·평가·출처관리 패턴 중 세무 RAG에 이전 가능한 부분만 검증한다. 현재 TAXiA 구현과 정확도·인용·지연·비용·라이선스를 비교한 뒤, 명확한 우위가 입증된 최소 단위만 채택한다.",
+      "published_at": "2026-07-29T18:50:11Z",
+      "rationale": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "source": "GitHub REST API",
+      "source_uid": "0db313ea329057e401bafa22",
+      "target_files": [
+        "src/taxia/retrieval/data_loader_user.py",
+        "src/js/src/utils/hf-loader.ts",
+        "README.md",
+        "SECURITY.md",
+        "docs/",
+        "tests/",
+        "benchmarks/",
+        "evaluation/",
+        "src/taxia/engine.py"
+      ],
+      "target_repository": "xaikorea/taxia",
+      "title": "AI4Finance-Foundation/FinGPT 저장소 메타데이터 변경",
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT"
+    }
+  ],
+  "date": "2026-07-30",
+  "generated_at": "2026-07-30T00:07:38Z",
+  "schema_version": 1,
+  "source_reports": [
+    "reports/2026/07/2026-07-30.json",
+    "reports-finance-tax-ai/2026/07/2026-07-30.json"
+  ],
+  "target_repository": "xaikorea/taxia"
+}
