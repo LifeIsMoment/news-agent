@@ -194,9 +194,17 @@
       "noise_ratio": 0.1154,
       "quality_score": 36,
       "source_failure_ratio": 0.0
+    },
+    {
+      "actionable_items": 1,
+      "changes": [],
+      "date": "2026-08-11",
+      "noise_ratio": 0.0382,
+      "quality_score": 33,
+      "source_failure_ratio": 0.0517
     }
   ],
-  "last_tuned_at": "2026-08-09T23:43:15Z",
+  "last_tuned_at": "2026-08-10T23:47:32Z",
   "max_actions": 12,
   "max_age_days": 45,
   "max_external_reference_actions": 2,
