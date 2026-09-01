@@ -1,0 +1,66 @@
+{
+  "autotune_changes": [],
+  "date": "2026-09-01",
+  "maintenance_recommendations": [
+    {
+      "problem": "원시 수집 결과의 오탐·기타 분류 비율이 높음",
+      "proposal": "GitHub 전역 동명 결과, 모니터 자기참조, 규제 RSS의 카테고리 오분류를 수집 단계에서 억제한다.",
+      "scope": "collector-code",
+      "severity": "높음",
+      "validation": "고정 오탐 fixture가 0건이고 TAXiA/XAIKOREA 및 실제 규제 fixture는 유지되는지 테스트한다."
+    },
+    {
+      "problem": "초기 기준선 자산이 신규 변화로 누적됨",
+      "proposal": "기준선 항목은 낮음으로 제한하고 오늘의 판단과 적용 후보에서 제외한다.",
+      "scope": "collector-code",
+      "severity": "높음",
+      "validation": "기준선 릴리스·페이지가 상위 목록에 나타나지 않는지 테스트한다."
+    },
+    {
+      "problem": "외부 참고 구현이 적용 목록을 과도하게 차지함",
+      "proposal": "외부 프로젝트는 최대 2건의 기술 검증 후보로 제한하고 직접 변경·공식 규제를 우선한다.",
+      "scope": "result-quality",
+      "severity": "높음",
+      "validation": "즉시 적용 목록의 대부분이 대상 저장소 직접 변경 또는 공식 규제인지 확인한다."
+    },
+    {
+      "problem": "수집은 됐지만 직접 적용 또는 공식 규제 항목이 없음",
+      "proposal": "프로젝트 구성요소 매핑과 공식 시행·판결·세무지식 변경 검색식을 보강한다.",
+      "scope": "result-quality",
+      "severity": "보통",
+      "validation": "대표 규제 fixture가 구체적 파일·작업·인수기준으로 변환되는지 테스트한다."
+    }
+  ],
+  "metrics": {
+    "actionable_items": 1,
+    "actionable_ratio": 0.0061,
+    "baseline_items": 1,
+    "component_coverage": 2,
+    "component_total": 9,
+    "direct_or_regulatory_action_items": 0,
+    "excluded_items": 3,
+    "generated_at": "2026-09-01T01:47:47Z",
+    "generic_github_noise_items": 1,
+    "misc_items": 73,
+    "misc_ratio": 0.4479,
+    "noise_ratio": 0.0307,
+    "official_items": 55,
+    "official_ratio": 0.3374,
+    "primary_action_items": 0,
+    "quality_score": 34,
+    "reference_action_items": 1,
+    "reference_action_ratio": 1.0,
+    "report_tracks": [
+      "reports",
+      "reports-finance-tax-ai"
+    ],
+    "self_reference_items": 3,
+    "source_failure_ratio": 0.0,
+    "sources_failed": 0,
+    "sources_total": 116,
+    "stale_items": 0,
+    "stale_ratio": 0.0,
+    "total_items": 163
+  },
+  "schema_version": 1
+}
