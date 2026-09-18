@@ -1,5 +1,5 @@
 {
-  "last_success_at": "2026-09-18T00:37:51Z",
+  "last_success_at": "2026-09-18T01:18:07Z",
   "monitor_id": "finance-tax-accounting-ai",
   "schema_version": 2,
   "seen": {
@@ -213,7 +213,7 @@
     "162b24fb5553fce5199b1672": "2026-08-16T22:47:01Z",
     "162f7414b28a4b330cb781a1": "2026-08-24T22:53:55Z",
     "164de4473f945135a612a007": "2026-08-14T22:49:28Z",
-    "16886f44549f203c1ecec3e1": "2026-09-18T00:37:51Z",
+    "16886f44549f203c1ecec3e1": "2026-09-18T01:18:07Z",
     "16a1e13c37c70fbac9736c7b": "2026-08-17T22:50:43Z",
     "16c78afe92dabb2002479767": "2026-08-27T03:27:25Z",
     "16da9257a329d9b0ae22a7c5": "2026-09-18T00:37:51Z",
@@ -424,6 +424,7 @@
     "2fff2b3a3063c93705beb584": "2026-08-11T23:12:12Z",
     "307331ededf54e5f08d72eca": "2026-08-03T23:35:59Z",
     "30898d1d24b23b85b3a44be1": "2026-09-16T00:40:02Z",
+    "30ad73eefb3e266453891715": "2026-09-18T01:18:07Z",
     "30e01c94714d51119741b777": "2026-08-25T22:55:19Z",
     "311140177f345d9f9cc5f9f1": "2026-09-08T00:36:09Z",
     "3125023f07ed59668809b91c": "2026-09-12T00:27:42Z",
@@ -619,6 +620,7 @@
     "46f265914a80650e09498073": "2026-09-18T00:37:51Z",
     "46fc949a07776e55fe79740c": "2026-08-19T22:51:25Z",
     "47138b959454dfa8cd9c2bb4": "2026-07-24T09:12:27Z",
+    "471cb16c03a1ced50dc739dc": "2026-09-18T01:18:07Z",
     "471fd4bb169ec35e10f73ee6": "2026-08-03T23:35:59Z",
     "474ee5d6aa46b5ca034babf0": "2026-08-29T03:47:58Z",
     "474fcf7836b270ecd6b4e4a0": "2026-08-19T22:51:25Z",
@@ -713,6 +715,7 @@
     "513c5898723aae566bdc605f": "2026-09-15T00:47:52Z",
     "5151318c1fb9936a06cddd73": "2026-08-09T23:00:04Z",
     "516fc1593976a5cf438b8d46": "2026-08-03T23:35:59Z",
+    "51aa9e9413d8656217b30d18": "2026-09-18T01:18:07Z",
     "51be1fd5e7d3aebc5a6dc22b": "2026-07-24T23:32:33Z",
     "51fde502a868d0ff850e2e14": "2026-07-30T23:33:10Z",
     "5229618168e6ff24c2ce6fd0": "2026-08-01T23:28:59Z",
@@ -1342,6 +1345,7 @@
     "a2c400309caed7138d57237d": "2026-09-09T00:26:18Z",
     "a2c7a3d215f2d4f03f414c66": "2026-08-24T22:53:55Z",
     "a2e3e79f776aff1d036c6ee6": "2026-08-27T03:27:25Z",
+    "a314f2b27b7684be7561e8c1": "2026-09-18T01:18:07Z",
     "a348dcf28a36ba7e15ae1c2e": "2026-07-30T23:33:10Z",
     "a37ecdfc8a44bcdc395bfa71": "2026-08-18T22:51:01Z",
     "a3befde5aabd62971aa902b2": "2026-08-30T00:33:31Z",
@@ -1355,6 +1359,7 @@
     "a4314f2c2885d7e807b4feb4": "2026-09-05T00:16:18Z",
     "a43dc1f9729cd836c4573d5a": "2026-08-03T23:35:59Z",
     "a4459ac17fb701555812629e": "2026-08-28T06:13:40Z",
+    "a44ff617dd2b4d94067b0b58": "2026-09-18T01:18:07Z",
     "a45cb6e56d0e511e9bdc7570": "2026-08-19T22:51:25Z",
     "a487fcd2cd514761d6118999": "2026-08-07T01:36:27Z",
     "a49f8c213b3c0b784aec4cba": "2026-09-02T00:24:43Z",
@@ -1697,6 +1702,7 @@
     "cb399ab5d11a135e93162eba": "2026-08-02T23:29:06Z",
     "cb4e18745b1a428f246c6cca": "2026-07-28T23:30:12Z",
     "cb4f744eb63f492ca959f432": "2026-08-17T22:50:43Z",
+    "cb8029f083ad42bb090e42f0": "2026-09-18T01:18:07Z",
     "cbaa32e71749fc156e9292cc": "2026-09-15T00:47:52Z",
     "cbb94253ada424560cd65b68": "2026-09-15T00:47:52Z",
     "cbe4b7d35b020ec6f4926adb": "2026-08-30T00:33:31Z",
@@ -2160,17 +2166,17 @@
       "forks_count": 3506,
       "open_issues_count": 312,
       "pushed_at": "2026-07-13T23:02:18Z",
-      "stargazers_count": 16303,
-      "updated_at": "2026-09-17T21:53:45Z"
+      "stargazers_count": 16302,
+      "updated_at": "2026-09-18T00:51:02Z"
     },
     "finance:github:AI4Finance-Foundation/FinRL-Trading": {
       "archived": false,
       "default_branch": "master",
       "forks_count": 1093,
-      "open_issues_count": 56,
-      "pushed_at": "2026-05-02T15:12:44Z",
-      "stargazers_count": 3710,
-      "updated_at": "2026-09-17T10:11:26Z"
+      "open_issues_count": 54,
+      "pushed_at": "2026-09-18T01:13:20Z",
+      "stargazers_count": 3709,
+      "updated_at": "2026-09-18T01:13:25Z"
     },
     "finance:github:AI4Finance-Foundation/FinRobot": {
       "archived": false,
@@ -2187,8 +2193,8 @@
       "forks_count": 7569,
       "open_issues_count": 113,
       "pushed_at": "2026-09-17T21:06:36Z",
-      "stargazers_count": 73157,
-      "updated_at": "2026-09-17T23:47:50Z"
+      "stargazers_count": 73159,
+      "updated_at": "2026-09-18T00:54:34Z"
     },
     "finance:github:OpenBB-finance/agents-for-openbb": {
       "archived": false,
@@ -2202,11 +2208,11 @@
     "finance:github:PaddlePaddle/PaddleOCR": {
       "archived": false,
       "default_branch": "main",
-      "forks_count": 11356,
+      "forks_count": 11357,
       "open_issues_count": 248,
       "pushed_at": "2026-09-16T03:31:50Z",
-      "stargazers_count": 89736,
-      "updated_at": "2026-09-18T00:27:12Z"
+      "stargazers_count": 89737,
+      "updated_at": "2026-09-18T00:52:03Z"
     },
     "finance:github:PolicyEngine/policyengine-core": {
       "archived": false,
@@ -2223,8 +2229,8 @@
       "forks_count": 4800,
       "open_issues_count": 914,
       "pushed_at": "2026-09-17T14:15:25Z",
-      "stargazers_count": 66574,
-      "updated_at": "2026-09-18T00:27:19Z"
+      "stargazers_count": 66577,
+      "updated_at": "2026-09-18T01:12:05Z"
     },
     "finance:github:frappe/books": {
       "archived": false,
@@ -2239,10 +2245,10 @@
       "archived": false,
       "default_branch": "develop",
       "forks_count": 12835,
-      "open_issues_count": 1836,
+      "open_issues_count": 1835,
       "pushed_at": "2026-09-17T17:10:50Z",
-      "stargazers_count": 39331,
-      "updated_at": "2026-09-17T23:52:09Z"
+      "stargazers_count": 39333,
+      "updated_at": "2026-09-18T01:07:17Z"
     },
     "finance:github:openfisca/openfisca-core": {
       "archived": false,
