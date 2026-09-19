@@ -397,6 +397,11 @@ def fetch_google_news(
         if kind == "brand_news" and not is_brand:
             continue
         category = "TAXiA·CLOA" if is_brand else classify_category(combined)
+        # AUTO-QUALITY: regulatory-misc-filter-v1
+        # Search-engine sidebars can match the query even when the actual document
+        # has no tax, legal, data, security, labour, financial or AI relevance.
+        if kind == "regulatory_news" and category == "기타" and not is_brand:
+            continue
         score, importance = calculate_importance(
             combined,
             url=source_url or link,
@@ -595,6 +600,20 @@ def fetch_github_global(client: HttpClient, since: dt.datetime, brand_cfg: dict[
                 summary = strip_html(row.get("body") or "본문 없음")
                 url = row.get("html_url", "")
             combined = f"{title} {summary} {url}"
+            # AUTO-QUALITY: strict-global-brand-filter-v1
+            # Generic TaxIA/CLOA homonyms are common. Global GitHub discovery must
+            # contain a high-precision TAXiA/XAIKOREA signal before it is reported.
+            precise_global_signal = any(
+                token in combined.lower()
+                for token in (
+                    "xaikorea", "taxia-core", "xaikorea0", "korean tax",
+                    "한국 세법", "graph-rag", "xaikorea.github.io/taxia",
+                )
+            )
+            if not precise_global_signal:
+                continue
+            if "lifeismoment/news-agent" in combined.lower():
+                continue
             if not brand_relevant(combined, url, brand_cfg):
                 continue
             score, importance = calculate_importance(combined, url=url, kind="github_activity", category="TAXiA·CLOA", brand_match=True)
