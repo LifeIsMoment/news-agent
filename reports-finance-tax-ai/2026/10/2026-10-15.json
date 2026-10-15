@@ -1,0 +1,2497 @@
+{
+  "date": "2026-10-15",
+  "generated_at": "2026-10-15T00:43:36Z",
+  "health": [
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "DIRECT-TAXIA-CLOA"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-AI-TAX-PRODUCT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-AI-ACCOUNTING-PRODUCT"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-AUDIT-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-TAX-AI-PRODUCT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-ACCOUNTING-AI-PRODUCT"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-AUDIT-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-CLOSE-RECONCILIATION-AI"
+    },
+    {
+      "count": 6,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-FINANCE-CFO-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-FINANCE-AGENT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-AP-AR-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-FINANCE-AI-GOVERNANCE"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "GLOBAL-FINANCE-MCP"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "TAX-VENDOR-WATCH"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "FINANCE-AI-BENCHMARK-NEWS"
+    },
+    {
+      "count": 6,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "ACCOUNTING-VENDOR-WATCH"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "PROFESSIONAL-FIRMS-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-NTS-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-MOEF-TAX-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-OPENDART-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-FSC-FSS-AI-FINANCE"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-KASB-STANDARDS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-BOK-ECOS-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-PIPC-FINANCE-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-LAW-OPEN-API"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "US-IRS-TREASURY-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "US-SEC-PCAOB-FASB-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "UK-HMRC-FRC-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "OECD-TAX-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "IFRS-EFRAG-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "EU-TAX-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "JP-TAX-ACCOUNTING-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "CN-TAX-FINANCE-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-TAX-REASONING-BENCHMARK"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-ACCOUNTING-AGENTS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-AUDIT-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-INVOICE-DOCUMENT-AI"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "xaikorea/taxia"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRL"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRL-Trading"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "OpenBB-finance/agents-for-openbb"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "patronus-ai/financebench"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "PolicyEngine/policyengine-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "openfisca/openfisca-core"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "OpenBB-finance/OpenBB"
+    },
+    {
+      "count": 103,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "frappe/erpnext"
+    },
+    {
+      "count": 30,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "docling-project/docling"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "frappe/books"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "PaddlePaddle/PaddleOCR"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-TAX-AI-DISCOVERY"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "taxia-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "openbb"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-ACCOUNTING-AI-DISCOVERY"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-INVOICE-AGENT-DISCOVERY"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "openfisca-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "policyengine-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "docling"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "paddleocr"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "공식 규정 API",
+      "ok": true,
+      "source": "US-FEDERAL-REGISTER-FINANCE-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "공식 페이지 변경",
+      "ok": true,
+      "source": "OpenDART 개발가이드"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "공식 페이지 변경",
+      "ok": true,
+      "source": "국가법령정보 OPEN API 가이드"
+    }
+  ],
+  "items": [
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_release",
+      "priority": "P0",
+      "published_at": "2026-10-14T22:47:27Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 76,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 GitHub 릴리스",
+      "summary": "## Features * Adds an option to group the \"Profit and Loss Statement\" and \"Balance Sheet\" reports by accounting dimension, so users can compare financial results across dimensions. (https://github.com/frappe/erpnext/pull/59377) * When _Use Transaction Date Exchange Rate_ is enabled, **Purchase Receipt** and **Purchase Invoice** documents mapped directly from a **Purchase Order** use the exchange rate for their posting date. Rates entered after mapping or carried over from another purchase document remain unchanged on later saves, and changing the posting date before the first save fetches the rate for the new date. (https://github.com/frappe/erpnext/pull/60181) * Allows users to submit a **Period Closing Voucher** when the stock account balance and stock value differ by up to 1%, after reviewing and confirming the difference; larger differences still block submission. (https://github.com/frappe/erpnext/pull/60193) * Updates ERPNext’s module dock with soft, single-color icons that adapt to light and dark themes and hover or active states, and gives CRM, Support, and Portal their own icons. (https://github.com/frappe/erpnext/pull/60325) * Adds a United States chart of accounts for new **Company** records with _Country_ set to United States, replacing the generic standard chart. (https://github.com/frappe/erpnext/pull/60429) ## Bug Fixes * Converts outstanding **Purchase Order**…",
+      "title": "frappe/erpnext 릴리스 v16.51.0",
+      "track": "오픈소스 프로젝트",
+      "uid": "9b23167a3896581f613a9955",
+      "url": "https://github.com/frappe/erpnext/releases/tag/v16.51.0"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_release",
+      "priority": "P1",
+      "published_at": "2026-10-14T22:08:46Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 62,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 GitHub 릴리스",
+      "summary": "## Features * When _Use Transaction Date Exchange Rate_ is enabled, **Purchase Receipt** and **Purchase Invoice** documents mapped directly from a **Purchase Order** use the exchange rate for their posting date. Rates entered after mapping or carried over from another purchase document remain unchanged on later saves, and changing the posting date before the first save fetches the rate for the new date. (https://github.com/frappe/erpnext/pull/60182) ## Bug Fixes * For **Sales Order** rows with _Ensure Delivery Based on Produced Serial No_, _Reserve Stock_ is cleared and hidden so existing stock is not reserved for items whose serial numbers are reserved during manufacturing. (https://github.com/frappe/erpnext/pull/60071) * Splits manufacturing costs across eligible finished-good rows in **Stock Entry**, excluding rows with manually set rates or zero value; backdated reposting recalculates all finished-good rows in the entry. (https://github.com/frappe/erpnext/pull/60136) * A **Stock Entry** now rejects manually set finished-good or secondary-item costs that exceed the cost of consumed materials. When a stock entry is reposted, its calculated cost is capped at zero rather than becoming negative. (https://github.com/frappe/erpnext/pull/60168) * Automatic batch selection in **Stock Entry** now accounts for quantities assigned to earlier rows, so rows without a selected batch don’…",
+      "title": "frappe/erpnext 릴리스 v15.123.0",
+      "track": "오픈소스 프로젝트",
+      "uid": "2918bbabfd42842cae008c86",
+      "url": "https://github.com/frappe/erpnext/releases/tag/v15.123.0"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "confidence": "중간~높음",
+      "evidence": "Google News RSS에서 공식 출처 도메인을 확인. 세부 내용은 연결된 1차 원문 검토 필요.",
+      "impact": "감사 증적, 내부통제, 이상거래 탐지, 에이전트 권한과 책임 추적 설계에 중요하다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:47:38Z",
+      "query_names": [
+        "PROFESSIONAL-FIRMS-AI"
+      ],
+      "score": 47,
+      "source": "Deloitte",
+      "source_type": "vendor_primary",
+      "status": "기업 공식 발표 색인",
+      "summary": "AI in Finance: What Controllers Need to Know Deloitte",
+      "title": "AI in Finance: What Controllers Need to Know",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "b362b9c270fb44e1b70670a2",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeWVZNXQxNTNaeTNGMkM5VDA2bmFtS05aSmRJLURJR2hHQnZOSkNkRy1OYXFoc1dvMDJ1c2duZjF6a05fUmg0TEJsZ19hRGJFc2c1alZEQ2ZLNHRSOTJBakVpUE9uT0R4NHpYTklYTFIwT19UenpSNkV2V0lsOGpCMUt5MWhLakg2Z0hLUmpKdnR5QU1fc3V2OWpOYVFHQQ?oc=5"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "confidence": "중간~높음",
+      "evidence": "Google News RSS에서 공식 출처 도메인을 확인. 세부 내용은 연결된 1차 원문 검토 필요.",
+      "impact": "감사 증적, 내부통제, 이상거래 탐지, 에이전트 권한과 책임 추적 설계에 중요하다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-10-14T20:38:16Z",
+      "query_names": [
+        "GLOBAL-AUDIT-AI",
+        "PROFESSIONAL-FIRMS-AI"
+      ],
+      "score": 41,
+      "source": "EY",
+      "source_type": "vendor_primary",
+      "status": "기업 공식 발표 색인",
+      "summary": "How AI assurance builds trust with SOC, attestation and certification EY",
+      "title": "How AI assurance builds trust with SOC, attestation and certification",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "9cad15fbb5f0347ab4ae088b",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOU2hZU3dMLXVEVnU5WmJQNE1jNjBoWDRwVVZHejFqVTVfZkxBSnZDTEp1VFI4MHVYZHYybmdudW5ZUEJrQzVpYVRHNjdSZ2JhNy1QQ0d3Z2dYUjM0TGxhQWZoUFdTekxLUWZjdDcxdHNPSlN5THdONXAyOUlzREZkLUZsV2FfY0l3UDdvOURvVGE1bHNxSUR0bXhpSQ?oc=5"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "PyPI 공식 JSON API의 버전·파일·업로드 시각",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "pypi_release",
+      "priority": "P2",
+      "published_at": "2026-10-14T12:21:19Z",
+      "query_names": [
+        "docling"
+      ],
+      "score": 52,
+      "source": "PyPI JSON API",
+      "source_type": "package_primary",
+      "status": "공식 패키지 릴리스",
+      "summary": "최신 버전 2.139.0; Python 요구사항 <4.0,>=3.10; 배포 파일 2개.",
+      "title": "PyPI docling 2.139.0 릴리스",
+      "track": "오픈소스 프로젝트",
+      "uid": "68222605eaafe52c921b4a79",
+      "url": "https://pypi.org/project/docling/"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_release",
+      "priority": "P2",
+      "published_at": "2026-10-14T12:18:27Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 54,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 GitHub 릴리스",
+      "summary": "### Feature * Expose max_concurrent_results on ThreadedDoclingParseBackendOptions ([#4804](https://github.com/docling-project/docling/issues/4804)) ([`ce5621b`](https://github.com/docling-project/docling/commit/ce5621b5e5569cfda1a010566247c93faa7d7032)) * Expose per-page confidence breakdown in ConfidenceScores ([#4233](https://github.com/docling-project/docling/issues/4233)) ([`5bdabb9`](https://github.com/docling-project/docling/commit/5bdabb917617d0ff434f676d537bda80cd19615f)) * **progress:** Add conversion progress bars and an event callback ([#4560](https://github.com/docling-project/docling/issues/4560)) ([`fdb6321`](https://github.com/docling-project/docling/commit/fdb6321046b4cdd75cde8ed804bf76dd1968b7cf)) * **iwork:** Read pictures in Numbers table cells ([#4736](https://github.com/docling-project/docling/issues/4736)) ([`dd477a9`](https://github.com/docling-project/docling/commit/dd477a9f5feb3c505caeb6e73931bf93cecc79f4)) * Allow docling-tools to download whisper artifacts and for docling to run ASR from an artifactory directory ([#4760](https://github.com/docling-project/docling/issues/4760)) ([`765dc86`](https://github.com/docling-project/docling/commit/765dc86182b56ac3ad5baba1a68bd330d11108cf)) * **pptx:** Read every plot of a combination chart ([#4773](https://github.com/docling-project/docling/issues/4773)) ([`070a6d3`](https://github.com/docling-project/docling…",
+      "title": "docling-project/docling 릴리스 v2.139.0",
+      "track": "오픈소스 프로젝트",
+      "uid": "eb32d440e09fa8ece012c74e",
+      "url": "https://github.com/docling-project/docling/releases/tag/v2.139.0"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P2",
+      "published_at": "2026-10-15T00:21:36Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-10-14T22:47:26Z; stars 40155; forks 13132; open issues 1423; archived False.",
+      "title": "frappe/erpnext 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "98227f9e65e05ed0efa99474",
+      "url": "https://github.com/frappe/erpnext"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T19:50:24Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(accounts): re-derive bank side amount when payment account currency changes (#59582)",
+      "title": "frappe/erpnext 커밋 655186714c: fix(accounts): re-derive bank side amount when payment account currency changes (#59582)",
+      "track": "오픈소스 프로젝트",
+      "uid": "432dfc28d7e34ff907f000b0",
+      "url": "https://github.com/frappe/erpnext/commit/655186714ce8b163cf32effc1ab4f335b99df7ca"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T17:57:15Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "Merge pull request #60698 from mihir-kandoi/stock-balance-dimension-reconciliation",
+      "title": "frappe/erpnext 커밋 6e4dffdeb6: Merge pull request #60698 from mihir-kandoi/stock-balance-dimension-reconciliation",
+      "track": "오픈소스 프로젝트",
+      "uid": "250198212b605b1569457446",
+      "url": "https://github.com/frappe/erpnext/commit/6e4dffdeb6dcc724adeacf1b30ef1cbabcb2af80"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T17:12:25Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): assert duplicate template parameter identifies row",
+      "title": "frappe/erpnext 커밋 0ae42aec9b: test(stock): assert duplicate template parameter identifies row",
+      "track": "오픈소스 프로젝트",
+      "uid": "6b2dccba7aa8aa1d194529dd",
+      "url": "https://github.com/frappe/erpnext/commit/0ae42aec9bc5ef99cf8048484f031cee80dbf25c"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T17:08:13Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): reset the item-warehouse balance for legacy serial reconciliations",
+      "title": "frappe/erpnext 커밋 a36bdd4952: fix(stock): reset the item-warehouse balance for legacy serial reconciliations",
+      "track": "오픈소스 프로젝트",
+      "uid": "a33e1167903880898fe538eb",
+      "url": "https://github.com/frappe/erpnext/commit/a36bdd4952439a8084f90c15676e04954a86e7e5"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T16:59:44Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): reconciliation without dimension in dimension-wise stock",
+      "title": "frappe/erpnext 커밋 3d01b50beb: test(stock): reconciliation without dimension in dimension-wise stock",
+      "track": "오픈소스 프로젝트",
+      "uid": "59dc7fe886ff058c4f792156",
+      "url": "https://github.com/frappe/erpnext/commit/3d01b50beb9ccec896ccc809883ffb144da8ef91"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T16:58:03Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): apply reconciliations to dimension-wise rows as a change",
+      "title": "frappe/erpnext 커밋 c8eb481d32: fix(stock): apply reconciliations to dimension-wise rows as a change",
+      "track": "오픈소스 프로젝트",
+      "uid": "dbc8ffe4e22654e982adde12",
+      "url": "https://github.com/frappe/erpnext/commit/c8eb481d32c5593e4f3fb586379cad8df2fb3455"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T16:54:57Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): allow manufacturing roles to manage stock reservations (#60684)",
+      "title": "frappe/erpnext 커밋 5df27ece36: fix(stock): allow manufacturing roles to manage stock reservations (#60684)",
+      "track": "오픈소스 프로젝트",
+      "uid": "2e1686e62abcad19ab0510e0",
+      "url": "https://github.com/frappe/erpnext/commit/5df27ece36ac0d580d72052cba9074b6aaffccd4"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T16:54:56Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix: resolve customer acquisition before assigning revenue in Customer Acquisition and Loyalty",
+      "title": "frappe/erpnext 커밋 cdcb0de6b8: fix: resolve customer acquisition before assigning revenue in Customer Acquisition and Loyalty",
+      "track": "오픈소스 프로젝트",
+      "uid": "9645f7c79651ffacb1dfdd27",
+      "url": "https://github.com/frappe/erpnext/commit/cdcb0de6b8641a19f6482b76a24aebe975a2b46d"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T16:01:46Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "Merge remote-tracking branch 'upstream/develop' into wt-60227",
+      "title": "frappe/erpnext 커밋 3fef100fc8: Merge remote-tracking branch 'upstream/develop' into wt-60227",
+      "track": "오픈소스 프로젝트",
+      "uid": "6d368141b7b0ffdfd167bd99",
+      "url": "https://github.com/frappe/erpnext/commit/3fef100fc8123c56cd04e8c79498d0c1f984bc20"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:55:33Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "Merge pull request #60011 from nabinhait/fix/sales-invoice-trends-review-bugs",
+      "title": "frappe/erpnext 커밋 b08c777e2f: Merge pull request #60011 from nabinhait/fix/sales-invoice-trends-review-bugs",
+      "track": "오픈소스 프로젝트",
+      "uid": "e56945ba7b8342ea8554961a",
+      "url": "https://github.com/frappe/erpnext/commit/b08c777e2fcda2f4eae9beabd8125c3693a71ad8"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:50:42Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(subcontracting): grant Subcontracting BOM access to purchase, stock and manufacturing roles",
+      "title": "frappe/erpnext 커밋 ef841ad064: fix(subcontracting): grant Subcontracting BOM access to purchase, stock and manufacturing roles",
+      "track": "오픈소스 프로젝트",
+      "uid": "fc9107ea046dd6ea16961e39",
+      "url": "https://github.com/frappe/erpnext/commit/ef841ad064b55427a517370a9908fbf4c187771e"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:39:42Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(projects): type change fetches the task weight unless the weight changes",
+      "title": "frappe/erpnext 커밋 4013a2c888: test(projects): type change fetches the task weight unless the weight changes",
+      "track": "오픈소스 프로젝트",
+      "uid": "9dd35edf47b8027078e72dc2",
+      "url": "https://github.com/frappe/erpnext/commit/4013a2c88801ea3281e3df1db8e906d639bc2834"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:39:42Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(projects): fetch the task weight when only the type changes",
+      "title": "frappe/erpnext 커밋 ba5e28ebee: fix(projects): fetch the task weight when only the type changes",
+      "track": "오픈소스 프로젝트",
+      "uid": "3f13b2abbfafbf54d02d519f",
+      "url": "https://github.com/frappe/erpnext/commit/ba5e28ebee8d1cb572aecdd38d65c1de7c1ebbb6"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:38:48Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "perf(stock): fetch pooled batch rates in one query",
+      "title": "frappe/erpnext 커밋 90aa56065e: perf(stock): fetch pooled batch rates in one query",
+      "track": "오픈소스 프로젝트",
+      "uid": "027ec6c99c594a530b333a9e",
+      "url": "https://github.com/frappe/erpnext/commit/90aa56065ef180fd9ea072a6353ff5cc82b0c9e0"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:36:58Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test: rejected warehouse return rows share the rejected qty",
+      "title": "frappe/erpnext 커밋 1c007b51f5: test: rejected warehouse return rows share the rejected qty",
+      "track": "오픈소스 프로젝트",
+      "uid": "1bf97d950710a508ee514a31",
+      "url": "https://github.com/frappe/erpnext/commit/1c007b51f5511ae3806895226c054b50446e0823"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:36:53Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(controllers): count rejected warehouse return rows as rejected qty",
+      "title": "frappe/erpnext 커밋 4cc2ffb2a8: fix(controllers): count rejected warehouse return rows as rejected qty",
+      "track": "오픈소스 프로젝트",
+      "uid": "b56d2f7b114f0717d5d42db1",
+      "url": "https://github.com/frappe/erpnext/commit/4cc2ffb2a85546728ad15a52643d3d78c1e96fd0"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:35:46Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(controllers): count earlier rows of a return in its qty limit",
+      "title": "frappe/erpnext 커밋 6658b79c12: fix(controllers): count earlier rows of a return in its qty limit",
+      "track": "오픈소스 프로젝트",
+      "uid": "b67cc575fea2c0c649248281",
+      "url": "https://github.com/frappe/erpnext/commit/6658b79c1258a3773ae825fc3bfa0970ce3cbe57"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:35:46Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test: split invoice return rows share the original row qty",
+      "title": "frappe/erpnext 커밋 adf0cf378d: test: split invoice return rows share the original row qty",
+      "track": "오픈소스 프로젝트",
+      "uid": "6b541f2d2cd4ef6427a2ba90",
+      "url": "https://github.com/frappe/erpnext/commit/adf0cf378de8b05751e70bf900a28a2f31cfcefa"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:25:05Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(manufacturing): process loss value for an intermediate operation",
+      "title": "frappe/erpnext 커밋 dac1d259fa: test(manufacturing): process loss value for an intermediate operation",
+      "track": "오픈소스 프로젝트",
+      "uid": "3b4d669c7f2f59163bdd6203",
+      "url": "https://github.com/frappe/erpnext/commit/dac1d259fa8471e37127853e66a08655025a4713"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:25:04Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(manufacturing): count all finished output in the process loss denominator",
+      "title": "frappe/erpnext 커밋 ff394e3ab4: fix(manufacturing): count all finished output in the process loss denominator",
+      "track": "오픈소스 프로젝트",
+      "uid": "d9d08adb8650050b85225307",
+      "url": "https://github.com/frappe/erpnext/commit/ff394e3ab4d13acd668f5e3bd435293cac6ada56"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:15:32Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): trim reserved stock report access test",
+      "title": "frappe/erpnext 커밋 9c962ddb36: test(stock): trim reserved stock report access test",
+      "track": "오픈소스 프로젝트",
+      "uid": "0bd6de837b185f546f2c2431",
+      "url": "https://github.com/frappe/erpnext/commit/9c962ddb36394f3d0dedb0165867941185567df3"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:14:05Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(manufacturing): process loss value for a partly produced work order",
+      "title": "frappe/erpnext 커밋 1f4cd0953a: test(manufacturing): process loss value for a partly produced work order",
+      "track": "오픈소스 프로젝트",
+      "uid": "2c9a0ed83f7fbc4bb3dc197c",
+      "url": "https://github.com/frappe/erpnext/commit/1f4cd0953a5d4c77917e4d91153c5d1f5616bdf1"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:13:44Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(manufacturing): value process loss against the processed qty",
+      "title": "frappe/erpnext 커밋 14d424e4bc: fix(manufacturing): value process loss against the processed qty",
+      "track": "오픈소스 프로젝트",
+      "uid": "e44835a59970a54f24b426f7",
+      "url": "https://github.com/frappe/erpnext/commit/14d424e4bc148506868c9cc17e98e7403aa13c53"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:13:33Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(manufacturing): process loss report quantities follow the report dates",
+      "title": "frappe/erpnext 커밋 99601080be: test(manufacturing): process loss report quantities follow the report dates",
+      "track": "오픈소스 프로젝트",
+      "uid": "44b00f0f709531ef767c25b1",
+      "url": "https://github.com/frappe/erpnext/commit/99601080bee1818de5de5f54e456149d93b03e88"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:13:28Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): reserved stock report respects user permissions",
+      "title": "frappe/erpnext 커밋 23db3bdd15: test(stock): reserved stock report respects user permissions",
+      "track": "오픈소스 프로젝트",
+      "uid": "b80b3135eadde9addedce5c2",
+      "url": "https://github.com/frappe/erpnext/commit/23db3bdd15833d5f60e286172e724a72ffcb7454"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:13:27Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): apply user permissions in reserved stock report",
+      "title": "frappe/erpnext 커밋 808d12af8c: fix(stock): apply user permissions in reserved stock report",
+      "track": "오픈소스 프로젝트",
+      "uid": "b3826e1243c49300f62b0ca5",
+      "url": "https://github.com/frappe/erpnext/commit/808d12af8c6e4b49fed1964d621714bf80c05fd7"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:12:50Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(manufacturing): scope process loss report quantities to the report dates",
+      "title": "frappe/erpnext 커밋 a9c6e02be6: fix(manufacturing): scope process loss report quantities to the report dates",
+      "track": "오픈소스 프로젝트",
+      "uid": "2447279cc9a4d4e420be64e7",
+      "url": "https://github.com/frappe/erpnext/commit/a9c6e02be6bf86a5299dbc75e3672c4235252398"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:10:48Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "revert(accounts): one header to row copy for accounting dimensions",
+      "title": "frappe/erpnext 커밋 d293793681: revert(accounts): one header to row copy for accounting dimensions",
+      "track": "오픈소스 프로젝트",
+      "uid": "390e565825825b4f37f541cf",
+      "url": "https://github.com/frappe/erpnext/commit/d293793681370913a3c7305a952e8376bc5bc1c4"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T15:10:46Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "revert(accounts): keep dimensions on duplicated rows",
+      "title": "frappe/erpnext 커밋 9a9bc2bb11: revert(accounts): keep dimensions on duplicated rows",
+      "track": "오픈소스 프로젝트",
+      "uid": "dbf59afd8032051f94417229",
+      "url": "https://github.com/frappe/erpnext/commit/9a9bc2bb11d2a507f64801a5b4559ebe72b1ba31"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:38:02Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(manufacturing): correct job card summary results (#60656)",
+      "title": "frappe/erpnext 커밋 114526ddec: fix(manufacturing): correct job card summary results (#60656)",
+      "track": "오픈소스 프로젝트",
+      "uid": "4810f885c88f90f58c273191",
+      "url": "https://github.com/frappe/erpnext/commit/114526ddecdc6285feeb701e6343911aa14c7674"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:29:33Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): rejected qty return after accepted qty return",
+      "title": "frappe/erpnext 커밋 236fe82b11: test(stock): rejected qty return after accepted qty return",
+      "track": "오픈소스 프로젝트",
+      "uid": "e6b885e308a646aebc6a8a4a",
+      "url": "https://github.com/frappe/erpnext/commit/236fe82b11d2ce18cc3db05ac80345547879c70b"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:29:08Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): allow returning the rejected part after the accepted part",
+      "title": "frappe/erpnext 커밋 ada44091f5: fix(stock): allow returning the rejected part after the accepted part",
+      "track": "오픈소스 프로젝트",
+      "uid": "6b56936b4d24a51f1a27960a",
+      "url": "https://github.com/frappe/erpnext/commit/ada44091f509eddba979adf10ff0f1d58c5b1b7a"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:29:07Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): rejected warehouse return after accepted return",
+      "title": "frappe/erpnext 커밋 26dc6cd576: test(stock): rejected warehouse return after accepted return",
+      "track": "오픈소스 프로젝트",
+      "uid": "86e8551edbe249c89dc44582",
+      "url": "https://github.com/frappe/erpnext/commit/26dc6cd57643638f37334e096b93492a6b588d53"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:28:25Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): count rejected warehouse returns as rejected qty",
+      "title": "frappe/erpnext 커밋 4aea896965: fix(stock): count rejected warehouse returns as rejected qty",
+      "track": "오픈소스 프로젝트",
+      "uid": "bff25b730ff988ee9ef759db",
+      "url": "https://github.com/frappe/erpnext/commit/4aea896965dcac260d07643631a173cf84a67b73"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:24:11Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): cover pooled and serial-wise batch values",
+      "title": "frappe/erpnext 커밋 a0f2be593e: test(stock): cover pooled and serial-wise batch values",
+      "track": "오픈소스 프로젝트",
+      "uid": "c1336f59e1f3119f90ad7456",
+      "url": "https://github.com/frappe/erpnext/commit/a0f2be593ee756f20307ba9bb0527518c136baee"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:24:11Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): value pooled batches at the warehouse rate",
+      "title": "frappe/erpnext 커밋 c520e2f067: fix(stock): value pooled batches at the warehouse rate",
+      "track": "오픈소스 프로젝트",
+      "uid": "d094f93499c595f5ada7edb2",
+      "url": "https://github.com/frappe/erpnext/commit/c520e2f0671d103af0be2e9ef1f54598d2009055"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T12:09:35Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix: apply user permissions to sales funnel counts",
+      "title": "frappe/erpnext 커밋 9b0b997754: fix: apply user permissions to sales funnel counts",
+      "track": "오픈소스 프로젝트",
+      "uid": "9f90a63a1a71cb64ca79a473",
+      "url": "https://github.com/frappe/erpnext/commit/9b0b99775484724039b83fcf9128faa6dd27d3de"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T12:09:09Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix: count only lead-originated quotations in sales funnel",
+      "title": "frappe/erpnext 커밋 6103b5027d: fix: count only lead-originated quotations in sales funnel",
+      "track": "오픈소스 프로젝트",
+      "uid": "b234945e4f851a1239d9ebfc",
+      "url": "https://github.com/frappe/erpnext/commit/6103b5027d87ce99e87377900cd74eecd623d003"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T11:49:27Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(customer): destroy the credit chart whenever the charts panel clears",
+      "title": "frappe/erpnext 커밋 cdc97a1e47: fix(customer): destroy the credit chart whenever the charts panel clears",
+      "track": "오픈소스 프로젝트",
+      "uid": "7083772c084a27b02bae1a15",
+      "url": "https://github.com/frappe/erpnext/commit/cdc97a1e47e1828c39f7f71c7727664c74ff4416"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T11:28:17Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "refactor(customer): draw the credit limit donut with frappe.Chart",
+      "title": "frappe/erpnext 커밋 31014b2e03: refactor(customer): draw the credit limit donut with frappe.Chart",
+      "track": "오픈소스 프로젝트",
+      "uid": "8dc19d31a566390f827581d0",
+      "url": "https://github.com/frappe/erpnext/commit/31014b2e03f64bb746a9a5e63f00ae1c7e207a4c"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T11:12:24Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(stock): verify reserved stock report access",
+      "title": "frappe/erpnext 커밋 9f644cc5e2: test(stock): verify reserved stock report access",
+      "track": "오픈소스 프로젝트",
+      "uid": "c5933b79cdf96ccf402205b4",
+      "url": "https://github.com/frappe/erpnext/commit/9f644cc5e2ff173fb51f81630a0208cb6e7b38d2"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T11:12:23Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(stock): allow operational roles to view reserved stock",
+      "title": "frappe/erpnext 커밋 11ab174b64: fix(stock): allow operational roles to view reserved stock",
+      "track": "오픈소스 프로젝트",
+      "uid": "af31b8e64f7a2f06fdf74ba7",
+      "url": "https://github.com/frappe/erpnext/commit/11ab174b6490a3d23c9c114576c9713f84c2a6c0"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T09:30:29Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "test(assets): receive repair stock on the failure date",
+      "title": "frappe/erpnext 커밋 05ea4c0889: test(assets): receive repair stock on the failure date",
+      "track": "오픈소스 프로젝트",
+      "uid": "3d3d6e143639b0e0528a44a8",
+      "url": "https://github.com/frappe/erpnext/commit/05ea4c0889fec1d0e74f2268ce6bcaee9c0a35f2"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P2",
+      "published_at": "2026-10-14T08:53:38Z",
+      "query_names": [
+        "frappe/books"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-10-02T10:56:40Z; stars 5000; forks 1159; open issues 144; archived True.",
+      "title": "frappe/books 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "b267e38c50349e25a3cf5bfc",
+      "url": "https://github.com/frappe/books"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P2",
+      "published_at": "2026-10-14T08:02:23Z",
+      "query_names": [
+        "frappe/erpnext"
+      ],
+      "score": 42,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "Merge remote-tracking branch 'upstream/develop' into wt-60227",
+      "title": "frappe/erpnext 커밋 2083411984: Merge remote-tracking branch 'upstream/develop' into wt-60227",
+      "track": "오픈소스 프로젝트",
+      "uid": "dc4928fe6a9bf1daa821145d",
+      "url": "https://github.com/frappe/erpnext/commit/208341198472cae7fa340012976fede39ce61bdd"
+    },
+    {
+      "category": "논문·벤치마크",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "완전정답률, 인용 정확도, 수치 계산, 시점 적용, 재현성 등 평가체계 고도화에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P2",
+      "published_at": "2026-10-14T21:12:36Z",
+      "query_names": [
+        "patronus-ai/financebench"
+      ],
+      "score": 41,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2024-12-03T17:29:02Z; stars 374; forks 3; open issues 11; archived False.",
+      "title": "patronus-ai/financebench 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "c0f207b7d513c1eb6d485677",
+      "url": "https://github.com/patronus-ai/financebench"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-10-14T21:00:00Z",
+      "query_names": [
+        "ACCOUNTING-VENDOR-WATCH"
+      ],
+      "score": 38,
+      "source": "CFOtech Australia",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "Intuit launches AI tools for Australian QuickBooks users CFOtech Australia",
+      "title": "Intuit launches AI tools for Australian QuickBooks users",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "ea5c280c4fae9f2c2bf01816",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQblhJaFF2M3hFQnFLRVYyV2tPYWZHaDdyS1RNZW1NVl9mVll3YUZBRXkzLXhoaXM4aGxsb2t1RnJNWktlYU9xX1o1eV9GWkNpNVV5aWI0ZW5PWWt0aTNiM3RTQVVaUXlCc1ZyeHFaakFvckJDUTMxc1FKUHlHbC1UUkNkTDNmTkRvaHl0ZVFR?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "데이터 격리, 모델·도구 권한, 사람 승인, 비용·로그·책임 관리 요구사항에 반영해야 한다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-10-14T14:31:00Z",
+      "query_names": [
+        "GLOBAL-FINANCE-MCP"
+      ],
+      "score": 37,
+      "source": "Yahoo Finance",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "Axi Launches MCP Integration Connecting MT5 Accounts to Claude Yahoo Finance",
+      "title": "Axi Launches MCP Integration Connecting MT5 Accounts to Claude",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "926cb0540dcab141e185ed83",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTTFoTXNiNXVkdjB2RjlmaEpqS21JQ1dnbk5sVm9RUHFCVlF5cF9NU1gtVmR1SUpiZ3I4WWNUcjhwWG9nc2Fha2hnTmd6NENxNng4dEZvUDBtaC04cVIxR3VMQUZ3ZVlhZTJDWjBOMVFOal9tbDBFaEVYVUVLU01aaE9sdHNaUFFCSzljQWFvM0FMbGZVTkRLY1ZvTWkwNS1HQ2Q3Z09n?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "데이터 격리, 모델·도구 권한, 사람 승인, 비용·로그·책임 관리 요구사항에 반영해야 한다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P2",
+      "published_at": "2026-10-14T13:00:00Z",
+      "query_names": [
+        "GLOBAL-FINANCE-MCP"
+      ],
+      "score": 37,
+      "source": "Yahoo! Finance Canada",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "PitchBook Launches an Agentic Platform Assistant and New PitchBook Data MCP to Meet Investors' Rapidly Evolving Workflow Needs Yahoo! Finance Canada",
+      "title": "PitchBook Launches an Agentic Platform Assistant and New PitchBook Data MCP to Meet Investors' Rapidly Evolving Workflow Needs",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "12b26e740af99fb58e48f0e4",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOVDRDSUZlQm5LSTd1bV9nUmRwT2x3ZUJOSmhDVkNMb2ZmR0VqX2lrT1llS1RrNmlTb3BNNTZ3SU1jQ2lyMTNKYnFHZVRFak12NXUxSmJnU0h5NFFLTmFqVnR2WENORFFYSGxab0JzZ0xvNWVVRzJNdkJlN3hqV1pqQ2tYOGxFakJFT205QlAwZ1lRSGZUbmQ3UGNR?oc=5"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-15T00:37:40Z",
+      "query_names": [
+        "PaddlePaddle/PaddleOCR"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-09-16T03:31:50Z; stars 91114; forks 11487; open issues 245; archived False.",
+      "title": "PaddlePaddle/PaddleOCR 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "2f64e2fb694980907ec5320f",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR"
+    },
+    {
+      "category": "재무분석·FP&A·CFO",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "재무 분석, 예산·현금흐름·예측, 경영 의사결정 품질과 검증 구조에 영향을 준다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-15T00:22:34Z",
+      "query_names": [
+        "OpenBB-finance/OpenBB"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-10-14T22:08:00Z; stars 74239; forks 7684; open issues 101; archived False.",
+      "title": "OpenBB-finance/OpenBB 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "369672c31ea68c82b8fcd28e",
+      "url": "https://github.com/openbq-org/OpenBB"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-15T00:22:26Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-10-14T12:48:43Z; stars 68893; forks 5081; open issues 868; archived False.",
+      "title": "docling-project/docling 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "428311a1c00af6acf3c58825",
+      "url": "https://github.com/docling-project/docling"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-15T00:01:46Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinRL"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-10-13T16:08:03Z; stars 16643; forks 3545; open issues 307; archived False.",
+      "title": "AI4Finance-Foundation/FinRL 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "8bb2c57be617c5c6b35efba8",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-14T17:04:27Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinGPT"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-09-23T01:59:08Z; stars 21404; forks 3033; open issues 54; archived False.",
+      "title": "AI4Finance-Foundation/FinGPT 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "9bc390a6059b15264eed4978",
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-14T16:36:04Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinRobot"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-09-28T11:24:54Z; stars 8221; forks 1390; open issues 77; archived False.",
+      "title": "AI4Finance-Foundation/FinRobot 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "05b50d90d1fc37c9218828fd",
+      "url": "https://github.com/AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-14T14:19:28Z",
+      "query_names": [
+        "AI4Finance-Foundation/FinRL-Trading"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-09-18T01:13:20Z; stars 3815; forks 1115; open issues 54; archived False.",
+      "title": "AI4Finance-Foundation/FinRL-Trading 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "db0f2665b6ee3f73be4f49db",
+      "url": "https://github.com/AI4Finance-Foundation/FinRL-Trading"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T12:48:43Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(ocr): do not OCR an enclosed region twice (#4748)",
+      "title": "docling-project/docling 커밋 6fadbae317: fix(ocr): do not OCR an enclosed region twice (#4748)",
+      "track": "오픈소스 프로젝트",
+      "uid": "ad12e0d7a3c093fbf3c873b9",
+      "url": "https://github.com/docling-project/docling/commit/6fadbae317b09c4dd4051c0f1fc1746c6baf04bc"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:56:20Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(md): keep pictures through HTML conversion (#4777)",
+      "title": "docling-project/docling 커밋 774387e750: fix(md): keep pictures through HTML conversion (#4777)",
+      "track": "오픈소스 프로젝트",
+      "uid": "ac7b3cdb46f90d25648a9b35",
+      "url": "https://github.com/docling-project/docling/commit/774387e7507e9be80b6f081bace13f2c5418719e"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:56:18Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(vlm): report the stop reason of streaming requests (#4778)",
+      "title": "docling-project/docling 커밋 fd346c7fc8: fix(vlm): report the stop reason of streaming requests (#4778)",
+      "track": "오픈소스 프로젝트",
+      "uid": "121a3900380eb2abc860ed63",
+      "url": "https://github.com/docling-project/docling/commit/fd346c7fc8884c59ee4f8e846fd6ffb588d34720"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:51:53Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(docx): read the active branch of a body-level mc:AlternateContent (#4615)",
+      "title": "docling-project/docling 커밋 b35ad57af3: fix(docx): read the active branch of a body-level mc:AlternateContent (#4615)",
+      "track": "오픈소스 프로젝트",
+      "uid": "d7ad1e9e79b821632dc7d67f",
+      "url": "https://github.com/docling-project/docling/commit/b35ad57af3a9311d5da8c20ede17865c40b87870"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:50:53Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "feat: expose max_concurrent_results on ThreadedDoclingParseBackendOptions (#4804)",
+      "title": "docling-project/docling 커밋 ce5621b5e5: feat: expose max_concurrent_results on ThreadedDoclingParseBackendOptions (#4804)",
+      "track": "오픈소스 프로젝트",
+      "uid": "7c4bee254862d5de1fa627cf",
+      "url": "https://github.com/docling-project/docling/commit/ce5621b5e5569cfda1a010566247c93faa7d7032"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:49:15Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(docx): keep table rows after a list resumes in a cell (#4674)",
+      "title": "docling-project/docling 커밋 0f233559b3: fix(docx): keep table rows after a list resumes in a cell (#4674)",
+      "track": "오픈소스 프로젝트",
+      "uid": "04dfc0004a7bec4884965938",
+      "url": "https://github.com/docling-project/docling/commit/0f233559b364d779d2ce945b32a44267755ee904"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:42:02Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(pptx): move footer placeholders to the furniture layer (#4746)",
+      "title": "docling-project/docling 커밋 3acd5ca3be: fix(pptx): move footer placeholders to the furniture layer (#4746)",
+      "track": "오픈소스 프로젝트",
+      "uid": "1a7656124bf67ff6f5ad25bf",
+      "url": "https://github.com/docling-project/docling/commit/3acd5ca3be5fb34f525e365acc1426baf140a780"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:40:38Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(html): decode a rendered stream with the encoding the document declares (#4468)",
+      "title": "docling-project/docling 커밋 85dcebc772: fix(html): decode a rendered stream with the encoding the document declares (#4468)",
+      "track": "오픈소스 프로젝트",
+      "uid": "0eb383aeea7ac75041d29ede",
+      "url": "https://github.com/docling-project/docling/commit/85dcebc7726487193add4dd419e5b05619370774"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:36:38Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "perf(layout): move detections to the CPU once before building the output (#4764)",
+      "title": "docling-project/docling 커밋 7e16edc966: perf(layout): move detections to the CPU once before building the output (#4764)",
+      "track": "오픈소스 프로젝트",
+      "uid": "24dbc20e12455abace527463",
+      "url": "https://github.com/docling-project/docling/commit/7e16edc966fb0e048d7ef6976ea7907d6b377a97"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:34:41Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(pptx): keep a hyperlink attached to a whole shape (#4787)",
+      "title": "docling-project/docling 커밋 85081410b9: fix(pptx): keep a hyperlink attached to a whole shape (#4787)",
+      "track": "오픈소스 프로젝트",
+      "uid": "d938e5bd56a2d89694040944",
+      "url": "https://github.com/docling-project/docling/commit/85081410b9f53d65eec244fce9e8ad738ba8d66f"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:32:33Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "refactor(asr): remove redundant n_mels override for WhisperS2T (#4785)",
+      "title": "docling-project/docling 커밋 5a21f39d1d: refactor(asr): remove redundant n_mels override for WhisperS2T (#4785)",
+      "track": "오픈소스 프로젝트",
+      "uid": "240c0fb973479282b4ace7b1",
+      "url": "https://github.com/docling-project/docling/commit/5a21f39d1d7bfcbe68ff89964b219689e8235a9f"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:28:43Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(md): keep the hyperlink of autolinks outside table cells (#4791)",
+      "title": "docling-project/docling 커밋 475722097f: fix(md): keep the hyperlink of autolinks outside table cells (#4791)",
+      "track": "오픈소스 프로젝트",
+      "uid": "cb720bf04bdc71d2a998bfa6",
+      "url": "https://github.com/docling-project/docling/commit/475722097f45f69c9c7fbde3ef5b30ef6479d157"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:28:15Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(pypdfium2): keep letters of adjacent lines out of text cells (#4802)",
+      "title": "docling-project/docling 커밋 006c098d32: fix(pypdfium2): keep letters of adjacent lines out of text cells (#4802)",
+      "track": "오픈소스 프로젝트",
+      "uid": "cf3bb2ef115f80191f19e9d3",
+      "url": "https://github.com/docling-project/docling/commit/006c098d322a1fd709ec53fd7e798ca6fe7fbcd1"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:27:20Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(email): route an Outlook .msg that filetype reports as XLS to the email backend (#4798)",
+      "title": "docling-project/docling 커밋 385ddd4fc2: fix(email): route an Outlook .msg that filetype reports as XLS to the email backend (#4798)",
+      "track": "오픈소스 프로젝트",
+      "uid": "d03963919ebca58d49bc117f",
+      "url": "https://github.com/docling-project/docling/commit/385ddd4fc2e448f88904c5f189ba24d478224fdd"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:22:34Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(markdown): resolve relative images for local sources (#4816)",
+      "title": "docling-project/docling 커밋 8119cdceef: fix(markdown): resolve relative images for local sources (#4816)",
+      "track": "오픈소스 프로젝트",
+      "uid": "02f2f8f6620427a4f2355710",
+      "url": "https://github.com/docling-project/docling/commit/8119cdceef7494dc361b9d30b40458d287a06a34"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:19:55Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(asciidoc): nest lists with different bullet markers (#4822)",
+      "title": "docling-project/docling 커밋 f1d17255b6: fix(asciidoc): nest lists with different bullet markers (#4822)",
+      "track": "오픈소스 프로젝트",
+      "uid": "850d7252bbd9e392e24acdfb",
+      "url": "https://github.com/docling-project/docling/commit/f1d17255b649938c5f9d68ea2c6c5f64cca42b3d"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:16:59Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "feat: expose per-page confidence breakdown in ConfidenceScores (#4233)",
+      "title": "docling-project/docling 커밋 5bdabb9176: feat: expose per-page confidence breakdown in ConfidenceScores (#4233)",
+      "track": "오픈소스 프로젝트",
+      "uid": "7290a1d001bd38a6c74e60aa",
+      "url": "https://github.com/docling-project/docling/commit/5bdabb917617d0ff434f676d537bda80cd19615f"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T09:51:51Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(asciidoc): stop an unclosed block delimiter from hanging the parser (#4662)",
+      "title": "docling-project/docling 커밋 2104df53e9: fix(asciidoc): stop an unclosed block delimiter from hanging the parser (#4662)",
+      "track": "오픈소스 프로젝트",
+      "uid": "bb78650745e97e7ece0bb7df",
+      "url": "https://github.com/docling-project/docling/commit/2104df53e9c49c59db16d2404e54432e4e0ff8dc"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T09:49:07Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(odf): keep image references out of list item text (#4693)",
+      "title": "docling-project/docling 커밋 4b8231f10c: fix(odf): keep image references out of list item text (#4693)",
+      "track": "오픈소스 프로젝트",
+      "uid": "fac63fccb4d23a132dfece6f",
+      "url": "https://github.com/docling-project/docling/commit/4b8231f10cfb7747e28b8d3e64a66e4ebff02589"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T09:46:05Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(vlm): report streaming request failures as per-page inference errors (#4561)",
+      "title": "docling-project/docling 커밋 ab4419b812: fix(vlm): report streaming request failures as per-page inference errors (#4561)",
+      "track": "오픈소스 프로젝트",
+      "uid": "96520f5a7d9a763d00fd8ba4",
+      "url": "https://github.com/docling-project/docling/commit/ab4419b8129ffd3dd90f5da85138e5d356f20d5b"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T09:43:33Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(asciidoc): strengthen the parsing of nested lists (#4721)",
+      "title": "docling-project/docling 커밋 c0be875615: fix(asciidoc): strengthen the parsing of nested lists (#4721)",
+      "track": "오픈소스 프로젝트",
+      "uid": "079ac4aa58c2cbda1c5eda75",
+      "url": "https://github.com/docling-project/docling/commit/c0be875615f1c2fadb10bf20f760c7d3dc4b1059"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T09:01:07Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "fix(html): resolve the line break sentinel outside paragraphs (#4675)",
+      "title": "docling-project/docling 커밋 7be1913a2c: fix(html): resolve the line break sentinel outside paragraphs (#4675)",
+      "track": "오픈소스 프로젝트",
+      "uid": "94a8f76b33472e4f44f4f767",
+      "url": "https://github.com/docling-project/docling/commit/7be1913a2c0b93f8b756644fe682d0515d0b667f"
+    },
+    {
+      "category": "오픈소스·도구",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "라이선스, 유지보수, 재현성, 보안, 데이터 반출과 국내 현지화 비용을 기준으로 평가해야 한다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_metadata",
+      "priority": "P3",
+      "published_at": "2026-10-14T08:54:46Z",
+      "query_names": [
+        "OpenBB-finance/agents-for-openbb"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 저장소 변경",
+      "summary": "최근 push 2026-07-01T14:10:44Z; stars 403; forks 102; open issues 1; archived True.",
+      "title": "OpenBB-finance/agents-for-openbb 저장소 메타데이터 변경",
+      "track": "오픈소스 프로젝트",
+      "uid": "cbbd5251a60b229fc58aa34d",
+      "url": "https://github.com/OpenBB-finance/agents-for-openbb"
+    },
+    {
+      "category": "문서 AI·OCR·XBRL",
+      "confidence": "높음",
+      "evidence": "GitHub 공식 REST API의 저장소·릴리스·커밋·이슈 메타데이터",
+      "impact": "세금계산서·영수증·공시 문서의 OCR, 표·주석·좌표 추출과 데이터 계보 품질에 중요하다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_commit",
+      "priority": "P3",
+      "published_at": "2026-10-14T08:27:58Z",
+      "query_names": [
+        "docling-project/docling"
+      ],
+      "score": 34,
+      "source": "GitHub REST API",
+      "source_type": "repository_primary",
+      "status": "공식 코드 변경",
+      "summary": "ci: show only the group counts and a prominent link in the reminder (#4814)",
+      "title": "docling-project/docling 커밋 daea706c2f: ci: show only the group counts and a prominent link in the reminder (#4814)",
+      "track": "오픈소스 프로젝트",
+      "uid": "bddc5bbdbb9135cc82456e0c",
+      "url": "https://github.com/docling-project/docling/commit/daea706c2ff02d898705cf4d8cdcab577cb703ac"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "감사 증적, 내부통제, 이상거래 탐지, 에이전트 권한과 책임 추적 설계에 중요하다.",
+      "jurisdiction": "대한민국",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-10-14T11:57:11Z",
+      "query_names": [
+        "KR-AUDIT-AI"
+      ],
+      "score": 34,
+      "source": "시사매거진",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "캠코, 기술보증기금·주택도시보증공사와 AI 기반 디지털 감사 혁신 맞손 시사매거진",
+      "title": "캠코, 기술보증기금·주택도시보증공사와 AI 기반 디지털 감사 혁신 맞손",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "e078e65024e19528c80d8c1b",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBCV2c4Y1FJWmZlc1ZjQ0ZBc3BQaTA5ZHNQYi1qMEhMR0d4bWcyS1RvN3R5RkVXX3lIUTlPMTJGdUVBOFJKSk1kTDJFTGlvYVFvWVVRWFRuY04?oc=5"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "감사 증적, 내부통제, 이상거래 탐지, 에이전트 권한과 책임 추적 설계에 중요하다.",
+      "jurisdiction": "대한민국",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-10-14T04:02:00Z",
+      "query_names": [
+        "KR-AUDIT-AI"
+      ],
+      "score": 34,
+      "source": "비즈월드",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "한글날 연휴 잊은 서울시의회 ‘AI 열공’…“방대한 감사 자료, AI로 싹 훑는다” 비즈월드",
+      "title": "한글날 연휴 잊은 서울시의회 ‘AI 열공’…“방대한 감사 자료, AI로 싹 훑는다”",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "2a8f750ccde3979b3d68f3c0",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5uN1R2TG9CcWRhcWdsRVBKUTBMUVR6bURvaENPTHZXYnBXU1RXdHBYXy05bkVwX0YzODJ3X2ZHMU1ob0xHbHN6UjVjSGFNZThkSFBuOGpKYW13TEFTNlNMM19qdU5yQ0pIN2c?oc=5"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-10-14T23:18:18Z",
+      "query_names": [
+        "ACCOUNTING-VENDOR-WATCH"
+      ],
+      "score": 33,
+      "source": "Yahoo Finance",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "Is Xero’s (ASX:XRO) Google Gemini Integration Quietly Rewiring Its AI Platform Ambitions? Yahoo Finance",
+      "title": "Is Xero’s (ASX:XRO) Google Gemini Integration Quietly Rewiring Its AI Platform Ambitions?",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "ae5d493583d34dba302bda8c",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVFpMU0tuanZkamFHbG1oMUlCc084dHlQbXVwNXlRWkR6NlZDc0hVZWpqX0ZEalptUnNWQkVubDFIQ1o4eHJhVlJQSWh6Tk1YUUNZX0gtU1dWc2Zlc21MUTBxRUdsX0hqSnNMVkwtbFd5MkpxMG12a3RDWXdyaVd2X1Bmcm00bk5FUzY0X3lVdzNEYVdh?oc=5"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-10-14T17:39:24Z",
+      "query_names": [
+        "ACCOUNTING-VENDOR-WATCH"
+      ],
+      "score": 33,
+      "source": "iPhone in Canada",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "QuickBooks Can Now Use AI to Handle More of Your Bookkeeping in Canada iPhone in Canada",
+      "title": "QuickBooks Can Now Use AI to Handle More of Your Bookkeeping in Canada",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "a440f3676547f294befddc5b",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMXdraC0xN0tRSkJpTWxYaHVRaDJ3d2JlYTVsVkttYm4xS2lBVU1QWnZITUpST1o3Rm1jdHpkU01YMlMtcEhmQ2k2T1NPeXE5WmZrOEE2VU1JZTVGc0ZVSkJqU1dhSjdEelFNLWpncFpBN1RPTW1QNGh1eDI1dzN2U3pEQ3lPc3dMc0tF?oc=5"
+    },
+    {
+      "category": "감사·내부통제·부정탐지",
+      "confidence": "낮음~중간",
+      "evidence": "Google News RSS가 제공한 제목·요약·발표 출처. 원문 발표일, 기능 범위, 수치와 시행일을 재확인해야 함.",
+      "impact": "감사 증적, 내부통제, 이상거래 탐지, 에이전트 권한과 책임 추적 설계에 중요하다.",
+      "jurisdiction": "글로벌",
+      "kind": "news",
+      "priority": "P3",
+      "published_at": "2026-10-14T04:06:00Z",
+      "query_names": [
+        "PROFESSIONAL-FIRMS-AI"
+      ],
+      "score": 33,
+      "source": "BigGo Finance",
+      "source_type": "secondary_index",
+      "status": "뉴스/RSS 색인·원문 확인 필요",
+      "summary": "Deloitte Survey: Over Half of UK Large-Company CFOs Expect AI to Trigger Layoffs BigGo Finance",
+      "title": "Deloitte Survey: Over Half of UK Large-Company CFOs Expect AI to Trigger Layoffs",
+      "track": "상용 서비스·기업 업데이트",
+      "uid": "8842b2449a24ce41bfee4db8",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE95V2RsNU41LW1VblM4MzZyazlMMDg3aHhvQnFuMkRQVWtlMHB5VE5yTzlveUZnTWdCeEphS1JEdDRGWWxHVGNVUV8xc3pNenI1MGhlQ0h5ZkRUVzVFZ0Q5U1VxYVlPTnJVeXlpNkxteEg0TVFCWXc?oc=5"
+    }
+  ],
+  "monitor_id": "finance-tax-accounting-ai",
+  "schema_version": 2
+}
