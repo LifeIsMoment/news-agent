@@ -1,27 +1,20 @@
 {
   "date": "2026-11-01",
-  "generated_at": "2026-11-01T01:21:10Z",
+  "generated_at": "2026-11-01T02:15:30Z",
   "health": [
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-AI-ACCOUNTING-PRODUCT"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-AI-TAX-PRODUCT"
+      "source": "DIRECT-TAXIA-CLOA"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "DIRECT-TAXIA-CLOA"
+      "source": "KR-AI-ACCOUNTING-PRODUCT"
     },
     {
       "count": 0,
@@ -35,10 +28,10 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-TAX-AI-PRODUCT"
+      "source": "KR-AI-TAX-PRODUCT"
     },
     {
-      "count": 3,
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
@@ -49,10 +42,17 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "GLOBAL-TAX-AI-PRODUCT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "GLOBAL-ACCOUNTING-AI-PRODUCT"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
@@ -70,6 +70,13 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "GLOBAL-FINANCE-AGENT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "GLOBAL-AP-AR-AI"
     },
     {
@@ -77,7 +84,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-FINANCE-AGENT"
+      "source": "GLOBAL-FINANCE-MCP"
     },
     {
       "count": 0,
@@ -91,10 +98,17 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "GLOBAL-FINANCE-MCP"
+      "source": "FINANCE-AI-BENCHMARK-NEWS"
     },
     {
-      "count": 4,
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "ACCOUNTING-VENDOR-WATCH"
+    },
+    {
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
@@ -105,7 +119,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "FINANCE-AI-BENCHMARK-NEWS"
+      "source": "PROFESSIONAL-FIRMS-AI"
     },
     {
       "count": 0,
@@ -119,28 +133,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "ACCOUNTING-VENDOR-WATCH"
-    },
-    {
-      "count": 3,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "PROFESSIONAL-FIRMS-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
       "source": "KR-MOEF-TAX-DIGITAL"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-FSC-FSS-AI-FINANCE"
     },
     {
       "count": 0,
@@ -161,21 +154,14 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "KR-FSC-FSS-AI-FINANCE"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "KR-BOK-ECOS-API"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-LAW-OPEN-API"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-PIPC-FINANCE-AI"
     },
     {
       "count": 0,
@@ -189,14 +175,14 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "UK-HMRC-FRC-AI"
+      "source": "KR-PIPC-FINANCE-AI"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "OECD-TAX-AI"
+      "source": "KR-LAW-OPEN-API"
     },
     {
       "count": 0,
@@ -210,7 +196,21 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
+      "source": "OECD-TAX-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
       "source": "IFRS-EFRAG-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "UK-HMRC-FRC-AI"
     },
     {
       "count": 0,
@@ -229,13 +229,6 @@
     {
       "count": 0,
       "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "JP-TAX-ACCOUNTING-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
       "group": "논문",
       "ok": true,
       "source": "ARXIV-TAX-REASONING-BENCHMARK"
@@ -250,9 +243,16 @@
     {
       "count": 0,
       "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "JP-TAX-ACCOUNTING-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
+      "source": "ARXIV-INVOICE-DOCUMENT-AI"
     },
     {
       "count": 0,
@@ -266,21 +266,14 @@
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-AUDIT-AI"
+      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
     },
     {
       "count": 0,
       "detail": "",
       "group": "논문",
       "ok": true,
-      "source": "ARXIV-INVOICE-DOCUMENT-AI"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinGPT"
+      "source": "ARXIV-AUDIT-AI"
     },
     {
       "count": 0,
@@ -294,17 +287,24 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
+      "source": "AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
       "source": "AI4Finance-Foundation/FinRobot"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "AI4Finance-Foundation/FinRL"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -322,10 +322,10 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "patronus-ai/financebench"
+      "source": "openfisca/openfisca-core"
     },
     {
-      "count": 5,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -343,17 +343,17 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "openfisca/openfisca-core"
+      "source": "patronus-ai/financebench"
     },
     {
-      "count": 2,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "docling-project/docling"
     },
     {
-      "count": 101,
+      "count": 5,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -367,32 +367,11 @@
       "source": "PaddlePaddle/PaddleOCR"
     },
     {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "frappe/books"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "GitHub 신규 발견",
-      "ok": true,
-      "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 신규 발견",
-      "ok": true,
-      "source": "GITHUB-TAX-AI-DISCOVERY"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "PyPI",
-      "ok": true,
-      "source": "taxia-core"
     },
     {
       "count": 1,
@@ -402,11 +381,25 @@
       "source": "GITHUB-ACCOUNTING-AI-DISCOVERY"
     },
     {
-      "count": 2,
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
+    },
+    {
+      "count": 0,
       "detail": "",
       "group": "PyPI",
       "ok": true,
-      "source": "policyengine-core"
+      "source": "taxia-core"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-TAX-AI-DISCOVERY"
     },
     {
       "count": 0,
@@ -420,10 +413,10 @@
       "detail": "",
       "group": "PyPI",
       "ok": true,
-      "source": "docling"
+      "source": "policyengine-core"
     },
     {
-      "count": 1,
+      "count": 2,
       "detail": "",
       "group": "GitHub 신규 발견",
       "ok": true,
@@ -434,14 +427,21 @@
       "detail": "",
       "group": "PyPI",
       "ok": true,
-      "source": "paddleocr"
+      "source": "openfisca-core"
     },
     {
       "count": 0,
       "detail": "",
       "group": "PyPI",
       "ok": true,
-      "source": "openfisca-core"
+      "source": "docling"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "PyPI",
+      "ok": true,
+      "source": "paddleocr"
     },
     {
       "count": 0,
@@ -455,14 +455,14 @@
       "detail": "",
       "group": "공식 페이지 변경",
       "ok": true,
-      "source": "OpenDART 개발가이드"
+      "source": "국가법령정보 OPEN API 가이드"
     },
     {
       "count": 0,
       "detail": "",
       "group": "공식 페이지 변경",
       "ok": true,
-      "source": "국가법령정보 OPEN API 가이드"
+      "source": "OpenDART 개발가이드"
     }
   ],
   "items": [
@@ -2578,6 +2578,28 @@
       "track": "오픈소스 프로젝트",
       "uid": "8eaef9875fe56e5407eea788",
       "url": "https://github.com/frappe/books"
+    },
+    {
+      "category": "세무 AI·조세기술",
+      "confidence": "중간",
+      "evidence": "GitHub 공개 Repository Search API. 동명이인, 포크, 유지보수 상태와 라이선스 확인 필요.",
+      "impact": "세법 검색, 신고 검증, 결정론적 세액 계산, 전문가 승인 구조에 직접 영향을 준다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_discovery",
+      "priority": "P2",
+      "published_at": "2026-11-01T02:01:49Z",
+      "query_names": [
+        "GITHUB-TAX-AI-DISCOVERY"
+      ],
+      "score": 47,
+      "source": "GitHub Search API",
+      "source_type": "repository_discovery",
+      "status": "공개 저장소 발견·품질 확인 필요",
+      "summary": "Think before doing, prove before saving. Vestige is the local-first cognitive operating system and deterministic safety kernel for autonomous AI agents. Powered by FSRS-6 causal graph memory, cryptographic Merkle-chained state ledgers, and out-of-band kernel gates bringing frontier PhD reasoning to local silicon with zero cloud token tax. | stars 658; forks 73; language Rust; archived False.",
+      "title": "신규·변경 GitHub 저장소: samvallad33/vestige",
+      "track": "오픈소스 프로젝트",
+      "uid": "7aa636191d1691ff31da74f9",
+      "url": "https://github.com/samvallad33/vestige"
     },
     {
       "category": "오픈소스·도구",
