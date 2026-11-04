@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "generated_at": "2026-11-04T02:33:25Z",
+  "generated_at": "2026-11-04T03:01:22Z",
   "health": [
     {
       "count": 0,
@@ -14,17 +14,17 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-AI-ACCOUNTING-PRODUCT"
+      "source": "KR-AI-TAX-PRODUCT"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-AI-TAX-PRODUCT"
+      "source": "KR-AI-ACCOUNTING-PRODUCT"
     },
     {
-      "count": 10,
+      "count": 9,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
@@ -38,18 +38,18 @@
       "source": "GLOBAL-ACCOUNTING-AI-PRODUCT"
     },
     {
-      "count": 2,
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "GLOBAL-TAX-AI-PRODUCT"
     },
     {
-      "count": 11,
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-FINANCE-CFO-AI"
+      "source": "GLOBAL-AUDIT-AI"
     },
     {
       "count": 0,
@@ -57,13 +57,6 @@
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "GLOBAL-FINANCE-AGENT"
-    },
-    {
-      "count": 3,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "GLOBAL-AUDIT-AI"
     },
     {
       "count": 0,
@@ -80,13 +73,6 @@
       "source": "GLOBAL-AP-AR-AI"
     },
     {
-      "count": 2,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "GLOBAL-FINANCE-MCP"
-    },
-    {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
@@ -94,21 +80,35 @@
       "source": "GLOBAL-FINANCE-AI-GOVERNANCE"
     },
     {
-      "count": 11,
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "TAX-VENDOR-WATCH"
+      "source": "GLOBAL-FINANCE-MCP"
     },
     {
-      "count": 8,
+      "count": 2,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
       "source": "ACCOUNTING-VENDOR-WATCH"
     },
     {
-      "count": 3,
+      "count": 4,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "TAX-VENDOR-WATCH"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-NTS-AI"
+    },
+    {
+      "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
@@ -126,21 +126,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-NTS-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
       "source": "KR-MOEF-TAX-DIGITAL"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
-      "source": "KR-FSC-FSS-AI-FINANCE"
     },
     {
       "count": 0,
@@ -161,7 +147,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "KR-BOK-ECOS-API"
+      "source": "KR-FSC-FSS-AI-FINANCE"
     },
     {
       "count": 0,
@@ -175,13 +161,6 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "US-IRS-TREASURY-AI"
-    },
-    {
-      "count": 0,
-      "detail": "",
-      "group": "뉴스·공식기관",
-      "ok": true,
       "source": "KR-PIPC-FINANCE-AI"
     },
     {
@@ -189,14 +168,28 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "IFRS-EFRAG-DIGITAL"
+      "source": "KR-BOK-ECOS-API"
     },
     {
       "count": 0,
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "US-SEC-PCAOB-FASB-AI"
+      "source": "US-IRS-TREASURY-AI"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "KR-FINANCE-CFO-AI"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "뉴스·공식기관",
+      "ok": true,
+      "source": "UK-HMRC-FRC-AI"
     },
     {
       "count": 0,
@@ -210,7 +203,7 @@
       "detail": "",
       "group": "뉴스·공식기관",
       "ok": true,
-      "source": "UK-HMRC-FRC-AI"
+      "source": "IFRS-EFRAG-DIGITAL"
     },
     {
       "count": 0,
@@ -250,9 +243,9 @@
     {
       "count": 0,
       "detail": "",
-      "group": "논문",
+      "group": "뉴스·공식기관",
       "ok": true,
-      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
+      "source": "US-SEC-PCAOB-FASB-AI"
     },
     {
       "count": 0,
@@ -264,37 +257,9 @@
     {
       "count": 0,
       "detail": "",
-      "group": "GitHub 고정 추적",
+      "group": "논문",
       "ok": true,
-      "source": "xaikorea/taxia"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinGPT"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinRobot"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinRL"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "AI4Finance-Foundation/FinRL-Trading"
+      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
     },
     {
       "count": 0,
@@ -306,6 +271,48 @@
     {
       "count": 0,
       "detail": "",
+      "group": "논문",
+      "ok": true,
+      "source": "ARXIV-FINANCIAL-LLM-AGENTS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "xaikorea/taxia"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRobot"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "AI4Finance-Foundation/FinRL-Trading"
+    },
+    {
+      "count": 0,
+      "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "OpenBB-finance/agents-for-openbb"
@@ -313,40 +320,33 @@
     {
       "count": 0,
       "detail": "",
-      "group": "논문",
-      "ok": true,
-      "source": "ARXIV-FINANCIAL-QA-BENCHMARK"
-    },
-    {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "OpenBB-finance/OpenBB"
-    },
-    {
-      "count": 1,
-      "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "patronus-ai/financebench"
     },
     {
-      "count": 1,
-      "detail": "",
-      "group": "GitHub 고정 추적",
-      "ok": true,
-      "source": "openfisca/openfisca-core"
-    },
-    {
-      "count": 7,
+      "count": 4,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
       "source": "PolicyEngine/policyengine-core"
     },
     {
-      "count": 102,
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "openfisca/openfisca-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 고정 추적",
+      "ok": true,
+      "source": "OpenBB-finance/OpenBB"
+    },
+    {
+      "count": 7,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
@@ -357,7 +357,7 @@
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "frappe/books"
+      "source": "docling-project/docling"
     },
     {
       "count": 1,
@@ -367,11 +367,18 @@
       "source": "PaddlePaddle/PaddleOCR"
     },
     {
-      "count": 12,
+      "count": 0,
       "detail": "",
       "group": "GitHub 고정 추적",
       "ok": true,
-      "source": "docling-project/docling"
+      "source": "frappe/books"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-TAX-AI-DISCOVERY"
     },
     {
       "count": 1,
@@ -388,11 +395,11 @@
       "source": "taxia-core"
     },
     {
-      "count": 1,
+      "count": 2,
       "detail": "",
-      "group": "GitHub 신규 발견",
+      "group": "PyPI",
       "ok": true,
-      "source": "GITHUB-TAX-AI-DISCOVERY"
+      "source": "policyengine-core"
     },
     {
       "count": 0,
@@ -402,14 +409,7 @@
       "source": "openbb"
     },
     {
-      "count": 3,
-      "detail": "",
-      "group": "PyPI",
-      "ok": true,
-      "source": "policyengine-core"
-    },
-    {
-      "count": 1,
+      "count": 0,
       "detail": "",
       "group": "PyPI",
       "ok": true,
@@ -425,13 +425,6 @@
     {
       "count": 0,
       "detail": "",
-      "group": "GitHub 신규 발견",
-      "ok": true,
-      "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
-    },
-    {
-      "count": 0,
-      "detail": "",
       "group": "PyPI",
       "ok": true,
       "source": "paddleocr"
@@ -442,6 +435,13 @@
       "group": "GitHub 신규 발견",
       "ok": true,
       "source": "GITHUB-INVOICE-AGENT-DISCOVERY"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "group": "GitHub 신규 발견",
+      "ok": true,
+      "source": "GITHUB-FINANCE-BENCHMARK-DISCOVERY"
     },
     {
       "count": 0,
@@ -2291,6 +2291,28 @@
       "track": "오픈소스 프로젝트",
       "uid": "bd6f116251c492de4067e00f",
       "url": "https://github.com/patronus-ai/financebench"
+    },
+    {
+      "category": "회계 자동화·결산",
+      "confidence": "중간",
+      "evidence": "GitHub 공개 Repository Search API. 동명이인, 포크, 유지보수 상태와 라이선스 확인 필요.",
+      "impact": "거래 분류, 전표·원장 검증, 계정 조정과 월말결산 자동화 수준을 판단하는 핵심 신호다.",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_discovery",
+      "priority": "P2",
+      "published_at": "2026-11-04T03:01:12Z",
+      "query_names": [
+        "GITHUB-ACCOUNTING-AI-DISCOVERY"
+      ],
+      "score": 39,
+      "source": "GitHub Search API",
+      "source_type": "repository_discovery",
+      "status": "공개 저장소 발견·품질 확인 필요",
+      "summary": "Nine small languages, one toolchain. What one checks, the next can build on. | stars 3; forks 0; language Rust; archived False.",
+      "title": "신규·변경 GitHub 저장소: i2y/ritsu",
+      "track": "오픈소스 프로젝트",
+      "uid": "88ef9ed5354a6330b2081008",
+      "url": "https://github.com/i2y/ritsu"
     },
     {
       "category": "회계 자동화·결산",
