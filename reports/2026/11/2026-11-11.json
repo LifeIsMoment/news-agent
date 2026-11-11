@@ -1,0 +1,1906 @@
+{
+  "date": "2026-11-11",
+  "generated_at": "2026-11-11T01:44:47Z",
+  "health": [
+    {
+      "count": 0,
+      "detail": "HTTPError: HTTP Error 503: Service Unavailable",
+      "ok": false,
+      "source": "Brand-News-1"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-2"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-3"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-4"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-5"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-6"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-7"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-8"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-9"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Brand-News-10"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-1"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-2"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-3"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-4"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-5"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-6"
+    },
+    {
+      "count": 8,
+      "detail": "",
+      "ok": true,
+      "source": "Market-News-7"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "KR-NTS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "KR-MOEF"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "ok": true,
+      "source": "KR-PIPC"
+    },
+    {
+      "count": 39,
+      "detail": "",
+      "ok": true,
+      "source": "KR-LAW-ASSEMBLY"
+    },
+    {
+      "count": 8,
+      "detail": "",
+      "ok": true,
+      "source": "KR-COURTS"
+    },
+    {
+      "count": 6,
+      "detail": "",
+      "ok": true,
+      "source": "KR-FTC"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "ok": true,
+      "source": "KR-FSC-FSS"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "KR-COPYRIGHT"
+    },
+    {
+      "count": 7,
+      "detail": "",
+      "ok": true,
+      "source": "KR-LABOR"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "KR-SECURITY"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "ok": true,
+      "source": "EU-AI-ACT"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "EU-DATA"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "EU-COMPETITION"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "EU-TAX"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "EU-COURT"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "ok": true,
+      "source": "US-FEDERAL"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "US-FTC-DOJ"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "US-TAX"
+    },
+    {
+      "count": 1,
+      "detail": "",
+      "ok": true,
+      "source": "US-IP-SEC"
+    },
+    {
+      "count": 26,
+      "detail": "",
+      "ok": true,
+      "source": "UK-GOV"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "UK-ICO-CMA"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "JP-PPC"
+    },
+    {
+      "count": 6,
+      "detail": "",
+      "ok": true,
+      "source": "JP-METI-DIGITAL"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "CN-CAC"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "CN-SAMR-TAX"
+    },
+    {
+      "count": 2,
+      "detail": "",
+      "ok": true,
+      "source": "INT-OECD"
+    },
+    {
+      "count": 15,
+      "detail": "",
+      "ok": true,
+      "source": "INT-WIPO"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "GitHub-Repo-xaikorea/taxia"
+    },
+    {
+      "count": 4,
+      "detail": "",
+      "ok": true,
+      "source": "GitHub-Global-Search"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "PyPI-taxia-core"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "HuggingFace-xaikorea0"
+    },
+    {
+      "count": 0,
+      "detail": "",
+      "ok": true,
+      "source": "WebSnapshot-xaikorea.github.io"
+    },
+    {
+      "count": 3,
+      "detail": "",
+      "ok": true,
+      "source": "US-Federal-Register-API"
+    }
+  ],
+  "items": [
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "긴급",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-11-10T03:59:30Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 94,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 2026-11-10 자동 모니터링 **실행:** 2026-11-10 12:59:09 KST **누적 항목:** 87개 **전체 보고서:** [reports/2026/11/2026-11-10.md](https://github.com/LifeIsMoment/news-agent/blob/main/reports/2026/11/2026-11-10.md) ## 우선 검토 - **긴급** · **제품 생태계/TAXiA·CLOA** · [GitHub LifeIsMoment/news-agent #678: [AI 세무·법률/TAXiA·CLOA] 2026-11-09 자동 모니터링](https://github.com/LifeIsMoment/news-agent/issues/678) - TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지 - 상태: 공개 GitHub 언급·자동 판독 · 출처: GitHub Search API - **높음** · **제품 생태계/TAXiA·CLOA** · [GitHub LifeIsMoment/news-agent #680: [프로젝트 적용] 2026-11-09 모니터링 브리프](https://github.com/LifeIsMoment/news-agent/issues/680) - TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지 - 상태: 공개 GitHub 언급·자동 판독 · 출처: GitHub Search…",
+      "title": "GitHub LifeIsMoment/news-agent #684: [AI 세무·법률/TAXiA·CLOA] 2026-11-10 자동 모니터링",
+      "uid": "c787ee4cefe8b89678cfbc2e",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/684"
+    },
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "긴급",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-11-10T04:35:22Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 92,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 2026-11-10 프로젝트 적용 브리프 **품질:** 38/100 **원시 수집:** 184개 **적용 후보:** 1개 **전체 브리프:** [applications/2026/11/2026-11-10.md](https://github.com/LifeIsMoment/news-agent/blob/main/applications/2026/11/2026-11-10.md) ## 실행 우선순위 - [ ] **기술 검증 후보** · [AI4Finance-Foundation/FinGPT 저장소 메타데이터 변경](https://github.com/AI4Finance-Foundation/FinGPT) - 적용성 62 / 신뢰도 78 - 구성요소: 데이터 출처·저작권·라이선스, 평가·회귀·벤치마크 - 파일: `src/taxia/retrieval/data_loader_user.py`, `src/js/src/utils/hf-loader.ts`, `README.md`, `SECURITY.md` - 변경: 격리된 PoC에서 금융 NLP 데이터셋·평가·출처관리 패턴 중 세무 RAG에 이전 가능한 부분만 검증한다. 현재 TAXiA 구현과 정확도·인용·지연·비용·라이선스를 비교한 뒤, 명확한 우위가 입증된 최소 단위만 채택한다. > 법적 효력·시행일·예외와 실제 코드 상태는 담당자 검증이 필요합니다.",
+      "title": "GitHub LifeIsMoment/news-agent #686: [프로젝트 적용] 2026-11-10 모니터링 브리프",
+      "uid": "a453cd9a29e3c90c268e8470",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/686"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "높음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T20:13:19Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 64,
+      "source": "국가법령정보센터",
+      "status": "공식 공표·자동 판독",
+      "summary": "개인정보 보호법 시행령 국가법령정보센터",
+      "title": "개인정보보호법시행령",
+      "uid": "7305e7e7b075390ebfd94c00",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQanpwSzF1REpLdHBpVmFsTEoya3FueFFJcWdyd25iUUJPQjVwemhTcmxvVFhxRV9BbHBXNGtvSlR0SHFXb0dxMmpsNkczVWxSTVFGRUZkRlhMdm5vVER1bFVFT0kybzNVYnVabTMyYmZLVF9aVFVXRVFVVXFnQ0hONUgyMEJ4THlsR0tyWDVWUVZvVkQ3VmVpTDE3Q2JNVVlONEhwTTJHNGkxb3MyZDl1RzN3d2ZQdUtNZDBKYi1mdUxxOWJDNnVFZFVUbGg2WUpMSmUzRVNuMFNweDYtb1NXRWhhbDZReExmWTZpSy0wcFQ5VzJCUGc?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "높음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:57:43Z",
+      "query_names": [
+        "KR-NTS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 64,
+      "source": "국세청",
+      "status": "공식 공표·자동 판독",
+      "summary": "「연락사무소 현황명세서 제출의무 불이행 등에 대한 과태료 양정 및 부과․징수 규정」제정(안) 행정예고 국세청",
+      "title": "「연락사무소 현황명세서 제출의무 불이행 등에 대한 과태료 양정 및 부과․징수 규정」제정(안) 행정예고",
+      "uid": "ffda1a2c3980d2a2dfc49e37",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE11NW04S2FDNnhwZktKRllLU1kzNlpOVEJULW5wREtIWEFqdUFzdU51cXJYWDhNV2N2NXA0ZmNtMUxtM0EteE5kSzBLRDJnY1ZsQW9mZmpYN29CMXhmc1llVy1tNFhSWWNuVUY5YV9DUHI3OGxMQ0xEQ2psVQ?oc=5"
+    },
+    {
+      "category": "TAXiA·CLOA",
+      "evidence": "GitHub 공개 검색 API. 동명이인·포크 여부 확인 필요.",
+      "importance": "높음",
+      "jurisdiction": "제품 생태계",
+      "kind": "github_activity",
+      "published_at": "2026-11-10T04:35:24Z",
+      "query_names": [
+        "github:issues"
+      ],
+      "relevance": "TAXiA·CLOA 관련 외부 저장소·이슈·통합 흔적을 탐지",
+      "score": 58,
+      "source": "GitHub Search API",
+      "status": "공개 GitHub 언급·자동 판독",
+      "summary": "# 자동 개선 점검 — 2026-11-10 - 품질 점수: **38/100** - 노이즈 비율: **3.3%** - 소스 실패 비율: **0.0%** - 프로젝트 적용 항목: **1개** ## 자동 적용된 안전 설정 - 변경 없음 ## 코드·파이프라인 개선 후보 ### 1. 원시 수집 결과의 오탐·기타 분류 비율이 높음 - **범위:** collector-code - **중요도:** 높음 - **제안:** GitHub 전역 동명 결과, 모니터 자기참조, 규제 RSS의 카테고리 오분류를 수집 단계에서 억제한다. - **검증:** 고정 오탐 fixture가 0건이고 TAXiA/XAIKOREA 및 실제 규제 fixture는 유지되는지 테스트한다. ### 2. 초기 기준선 자산이 신규 변화로 누적됨 - **범위:** collector-code - **중요도:** 높음 - **제안:** 기준선 항목은 낮음으로 제한하고 오늘의 판단과 적용 후보에서 제외한다. - **검증:** 기준선 릴리스·페이지가 상위 목록에 나타나지 않는지 테스트한다. ### 3. 외부 참고 구현이 적용 목록을 과도하게 차지함 - **범위:** result-quality - **중요도:** 높음 - **제안:** 외부 프로젝트는 최대 2건의 기술 검증 후보로 제한하고 직접 변경·공식 규제를 우선한다. - **검증:** 즉시 적용 목록의 대부분이 대상 저장소 직접 변경 또는…",
+      "title": "GitHub LifeIsMoment/news-agent #687: [자동 개선] 2026-11-10 모니터링 품질 점검",
+      "uid": "2ee2474941f7209cee99cb07",
+      "url": "https://github.com/LifeIsMoment/news-agent/issues/687"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T05:28:51Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 52,
+      "source": "대한민국 법원",
+      "status": "공식 공표·자동 판독",
+      "summary": "전국법원 주요판결 대한민국 법원",
+      "title": "전국법원 주요판결",
+      "uid": "dcb4645f8681ddec5152986d",
+      "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPUDFPUHBYejJfWGxoWXhISHdHaE9KM1AwWldKNlVqRDlMdU1KdVo5ZHpIdWxLMWVuUFVKUm9oY0ZPaTExandTNWdWMTFLQXp4R2lmN0pYUE1ZUXlFSDNTZlNSQWM5bk9pY1dhMEJ0OGc1M1pEZXh6V0Zyb0VNeGhTWEhvMEN2Nmc2S2NTRVJzd2ZtMjF5SkM2S3lCUzB0b3lGLXlsVjdLZ1FHRE8ySmlqUTl3TWNtS0xfdHVlQVhsNjF3d3pIS3Y0cDI4dnZDNWxxTVpJUWdVRmRCQ2xVYTdoSURMV1QwYlV4OVd3OHFDV0JjYVpFbnBzRnJQbkNBQVRQQ3RRZlpKS3l4UFVwaVB1STNXM3NtX2QzdjZMN1ZvMDQybDFpVjI2bVM5RzhlcE92S2c?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-09T23:47:41Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 52,
+      "source": "국가법령정보센터",
+      "status": "공식 공표·자동 판독",
+      "summary": "개인정보보호위원회직제시행규칙 국가법령정보센터",
+      "title": "개인정보보호위원회직제시행규칙",
+      "uid": "69b1c41717810dd135e3c493",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPYVB4LXk0WXdwemQ1ZEVtTFFCbFFkQ2pxUHVKdWgyX0ZVY05sMlZ1bkxDU3l4cDVnOUhzVDNZS0VRMTYyNzZmYmlYTVF2QXRzMFV5Sjh2dzlfRzRISm5pRXhQX3JnNDluSzVfTzlxNEZKU29iaUdVY05kVkpvb1poWWlPOFRZMXZQRzZ2cTdySy1wc216VTdUaG4xdUxDOC1mNGdLelRlTUREaFJrRFNwZ3hucXczZWJScXRiMFI4bHpVc01QMURXdlJKcDgzbHZYcHc5SDljU2UwaUdYX2E4Q01TRXZ1Z0VwY2NRTV9scEpueHdyZnZLbmtvd3RtcjlaVkFST1Y1V3dOVTUwLWpCU1pKSGxFYmV6c01RMGlwTE9PZw?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T19:02:42Z",
+      "query_names": [
+        "US-IP-SEC"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 52,
+      "source": "SEC.gov",
+      "status": "공식 공표·자동 판독",
+      "summary": "SEC Announces Enforcement Annual Results for Fiscal Year 2026 SEC.gov",
+      "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
+      "uid": "eaaf6449a4d8c9e844ab4fb5",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZWoyYWI2MEJVYlNBOUJTUHo1cl8zT3NLYmNGTnlWTGZpQ2h5WVNHNUdQRmtMczVib3p6SjZJaE90ak9VT0g5MjVUam9IV2Q5YVp2cDlCRnB3QVptcGxhTmg2dklVS01GV3NoMWpNNFItUl9rRHFQMmx0VFRwY3RhTV9LR0JIUUhHc3A4ZWxjc2x2VkZyTENpcG83a2VNR3dOalMwVl9RVy1VajBFRjZ3?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T08:58:45Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "공식 공표·자동 판독",
+      "summary": "POSBANK/Decision on Business Acquisition(Material Management Matters of Subsidiary Company)/2026.11.10 DART - Repository of Korea's Corporate Filings",
+      "title": "POSBANK/Decision on Business Acquisition(Material Management Matters of Subsidiary Company)/2026.11.10",
+      "uid": "f48e315a8442f5977b1c2b40",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9BYl9WUlFFaWxqX01RNHRxblBGV2tOQzBtVWR5eXpodW03WXdBUWlrYW1tUTVSUVR5WlJrbTBYVnF5TUQ2Q2hPd2tPam9IUFFvQVpKMDZVYXd5UXVXZ2tTbjhTLUVibDZxRXVXaGJwcXhkamt0?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T08:58:04Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "DART - Repository of Korea's Corporate Filings",
+      "status": "공식 공표·자동 판독",
+      "summary": "Flitto/Contract for Sales or Supply/2026.11.10 DART - Repository of Korea's Corporate Filings",
+      "title": "Flitto/Contract for Sales or Supply/2026.11.10",
+      "uid": "44dc234068cfcde38ea79762",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBjR0IzOTNwYVNtZjEwb1JuTEJFSzVlOF9rZ21mVExEUC1QRU5CS3Z0ZUMzRWlLYmVyWU1rTG8tRUliUy1aUHRxNHVIbnJBNTV3dlMxTlpxQnFYUkRNTzJuSDVRU1VmbVo5ZWhqY3NPY09fS0tm?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "EU",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:01:46Z",
+      "query_names": [
+        "EU-AI-ACT"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "Shaping Europe’s digital future",
+      "status": "공식 공표·자동 판독",
+      "summary": "Commission invites views on draft revised election guidelines under Digital Services Act Shaping Europe’s digital future",
+      "title": "Commission invites views on draft revised election guidelines under Digital Services Act",
+      "uid": "87a098b4574db5977e6aef35",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdFFINFJNMm96ZU8xZlVsdXhOS28zYk9rLVdxd2xnS25mWXJxNHZqT1hRUUIzNmtINnNLNDFmRUg3MTVHQUhXZTJvZFRiaGJ0VjM1azNxdV9IMG5jWmVhYVByRjFKbXV2a2gwVFNWb05EWHpTb1pYVDJxOFQ0UUlqV0EzR1lidkYwMFdla2FxaVhrSWk2Z1h1S003eHhzTWo2cV9adnJjOUs4cFhiSkVURUwzRGdOZ3BjU2J4V3MwaFpKNldMaHFfUDlVcw?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-11T00:33:50Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "GOV.UK",
+      "status": "공식 공표·자동 판독",
+      "summary": "Decision No 3/2026 of the Joint Committee established by the Agreement on the withdrawal of the UK from the EU: adding a newly adopted Union act to Annex 2 to the Windsor Framework (HTML) GOV.UK",
+      "title": "Decision No 3/2026 of the Joint Committee established by the Agreement on the withdrawal of the UK from the EU: adding a newly adopted Union act to Annex 2 to the Windsor Framework (HTML)",
+      "uid": "33760c3c823c9fe11bbbf6aa",
+      "url": "https://news.google.com/rss/articles/CBMi5ANBVV95cUxNeE1DVlhzdFluQXBDX0hkOU9DNVZJRGp2YWQzYUhyaVZSdFJ0bWY1dDdfNlNqNVJMS3JyRHk5VFRuV0FKaWQyQVJFTmpQMVRkRUhBSWEyQUVzZWd1RGczSE41SDhEWWIycEZxTFNEZnBOd3hITVFFd1pybWdmc3AxNENVcERVYTdSaW9FcktHb0R2LW14VnZGTVlMQ3lVV3ZTclBCbElxR0hSOXlTaUYzTURwdklKdm4wVXdMM2oybUtPaWpiVTBwV3hWWWJvVHkzTFFTb01sTzJuWWpPRDhOOV9KMVVqY0ZQbDVuVGhURmx5WjdhQzdsbGZ6V19VQmdHSUItRTYxOVltTVpLNVV6V1lUMDd0RXZEbVdyTVhGYTVQbS1lODZIcmNONndaTjZDWVZqY19PT2s2TEdsY2hVS1I3ekVZUWtPMm52MWZCSS1tbDB1emRuRGtOY3luUTJSdFAzYzNvaW5sOVFudTdiTm93Y2RvYW83TkNPYVpPNXlneHdOZU5aLTFWdW83aE5SRE1udUpOclh0YTFIS1VaXzhxTGgzZURLcmM1RjR2S2Vkam1PLXFFclFsR0Q1d3lMYjdZbXVDT3RTU0MzTmtNemFMMy02cG1yT3Y5WHdRbXNQbm1H?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T16:29:47Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "GOV.UK",
+      "status": "공식 공표·자동 판독",
+      "summary": "Strategic direction and guidance - GOV.UK GOV.UK",
+      "title": "Strategic direction and guidance - GOV.UK",
+      "uid": "5b61519f4e657ab4b3665f43",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQVUtoUjl0UmJaRWk4TjYwUUhlVjlseF9WSEtMWlQ3Q01VS25VaXlpTExEUUdGdmRpdXVMVjVfa3FhcXl5djA4ZlFCTm9zRE9sR2MyUkM0MURMQzJET0RFM21rdTdyeDUzdVRZTWxMMzlMb2N3eTJzamFkWGIxX2FlSElMa0xGSW1yT3BzaktwYkVwN0djQTNOOWg0Q0RuQXBZeHZtWXRZcklkNjdtNHlOeUNkejhTNTVSTnc?oc=5"
+    },
+    {
+      "category": "보안·책임",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T16:06:31Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "전문가용 AI의 보안, 오류책임, 감사추적과 사고대응에 관련",
+      "score": 40,
+      "source": "GOV.UK",
+      "status": "공식 공표·자동 판독",
+      "summary": "Introducing a certification scheme for assuring edtech and AI product safety - government consultation GOV.UK",
+      "title": "Introducing a certification scheme for assuring edtech and AI product safety - government consultation",
+      "uid": "b084b36deb2fba636d23343a",
+      "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNalpQODR2MDZzV2d2c1JrR3RKd1BiaDBWYzFxb19iZmJHME9qd3MyUjNua1d5MTZuOUdRblVxaF9qb18zek5XVFR4WHRMM2lqV3g2OWRpNjJCSWtST2ZxQWVMdDBaQjJnLVFLeGNYX2VRWUJDdmljRXU2dWRLOFdDeVRIR2p1ZVNWMWNMajhVeXEyUUtyUmp0cGtWNnNyOU9qWU9DeEt5ZTFCcGZEZWtMV2hNQjJXZnliOUtzZWlkcWlRTmh4M2RHcG91cjJPcVJPVDNqbHNwUDYtMlhtQi1rVmMwNDlsZlBNb2ZqSmVDb29TdjhwZFRjVmtRbUxxVHh6b05KUmI3RkUwVjBrSkRTVGhQdWJBX3FjdTdDVHFLcmxQZnFSX2tBN3JUc0VyNWdGN1d5ZkhjRml6YjhI?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T20:49:43Z",
+      "query_names": [
+        "INT-OECD"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "OECD",
+      "status": "공식 공표·자동 판독",
+      "summary": "Climate Club guidance on country platforms for industry transformation OECD",
+      "title": "Climate Club guidance on country platforms for industry transformation",
+      "uid": "f8add504e2f94fcec3537ebb",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdjVRM1FwaUFrc2s1aEpqdDhMdGVpUjBobXotM1NiMlZoSUozaWhHZGt4bEtTTVd3bHZfSnNoMnRwd190anU3d3BRNjlzRFR3UkNyeHJ2QmF2bTVaLWQzdjE5d2ZPSEY1RUoyUWRUTE5CQnVQUFZLQWtqNHZMb1ZoSWdLZnl3YUlVY2htTEh3ZGxiaFh6OHMzQXFZclJIcnFPWWNaMERETURFMm1NdE1tMC1CaFhwUklOMWpVY0VJY1lHUQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T06:13:22Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 40,
+      "source": "WIPO",
+      "status": "공식 공표·자동 판독",
+      "summary": "Government Proceedings Act, Uganda WIPO",
+      "title": "Government Proceedings Act, Uganda",
+      "uid": "862166c4770d11d20d8c5542",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB2c0drd1hVNlVweG1COHVLZnJSS0RVb1h6QS1ybmpTLTZoY08zRzdtYnZuU3hRckFZUjE0UzlTLTRGLTk0QUlUQzVXTGI1WEEwcTh3dTBScU9nQk1jWHdsZU0yaWlkWTdJ?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "중국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T13:45:45Z",
+      "query_names": [
+        "CN-SAMR-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "山东省税务局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Ai 税讯播报丨税收征收管理法修订草案向社会公开征求意见 山东省税务局",
+      "title": "Ai 税讯播报丨税收征收管理法修订草案向社会公开征求意见",
+      "uid": "b92e1bd52182b988dec82164",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VX1hWRXNmLTRfMnVsZ2Y1c0FVS204LTFTNGw5U0RvYXQ1QU9EWk12R0hfemU5ckE3MEpDY3NPd0Z3MDNpMmFMaEotZlE1ZS1TWWVxczZtLUVNanBwZVRXS0Nla2haSWxVWXB5UzJKb2FDLWY5?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "보통",
+      "jurisdiction": "중국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T07:48:00Z",
+      "query_names": [
+        "CN-SAMR-TAX"
+      ],
+      "relevance": "TAXiA의 세법 지식·답변·증빙 범위에 영향을 줄 수 있음",
+      "score": 35,
+      "source": "国家税务总局江苏省税务局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "AI时代，让我们跟着世界一起变 国家税务总局江苏省税务局",
+      "title": "AI时代，让我们跟着世界一起变",
+      "uid": "ba76085b27f661c194a763f9",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBWYnhBZ2RfSTc0VXhpbzE4U0Vaa3d6ejE0SW1odjhqUzVLLVIwYmhnZngwS1FBVkN1QzhCam5iTFFlV1QwWHpfQzd5bkdJVWdHVXBKamJ5akZGLVFueTQxV2ZyS1pIaFVyaTZHWGhWWVZYWHRzRnhJ?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-11T01:34:23Z",
+      "query_names": [
+        "KR-LABOR"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "고용노동부",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "한국고용정보원, 진천군과 전국 최초 ‘찾아가는 지역 맞춤형 인공지능(AI) 청년일자리’ 추진 고용노동부",
+      "title": "한국고용정보원, 진천군과 전국 최초 ‘찾아가는 지역 맞춤형 인공지능(AI) 청년일자리’ 추진",
+      "uid": "c0e37ffc31c0098f2ecb392c",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBReERKZjhNRHdfQVdfNHc1RkdZODVrem5FdmEyZlFyWHJoWWxQS004aXhobkVJVnNXV05qS3lpTG11QWRibUJDMl8zd0g2dndZUm5ybVp4bjN2dTFhR051OW9VbndkWnEtZmV0bXRMSDBSVzN5aWdr?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-11T01:34:22Z",
+      "query_names": [
+        "KR-LABOR"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "고용노동부",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "고교 일학습병행 학습근로자 대상 ‘도메인 인공지능(AI) 특강’ 실시 고용노동부",
+      "title": "고교 일학습병행 학습근로자 대상 ‘도메인 인공지능(AI) 특강’ 실시",
+      "uid": "db125df5e2cd107d6aa45cff",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5IYkRWdUViSHVMN3RFQmVYM1lLQTMyU24zM3A0NEJqMXdRUnBIWjZGUlQ4dUk2UGFjWkFTaTFtdUp6Y3Q5R0ZPSExuWVlZcFBYUldCbDRNdUZQQXlpWG54ekExLW5sUnJvaERTSXZwLXZsU1lnZnNV?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T21:28:04Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "개인정보 보호법 국가법령정보센터",
+      "title": "개인정보보호법",
+      "uid": "d6832b849eaef87bd78b5c62",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNXzVmUHJsbWhIangzNWRIZThyUmU0Q3VhalhhRENXLTJxaFMyZDZkWnhucUpQQW5oTl9kUlZkclJMdWtsc0RMRExoa1RnRUZiTmJMTTBsT3BpbU96MzJhYy1maWJhZU5OUUlyNnZ1Vzc4SHY5WnNKOTZmdTloNWhqMEgxSEhSMUJZOG1YcVFKbHNZdWotbUJ4UDFCUURlanpwVkhyYnNmejBWOFYtVXRIODhqNHlZNEdHT3k2UThubzRtbHFvUFdIQ3k1TUg4ZFJtekl4RVlRU0FuemlOY3libi1jbGllZk8xUHZyX0VCSHU?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T20:25:58Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "파주시 인공지능 기본 조례 국가법령정보센터",
+      "title": "파주시 인공지능 기본 조례",
+      "uid": "f3b5803ca257cac903a9d70d",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQdFBJUDZJVzNCRGhiTFJub0VVVDZkRVN2eFc2WG5YY2pKdW95RVhCa2xrc3dWVjBaNXFwZEYtT1JNUjFGZ1hoNjhBQmN0cHlNQ1FGZEUwbGRIRktQQjlldmJIUzdEY0hnVkVEN2ppZWV6Zk5IbUJkeHRsTEh2M0dVN1JrUFVEYVE2UkNucS1ldWJQbFBYQlBmN0FhR0tpSm13eE81cC1Zd2Yxbkd6U2l3aFdVbFNPd25vcFREanBTcEhqeVNqbC1oQVU3akY4Q3VTZ0oxQktnOTVmaS1VLUJwRjlRdmp6T05ocGk5UFkxQjhqYkdoU2liYmJRTQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T17:42:41Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "국가데이터연구원위임전결규정 국가법령정보센터",
+      "title": "국가데이터연구원위임전결규정",
+      "uid": "bd459aa3c428197f74b24cc5",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOZHEyWjNYaFczaFhRVzk5QWxvOW0telZEYVBPam14RU9nWGttNnNtNk5MUmxuRDM1b3V0WVVXUDdxaEhIeDV5LTQzZk5yUGRWcXE4ZHVvaGl4RzVwU3oxbklnMHJCT09MX2lzdS1taVRKYVVNbXVIYzd5c2VKb1lkWDJfdFdjMFE4YmNNbDhaYVkwNW9EcWRIMG9Id0NSeVVscnFnOXFiSkNJa2VRM0tQWDhVVFQwUmVFbDVpTFZndkRGTm1obE14UjhsN2QwenMxSWMtcGI3NFprTHJwTWFoOTRsc2trM1BxUWl4QTN4M2JfaTd2Uk03blhLNEdSUldjb2MtT0luMkh0dld5bl9rdjBPSQ?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T17:33:00Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "대한민국 법원",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "개인정보파일 목록 검색 > 목록 대한민국 법원",
+      "title": "개인정보파일 목록 검색 > 목록",
+      "uid": "5b56753b438d65117c1eb7fa",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM3NJYWFRbDhJV3dtVkdZbUVsQUZ0bVZjM05XYzlmcUZwQW1tQURPZFFjczdFZFpTMTg5RkJyTHgxbDJuNDhjVFBYSkNNZ0tpXzBxWlVlSXN6bUs0YkJvUkxWUVpwVWM2R2FlekFNNnlzSWRQWnJNZ2pfbjl6bGtyVm9sVkRXYk5maF9sLTR6RkNjRkkwLUlFeUJicTdaVlRxQ3lrMllZSkp4dWl6UUFPbHgtMFJuczJzb2JySTJpQWFqeTQ?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T17:30:16Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "서울특별시 인공지능 기본 조례 국가법령정보센터",
+      "title": "서울특별시 인공지능 기본조례",
+      "uid": "aeb60c1b9bec0e6d2404eed8",
+      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPTDNieTVUS1lvVFNxT0JKSjlXcTFfZ2tkV3V0emZwb3BwOEdFbE1NWnFGa1BDUHRnUTBJWUhBUGhQNmh2UkpLTnFzN2F0YmtWOGsxMmNrQmtaSGVhR2gtWVhfbFVNMU1wQTNjSmZDaGZCeUIzRHBiRlNYSkJiV241OE9SR0VnUW5zXzBaeVZrYUdJUmZmdnNwM2dNY0t0OHBwVy05UGlJeGRMa0ZhMEEzVjNCVkJLQzBNRlEtVUpJcFpnc1h4blRiZ3RLOHB6NGVieFdMNVNWTmU3YzN2VlQtZXd5RGRMWTBHMUxTY2txSDUtRlVXZmZfeDVCUHZSRGZCc0I5NUVFUlp4VkRRR1dR?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T15:46:39Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "보건의료데이터용어및전송표준 국가법령정보센터",
+      "title": "보건의료데이터용어및전송표준",
+      "uid": "3c3db961ba46925499f9d1fa",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOVDVuaUJPYV9CQVp6Si1URnByX0ZjVWNOZW9DSkd4WVlyVFdtcG9UeVhXSFhVUGNObDBBUGtmSDY4MlppQmpoRVpUc2pEMlkzejBfN1R4Yk0tSU1lY1FYNlVjTkdNUXJTVkFWWW12YWhiYmIzeVZia1FFbndxOHMyekMzYnVFdW9ST2gtc28zckN1ODlBbE5lU09HVWYzU0dDdzBxaUdNXy1GZXVKSGt0RHFyNk9XOHRaM1BMaGdNSU1hZnJHTGlkOUhNcy1hb3k0NWFuWllXN1pfNFBxRTJEZUJkV3NMbG9RUnczbTlWcEhLVGo2UDVKbGNTUkY4dlVfN2JESWozWGs3N0N5ZUFEWGdtOA?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T14:33:16Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "자율기구방위사업AI기획담당관설치및운영에관한규정 국가법령정보센터",
+      "title": "자율기구방위사업AI기획담당관설치및운영에관한규정",
+      "uid": "304e3a47172c5822c7f24a23",
+      "url": "https://news.google.com/rss/articles/CBMiggNBVV95cUxQaUdNdDZLSERwWURoNEVQRjE3WkRya2RGSThXWEhsQUh3LUtVSkRpanBUdUpQeUFIQWxMOGVRMGYtbUpoMzJOOF9hWEp0cExHMU0wN3dFN2Nsb2FBaGFXeFNxMUJ6dWo3Qk14VkZWb3VZNnJiYVlCN1ZpNGRZSzU0R0ptTmdmd1Q0QkgwTm9zT1Ffcm94RzdrOHkwT0JLaEtXTXNrQjBBcllhYk4td1VKeFFLOGJBcVY0VUtHX2x2S2pEZS1oZlZqbkZIQ1gwVVR2Q2tScFB2ZVlYU1NKTHpQNmN0a0VqX0E2QWZURUx2cTFvMVdwNUV1Qk85UXVKXzNDNnAzd1ZoV1IxeWRiUXBHNE80djZUc0JJVmVNQTI3VW1EMVZVSk9mcDRjcGRHY1NIeWZ6ZjdWZWdhdVZ5cFI0SGNGc2RiMTh5UVVTV2RvOW5wcTJTbGR3eUI2TkgyQi1CTVhiTTlpeE54aS12dVJvaE5YRGljTDVPSXdCaXpuWk05dw?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T14:21:56Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "법원개인정보보호에관한규칙 국가법령정보센터",
+      "title": "법원개인정보보호에관한규칙",
+      "uid": "77276fb22dff83d470e09ccb",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOOGFrclF1Y3NXTldSOF9XSDMwa1BDeGZudkRWSk5DNFVOSk5qYm5qa1ViMHpFZWFLSWtROTdTRHpwR1ZJaFd3RUZaVVBZZlVOcjhjVnpHdEJIaHB4Z2psb2xzNXpVNjl1QnJ0MTh2b3B6bWZkd201ZDBXaUtNaGdyQzM3WkJSWVRCVmVrMmdGa2xoWTZJeVNoRTBsTmxReTh1SmZyVWJLY05rM2dTMm9pbmZuY3RhcGxwTFlYYU9leW12SDlXTEk2VDNPaXhjU2lwR0VnV0p3d3hxQzNZeF9IUWEwY0E5Vk85T19MOGoxOTZmNTdCQTNsekoxTkx5alhMZWZONlNReVVQUGc?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:46:37Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "인공지능 데이터센터 산업 진흥에 관한 특별법 국가법령정보센터",
+      "title": "인공지능 데이터센터 산업 진흥에 관한 특별법",
+      "uid": "50aebf3a5fd36a4fe229e6d0",
+      "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxPQmo5OTIxN3N6Qlh0UXJSYTEyVmJMWU0yOFNYY0hwR0R6aDAzYkx0OUZybUpFczN6YXdlMVlPS2hDNlVmaTNCNkRJRGd3bDVtaHVraVMtWGgwV29MOHpOVWF6TmFGTTZwc1ptMEZkTEdKeXlIdDRfQ3hzVXg0MzNZM0c0SGN3UVlzOE9NWE9qUVV1NHY5eW5BOHczTmJwLWJFVkx5M2JsOUtFMlliRThSbTFOZjY0ODNLcHN3aTY3eWQ1OTQ2TXFXYmF6MDdPWlZ6bFB1WDZ2endaeWtFV3dQM3VONUVWS2JMcW9QUGRYX21VUTJvNGlraXdCR0pyak1BaUN0d1JJTmtST1U2NGFXYUdLSTlacjNFZkhhVHRhQUNBRGlpdDExN1VlaGUweWNUbkExV2VuVDdEMy1nUkdiVGZ5c0dkSlFpd2RN?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:01:05Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "개인정보단체소송규칙 국가법령정보센터",
+      "title": "개인정보단체소송규칙",
+      "uid": "e436e53c4ba93b284cb44544",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNc1pWdG1PUExZbGZVcG5fcWRyalBBMW43Mk9ZdThsd3k1dzhxM3NwcVJ5dkNtNGZ1ODI3emdNOEtpRVdocjZoVXQ3S0U4TXNvVzVjTUNFY0VnRFJsNEpIdW9JVjdKajZYMjR3bjdma3hKTGtqblFEQmUteDdNZU5hR1N3ek5NODhWSGFERUY5bmNzaTVhSm5JRGhkT2tySHI1T2pvLVdyLTZFVk0wT2VvejRkYXlmYU5UQ2dxbDNDTTVJLW1FYzdISUVVRUQyRTZjbGlzNF9sVWtRRzNkVXFWOURZNlZXZw?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:31:15Z",
+      "query_names": [
+        "KR-LABOR"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "고용노동부",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "고용노동부 평택지청 고용노동부",
+      "title": "고용노동부 평택지청",
+      "uid": "a160f30defad21df4e466e5c",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbUM4ajJULVFLR1Joa3laN3pla01xZnpaVkdQNmU2TXREY2toT0JUNGM3Njg5aUtaMUJqYm1xNDRaTUxvZS1zRUdBekU4eHBKaTMxY0cxQXQxenoyQlhNN0FweWpMR3pfZ0NqZ05ReEgxRC1JNTRDcnZGeEFkTVJ3aG5Zb3ZDTWg3TGFTOFFn?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:15:04Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "오산시 코딩ㆍ인공지능 교육 활성화 지원 조례 국가법령정보센터",
+      "title": "오산시 코딩ㆍ인공지능 교육 활성화 지원 조례",
+      "uid": "de5715d60ff51a9c6e9b0cf4",
+      "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxNaW9kSWQxT05pTTdsaHRRTHZhRjd3RWdCMTRWcTdkanhWUGVaUWh5VUlranFwbVd1MC1tWk1VVGRuVTVEMEJ1U1J6eDdJeHZBSEl0YjNMQ3lkR1NraWozclhKaFRybFVBQ1FoX0VqUUVnUEw0Y29ZUHBzeVNSZWJoZllFMUVLZlJDWGg3eDdYNnZhSV91Q2Y5MVhZdVhIRFY4ekVZOUtINjlKdElqckI3X1FlUzNkelBDVHNxNFM3N3l3UXRGNEVEYlNqU0g3VjhYblR1clN3aDZielZ2Y0VRdlJwYWpEMHJEQUViMHNRSENYQ25fR2xIb1BxVHE0Q3h0YmRmbk1wbmVac2xQZ1Zrd2Ewbk9LV1p5M0E2TG5GMWxneWY3VGNIYVdzRE40NUs4ZEc3dVRDclJxcnhFSzlJVEhCTHo4ZHdFZHJWYzBYTnhxc3pORnNOT0ZKT2JRdFFUQk9z?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T08:34:42Z",
+      "query_names": [
+        "KR-NTS"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "국세청",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "국세청 기간제(육아휴직대체) 근로자 채용 공고 국세청",
+      "title": "국세청 기간제(육아휴직대체) 근로자 채용 공고",
+      "uid": "672df80146e59c264f3d961d",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPekdWcmtVdGRiT3NhQWtDZFZFdGVMbWhCR3J6SS1FbGZLd1FqYnZvRFZpZEdNR0RwelI0M3NadVFuX0ljaGdGT2phZVRoclhjM2ZNWnd0Zmt6MWxRd2dsZ08wckhXWk96aEd1b3JCVmhLbDltbFhZdVFHTjk4elBtc1JWTWNBSHRrQ1E?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T08:29:34Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "자율기구지식재산인공지능전환추진단의설치및운영에관한규정 국가법령정보센터",
+      "title": "자율기구지식재산인공지능전환추진단의설치및운영에관한규정",
+      "uid": "039d675f04f590cb88a961a7",
+      "url": "https://news.google.com/rss/articles/CBMiuwNBVV95cUxNSDV5OVVnX1BNRmg5TkRzLXhGZlV4YllPWVRVeDEzRXoxR3YyUFhpTkp1b2JYODlkbFRDempIbDMwbG5xRnVfLXNIdFJnTUpvdWJQQmlkRmZPSTlOMFpEMVd4SWx0MkNsN1hnV0l2WGZ5QWVKSGpPRDVQZzVfTlNySkFmRXluSFRHd0VvUVdaanNQOEt6SVAzUVdKbjVCZVZTbDZuT2t2SGd0cEh5Z1NNVTEzZzU5V2VBcGV5UDktZzg3NnBsLUx6VEhVVk1ZZHJ3N3M5WmZjSjZOYWlTQ0gzZlo3eHZZQnhZbnBDdzh0Um0tbmlFRnN6enNsMDgyS2ZhSzc5dXVNT3dRdnVzelZoQjFvU2VpbHNpdlhGVVVPdnpHWXZwekVvRm0zNE1WalV6UXZka1RKQjF3NmZyekZUZnAtSDVQRm5EekZ5by1kOVQxT0YwcXZ3ZmxXMnhVdE9aWUNwWVlaSERfUElfVnRreGpTRmhEcTVVRU1PdXN0ZEJYZW1xS0JwLXVINElJMk9vR2EtRWNOeGEzRThCd3NydV9mNUY3NVVPREJRZng5bjdwaHVNREdRcDh0QQ?oc=5"
+    },
+    {
+      "category": "금융·소비자",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T06:14:53Z",
+      "query_names": [
+        "KR-FSC-FSS"
+      ],
+      "relevance": "전문가용 AI의 설명·광고·소비자보호·금융규제 리스크에 관련",
+      "score": 28,
+      "source": "금융위원회",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "영상 - 홍보자료 - 알림마당 금융위원회",
+      "title": "영상 - 홍보자료 - 알림마당",
+      "uid": "2635f9d20b4bf7eb14e0a8e4",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9WczZJUlQwcmxLUmVKcmNZZEFCNXJURE55eDhCNE5sLUxfdURya2ZiXzhFWDQ5bXhWSnBfam8za2FCeGFVOUtUbEUwZktnLVZ5N3FhV1FVakJsT1k2eUhwUldUNnY5OXRkQy1FT1FLeDZXaHJqVlhqNUF2bmxwVDQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T05:39:12Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "국가법령정보센터",
+      "title": "- 국가법령정보센터",
+      "uid": "ba4c8eb38de2d00c521a32a1",
+      "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxQNWJGU2ZQaVBDdDhhaHVZR081bUZJV1VUWEtlSnBneGYwZ0dWZ01qMk9MWWNlNVFkUms0YldQZm11bkRXbzJIcGRxOXdTT3FVdHFDR3E3TlF2bGFhM2RDbkFPN3AwQTNGVlVWNG01T3g4N0xwRmN1Yzk3RzZOdWE4UmhhNDhyVlFOa2stRzEyTW9kUW5rUE12OGZFOUZsN3d4RnRub21vaDBlWWRscGoyZ083S3hUbnFTQzY3ZEFzSmRJM2ZKVHF3SDcxZVNZVnZWdWRVT1RmQUVkQzlMMGlldl9UcFZ6SEV6OGxzTk1zaE5zODBZMXJuZUpsWjBGekZ5eGZaWjFQTjJTcXppcDZLRXdMSjdkazJQT1UyQkE1Z0x2Z0V0MW9YaFZsaVNLVEZaaWlwNmp6ZmIzYy1lY0VpcjhfOHNGd2xXYWZ5UzJId3M1WFk4TDZRTkE3N2FCa3p4a1NSeU9STFhKN2VPSF9DZ1ktQXFieHlaYVUtSHJmTm9CejJ3SHN2TlRtZGJidng4WkVDcFJ4OEpOX1NudU45cV95Zko?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T05:07:18Z",
+      "query_names": [
+        "KR-LABOR"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "고용노동부",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "「2026 울산 공공기관 합동 혁신 경진대회」 개최 고용노동부",
+      "title": "「2026 울산 공공기관 합동 혁신 경진대회」 개최",
+      "uid": "3935cf697f349c8c8facbc09",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBqXzQyeEt2ekhRdGszY2cwSzFnSDhyQ0tOWUZWOFg0V1NrVHJhU1BjUWxZSlNyTVhEWFB0N0xyckhlMng3RFNLOElZLWxsaUYwcEthN2xISjQ1WnNBYnhzem5XSVVOcnZEaWRWUnQ1bVhDc3FXLU1n?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T04:02:05Z",
+      "query_names": [
+        "KR-LABOR"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "고용노동부",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "한국폴리텍대학, 산업이 원하는 학과를 먼저 만든다. 고용노동부",
+      "title": "한국폴리텍대학, 산업이 원하는 학과를 먼저 만든다.",
+      "uid": "cc0152bd872eb667b80feb1a",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9tS3NQbHRxZ3U3OU9nS2Y5SkNIaWlWdEdGTWp2RnFPcnhzdVlscDdCdWVrTmxpTGhmNmQ0YlN4Zm4zMXFfaUx4c05nWVBCYlU1LXJEeEl2aERvaV92NF9hX1IyZ1VWWHdlbHFjdU5wUFhXbkRMZXFZ?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:58:29Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "선거관리위원회개인정보보호에관한규칙 국가법령정보센터",
+      "title": "선거관리위원회개인정보보호에관한규칙",
+      "uid": "1c5326bf105f62749ac7d6e9",
+      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxPcWdzWURqeWEybmlOWklxeVVRRzBPdEExMFA4ZmJJYmg3Z3hnM0Y5am9mbGlHQWxKR1hFWHNTTGZYZ29XdTFOQzFOcXhySi1Sek15MXZUSzd0VnBrMThlOFdJVFpSalcyd0JXbC1pU055SW56R19NeHpHN0NVWkVRbDBwOVM5djVnUjE2Q0d4U21KTTZadWpmQml2cFhpY0JlV1VQeURkQVpDc2RXV0Q5Z3cxeFFtdHVyNG4tM1BQWDVXNnpsRm5hd2ZFMGd5bENhckJGR09teUs5Q2MxOFd1REdFMUU4Ry11aGZyU2lzX1V6SWZ2Z3hqZ2RkTUVrWlFuMXh2cnpIZlhJR3dVZmZMNlkyeU0tWXNVaGdkdUFqcUR1WXVrY285UzBDS0lQRkItZjMxOC01RUczNGNUaDZQYUZJbTczUQ?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:49:41Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "대한민국 법원",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "[성남지원] 공무직 근로자 채용시험 공고(성남지원 공고 2026-4호) - 개인정보파일 목록 검색 대한민국 법원",
+      "title": "[성남지원] 공무직 근로자 채용시험 공고(성남지원 공고 2026-4호) - 개인정보파일 목록 검색",
+      "uid": "e486c14191751723fc6fb95d",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPWjlNQjNCN0lndlROV3BaUUlQdHZQc19EUGdfTmx4YW1iYWdsQzNBbFRFR00tM0NlMUU1NEY1LWtHdlNubjc3SjAxUDRYaUhhU0E0QTdTNEpaSHdlbFlHM1pDdUI2Nm1rWFhKUVI2SlVUY0FNNFlCVjgtdjByckhDc3hQSlpVT3BlTm1CNFp2c2l6YUFOUjU2Rk14NlVySHZiZGVoVjVsNjRUOGxQWjM3RUxXVkxCTmMzVUU3T0FQMFVPRFJyQkxzNXpSNHVVQTViMjZia1U3LXpqQQ?oc=5"
+    },
+    {
+      "category": "AI 규제·거버넌스",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:12:08Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "AI 제공자·배포자 의무와 거버넌스 설계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "산업디지털전환및인공지능활용촉진법 국가법령정보센터",
+      "title": "산업디지털전환및인공지능활용촉진법",
+      "uid": "d3d9c02d5b6566cd51d24fc4",
+      "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPNS1hMng0TkpxaVN2ejd2U0QxUmVibEpuQ3lhcGVBQnFLSGdGUVA2Nm1YX3BQZmFzdjNLWHA2NGd3bFNwd1l6dXdVUWdZUFlqNjlhcVBvczRxLUZjRkhPY0xaNnpUdG9RUWx2TXM1c0FZbGVyeUV1X0VPUzRSaEJHZTFuMG54S3JWd3JuWWpVUDVmXy1tOFdfU1JxbG55ZjdDT3ZZVXFzOTBRTWs4MWdkSW5zdVNlOWxmY2F0ajdPb0JLRlg3OGNvR2hPa244TlIwRkF5eU8zN3YzRFV1eDFjT1BIWXMzM0V5N2hfWkNtd0JKeEpDakJiVEh6ZGE3Xzh2Y0VOY2M2NV9aaFl1SjdaMklKRlp1aTd4TkRlcDRqbXE5ZFBnMTVxZ3l5Yk9zUWlfZXZkWDlhaDlxZw?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:04:48Z",
+      "query_names": [
+        "KR-COURTS"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "대한민국 법원",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "전국법원소식 >목록 대한민국 법원",
+      "title": "전국법원소식 >목록",
+      "uid": "32f964f903afad840f5a9f93",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNb00yOUtMTTN3bVJ4cXJKb1hielBwbUpsTk5zRUpnS2VXQWVLSUhtOGlaRXA5V001VWZST0QzbU5OZEpGcmwwZ3dtNHh1MFZJZUc1VTc2V2VCUGpEVTFubkkxVWwybmxoVjFYdkwycXhkajFlQ3BIUG95eVhpMTlpSXQ2dFlDQnkyVC0yTVhmRkNVdzBrcXdEa3BTRE9feGVMYlpLblBVOERrbWc0QTYyZkVPUVJfT0J4UnBJSXdLbEl5NTY4T0xycm5GYndCakZQZUFzenJlVkJkaFhuazFudk5KMDdFdnJsU3l4TTh6UEoxeUhnRURTV2hjbkpKX29t?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T02:55:21Z",
+      "query_names": [
+        "KR-FTC",
+        "KR-PIPC"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "개인정보보호위원회",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "보도자료 개인정보보호위원회",
+      "title": "보도자료",
+      "uid": "259e09e6de27431a0142fada",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbGpkSzJWUGNBZURtUURfRWl3eE03cTV3YkF1S01HQVJ4WUFEbWtXbGFVS1pVcktlbmNsOWhGTzJxV01ZbUVsZmg0Vnp3YzBvYkFaekctekN1VUJSZHFadWtHNndKWWhmaFVzWWJDRVRGSy1nNXNxckJYZnduUXpKbm1sbFdLVXVNVkFtNFE1dEs4TDdqWUUw?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "대한민국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-09T20:49:34Z",
+      "query_names": [
+        "KR-LAW-ASSEMBLY"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "국가법령정보센터",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "조문정보 국가법령정보센터",
+      "title": "조문정보",
+      "uid": "36af0c840545f01971ccc0fc",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNSVhSWEJHR0Z2d2xLREUteW5ISjRoSHpYeVZpdzIzWDg2X3FXQ2FkWWRTNGdUMGVkdGc2TmNLUEx4R3luaWwwb1o1X05ocVYtT0JmajRTSnVvbG1OMTNteXNyWnlUSlpTNXlRbGN4eHlFODRubnhrV09lLXpIVEFOOGtKdFlDY0F5Z01j?oc=5"
+    },
+    {
+      "category": "개인정보·데이터",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "EU",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T20:41:45Z",
+      "query_names": [
+        "EU-DATA"
+      ],
+      "relevance": "CLOA/TAXiA의 데이터 수집·학습·로그·국외이전 통제에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "European Data Protection Board",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "News European Data Protection Board",
+      "title": "News",
+      "uid": "4a3bd93a6d1f392a85939817",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE50bmx3RDlXV08wNE4zdWMwVlJVcEk0NVdjdEJoRnh4VXpscFpjdFNiRTZselZpRkM3ZXJCV05tcmd3eU9HWXk0TGk5MFRuTmJMZFRN?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T19:48:17Z",
+      "query_names": [
+        "US-FTC-DOJ"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Department of Justice (.gov)",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "North Smithfield Man Charged with Multiple Child Exploitation Offenses Involving Surreptitious Filming of a Minor and Creating AI-Generated Child Sexual Abuse Material with Images of Minors Known to Him Department of Justice (.gov)",
+      "title": "North Smithfield Man Charged with Multiple Child Exploitation Offenses Involving Surreptitious Filming of a Minor and Creating AI-Generated Child Sexual Abuse Material with Images of Minors Known to Him",
+      "uid": "08e2eff35c4506d66557f34b",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORjZrY19KclBsUV82cEllMWFzRnppbnNNYlF2dnpHZjltTEJqZ296OHcwdEEtQUVXblFmM19UWGI3Rlh5UVJqcDVDTUU1N3MwVGJWTHgyWUM2ODh1Q3RUSFpmTkJOQ1U4eEJmbnN2Y0lnckRGVzIzUVA5ejZHNUgyeEdscXpvZ04ySi01UnNnZkVwMzlGd3JFMGhVcmg4OGc3SkVDeFlQRnZhUXhiY0hj?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T06:42:58Z",
+      "query_names": [
+        "US-FTC-DOJ"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Federal Trade Commission (.gov)",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "2026 Press Releases Federal Trade Commission (.gov)",
+      "title": "2026 Press Releases",
+      "uid": "76b015dcfd85adacbcbe0d98",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQXc1YWVTLURCbzl2Z3FueWt5VU1SUS1oRXVwNG5Vb1BiaDdsbGdNbXNSbHBRTU5HMzZYQ19CSU42eVR5dmN1RDEzcWZJT3lPQjROMjRXSHdGYkFVRXNtLUFDZ1Jua1pmMmczdG9tN1pSTVNTZ0FYZzNScmZnZldtNEt3bV9KX2c?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "미국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T00:16:25Z",
+      "query_names": [
+        "US-FEDERAL"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "Federal Register (.gov)",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Accelerating Access to Veterans' Benefits and Employment Opportunities Federal Register (.gov)",
+      "title": "Accelerating Access to Veterans' Benefits and Employment Opportunities",
+      "uid": "206e75fe61a29793cf858cdb",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPUGxDZnFCcXVnbG92dy1SZXotV095cnhkVmx6bXVyY1Q1ZzJKRFBuMnI1VUxOeXA3WkhCUFVkLXlUTlBZVHNDVFNMTTBxbmY2NEZLclJHTWIwUFh3WWt5SXZEVWlxZ2IzMThJUVJCZW1fTVl3N1R6c1JraW9PWlNRbmsxMHR6Q1p5eVFjYzhhenQ0eHB5ZElOMDNjbDdqUzF3b1VSUXNsNV9MdTVJaE41akJJOVRzUVhwUHA3bnFLblNkWDJRalRqN1hNa0ZJYS1ZdkRDQURGaXJjNm5lN01CY1VfOWdfd3NhVkhRMg?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Federal Register 공식 API",
+      "importance": "낮음",
+      "jurisdiction": "미국",
+      "kind": "official_rule",
+      "published_at": "2026-11-10T00:00:00Z",
+      "query_names": [
+        "US-Federal-Register-API"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "U.S. Federal Register API",
+      "status": "미국 연방 공식 문서",
+      "summary": "This notice advises the public that HUD intends to make changes to its Headquarters and Field operational structure. These changes are designed to better enable HUD to address crucial workplace and mission needs by eliminating redundancies, streamlining and increasing flexibility in work processes, and consolidating administrative functions, thus allowing the Department to more efficiently deliver on its mission utilizing current resources. It does not propose any office closures or relocation of staff.",
+      "title": "Notice of Intent To Reorganize HUD and Revise Headquarters and Field Operating Model",
+      "uid": "679ebcf88341fde2993162cc",
+      "url": "https://www.federalregister.gov/documents/2026/11/10/2026-22838/notice-of-intent-to-reorganize-hud-and-revise-headquarters-and-field-operating-model"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T23:49:36Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Civil Service Jobs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Data Asset Manager Civil Service Jobs",
+      "title": "Data Asset Manager",
+      "uid": "8980e9fcc60e1f16a1d97096",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBIdkRFcUR5U2w5ZzBkOWFqVVpJSnZQYldBVkI3cUlHaGR0ZElmUjZ4N1pzRWJucFB6SDN0UDJMeEJmd1JhMHNyZmpKbV9pR0dHeHhBQkdMeFA5cnZHejNreENEVTdHS0tkWkRTZk50b2Zqa0ZSNUxFN3ZR?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T23:17:17Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Civil Service Jobs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Digital Inclusion and Skills Analyst Civil Service Jobs",
+      "title": "Digital Inclusion and Skills Analyst",
+      "uid": "17f45ab6ad6bf96439429d2d",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5paVhPTjZ0Tk03LTV5cWotUzhzTEVjR2lBcHcya0NBVTdqWGEzWXZvcGNhcUktM3FPTlFfNmNlTVQtWDJXSFNnd2VOUEtvd3Nra0o0d21SSFdCUUJNY0plTzJaUkJXNjNrWGNBRXJaak5ydUNaM2VCTmxR?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T23:05:53Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Civil Service Jobs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Deputy Information Systems Manager Civil Service Jobs",
+      "title": "Deputy Information Systems Manager",
+      "uid": "8957d24d690bc53c3d4726f5",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBkc0doQ0tIaDdlV08yb2ZFV3E0RzBjeFhBTmg0ZUtYeE9LTmp4YlBKVXBVNzlRZWxzclVjY2tEZ0tnS3BKUXlRdTJuYkY3LVpMeE5Tc1JmM2ptUWpCNGdoWVR4eGJoYXlYRkRfdF90TDVITFh1MW4yYmtR?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T19:46:37Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "GOV.UK",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "REWIRING THE STATE AND THE FUTURE CIVIL SERVICE GOV.UK",
+      "title": "REWIRING THE STATE AND THE FUTURE CIVIL SERVICE",
+      "uid": "cdadf01c19946a41b5333a47",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQelRnRkM3WC15MFFlZktiUy1wOGNoQ2xXcWh3c0s1djBhcVFTdThDb1FwTWpGck1rVFRiQ1BNTExLYXdyVXdHUjRrcjJfVkhuNG9rYVZ2S29IQUlRMnpvTG9GU0FzQzZtX3plUWVURllRa0t0MzJkVE5yLXowVkxNSktYcWJMY0kzU25TT1FJMA?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T18:47:21Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Civil Service Jobs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "16-19 Funding Unit Manager Civil Service Jobs",
+      "title": "16-19 Funding Unit Manager",
+      "uid": "6ea88d01e7735515b2baea4b",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE8xQkdXSXNsOWhLTnUyQ1lKaEJJRHp1cHEwVmd3cmM0bDc2cHVVWURCX2xsOVNuMDIwMFF4TVFqYl9BejNxeWtBLXR4YXFYMWctMER4ZnpXTUZ3WUp0UzhtWk9kYV96RGJnOWw0d0lHTzNaR2x5WWpCeHhn?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T17:06:25Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24092 - Receptionist - Nottingham Justice.gov.uk",
+      "title": "24092 - Receptionist - Nottingham",
+      "uid": "36e2cdd70d3986db1b27cd95",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUmg4OTdXTWROc1B5b044WHllY04zUmJHMVdmZWVPdHhaRTFCeXZXdHZNZlFYSXItMkZlYzNYa3g3MkJnaTJDdEhKUlRyWGY0WkdlTTRSWUdKQTBZTy1kQy1ueFYtdGc2VFNJejg3WENDZldTUnZodC0wSWFjVGlvQ01MSWpocXpJ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T17:06:21Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24101 - Roman Catholic Chaplain. Part time Grendon and Spring Hill 20 hours p/w Justice.gov.uk",
+      "title": "24101 - Roman Catholic Chaplain. Part time Grendon and Spring Hill 20 hours p/w",
+      "uid": "e3256bed17c7269f84a30728",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNMXFneEpfTUo3ZlN4TWRtU2JBenVDSGo3cW55ZFFGU1ZOSnZUdTNzMzNWZlpWWW9PY2RacG5HN29ranNJRUVQdENRZEJiN2FsZ2dlVXYzXzVLYTJ2NEcxd3dmeUtPUDJ6M2lwNEp2X2ZaTnBZTVVQejRXbDZkcnAwcHdKZlppVlBvSjl2WUVFNHNPWXlOTjM2cjkzUkpOaXlrcG4zQlZicnk5WTRHTDVBa0FBTVVSbmdwYnptMW5JaWUxU0VVX3Fr?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T16:48:45Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "GOV.UK",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Government response: Trust-based pension schemes: Trustees and governance, building a stronger future GOV.UK",
+      "title": "Government response: Trust-based pension schemes: Trustees and governance, building a stronger future",
+      "uid": "8ca5b5bf6c87e06694948e3f",
+      "url": "https://news.google.com/rss/articles/CBMizgJBVV95cUxQWUhRMndYOFdSTzZkRFU5Yi1vQ0NEMXlNTGZnNTFpczkzdmdJYlRjOWU3NHJvekxwZDVzX0M5X3JQRkV3WEVSbUtiRjNXeWRTLTRpc01zLUlGV19MV3BkNU44Tm12dTBCWEVuSFBrel9lbkZUZVhWTmk2VWgwaTdPSGtWYjVOVlV0TE5SbnBJMTZKZHVEb19DOVUweW8wU3hUc0JLSTV5QWF0SllZb0JVUUVuRHNaNkN4cFdRSzBEWmF1UzNQRllMb20yMjh4aE5tMWhFanhBaFZUVDlDN0VVOUJ2RVo0MVpXMVpJcVRVc1hOVEZ6eGhDSThINzF6bm5wSUhYQW8zUlJmRVlhOU9JMk9KVjFoWTFTb21SMDlncUNRVDNVQVk0Z3g4NE1CZEMtbUNqcTNhclNfaXJ3Q2U4TVBpWFhuNjhsT2trUUpn?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T16:01:30Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "GOV.UK",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Joint Statement on the Withdrawal Agreement Joint Committee, 10 November 2026 GOV.UK",
+      "title": "Joint Statement on the Withdrawal Agreement Joint Committee, 10 November 2026",
+      "uid": "d4f7820ee758a421856755b8",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcXJlalhHWWpLZm92QXI1OVJtc3hQMGNrc1VEOExERjFpOWJkVGM5YVVSSVAxNHN1a2hBUTdNWlU5TlhhUUgycXBhUDhrWHVqNHh5MzhvZVd4THl1TXRUNDh5QTNIXzNBRC01VGRnNkVZNVJrTU1FVXdOYlBYY201YlNYdzI0cEZzck5LZGRlY1lMSGstY3VoZGtvQjVVX241T2hKcHhGNWVCVk9tSWJhdQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T14:35:00Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Durham County Council",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "News-Independent review finds strong commitment to delivering positive change at council Durham County Council",
+      "title": "News-Independent review finds strong commitment to delivering positive change at council",
+      "uid": "fe7bd340129763cc2b554c29",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMlliblFWQk80LXpWZmpIT3RYZ2l2MTFyc1VZOTNDSm8wdVA2Tk10anc0dEgxYTNRNGJSdnVuQ0lnM1pRS2s5c2pQUjY2Z0d6Q19tb0ZQcmYzU1p0ckhOWlM5bE03YXJpNTIzUzlDUUJnZlNTUnN6bU5RVzZxVmpVQy1uUC0tZlp2RW5rSG9ZREhqdkhsV2FvQXdVWEFVaWx5T1ZNS1NxRmkzWjZMODFnZy0zWS1LNV9jRDljWml6Z0tYbUFCbndB?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T13:11:33Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24093 - Receptionist - Birmingham Central and South Justice.gov.uk",
+      "title": "24093 - Receptionist - Birmingham Central and South",
+      "uid": "5126353a1c198455ee44ac0e",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTFJBOWhYeExjNWlOZ0RmNEt3NHFBNkI2VVBsdlY1cHNlbXVrSzZlYVpsU2ZQNUVMcmVuc3pZa3JDd0wzdDRva2JMcTJUWnN1NENVY0dmdGg4OHh2dno2cEh5TnZrZXFkYWNMOXM5RDlaemJEdUtieXVrNDd6MjF3aVhEYmx5cWVJUXVCNU9nVnI3TzdCa05QUTVaVzJOSTdP?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T12:14:00Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "GOV.UK blogs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Designing an AI assistant people can trust GOV.UK blogs",
+      "title": "Designing an AI assistant people can trust",
+      "uid": "42bcb1a13edb6ec6f45d8c4f",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObE9KcERTMHJaU1E5REhKOHpfeXNtelVKbzRUY1V4TERENmh3Z1NackpSOUpwWlZkSXRyNExDbnRMTktGYkVCRFN1c3UyS2RJNVBYX2xiRlVVY1NzSFlDS196NUp0YlZlVWtsa0ltdUE2aDJ3T09rWU9OX2hGRGZycGtZZExSR1hXOExZRWlpUEE?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T12:12:44Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24090 - HMP Bristol - ID & Banking Admin Justice.gov.uk",
+      "title": "24090 - HMP Bristol - ID & Banking Admin",
+      "uid": "f1c2b8e13e32a7aaf45f8573",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQlhJRjlEYkYxQWdyM21ESFIyU2trbXVDTHJsOXljVVkycTJHWWNodXIyc3VxUUt3dEoxRURiSm9xWm1heXVQZGlJMDFBTTE3R1ltQkd0aVk0dEcwcTBnRGp0MllWVmk4N0QyM2tObWlDM3hHV0tPNWJrYi15ejJFSDlQdmV6eDdvSmpfcXdrUQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T12:12:41Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24084 - Neurodiversity Support Manager Justice.gov.uk",
+      "title": "24084 - Neurodiversity Support Manager",
+      "uid": "13fb4cb83c37a872fc137de9",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdmxhcTJEMDhmdGVLRDBVNE1OaWNDaGd4bUVCRHF4ZXV1V1l1QV9SVmNFVTFXQTlSUFZZelRWcWkzWXFMMnduZ2tDTEpNRklmem1YUXRhY3hmTFNhaWJtOG5EcnF6ZlFIZkhCWGF3TUV5S19fZ0NESVo3Rl9ybmJaMWIyeEYxSC1wQXU5STI0QlpHUQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T12:06:18Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24086 - Workforce Lead Justice.gov.uk",
+      "title": "24086 - Workforce Lead",
+      "uid": "f553f4ef8caa59c3d275cbe2",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1nUUtLWUJRZWRBbFhwU0FZVVRnYlVfYkxBYnhFOW9LVmhUYzlmb1dDVEszN25BVWp6UzZIc3E5cXY4OXQ1d1p0cGdpUWV5OEF4VTI2Sjh2dmRoQlRKb2tacnhkZHZiTENzdi1kR05lMnVnRGxlaTJBWENTZTI?oc=5"
+    },
+    {
+      "category": "보안·책임",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:20:02Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "전문가용 AI의 보안, 오류책임, 감사추적과 사고대응에 관련",
+      "score": 28,
+      "source": "Civil Service Jobs",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Lead Cyber Security Risk Manager - Home Office Cyber Security Civil Service Jobs",
+      "title": "Lead Cyber Security Risk Manager - Home Office Cyber Security",
+      "uid": "709157b35ddcecbc71f02de2",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBHR3ZOSnN0QzkyYmZuWnpjUC1PSnN5R2poZmZwNTZ0dmJaSFJacUg5YXBtWUxJWUt0bjFuWkZLdE9DMTdlRXhtcHlPdzlxTDRBbE9BNkFZMXk2WGNnY3RROEVxbzUxZHp6WVZOWnl3QWJEUVZmWjhjakFpVHQ0Zw?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:14:48Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Colchester City Council",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "How Colchester is using AI insights to drive digital transformation recognised by Microsoft Colchester City Council",
+      "title": "How Colchester is using AI insights to drive digital transformation recognised by Microsoft",
+      "uid": "7a61d729fe88415bdd74277b",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdVNnNl80MndXS01OQlJKaC1Ia2FGVTNEWldxZ2ZMRHp4ZHpOWkxpc3I3bWNCa0pyR1RnNjBCeVlPeUhMNDE3UGFzYnd4Zl9ub3JyY05neFNZeUs0S00zUVJ5WFN6QkVvM2hHZjJPbERsVG9CRk1YLWt3aXhXeGNtRzdDcFJZWVE4QnBVbC1QQWZXTEM0QzRIU1FMdXZjdXdyNkZVZkUyOVNDZU5aRHFHT2FsVXlCQTlYSkd6TTg4NElCcUtB?oc=5"
+    },
+    {
+      "category": "보안·책임",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:02:36Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "전문가용 AI의 보안, 오류책임, 감사추적과 사고대응에 관련",
+      "score": 28,
+      "source": "GOV.UK",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Introducing an EdTech and AI product safety certification scheme GOV.UK",
+      "title": "Introducing an EdTech and AI product safety certification scheme",
+      "uid": "6533ff06c613c36dfcec554f",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOQ1JKRkdscjNEbldTSU9WQ28xc254d2FPSjlmd2FCanNYQmtJM2F0d3RIdHBaYjRucnJfdUpaV0RvU3RDX0ZsSDM1dmpFbDRvWGczQjMxdXhaUklVQldpM2dwdnY2ZVdfV3RZcHdzRFRJZFJ2bTBRSDE0clAzX2hpT2pHanFGTHlXbEx3UVpPWlg2YkZZOW80TXpqdGpiUjZxWlBmNzlrVTNVYnJX?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T09:14:14Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24068 - Senior Managing Chaplain Justice.gov.uk",
+      "title": "24068 - Senior Managing Chaplain",
+      "uid": "d0ec0a0a9156897cc9e61092",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbHBSSHdmTUtZQ1VKVEFlVUhvaE1sUi1fQnpicU9FZ3owYW1BM1AzYVE1c0ZqcFVqdHgxcnFBVlJnUHhROElsTkJrbER4M3NoOXRCSkZsM0JOdWRRcU5Gc202d3kyUldmNzBpaDhxaWpxR3hvTGdyODYzbXV4WERXcVVqQ21PQkxxVkE?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T09:14:13Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "24055 - Receptionist (Haverfordwest) Justice.gov.uk",
+      "title": "24055 - Receptionist (Haverfordwest)",
+      "uid": "509234167be04c9312ee3a0c",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdjg5dFJIbHNsR2JVX2tYUEVEWU0xZmZyWFE1a21Mcm9BSC1TQ2hRNmJoRmIyNDJBTWpjWThXcGF1UE5uSzFtYVUtX2QwRDFNM1ZiRUdkTG51MVR6d0diT3M5ZVY2M19pYVBxaF83aVpidGVnSVZYZ1lTN1N5T092eWxIbXhrbnZrSU1WNQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T09:06:30Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "Justice.gov.uk",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "23933 - Senior Administration Officer - Derbyshire Justice.gov.uk",
+      "title": "23933 - Senior Administration Officer - Derbyshire",
+      "uid": "9d341300cdad89855aa1558f",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9zU1pVU0pDVWNsVmIxNGlGSzZkLXp2b29KTVZ0TkotR0JRd2lLSW9xTnVNN2oxcWJtaGNFOTYyZ0RoQUQ4VmxIdzdjZEdmZWpkRWVhRzRTOHQ3SktVcFNHeHM5cWE4WVJrWjBlYmQyVzJsU0pE?oc=5"
+    },
+    {
+      "category": "경쟁·플랫폼",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "영국",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T05:41:58Z",
+      "query_names": [
+        "UK-GOV"
+      ],
+      "relevance": "AI 서비스의 시장접근, 제휴, 플랫폼 의존성과 경쟁전략에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "GOV.UK",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Electro Optic Sensing Technologies: Competition Document GOV.UK",
+      "title": "Electro Optic Sensing Technologies: Competition Document",
+      "uid": "413bc70bfbdf356b9e7d470c",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQOUlLalZkUGZEN1JPbkJqS1Q0N1Z5dWhCeG45VzladDhPNDVLNmU3WHY4NHB1VUlfbU81Zjh2MFRlMm1UOUVPazhXeWZQdVJBUkJkTlFiTk5qaERwM3NXbGltU3hTTUwxY0ZsaHhySktvekRBM2xGTVo2eUNQT2xOYnhhbENNaWc4T3ZvOW5JSXlrMndHSExaSFNlR2N0cUcwcmliek1tWXlvRG5lRjg5ck1XaHJlRjNnM1d2Y1hFbWdyWkN3emRrTUMxbE1aQQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "일본",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-11T01:01:56Z",
+      "query_names": [
+        "JP-METI-DIGITAL"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "経済産業省",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "第12回ロボット大賞が決定しました 経済産業省",
+      "title": "第12回ロボット大賞が決定しました",
+      "uid": "73e912ffd9408b601b4ac5c4",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CRTBNaTNlQjdiWUpnYkZOUE5tYmh3eVRyaXBncFVKUEVwaldjbWJ4bXlHdzB6cGJPTFkzOE1YNGZodzhmWTNidXlnWkc1Y0o2UGNOY29wM0M0RUYydXlCZ1VrMA?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "일본",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T10:46:21Z",
+      "query_names": [
+        "JP-METI-DIGITAL"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "経済産業省",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "AI・データの円滑な事業者間連携に向けたユースケースに関する検討会 経済産業省",
+      "title": "AI・データの円滑な事業者間連携に向けたユースケースに関する検討会",
+      "uid": "112c1cc38fd7cfc7ed3cb78c",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBNZTVvR2REYnkwYmhsV2RKbjI0YVlOYnZ2cG1Xay1qZWE3YWFhSjd1NDkwanQweGd1eVdUM3FtVG1LbEwzTlN0bURqVGk2NUhVRFlHVlE1TEpocG9mNjhXWXh4ZlZ0dmh5M1VfRHYzbUtYSnU0VlBFdQ?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "일본",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T08:52:32Z",
+      "query_names": [
+        "JP-METI-DIGITAL"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "経済産業省",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "第1回 AI・データの円滑な事業者間連携に向けたユースケースに関する検討会 経済産業省",
+      "title": "第1回 AI・データの円滑な事業者間連携に向けたユースケースに関する検討会",
+      "uid": "9dc7cbb673b9aee3fcd58e2f",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5yU1hqRjJqblBEOXFrV0o3eE40VlJxTXJIaWZKME00TDRCdk1ZZlhoQl92dnp6ZVJHbUt3T05PczhkYm9WZDBqZ0VuUmM0U3BheTBqLWNiS0RNbUk2SjNzcXFib1RON0JKRE53S0lmbG9KbDM1ZlE?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "일본",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T05:05:55Z",
+      "query_names": [
+        "JP-METI-DIGITAL"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "近畿経済産業局",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "中小企業等向けサイバーセキュリティ緊急対策情報 近畿経済産業局",
+      "title": "中小企業等向けサイバーセキュリティ緊急対策情報",
+      "uid": "38c0eeb3d1a785dd47ae2d1d",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOREtQSVNNR3lEejRhajd1S1RmRDNLa09tQXpxMTRkWnYxMmkzVXRmMGp4N2ZROW1rWDF1d1dfN09lNmlETkVJV09tVDFiRjNsQUtPQVNycnl2eDZMRXdWVWNJMWZxY2U3dFdWSXktcEdubF82d3IyejhWRGlFVFh4UQ?oc=5"
+    },
+    {
+      "category": "저작권·지식재산",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T12:22:31Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "학습데이터, 생성물, 소프트웨어·브랜드 권리관계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Launch of the WIPO SPARK Report on Patenting in Deep Science Startups and Spinouts WIPO",
+      "title": "Launch of the WIPO SPARK Report on Patenting in Deep Science Startups and Spinouts",
+      "uid": "159d3ecf1ae580383ddda382",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLbTlZNVA0VVlDbTdyUV9zaVF1WU1rcG9qWmdhZjJjeFAzSnRHOWpmVWtiT0tmSzFhSUJPTmlqakhMaUh3WmhGMDFYZEtkQ3pMSzk3d1F1TUFTZFYzVHhxTGU2eEEzZ3c4eUFfOHJn?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:12:33Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Workshops, Seminars and Webinars WIPO",
+      "title": "Workshops, Seminars and Webinars",
+      "uid": "c140d1cc35a038e69a8218e8",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE10Zjc4VnkzX0plLUNENU92aDFrU1BFZEF3bjJWM29qMUdBMExEN1Fmam13OUYzZm9hZEMxM2tENTI4MkNaOXlkVEpaRzJuanVhRlViOTAydUo?oc=5"
+    },
+    {
+      "category": "노동·채용",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T11:06:38Z",
+      "query_names": [
+        "INT-OECD"
+      ],
+      "relevance": "AI 업무보조·평가 기능의 노동법 및 조직 운영 리스크에 관련",
+      "score": 28,
+      "source": "OECD",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Unemployment Rates, OECD - Updated: November 2026 OECD",
+      "title": "Unemployment Rates, OECD - Updated: November 2026",
+      "uid": "fe598cb8c9422ff55808aac8",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZUhERE9rbFdHNDZsVTFuOXBEUElNUmhLWkFwd2pNUnBZZVR5UUJGSXJCYm8zRUVQVUMyc0s2WjJranZBUkMxcHl0LTBDQzE0T2dsU21BbDF6ZGVDT3RzRmN1TnBZX2ZIWE1xa3lQeUgtQ2FpbjZwdjJ6RFN0OEV3cVZwM1hhV3oySVRjZlFZMFkxRE1NNG5XeUVXQzhtNWJfRnZPSWpXSno5RmRyOGNVRUR2WQ?oc=5"
+    },
+    {
+      "category": "경쟁·플랫폼",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T07:38:19Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "AI 서비스의 시장접근, 제휴, 플랫폼 의존성과 경쟁전략에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "WIPO Japan Office Organized “The 3rd Show and Tell Presentation Competition” WIPO",
+      "title": "WIPO Japan Office Organized “The 3rd Show and Tell Presentation Competition”",
+      "uid": "f2766c695cad6665a9d27fff",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZlVxUjdfR3dzVmRzbEg1dVBiamRDbzZMZnJCYkluLXE0cmxTVzZXNFVaclNyVmIyYUNCUXRCZjdKdE92M0RzLVp2OGFKUkN3MVVBVGdNTjZpanNCYng3MlhJQVhzU0F1QWI5Ry16RkRDVzd6X3hDdm4zQXo4RW1FallnTGtjSE9MRVJXdm5rUnBLaWdGWGNnMmcydldYeDBrRF9Rak5tdm9nT1RySnQ2eU9FYVlIT1EtSkFXXzZOYWhsY2ZDZXBn?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:37:12Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "WIPO Lex WIPO",
+      "title": "WIPO Lex",
+      "uid": "aa06781547e1186e369de978",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBRWS1SUUl3c0VFV2hnWGVvWVJjV3A0Mlg2ekNlN1Z5dHhQeU1MeWdIUk9HbjhMOUlxNFBoMU1hamk4aV9lTzM2eUo1dXBuVmZ2X1RLNGhB?oc=5"
+    },
+    {
+      "category": "저작권·지식재산",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-10T03:04:09Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "학습데이터, 생성물, 소프트웨어·브랜드 권리관계에 영향을 줄 수 있음",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Standing Committee on the Law of Trademarks, Industrial Designs and Geographical Indications WIPO",
+      "title": "Standing Committee on the Law of Trademarks, Industrial Designs and Geographical Indications",
+      "uid": "8a7a7ffe5bec75a66fdd948d",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1rZV85ZEFEbGlBSm9XY0IyOTFwdzVqQ3hfTkZfb0xYSUpqTTZWWlR6RU9FTUYxNXRBdkpySFdKd0NpUjFYNllKSlBzbzRfUnk2Y3UwdzV3UU13RE5TcVEwZGJRRk82WlBJeWRZTVpB?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "국제",
+      "kind": "regulatory_news",
+      "published_at": "2026-11-09T23:01:50Z",
+      "query_names": [
+        "INT-WIPO"
+      ],
+      "relevance": "세무·법률 AI 사업과의 관련성은 원문 검토가 필요",
+      "score": 28,
+      "source": "WIPO",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "Search WIPO",
+      "title": "Search",
+      "uid": "622766a831bb7ef1a956ae6c",
+      "url": "https://news.google.com/rss/articles/CBMinghBVV95cUxPTlk4dXlOTmRMZURJRGRZY09nbGU2TTB2c2NqY0xuS1VrSnZmSkJrMmxyTTBwNjFsNFBsaE1lWlNScHowUW81dGU1dHRmV1dJWHJJRFZJOGJhWEVMOGxDSVVzQWgtWl9saVBaV1I3Umtsb3AzM2huOUVBOVkyczNEWDRkWUl4U0tWdjRRTlEwdEVCNUhib0M1ckVnNDVKc3ViRkNTUmwyWTNTR3NYNDNlYkpYVEFOTm4tVDRIekZDd1ZKcTIzQTRPN3pmNjRsd0h6MjNaVVFLWTU0MkpVRG9iVmpHV3VaMGZQcE9uWXQ5SWhyOGlhSWdGN2wtRmNmVkEzNE1iRHVNVFlXRzBEYXROamJxSkFnMWExUHUzZC1rdkZzTVkyWWdQaFdHVjQxb0gwcmdVYmpaN3c2MTRGc2Jlbkt0UzBYMThwS2xuSjk0V2F1a1VtNHVYTGFFcFBXN0NMYWNHR21fTy1NX196WFNXZFZCRnRxWHE4VDBLb2J6MTU4NC1LeXFiQ0lKWXZnZHRQUGlqSTdFcllTeGpDam45bGZ0SWNhdjlPekxnZmx4NC1GUU9Ga1JZOVA2YThXbE1BdF8zbk9qS3AtYUhjQW1PSWpRbktsamtHcGdSOVpiSTJPcGFmbHV6aEJaMEN4aFRyNHlUdk5WVkhMaTFBcmFnMk5HMkJHSjZEMS1odk8yWGJTT3FUZ2N1S2ZzRWVTOVg0MFVESUtPTGY0MUw2Y1VLdmxwN2lud2ZkRE1kaUc1cDFXLVZnTGFZSms0ZVI0cEoxZmRXRDRBUlE2RmFJRkFsTEgyMk1VRzIwdUxwTV9WRTJKN1FzRC12TkxMNWM3US1TY0dRNHQ3RUhTRU9acHExcTlIeXZOWjZDdFlJREFMeEkyX0EzMUtVUWdmbTFFZ0hDRVJONXhJLUs4NXgzd1E1T1RJV00tODh5VHRQdGRKSl9iWF9ha1VLREVNc0kyOVJlNm1xR1hDU0FiM2RsVlpsSWkwM0loSWFNdDl0M0tlUDdDRFF6dVJoSTZpeEdtS0NnV0dlbVJsZGF2X0pHZ3hQSEpIajRYeEZhaHRTSng3S1lISk9rZTlsUUgydzNQRmg0bHpxQmhPV0dLc004WTdVNHF1VVlEcUhxTEs3UFZZUUx3N1dSRmFVMXdWV0tMVl9TNDI0d1k4eFFnUWJXd0ZpMWpPTnNrQ0V6NU4xUWpZX2M0ajdzWGlOb3h3VnhfRmJ4U2lrb3lEdWZSSGIyUFlUd0RvM2RwdndxUWtFWF9BR0sxZjU1bjJwLUQ1ZG5CS0o4QWI2YUtjcGlmSjdmS25aZ1NDOUVkYVNUdWQ1eFpxeTQ2aTZNQ0pUUGJxb1dlallvbWNSRS1wakMtbHVFY0xIbktuYUl4eTZVYkh0WHpR?oc=5"
+    },
+    {
+      "category": "세무·조세",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "시장",
+      "kind": "market_news",
+      "published_at": "2026-11-11T00:00:00Z",
+      "query_names": [
+        "Market-News-4"
+      ],
+      "relevance": "세무·회계·리걸테크 경쟁환경과 제품 포지셔닝에 관련",
+      "score": 12,
+      "source": "CPA뉴스",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "AI 시대, 회계·세무 인재를 함께 길러야 하는 이유 CPA뉴스",
+      "title": "AI 시대, 회계·세무 인재를 함께 길러야 하는 이유",
+      "uid": "331d40a67851f4665e082185",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0yb1FTTFExV2ExUVRMamttbXBqVXNLZ3A0bkFjWDI2cmxXbjVmTlFoZDlsWEZvaXBnUzM0a3FleGM3cGN0WUwtcXg2U3FreGlfcnJIWWhGTE1Fc1JsZUl4V0VvNWRwM1Rm?oc=5"
+    },
+    {
+      "category": "기타",
+      "evidence": "Google News RSS 색인. 링크의 원문·발표기관·시행일을 확인해야 함.",
+      "importance": "낮음",
+      "jurisdiction": "시장",
+      "kind": "market_news",
+      "published_at": "2026-11-10T04:30:00Z",
+      "query_names": [
+        "Market-News-7"
+      ],
+      "relevance": "세무·회계·리걸테크 경쟁환경과 제품 포지셔닝에 관련",
+      "score": 5,
+      "source": "데일리한국",
+      "status": "RSS 색인·원문 확인 필요",
+      "summary": "[유통레이더] 쿠팡, 설화수, 다나와, 롯데월드, 로앤컴퍼니, 하나투어, 롯데면세점 外 데일리한국",
+      "title": "[유통레이더] 쿠팡, 설화수, 다나와, 롯데월드, 로앤컴퍼니, 하나투어, 롯데면세점 外",
+      "uid": "8c40ae562e073c5ce5f51f16",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5CREZaTjdYS2d3eFNPeDhXX1lUSGxxbU1oNDZPaEhxRDNrU0dBM002bFFzWXNUaG9ka2M0RENreGdrQzVBWVcyZDFhSnpua0l5OVB4QTVHRHJ6bXB4bDFpbE5LWUdmeno1S0k4NmhvQdIBc0FVX3lxTFByRDBKYVRXLWRNS1NNMnJJU29OUXUxcVl6TU96NUJhaGprSElzNXhwZW14RUZaaEhzbWJJWHM1Vkc5eDdyWnJEdnlRS01HVzcyQlg4RGxTeElZWXYyVElfQmY3TE53MnB6RlZXS0lCTTlMTU0?oc=5"
+    }
+  ],
+  "schema_version": 1
+}
