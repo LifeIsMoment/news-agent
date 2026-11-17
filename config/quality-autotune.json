@@ -28,14 +28,6 @@
   ],
   "history": [
     {
-      "actionable_items": 1,
-      "changes": [],
-      "date": "2026-10-18",
-      "noise_ratio": 0.0538,
-      "quality_score": 36,
-      "source_failure_ratio": 0.0086
-    },
-    {
       "actionable_items": 2,
       "changes": [],
       "date": "2026-10-19",
@@ -266,9 +258,17 @@
       "noise_ratio": 0.0268,
       "quality_score": 43,
       "source_failure_ratio": 0.0172
+    },
+    {
+      "actionable_items": 1,
+      "changes": [],
+      "date": "2026-11-17",
+      "noise_ratio": 0.0178,
+      "quality_score": 39,
+      "source_failure_ratio": 0.0
     }
   ],
-  "last_tuned_at": "2026-11-16T02:41:38Z",
+  "last_tuned_at": "2026-11-17T05:02:48Z",
   "max_actions": 12,
   "max_age_days": 45,
   "max_external_reference_actions": 2,
