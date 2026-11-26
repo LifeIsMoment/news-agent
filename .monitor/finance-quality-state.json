@@ -1,31 +1,6 @@
 {
   "history": [
     {
-      "actionable_core_items": 0,
-      "baseline_top_share": 0.0,
-      "category_coverage": 5,
-      "changed": false,
-      "date": "2026-10-27",
-      "health_rate": 0.9913,
-      "items": 91,
-      "noise_top_share": 0.05,
-      "official_items": 3,
-      "official_or_paper_share": 0.05,
-      "open_source_items": 460,
-      "paper_items": 0,
-      "pipeline_average_minutes": 0.42,
-      "pipeline_success_rate": 1.0,
-      "pipeline_timed_out": 0,
-      "primary_evidence_share": 1.0,
-      "quality_score": 73,
-      "reports": 7,
-      "secondary_items": 43,
-      "taxia_top_share": 0.0,
-      "top_core_purity": 0.95,
-      "top_count": 20,
-      "vendor_items": 23
-    },
-    {
       "actionable_core_items": 3,
       "baseline_top_share": 0.0,
       "category_coverage": 5,
@@ -749,8 +724,33 @@
       "top_core_purity": 1.0,
       "top_count": 20,
       "vendor_items": 12
+    },
+    {
+      "actionable_core_items": 2,
+      "baseline_top_share": 0.0,
+      "category_coverage": 4,
+      "changed": false,
+      "date": "2026-11-26",
+      "health_rate": 1.0,
+      "items": 48,
+      "noise_top_share": 0.05,
+      "official_items": 1,
+      "official_or_paper_share": 0.0,
+      "open_source_items": 553,
+      "paper_items": 0,
+      "pipeline_average_minutes": 0.42,
+      "pipeline_success_rate": 1.0,
+      "pipeline_timed_out": 0,
+      "primary_evidence_share": 1.0,
+      "quality_score": 72,
+      "reports": 7,
+      "secondary_items": 79,
+      "taxia_top_share": 0.0,
+      "top_core_purity": 0.95,
+      "top_count": 20,
+      "vendor_items": 15
     }
   ],
-  "last_quality_score": 74,
-  "last_run_at": "2026-11-25T05:27:03.230319Z"
+  "last_quality_score": 72,
+  "last_run_at": "2026-11-26T05:07:20.053689Z"
 }
